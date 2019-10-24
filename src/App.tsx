@@ -8,10 +8,10 @@ import { Route } from "react-router";
 const App: React.FC = () => {
   return (
     <>
-      <Route path="/" component={News} />
-      <Route path="/catalogue/" component={Catalogue} />
-      <Route path="/details" component={Details} />
-      <Route path="/help" component={Help} />
+      <Route exact path="/" component={News} />
+      <Route exact path="/catalogue/" component={Catalogue} />
+      <Route exact path="/details" component={Details} />
+      <Route exact path="/help" component={Help} />
     </>
   );
 };

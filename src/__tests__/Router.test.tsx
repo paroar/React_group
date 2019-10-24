@@ -1,4 +1,5 @@
 import { waitForElement } from "@testing-library/react";
+import { createMemoryHistory } from "history";
 import React from "react";
 import App from "../App";
 import { renderRouter } from "../utils/tests";
@@ -12,11 +13,15 @@ test("app renders News, Catalogue, Details and Help and I can navigate to those 
 
   history.push("/catalogue");
   await waitForElement(() => getByTestId("catalogue-page"));
-  expect(queryByTestId("news-page")).toBeInTheDocument();
+  expect(queryByTestId("news-page")).not.toBeInTheDocument();
 });
 
 test("landing on a bad page shows news page", () => {
-  const { getByTestId, queryByTestId } = renderRouter(<App />);
-  expect(getByTestId("news-page")).toBeInTheDocument();
+  const history = createMemoryHistory({
+    initialEntries: ["/something-that-does-not-match"]
+  });
+
+  const { queryByTestId } = renderRouter(<App />, { history });
+  expect(queryByTestId("news-page")).not.toBeInTheDocument();
   expect(queryByTestId("catalogue-page")).not.toBeInTheDocument();
 });
