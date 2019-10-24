@@ -9,6 +9,7 @@
     "@types/react-dom": "16.9.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.2.0",
     "typescript": "3.6.4"
   },
@@ -38,6 +39,7 @@
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.2.0",
     "@testing-library/user-event": "^7.1.1",
+    "@types/react-router-dom": "^4.3.5",
     "@types/testing-library__dom": "^6.4.0",
     "@types/testing-library__react": "^9.1.1",
     "@types/testing-library__user-event": "^4.1.1"
