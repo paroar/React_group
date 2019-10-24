@@ -14,6 +14,11 @@ test("app renders News, Catalogue, Details and Help and I can navigate to those 
   history.push("/catalogue");
   await waitForElement(() => getByTestId("catalogue-page"));
   expect(queryByTestId("news-page")).not.toBeInTheDocument();
+
+  history.push("/catalogue/1");
+  await waitForElement(() => getByTestId("details-page"));
+  expect(queryByTestId("news-page")).not.toBeInTheDocument();
+  expect(queryByTestId("catalogue-page")).not.toBeInTheDocument();
 });
 
 test("landing on a bad page shows news page", () => {
