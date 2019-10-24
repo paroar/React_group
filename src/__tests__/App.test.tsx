@@ -4,5 +4,5 @@ import App from "../App";
 
 test("Hello test", () => {
   const { getByTestId } = render(<App />);
-  expect(getByTestId("main")).toHaveTextContent(/hello from app/i);
+  expect(getByTestId("main").children.length).toBe(5);
 });
