@@ -6,10 +6,14 @@
 > y amigable el usuario pueda encontrar información precisa,
 > detalla y actualizada mediante el uso de distintas APIS
 
-***
+
 ## Funcionalidad
 - [ ] Buscador de películas
 - [ ] Catálogo
 - [ ] Detalles, sinopsis, actores
 - [ ] Sección de noticias relacionadas
 - [ ] Gráfico popularidad/búsquedas
+- [ ] Ayuda
+- [ ] Usuarios
+- [ ] Series
+- [ ] 
