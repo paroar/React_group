@@ -19,6 +19,7 @@ test("app renders News, Catalogue, Details and Help and I can navigate to those 
   await waitForElement(() => getByTestId("details-page"));
   expect(queryByTestId("news-page")).not.toBeInTheDocument();
   expect(queryByTestId("catalogue-page")).not.toBeInTheDocument();
+  expect(getByTestId("navbar")).toBeInTheDocument();
 });
 
 test("landing on a bad page shows news page", () => {
@@ -30,4 +31,5 @@ test("landing on a bad page shows news page", () => {
   expect(queryByTestId("news-page")).not.toBeInTheDocument();
   expect(queryByTestId("catalogue-page")).not.toBeInTheDocument();
   expect(getByTestId("error-page")).toBeInTheDocument();
+  expect(getByTestId("navbar")).toBeInTheDocument();
 });

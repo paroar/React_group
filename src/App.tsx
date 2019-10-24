@@ -5,10 +5,12 @@ import Details from "./pages/Details";
 import Help from "./pages/Help";
 import { Route, Switch } from "react-router";
 import Error from "./pages/Error";
+import Navbar from "./components/Navbar";
 
 const App: React.FC = () => {
   return (
     <>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={News} />
         <Route exact path="/catalogue/" component={Catalogue} />
