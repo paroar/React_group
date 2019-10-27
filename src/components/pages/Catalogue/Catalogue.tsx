@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Card from "../../Card";
 
 const Catalogue: React.FC = () => {
   useEffect(() => {
@@ -20,9 +21,9 @@ const Catalogue: React.FC = () => {
     <>
       <h2 className="heading">Catalogue page</h2>
       <div className="Catalogue--grid">
-        {[].map.call(movies, movie => (
+        {movies.map(movie => (
           //@ts-ignore
-          <img key={movie.id} className="Catalogue--grid--img" src={`https://image.tmdb.org/t/p/w185`+movie.poster_path} alt="img"/>
+          <Card key={movie.id} movie={movie}/>
         ))}
       </div>
     </>
