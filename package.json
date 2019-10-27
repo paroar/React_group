@@ -9,7 +9,7 @@
     "@types/react-dom": "16.9.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "typescript": "3.6.4"
   },
@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass:watch": "node-sass src/sass/imports.scss src/index.css -w" 
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +43,7 @@
     "@types/react-router-dom": "^4.3.5",
     "@types/testing-library__dom": "^6.4.0",
     "@types/testing-library__react": "^9.1.1",
-    "@types/testing-library__user-event": "^4.1.1"
+    "@types/testing-library__user-event": "^4.1.1",
+    "node-sass": "^4.13.0"
   }
 }
