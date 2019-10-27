@@ -20,7 +20,9 @@ body {
 
 .Catalogue--grid--img {
   border-radius: 3px;
-  border: 6px solid orangered; }
+  border: 6px solid orangered;
+  width: 185px;
+  height: 278px; }
 
 .Catalogue--grid--img:hover {
   border: 6px solid orange;

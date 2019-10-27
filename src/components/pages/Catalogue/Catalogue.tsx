@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import Card from "../../Card";
 
 const Catalogue: React.FC = () => {
@@ -23,7 +24,7 @@ const Catalogue: React.FC = () => {
       <div className="Catalogue--grid">
         {movies.map(movie => (
           //@ts-ignore
-          <Card key={movie.id} movie={movie}/>
+          <Link to={`/catalogue/${movie.id}`}><Card key={movie.id} movie={movie}></Card></Link>
         ))}
       </div>
     </>

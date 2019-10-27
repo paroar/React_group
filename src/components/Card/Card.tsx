@@ -1,14 +1,17 @@
 import React from "react";
 
 const Card: React.FC = movie => {
-
   const card = {
-    margin: "auto"
-  }
+    margin: "auto",
+    position: "relative"
+  };
 
   return (
     <>
-      <div style={card}>
+              
+      <div 
+      //@ts-ignore
+      style={card}>
         <img
           //@ts-ignore
           src={`https://image.tmdb.org/t/p/w185` + movie.movie.poster_path}
