@@ -41,35 +41,39 @@ const Details: React.FC<DetailsProps> = ({
 
   if (!movie) {
     return null;
+  } else {
+    const path = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+    const divStyle = {
+      background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)), url(" + path + ")",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"
+    };
+
+    return (
+      <div data-testid="details-page" style={divStyle}>
+        <img
+          src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+          alt="poster-img"
+        />
+
+        <h4>Title</h4>
+        <p>{movie.title}</p>
+        <h4>Rating</h4>
+        <p>{movie.vote_average}</p>
+        <h4>Overview</h4>
+        <p>{movie.overview}</p>
+
+        {movie.videos.results.map(video => (
+          <iframe
+            width="420"
+            height="315"
+            src={`https://www.youtube.com/embed/${video.key}`}
+            title={video.key}
+          ></iframe>
+        ))}
+      </div>
+    );
   }
-
-  return (
-    <div data-testid="details-page">
-      <img
-        src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-        alt="poster-img"
-      />
-      <img
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-        alt="backdrop-img"
-      />
-
-      {movie.videos.results.map(video => (
-        <iframe
-          width="420"
-          height="315"
-          src={`https://www.youtube.com/embed/${video.key}`}
-        ></iframe>
-      ))}
-
-      <h4>Title</h4>
-      <p>{movie.title}</p>
-      <h4>Rating</h4>
-      <p>{movie.vote_average}</p>
-      <h4>Overview</h4>
-      <p>{movie.overview}</p>
-    </div>
-  );
 };
 
 export default Details;
