@@ -7,8 +7,15 @@ type Movie = {
   title: string;
   vote_average: string;
   overview: string;
-  videos: {};
-  results: [];
+  videos: Videos;
+};
+
+type Videos = {
+  results: Results[];
+};
+
+type Results = {
+  key: string;
 };
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
@@ -43,22 +50,24 @@ const Details: React.FC<DetailsProps> = ({
         alt="poster-img"
       />
       <img
-        src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
+        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
         alt="backdrop-img"
       />
 
-      {
-        //@ts-ignore
-        movie.videos.results.map(video => (
-          <iframe width="420" height="315"
-            src={`https://www.youtube.com/embed/${video.key}`}>
-          </iframe> 
-        ))
-      }
+      {movie.videos.results.map(video => (
+        <iframe
+          width="420"
+          height="315"
+          src={`https://www.youtube.com/embed/${video.key}`}
+        ></iframe>
+      ))}
 
-      <h4>Title: {movie.title}</h4>
-      <h4>Rating: {movie.vote_average}</h4>
-      <h4>Overview: {movie.overview}</h4>
+      <h4>Title</h4>
+      <p>{movie.title}</p>
+      <h4>Rating</h4>
+      <p>{movie.vote_average}</p>
+      <h4>Overview</h4>
+      <p>{movie.overview}</p>
     </div>
   );
 };
