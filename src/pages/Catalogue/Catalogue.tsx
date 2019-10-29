@@ -24,7 +24,7 @@ const Catalogue: React.FC = () => {
       <div className="Catalogue--grid">
         {movies.map(movie => (
           //@ts-ignore
-          <Link to={`/catalogue/${movie.id}`}><Card key={movie.id} movie={movie}></Card></Link>
+          <Link key={movie.id} to={`/catalogue/${movie.id}`}><Card movie={movie}></Card></Link>
         ))}
       </div>
     </>
