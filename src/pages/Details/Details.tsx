@@ -69,6 +69,7 @@ const Details: React.FC<DetailsProps> = ({
             height="315"
             src={`https://www.youtube.com/embed/${video.key}`}
             title={video.key}
+            key={video.key}
           ></iframe>
         ))}
       </div>
