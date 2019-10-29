@@ -1,15 +1,15 @@
 import React from "react";
-import Search from "./Search/Search";
-import Tags from "./Tags/Tags";
+import Search from "./Search/";
+import Tags from "./Tags/";
+import Logo from "./Logo/";
 
 
 const Navbar: React.FC = () => {
-  console.log("ESTA FUNCIONANDO");
   return (
-    <nav className="Navbar--navbar">
-      <h3>Logo</h3>
-      <Tags></Tags>
-      <Search></Search>
+    <nav className="navbar">
+      <Logo/>
+      <Tags/>
+      <Search/>
     </nav>
   );
 };

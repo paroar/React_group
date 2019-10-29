@@ -1,14 +1,14 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
+import { GoSearch } from "react-icons/go";
 
 const Search: React.FC = () => {
   return (
-    <>
-      <input />
-      <button onClick={alert}>
-        <FaSearch size={25} color="white"></FaSearch>
+    <div className="navbar--search">
+      <input type="search" />
+      <button onClick={alert} className="navbar--button">
+        <GoSearch size={25} color="white"></GoSearch>
       </button>
-    </>
+    </div>
   );
 };
 

@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const Tags: React.FC = () => {
   return (
-    <ul className="Navbar--navbar-list">
-      <Link to="/" className="nav-style">
-        <li>Home</li>
+    <ul className="navbar--list">
+      <Link to="/">
+        Home
       </Link>
-      <Link to="/catalogue" className="nav-style">
-        <li>Catalogue</li>
+      <Link to="/catalogue">
+        Catalogue
       </Link>
-      <Link to="/news" className="nav-style">
-        <li>News</li>
+      <Link to="/news">
+        News
       </Link>
-      <Link to="/help" className="nav-style">
-        <li>Help</li>
+      <Link to="/help">
+        Help
       </Link>
     </ul>
   );
