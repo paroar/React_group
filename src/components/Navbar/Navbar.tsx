@@ -1,28 +1,24 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
-  const navStyle = {
-    color: "white",
-    textDecoration: "none"
-  };
-
+  console.log("ESTA FUNCIONANDO");
   return (
     <nav className="Navbar--navbar">
       <h3>Logo</h3>
       <ul className="Navbar--navbar-list">
-        <NavLink to="/" style={navStyle}>
+        <Link to="/" className="nav-style">
           <li>Home</li>
-        </NavLink>
-        <NavLink to="/catalogue" style={navStyle}>
+        </Link>
+        <Link to="/catalogue" className="nav-style">
           <li>Catalogue</li>
-        </NavLink>
-        <NavLink to="/news" style={navStyle}>
+        </Link>
+        <Link to="/news" className="nav-style">
           <li>News</li>
-        </NavLink>
-        <NavLink to="/help" style={navStyle}>
+        </Link>
+        <Link to="/help" className="nav-style">
           <li>Help</li>
-        </NavLink>
+        </Link>
       </ul>
     </nav>
   );

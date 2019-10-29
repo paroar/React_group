@@ -1,12 +1,11 @@
 import React from "react";
-import "./index.css";
 import { Route, Switch } from "react-router";
-import Catalogue from "./components/pages/Catalogue";
-import Details from "./components/pages/Details";
-import Help from "./components/pages/Help";
-import Error from "./components/pages/Error";
-import Home from "./components/pages/Home";
-import News from "./components/pages/News";
+import Catalogue from "./pages/Catalogue";
+import Details from "./pages/Details";
+import Help from "./pages/Help";
+import Error from "./pages/Error";
+import Home from "./pages/Home";
+import News from "./pages/News";
 import Navbar from "./components/Navbar";
 
 const App: React.FC = () => {
