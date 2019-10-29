@@ -32,7 +32,12 @@ const Details: React.FC<DetailsProps> = ({
       const data = await fetch(
         `http://api.themoviedb.org/3/movie/${slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos`
       );
+      const similar = await fetch(
+        `https://api.themoviedb.org/3/movie/${slug}/similar?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&page=1`
+      )
       const item = await data.json();
+      const itemSimilar = await similar.json();
+      console.log(itemSimilar);
       setMovie(item);
     };
 
@@ -44,20 +49,22 @@ const Details: React.FC<DetailsProps> = ({
   } else {
     const path = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
     const divStyle = {
-      background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)), url(" + path + ")",
+      background: "url(" + path+ ")",
       backgroundRepeat: "no-repeat",
-      backgroundSize: "cover"
+      backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+      backgroundPosition: "center"
     };
 
     return (
-      <div data-testid="details-page" style={divStyle}>
+      <div data-testid="details-page" className="details-background" style={divStyle}>
         <img
           src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
           alt="poster-img"
         />
 
-        <h4>Title</h4>
-        <p>{movie.title}</p>
+        
+        <h2>{movie.title}</h2>
         <h4>Rating</h4>
         <p>{movie.vote_average}</p>
         <h4>Overview</h4>
@@ -67,6 +74,7 @@ const Details: React.FC<DetailsProps> = ({
           <iframe
             width="420"
             height="315"
+            frameBorder="0"
             src={`https://www.youtube.com/embed/${video.key}`}
             title={video.key}
             key={video.key}
