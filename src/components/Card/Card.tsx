@@ -1,10 +1,17 @@
 import React from "react";
 
-const Card: React.FC = movie => {
+type Mov = {
+  movie: PosterPath;
+}
+
+type PosterPath = {
+  poster_path: string;
+}
+
+const Card: React.FC<Mov> = movie => {
   return (
     <div className="card">
       <img
-        //@ts-ignore
         src={`https://image.tmdb.org/t/p/w185` + movie.movie.poster_path}
         className="Catalogue--grid--img"
         alt="img"
