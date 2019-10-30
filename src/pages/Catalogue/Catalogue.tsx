@@ -2,12 +2,30 @@ import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import Card from "../../components/Card";
 
+type Movie = {
+  id: string;
+  poster_path: string;
+  backdrop_path: string;
+  title: string;
+  vote_average: string;
+  overview: string;
+  videos: Videos;
+};
+
+type Videos = {
+  results: Results[];
+};
+
+type Results = {
+  key: string;
+};
+
 const Catalogue: React.FC = () => {
   useEffect(() => {
     fetchMovies();
   }, []);
 
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[] | null>(null);
 
   const fetchMovies = async () => {
     const data = await fetch(
@@ -18,17 +36,20 @@ const Catalogue: React.FC = () => {
     setMovies(items.results);
   };
 
-  return (
-    <>
-      <h2 className="heading">Catalogue page</h2>
-      <div className="Catalogue--grid">
-        {movies.map(movie => (
-          //@ts-ignore
-          <Link key={movie.id} to={`/catalogue/${movie.id}`}><Card movie={movie}></Card></Link>
-        ))}
-      </div>
-    </>
-  );
+  if(!movies){
+    return null;
+  }else{
+    return (
+      <>
+        <h2 className="heading">Catalogue page</h2>
+        <div className="Catalogue--grid">
+          {movies.map(movie=> (
+            <Link key={movie.id} to={`/catalogue/${movie.id}`}><Card movie={movie}></Card></Link>
+          ))}
+        </div>
+      </>
+    );
+  }
 };
 
 export default Catalogue;
