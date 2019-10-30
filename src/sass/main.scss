@@ -1,15 +1,13 @@
 @import 'typography/typography';
 
-@import 'reset';
-
-
+@import 'abstracts/reset';
 @import 'abstracts/color';
 
-@import 'components/Catalogue';
-@import 'components/Details';
-@import 'components/Error';
-@import 'components/Help';
-@import 'components/News';
+@import 'pages/Catalogue';
+@import 'pages/Details';
+@import 'pages/Error';
+@import 'pages/Help';
+@import 'pages/News';
 
 @import 'components/Navbar';
 @import 'components/Card';
