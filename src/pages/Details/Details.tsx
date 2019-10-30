@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 
-type Movie = {
+type FetchMovie = {
   poster_path: string;
   backdrop_path: string;
   title: string;
   vote_average: string;
   overview: string;
-  videos: Videos;
+  videos: {
+    results: {key: string}[];
+  };
 };
 
-type Videos = {
-  results: Results[];
+/*
+type Movie = {
+  posterPath: string;
+  backdropPath: string;
+  title: string;
+  voteAverage: string;
+  overview: string;
+  videos: string[];
 };
 
-type Results = {
-  key: string;
-};
+type Movie2 = {id: string} & Movie
+
+const fromFetchMovie = (movie: FetchMovie): Movie  => {
+  return {
+    posterPath: movie.poster_path,
+    videos: movie.videos.results.map(({key}) => key)
+  }
+}
+*/
+
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 
@@ -25,7 +40,7 @@ const Details: React.FC<DetailsProps> = ({
     params: { slug }
   }
 }) => {
-  const [movie, setMovie] = useState<Movie | null>(null);
+  const [movie, setMovie] = useState<FetchMovie | null>(null);
 
   useEffect(() => {
     const fetchMovie = async () => {
