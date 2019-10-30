@@ -13,7 +13,7 @@ const Card: React.FC<Mov> = movie => {
     <div className="card">
       <img
         src={`https://image.tmdb.org/t/p/w185` + movie.movie.poster_path}
-        className="Catalogue--grid--img"
+        className="grid--img"
         alt="img"
       />
     </div>

@@ -1,9 +1,8 @@
 .navbar {
-    min-width: 55rem;
+  min-width: 55rem;
   height: 5rem;
   background: rgb(49, 60, 63);
   position: relative;
-  
 
   &--logo {
     position: absolute;
@@ -22,23 +21,23 @@
     }
   }
 
-  &--search{
+  &--search {
     position: absolute;
     margin: 0 2rem;
     top: 50%;
     right: 1vw;
     transform: translateY(-50%);
 
-    input{
-        margin: 2rem;
-        border-radius: 25rem;
-        border: 1px solid rgba(255, 255, 255, 0.315);
-        color: white;
-        background: rgb(49, 60, 63);
-        height: 2rem;
-        width: 12rem;
-        text-align: center;
-        font-size: 1rem;
+    input {
+      margin: 0 2rem;
+      border-radius: 25rem;
+      border: 1px solid rgba(255, 255, 255, 0.315);
+      color: white;
+      background: rgb(49, 60, 63);
+      height: 2rem;
+      width: 12rem;
+      text-align: center;
+      font-size: 1rem;
     }
   }
 

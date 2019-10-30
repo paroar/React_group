@@ -9,15 +9,9 @@ type Movie = {
   title: string;
   vote_average: string;
   overview: string;
-  videos: Videos;
-};
-
-type Videos = {
-  results: Results[];
-};
-
-type Results = {
-  key: string;
+  videos: {
+    results: {key: string}[];
+  };
 };
 
 const Catalogue: React.FC = () => {
@@ -40,14 +34,13 @@ const Catalogue: React.FC = () => {
     return null;
   }else{
     return (
-      <>
-        <h2 className="heading">Catalogue page</h2>
-        <div className="Catalogue--grid">
+      <div className="catalogue">
+        <div className="grid">
           {movies.map(movie=> (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}><Card movie={movie}></Card></Link>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 };
