@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
+import Hero from "../../components/Hero";
 
 type FetchMovie = {
   poster_path: string;
@@ -8,7 +9,7 @@ type FetchMovie = {
   vote_average: string;
   overview: string;
   videos: {
-    results: {key: string}[];
+    results: { key: string }[];
   };
 };
 
@@ -32,7 +33,6 @@ const fromFetchMovie = (movie: FetchMovie): Movie  => {
 }
 */
 
-
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 
 const Details: React.FC<DetailsProps> = ({
@@ -49,7 +49,7 @@ const Details: React.FC<DetailsProps> = ({
       );
       const similar = await fetch(
         `https://api.themoviedb.org/3/movie/${slug}/similar?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&page=1`
-      )
+      );
       const item = await data.json();
       const itemSimilar = await similar.json();
       console.log(itemSimilar);
@@ -62,40 +62,40 @@ const Details: React.FC<DetailsProps> = ({
   if (!movie) {
     return null;
   } else {
-    const path = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+    /*
     const divStyle = {
-      background: "url(" + path+ ")",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      backgroundAttachment: "fixed",
-      backgroundPosition: "center"
-    };
+      background: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`
+    };*/
 
     return (
-      <div data-testid="details-page" className="details-background" style={divStyle}>
-        <img
-          src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-          alt="poster-img"
-        />
+      <Hero hero="detailsHero">
+        <div
+          data-testid="details-page"
+          className="details-background"
+        >
+          <img
+            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+            alt="poster-img"
+          />
 
-        
-        <h2>{movie.title}</h2>
-        <h4>Rating</h4>
-        <p>{movie.vote_average}</p>
-        <h4>Overview</h4>
-        <p>{movie.overview}</p>
+          <h2>{movie.title}</h2>
+          <h4>Rating</h4>
+          <p>{movie.vote_average}</p>
+          <h4>Overview</h4>
+          <p>{movie.overview}</p>
 
-        {movie.videos.results.map(video => (
-          <iframe
-            width="420"
-            height="315"
-            frameBorder="0"
-            src={`https://www.youtube.com/embed/${video.key}`}
-            title={video.key}
-            key={video.key}
-          ></iframe>
-        ))}
-      </div>
+          {movie.videos.results.map(video => (
+            <iframe
+              width="420"
+              height="315"
+              frameBorder="0"
+              src={`https://www.youtube.com/embed/${video.key}`}
+              title={video.key}
+              key={video.key}
+            ></iframe>
+          ))}
+        </div>
+      </Hero>
     );
   }
 };
