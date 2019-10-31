@@ -29,7 +29,7 @@
       &:hover{
         color:$first-color;
         transition-duration: 0.3s;
-        text-shadow: 0 0 5px $first-color;
+        text-decoration: underline;
       }
     }
   }
@@ -41,7 +41,7 @@
     input {
       margin: 0 2rem;
       border-radius: 25rem;
-      border: 1px solid rgba(255, 255, 255, 0.315);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       color: white;
       background: $fifth-color;
       height: 2rem;
@@ -50,7 +50,7 @@
       font-size: 1rem;
 
       &:hover{
-        border-color: white;
+        border-color: $first-color;
         transition-duration: 0.3s;
       }
 
