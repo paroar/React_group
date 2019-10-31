@@ -28,6 +28,9 @@ export type FetchMovie = {
       profile_path: string;
     }[];
   };
+  similar: {
+    results: { id: string; poster_path: string }[];
+  };
   className?: string;
 };
 

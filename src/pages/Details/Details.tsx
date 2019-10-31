@@ -6,6 +6,7 @@ import MovieInfo from "../../components/MovieInfo";
 import Cast from "../../components/Cast";
 import Video from "../../components/Video";
 import { FetchMovie } from "../../utils/types";
+import Similar from "../../components/Similar/Similar";
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 
@@ -44,6 +45,7 @@ const Details: React.FC<DetailsProps> = ({
           <Cast {...movie} className={"cast"} />
         </div>
         <Video {...movie} />
+        <Similar {...movie} />
       </Hero>
     );
   }
