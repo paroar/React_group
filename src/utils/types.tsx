@@ -17,7 +17,7 @@ export type FetchMovie = {
   vote_average: string;
   overview: string;
   tagline: string;
-  genres: { name: string }[];
+  genres: { id: string; name: string }[];
   videos: {
     results: { key: string }[];
   };

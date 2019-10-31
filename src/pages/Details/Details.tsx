@@ -19,14 +19,10 @@ const Details: React.FC<DetailsProps> = ({
   useEffect(() => {
     const fetchMovie = async () => {
       const data = await fetch(
-        `http://api.themoviedb.org/3/movie/${slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos,credits`
-      );
-      const similar = await fetch(
-        `https://api.themoviedb.org/3/movie/${slug}/similar?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&page=1`
+        `http://api.themoviedb.org/3/movie/${slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos,credits,similar`
       );
       const item = await data.json();
-      const itemSimilar = await similar.json();
-      console.log(itemSimilar, item.credits.cast);
+      console.log(item);
       setMovie(item);
     };
 

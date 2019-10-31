@@ -15,13 +15,11 @@ const Cast: React.FC<FetchMovie> = props => {
     <div>
       <div className="cast">
         {createArr(props.credits.cast).map(crew => (
-          <>
-            <Poster
-              key={crew.profile_path}
-              imgPath={crew.profile_path}
-              size={"w185"}
-            />
-          </>
+          <Poster
+            key={crew.profile_path}
+            imgPath={crew.profile_path}
+            size={"w185"}
+          />
         ))}
       </div>
     </div>

@@ -11,7 +11,7 @@ const MovieInfo: React.FC<FetchMovie> = props => {
       <p>{props.vote_average}<GoStar size={20} color={"gold"}/></p>
       <h4>Genres:</h4>
       {props.genres.map(genre => (
-        <>{genre.name}, </>
+        <span key={genre.id}>{genre.name}, </span>
       ))}
       <h4>Overview:</h4>
       <p>{props.overview}</p>
