@@ -1,7 +1,7 @@
 .navbar {
   min-width: 55rem;
   height: 5rem;
-  background: rgb(49, 60, 63);
+  background: $fifth-color;
   position: relative;
 
   &--logo {
@@ -10,45 +10,54 @@
     top: 50%;
     margin: 0 2rem;
     transform: translateY(-50%);
+
+    &:hover{
+      color: $first-color;
+      transition-duration: 0.3s;
+    }
   }
 
   &--list {
     float: right;
-    transform: translateY(155%);
-    margin: 0 20rem;
+    transform: translateY(150%);
     a {
-      margin: 1.5rem;
+      margin: 1rem;
+    }
+    li {
+      padding: 1rem;
+      display: inline;
+      &:hover{
+        color:$first-color;
+        transition-duration: 0.3s;
+        text-shadow: 0 0 5px $first-color;
+      }
     }
   }
 
   &--search {
-    position: absolute;
+    float: right;
     margin: 0 2rem;
-    top: 50%;
-    right: 1vw;
-    transform: translateY(-50%);
-
+    transform: translateY(70%);
     input {
       margin: 0 2rem;
       border-radius: 25rem;
       border: 1px solid rgba(255, 255, 255, 0.315);
       color: white;
-      background: rgb(49, 60, 63);
+      background: $fifth-color;
       height: 2rem;
       width: 12rem;
       text-align: center;
       font-size: 1rem;
-    }
-  }
 
-  &--button {
-    position: absolute;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0 0 0 0rem;
-    right: 0vw;
-    top: 50%;
-    transform: translateY(-50%);
+      &:hover{
+        border-color: white;
+        transition-duration: 0.3s;
+      }
+
+      &:focus {
+        background: white;
+        color: black;
+      }
+    }
   }
 }

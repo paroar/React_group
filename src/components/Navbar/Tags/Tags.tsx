@@ -5,16 +5,16 @@ const Tags: React.FC = () => {
   return (
     <ul className="navbar--list">
       <Link to="/">
-        Home
+        <li>Home</li>
       </Link>
       <Link to="/catalogue">
-        Catalogue
+      <li>Catalogue</li>
       </Link>
       <Link to="/news">
-        News
+      <li>News</li>
       </Link>
       <Link to="/help">
-        Help
+      <li>Help</li>
       </Link>
     </ul>
   );

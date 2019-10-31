@@ -8,8 +8,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <Logo/>
-      <Tags/>
       <Search/>
+      <Tags/>
     </nav>
   );
 };
