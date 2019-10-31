@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Card from "../../components/Card";
-
-type Movie = {
-  id: string;
-  poster_path: string;
-  backdrop_path: string;
-  title: string;
-  vote_average: string;
-  overview: string;
-  videos: {
-    results: {key: string}[];
-  };
-};
+import { Movie } from "../../utils/types";
 
 const Catalogue: React.FC = () => {
   useEffect(() => {
@@ -30,14 +19,16 @@ const Catalogue: React.FC = () => {
     setMovies(items.results);
   };
 
-  if(!movies){
+  if (!movies) {
     return null;
-  }else{
+  } else {
     return (
       <div className="catalogue">
         <div className="grid">
-          {movies.map(movie=> (
-            <Link key={movie.id} to={`/catalogue/${movie.id}`}><Card movie={movie}></Card></Link>
+          {movies.map(movie => (
+            <Link key={movie.id} to={`/catalogue/${movie.id}`}>
+              <Card poster_path={movie.poster_path}></Card>
+            </Link>
           ))}
         </div>
       </div>
