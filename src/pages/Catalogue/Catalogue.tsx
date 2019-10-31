@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card";
+import Card from "../../components/Poster/Poster";
 import { Movie } from "../../utils/types";
 import Hero from "../../components/Hero";
 
@@ -29,7 +29,7 @@ const Catalogue: React.FC = () => {
         <div className="grid">
           {movies.map(movie => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
-              <Card poster_path={movie.poster_path}></Card>
+              <Card imgPath={movie.poster_path} size={"w185"} className="grid--img"></Card>
             </Link>
           ))}
         </div>

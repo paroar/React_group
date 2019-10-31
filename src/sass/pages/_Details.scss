@@ -1,7 +1,33 @@
 .details-background {
-  background-repeat: "no-repeat";
-  background-size: "cover";
-  background-attachment: "fixed";
-  background-position: "center";
+  width: 65rem;
   color: white;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 3rem 1rem;
+  margin: 0 auto;
+
+  & > * {
+    padding: 1rem;
+    margin: 3rem auto;
+  }
+
+  .cast {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    &>*{
+      margin: 5px;
+    }
+
+    img {
+      width: 90px;
+      height: auto;
+      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      &:hover {
+        border: 1px solid $first-color;
+        cursor: pointer;
+      }
+    }
+  }
 }
