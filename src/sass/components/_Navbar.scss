@@ -1,4 +1,6 @@
 .navbar {
+  min-width: 70rem;
+  padding: 0 5rem;
   height: 5rem;
   background: $fifth-color;
   position: relative;
@@ -36,10 +38,9 @@
 
   &--search {
     float: right;
-    margin: 0 2rem;
     transform: translateY(70%);
     input {
-      margin: 0 2rem;
+      margin: 0 1.3rem;
       border-radius: 25rem;
       border: 1px solid rgba(255, 255, 255, 0.5);
       color: white;

@@ -44,8 +44,12 @@ const Details: React.FC<DetailsProps> = ({
           <MovieInfo {...movie} className={"info"} />
           <Cast {...movie} className={"cast"} />
         </div>
-        <Video {...movie} />
-        <Similar {...movie} />
+        <div className="details-videos">
+          <Video {...movie} />
+        </div>
+        <div className="details-similar">
+          <Similar {...movie} />
+        </div>
       </Hero>
     );
   }

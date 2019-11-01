@@ -1,10 +1,11 @@
 .details-background {
-  width: 65rem;
+  width: 70rem;
   color: white;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 3rem 1rem;
   margin: 0 auto;
+  padding: 5rem;
 
   & > * {
     padding: 1rem;
@@ -32,12 +33,27 @@
   }
 }
 
+
+.videos{
+  display: grid;
+  grid-template-columns: auto;
+}
+
 .similar{
+  margin: auto;
+  padding: 5rem;
+  width: 70rem;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 1rem;
 
   &>*{
     margin: auto;
     cursor: pointer;
-  }
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    &:hover{
+      border: 1px solid $first-color;
+    }
+  } 
+
 }

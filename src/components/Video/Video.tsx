@@ -3,7 +3,7 @@ import { FetchMovie } from "../../utils/types";
 
 const Video: React.FC<FetchMovie> = props => {
   return (
-    <>
+    <div className="videos">
       {props.videos.results.map(video => (
         <iframe
           width="420"
@@ -14,7 +14,7 @@ const Video: React.FC<FetchMovie> = props => {
           key={video.key}
         ></iframe>
       ))}
-    </>
+    </div>
   );
 };
 

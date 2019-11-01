@@ -1,0 +1,9 @@
+.movie-info{
+    max-height: 450px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto 50%;
+    &>*{
+        margin: auto 0;
+    }
+}

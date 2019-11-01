@@ -5,7 +5,8 @@
     no-repeat center;
   background-size: cover;
 }
-.catalogueHero,.detailsHero {
+.catalogueHero,
+.detailsHero {
   min-height: calc(100vh - 5rem);
   min-width: 55rem;
   background: linear-gradient(
