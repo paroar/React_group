@@ -17,9 +17,14 @@ export type FetchMovie = {
   vote_average: string;
   overview: string;
   tagline: string;
-  genres: { id: string; name: string }[];
+  genres: {
+    id: string;
+    name: string;
+  }[];
   videos: {
-    results: { key: string }[];
+    results: {
+      key: string;
+    }[];
   };
   credits: {
     cast: {
@@ -29,7 +34,10 @@ export type FetchMovie = {
     }[];
   };
   similar: {
-    results: { id: string; poster_path: string }[];
+    results: {
+      id: string;
+      poster_path: string;
+    }[];
   };
   className?: string;
 };

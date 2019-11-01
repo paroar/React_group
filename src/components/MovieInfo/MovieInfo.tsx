@@ -1,25 +1,21 @@
 import React from "react";
 import { FetchMovie } from "../../utils/types";
-import { GoStar } from 'react-icons/go';
+import Title from "./Title";
+import Tagline from "./Tagline";
+import Rating from "./Rating";
+import Genres from "./Genres";
+import Overview from "./Overview";
 
 const MovieInfo: React.FC<FetchMovie> = props => {
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <h3>{props.tagline}</h3>
-      <h4>Rating:</h4>
-      <p>{props.vote_average}<GoStar size={20} color={"gold"}/></p>
-      <h4>Genres:</h4>
-      {props.genres.map(genre => (
-        <span key={genre.id}>{genre.name}, </span>
-      ))}
-      <h4>Overview:</h4>
-      <p>{props.overview}</p>
+    <div className="movie-info">
+      <Title title={props.title}/>
+      <Tagline tagline={props.tagline}/>
+      <Genres genres={props.genres}/>
+      <Rating rating={props.vote_average}/>
+      <Overview overview={props.overview}/>
     </div>
   );
 };
 
 export default MovieInfo;
-
-/*
-GoStar* */
