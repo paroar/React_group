@@ -1,6 +1,5 @@
 .homeHero {
   min-height: calc(100vh - 5rem);
-  min-width: 55rem;
   background: url("../../img/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg")
     no-repeat center;
   background-size: cover;
@@ -8,7 +7,6 @@
 .catalogueHero,
 .detailsHero {
   min-height: calc(100vh - 5rem);
-  min-width: 55rem;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0%,

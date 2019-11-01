@@ -35,7 +35,7 @@ const Details: React.FC<DetailsProps> = ({
   } else {
     return (
       <Hero hero="detailsHero">
-        <div data-testid="details-page" className="details-background">
+        <div data-testid="details-page" className="details-movieInfo">
           <Poster
             imgPath={movie.poster_path}
             size={"w300"}
