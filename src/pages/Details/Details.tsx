@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
-import Hero from "../../components/Hero";
 import Poster from "../../components/Poster";
 import MovieInfo from "../../components/MovieInfo";
 import Cast from "../../components/Cast";
@@ -34,11 +33,11 @@ const Details: React.FC<DetailsProps> = ({
     return null;
   } else {
     return (
-      <Hero hero="detailsHero">
-        <div data-testid="details-page" className="details-movieInfo">
+      <>
+        <div className="details-movieInfo">
           <Poster
             imgPath={movie.poster_path}
-            size={"w300"}
+            size={"w342"}
             className={"poster"}
           />
           <MovieInfo {...movie} className={"info"} />
@@ -50,7 +49,7 @@ const Details: React.FC<DetailsProps> = ({
         <div className="details-similar">
           <Similar {...movie} />
         </div>
-      </Hero>
+      </>
     );
   }
 };

@@ -12,24 +12,16 @@ const createArr = (arr: any[]) => {
 
 const Cast: React.FC<FetchMovie> = props => {
   return (
-    <div>
-      <div className="cast">
-        {createArr(props.credits.cast).map(crew => (
-          <Poster
-            key={crew.profile_path}
-            imgPath={crew.profile_path}
-            size={"w185"}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {createArr(props.credits.cast).map(crew => (
+        <Poster
+          key={crew.profile_path}
+          imgPath={crew.profile_path}
+          size={"w185"}
+        />
+      ))}
+    </>
   );
 };
 
 export default Cast;
-
-/*
-<p>
-            {crew.name} as {crew.character}
-          </p>
-*/

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Poster from "../../components/Poster/Poster";
 import { Movie } from "../../utils/types";
-import Hero from "../../components/Hero";
 
 const Catalogue: React.FC = () => {
   useEffect(() => {
@@ -24,17 +23,13 @@ const Catalogue: React.FC = () => {
     return null;
   } else {
     return (
-      <div>
-      <Hero hero="catalogueHero">
         <div className="grid">
           {movies.map(movie => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
-              <Poster imgPath={movie.poster_path} size={"w185"} className="grid--img"></Poster>
+              <Poster imgPath={movie.poster_path} size={"original"} className="grid--img"></Poster>
             </Link>
           ))}
         </div>
-      </Hero>
-      </div>
     );
   }
 };
