@@ -20,21 +20,3 @@ const Video: React.FC<FetchMovie> = props => {
 };
 
 export default Video;
-
-/*
-allow?: string;
-allowFullScreen?: boolean;
-allowTransparency?: boolean;
-frameBorder?: number | string;
-height?: number | string;
-marginHeight?: number;
-marginWidth?: number;
-name?: string;
-referrerPolicy?: string;
-sandbox?: string;
-scrolling?: string;
-seamless?: boolean;
-src?: string;
-srcDoc?: string;
-width?: number | string;
-*/

@@ -1,6 +1,7 @@
 import React from "react";
 import Poster from "../Poster/Poster";
 import { FetchMovie } from "../../utils/types";
+import { Link } from "react-router-dom";
 
 const createArr = (arr: any[]) => {
   let table = [];
@@ -14,11 +15,13 @@ const Cast: React.FC<FetchMovie> = props => {
   return (
     <>
       {createArr(props.credits.cast).map(crew => (
-        <Poster
-          key={crew.profile_path}
-          imgPath={crew.profile_path}
-          size={"w185"}
-        />
+        <Link to={`/actor/${crew.id}`}>
+          <Poster
+            key={crew.profile_path}
+            imgPath={crew.profile_path}
+            size={"w185"}
+          />
+        </Link>
       ))}
     </>
   );
