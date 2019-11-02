@@ -40,10 +40,12 @@
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.2.0",
     "@testing-library/user-event": "^7.1.1",
+    "@types/faker": "^4.1.7",
     "@types/react-router-dom": "^4.3.5",
     "@types/testing-library__dom": "^6.4.0",
     "@types/testing-library__react": "^9.1.1",
     "@types/testing-library__user-event": "^4.1.1",
+    "faker": "^4.1.0",
     "node-sass": "^4.13.0"
   }
 }

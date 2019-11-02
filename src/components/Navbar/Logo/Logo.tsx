@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Logo: React.FC = () => {
   return (
-    <Link to="/">
+    <Link to="/" data-testid="logo">
       <FaFilm className="navbar--logo" size={50}></FaFilm>
     </Link>
   );

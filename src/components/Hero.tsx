@@ -6,7 +6,11 @@ type HeroProps = {
 };
 
 const Hero: React.FC<HeroProps> = ({ children, hero }) => {
-  return <header className={hero}>{children}</header>;
+  return (
+    <header className={hero} data-testid="hero">
+      {children}
+    </header>
+  );
 };
 
 export default Hero;
