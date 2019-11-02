@@ -8,15 +8,19 @@ type Genres = {
 };
 
 const Genres: React.FC<Genres> = props => {
-  return (
-    <div>
-      <h3>
-        {props.genres.map(genre => (
-          <span key={genre.id}>{genre.name}, </span>
-        ))}
-      </h3>
-    </div>
-  );
+  if (!props.genres) {
+    return null;
+  } else {
+    return (
+      <div>
+        <h3>
+          {props.genres.map(genre => (
+            <span key={genre.id}>{genre.name}, </span>
+          ))}
+        </h3>
+      </div>
+    );
+  }
 };
 
 export default Genres;

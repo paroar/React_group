@@ -15,7 +15,6 @@ const Catalogue: React.FC = () => {
       "https://api.themoviedb.org/3/movie/popular?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&page=1"
     );
     const items = await data.json();
-    console.log(items);
     setMovies(items.results);
   };
 
@@ -23,7 +22,7 @@ const Catalogue: React.FC = () => {
     return null;
   } else {
     return (
-        <div className="grid">
+        <div className="grid" data-testid="catalogue-page">
           {movies.map(movie => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster imgPath={movie.poster_path} size={"original"} className="grid--img"></Poster>

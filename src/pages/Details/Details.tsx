@@ -22,7 +22,6 @@ const Details: React.FC<DetailsProps> = ({
         `http://api.themoviedb.org/3/movie/${slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos,credits,similar`
       );
       const item = await data.json();
-      console.log(item);
       setMovie(item);
     };
 
@@ -33,7 +32,7 @@ const Details: React.FC<DetailsProps> = ({
     return null;
   } else {
     return (
-      <>
+      <div data-testid="details-page">
         <div className="details-movieInfo">
           <Poster
             imgPath={movie.poster_path}
@@ -49,7 +48,7 @@ const Details: React.FC<DetailsProps> = ({
         <div className="details-similar">
           <Similar {...movie} />
         </div>
-      </>
+      </div>
     );
   }
 };

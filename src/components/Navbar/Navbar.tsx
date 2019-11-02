@@ -6,7 +6,7 @@ import Logo from "./Logo/";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-testid="navbar">
       <Logo/>
       <Search/>
       <Tags/>
