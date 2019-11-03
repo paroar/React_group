@@ -32,17 +32,17 @@ const Details: React.FC<DetailsProps> = ({
     return null;
   } else {
     return (
-      <div data-testid="details-page">
-        <div className="details-movieInfo">
+      <div data-testid="details-page" className="details">
+        <div className="details--movieInfo">
           <Poster
             imgPath={movie.poster_path}
-            size={"w342"}
+            size={"original"}
             className={"poster"}
           />
-          <MovieInfo {...movie} className={"info"} />
-          <Cast {...movie} className={"cast"} />
+          <MovieInfo {...movie} className="details--movieInfo__info"/>
         </div>
-        <div className="details-videos">
+        <Cast {...movie}/>
+        <div className="details--videos">
           <Video {...movie} />
         </div>
         <div className="grid">

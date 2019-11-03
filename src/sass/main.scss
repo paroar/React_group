@@ -3,8 +3,11 @@
 @import 'abstracts/reset';
 @import 'abstracts/color';
 
-@import 'pages/Catalogue';
+@import 'layout/grid';
+
+@import 'pages/Details';
 
 @import 'components/Navbar';
 @import 'components/Hero';
 @import 'components/MovieInfo';
+@import 'components/Cast';
