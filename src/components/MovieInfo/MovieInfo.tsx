@@ -10,7 +10,7 @@ const MovieInfo: React.FC<FetchMovie> = ({
   overview
 }) => {
   return (
-    <div className="">
+    <div className="details--movieInfo--grid">
       <h1>{title}</h1>
       <h2>{tagline}</h2>
       <Genres genres={genres} />

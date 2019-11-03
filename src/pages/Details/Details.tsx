@@ -31,8 +31,17 @@ const Details: React.FC<DetailsProps> = ({
   if (!movie) {
     return null;
   } else {
+
+    const background = {
+      background: "url(https://image.tmdb.org/t/p/original"+movie.backdrop_path+")",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center center",
+      backgroundSize: "contain",
+      backgroundClip: "content-box"
+    }
     return (
-      <div data-testid="details-page" className="details">
+      <div data-testid="details-page" className="details" >
+        <div style={background}>
         <div className="details--movieInfo">
           <Poster
             imgPath={movie.poster_path}
@@ -40,6 +49,7 @@ const Details: React.FC<DetailsProps> = ({
             className={"poster"}
           />
           <MovieInfo {...movie} className="details--movieInfo__info"/>
+        </div>
         </div>
         <Cast {...movie}/>
         <div className="details--videos">
