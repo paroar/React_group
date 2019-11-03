@@ -11,11 +11,7 @@ const Similar: React.FC<FetchMovie> = props => {
       <>
         {props.similar.results.map(movie => (
           <Link key={movie.id} to={`/catalogue/${movie.id}`}>
-            <Poster
-              key={movie.poster_path}
-              imgPath={movie.poster_path}
-              size={"w185"}
-            />
+            <Poster imgPath={movie.poster_path} size={"original"} className="grid--img"></Poster>
           </Link>
         ))}
       </>

@@ -1,17 +1,7 @@
 .homeHero {
-  min-height: calc(100vh - 5rem);
+  font-size: 2rem;
+  min-height: calc(100vh - 10.1rem);
   background: url("../../img/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg")
     no-repeat center;
   background-size: cover;
-}
-.catalogueHero,
-.detailsHero {
-  min-height: calc(100vh - 5rem);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(22, 22, 22, 1) 35%,
-    rgba(19, 19, 19, 1) 65%,
-    rgba(0, 0, 0, 1) 100%
-  );
 }

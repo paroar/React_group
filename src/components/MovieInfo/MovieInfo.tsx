@@ -1,19 +1,21 @@
 import React from "react";
 import { FetchMovie } from "../../utils/types";
-import Title from "./Title";
-import Tagline from "./Tagline";
-import Rating from "./Rating";
 import Genres from "./Genres";
-import Overview from "./Overview";
 
-const MovieInfo: React.FC<FetchMovie> = props => {
+const MovieInfo: React.FC<FetchMovie> = ({
+  title,
+  tagline,
+  genres,
+  vote_average,
+  overview
+}) => {
   return (
     <div className="movie-info">
-      <Title title={props.title}/>
-      <Tagline tagline={props.tagline}/>
-      <Genres genres={props.genres}/>
-      <Rating rating={props.vote_average}/>
-      <Overview overview={props.overview}/>
+      <h1>{title}</h1>
+      <h2>{tagline}</h2>
+      <Genres genres={genres} />
+      <p>{vote_average}</p>
+      <p>{overview}</p>
     </div>
   );
 };

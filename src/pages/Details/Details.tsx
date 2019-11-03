@@ -45,7 +45,7 @@ const Details: React.FC<DetailsProps> = ({
         <div className="details-videos">
           <Video {...movie} />
         </div>
-        <div className="details-similar">
+        <div className="grid">
           <Similar {...movie} />
         </div>
       </div>

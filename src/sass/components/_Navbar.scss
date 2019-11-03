@@ -1,5 +1,6 @@
 .navbar {
-  height: 5rem;
+  font-size: 1.5rem;
+  height: 10rem;
   background: $fifth-color;
   position: sticky;
   top: 0;
@@ -9,47 +10,33 @@
     position: absolute;
     left: 0vw;
     top: 50%;
-    margin: 0 2rem;
+    margin: 0 2.5rem;
+    padding: 1rem;
     transform: translateY(-50%);
 
-    &:hover{
+    &:hover {
       color: $first-color;
       transition-duration: 0.3s;
     }
   }
 
-  &--list {
-    float: right;
-    transform: translateY(150%);
-    a {
-      margin: 1rem;
-    }
-    li {
-      padding: 1rem;
-      display: inline;
-      &:hover{
-        color:$first-color;
-        transition-duration: 0.3s;
-        text-decoration: underline;
-      }
-    }
-  }
-
   &--search {
-    float: right;
-    transform: translateY(70%);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     input {
-      margin: 0 1.3rem;
-      border-radius: 25rem;
+      margin: 0 5rem;
+      border-radius: 100rem;
       border: 1px solid rgba(255, 255, 255, 0.5);
       color: white;
       background: $fifth-color;
-      height: 2rem;
-      width: 12rem;
+      height: 3rem;
+      width: 15rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.5rem;
 
-      &:hover{
+      &:hover {
         border-color: $first-color;
         transition-duration: 0.3s;
       }
@@ -57,6 +44,22 @@
       &:focus {
         background: white;
         color: black;
+      }
+    }
+  }
+
+  &--list {
+    position: absolute;
+    top: 50%;
+    right: 25rem;
+    transform: translateY(-50%);
+    li {
+      padding: 2rem;
+      display: inline;
+      &:hover {
+        color: $first-color;
+        transition-duration: 0.3s;
+        text-decoration: underline;
       }
     }
   }
