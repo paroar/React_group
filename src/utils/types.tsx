@@ -42,6 +42,26 @@ export type FetchMovie = {
   className?: string;
 };
 
+export type ActorInfo = {
+  birthday: string | null;
+  known_for_department: string;
+  deathday: string | null;
+  id: number;
+  name: string;
+  also_known_as: string[];
+  gender: 0 | 1 | 2;
+  biography: string;
+  popularity: number;
+  place_of_birth: string | null;
+  profile_path: string;
+  adult: boolean;
+  imdb_id: string;
+  homepage: string | null;
+  combined_credits: {
+    cast: { id: string; poster_path: string }[];
+  };
+};
+
 /*
 type Movie = {
   posterPath: string;

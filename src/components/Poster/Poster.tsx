@@ -16,7 +16,6 @@ const Poster: React.FC<Poster | Profile> = props => {
   return (
       <img
         src={`https://image.tmdb.org/t/p/` + props.size + props.imgPath}
-        className={props.className}
         alt="img"
       />
   );

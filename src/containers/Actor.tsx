@@ -1,27 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 import { Link } from "react-router-dom";
-import Poster from "../../components/Poster/Poster";
+import Poster from "../components/Poster/Poster";
+import {ActorInfo} from "../utils/types";
 
-type Actor = {
-  birthday: string | null;
-  known_for_department: string;
-  deathday: string | null;
-  id: number;
-  name: string;
-  also_known_as: string[];
-  gender: 0 | 1 | 2;
-  biography: string;
-  popularity: number;
-  place_of_birth: string | null;
-  profile_path: string;
-  adult: boolean;
-  imdb_id: string;
-  homepage: string | null;
-  combined_credits: {
-    cast: { id: string; poster_path: string }[];
-  };
-};
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 const Actor: React.FC<DetailsProps> = ({
@@ -29,7 +11,7 @@ const Actor: React.FC<DetailsProps> = ({
     params: { slug }
   }
 }) => {
-  const [actorMovies, setMovie] = useState<Actor | null>(null);
+  const [actorMovies, setMovie] = useState<ActorInfo | null>(null);
 
   useEffect(() => {
     const fetchMovie = async () => {

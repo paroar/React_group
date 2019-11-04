@@ -1,9 +1,12 @@
 import React from "react";
+import Hero from "../components/Hero";
 
 const Error = () => {
   return (
     <div data-testid="error-page">
-      <h2 className="heading">ERROR 404: PAGE NOT FOUND</h2>
+      <Hero hero="homeHero">
+        <div>Hello from Error</div>
+      </Hero>
     </div>
   );
 };
