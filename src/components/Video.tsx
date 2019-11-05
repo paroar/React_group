@@ -1,5 +1,5 @@
 import React from "react";
-import { FetchMovie } from "../../utils/types";
+import { FetchMovie } from "../utils/types";
 
 const Video: React.FC<FetchMovie> = props => {
   if (!props.videos) {
