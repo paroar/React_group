@@ -1,11 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { RouteComponentProps } from "react-router";
-import { Link } from "react-router-dom";
-import Poster from "../components/Poster/Poster";
-import {ActorInfo} from "../utils/types";
+import React, { Component } from "react";
+import Actor from "../components/Actor";
 
+class ActorContainer extends Component {
+  state = {
+    loading: false,
+    movies: []
+  };
 
-type DetailsProps = RouteComponentProps<{ slug: string }>;
+  async componentDidMount() {
+    //@ts-ignore
+    const url = `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&append_to_response=external_ids,combined_credits`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(movies =>
+      this.setState({ loading: false, movies: movies})
+    );
+
+  }
+
+  componentWillUnmount() {
+    this.setState({ loading: false });
+  }
+
+  render() {
+    console.log("?????",this.state.movies);
+    if (this.state.loading) {
+      return <div>loading...</div>;
+    }
+    if (!this.state.movies) {
+      return <div>didn't get movies</div>;
+    }
+    //console.log("?????",this.state.movies);
+      return (
+        <Actor movies={this.state.movies}/>
+      );
+    
+
+  }
+}
+
+export default ActorContainer;
+
+/*
+<Grid arr={this.state.movies} />
 const Actor: React.FC<DetailsProps> = ({
   match: {
     params: { slug }
@@ -53,3 +91,4 @@ const Actor: React.FC<DetailsProps> = ({
 };
 
 export default Actor;
+*/

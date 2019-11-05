@@ -1,9 +1,5 @@
 import React from "react";
-
-type HeroProps = {
-  children: React.ReactNode;
-  hero: string;
-};
+import { HeroProps } from "../utils/types";
 
 const Hero: React.FC<HeroProps> = ({ children, hero }) => {
   return (

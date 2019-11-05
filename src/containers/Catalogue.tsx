@@ -31,9 +31,7 @@ class CatalogueContainer extends React.Component {
     }
 
     return (
-      <div>
         <Grid arr={this.state.movies} />
-      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import Search from "./Search/";
-import Tags from "./Tags/";
-import Logo from "./Logo/";
+import Search from "./Search/Search";
+import Tags from "./Tags/Tags";
+import Logo from "./Logo/Logo";
 
 
 const Navbar: React.FC = () => {

@@ -1,8 +1,11 @@
 import React from "react";
-import Catalogue from "../containers/Catalogue";
+import Actor from "../containers/Actor";
+import { RouteComponentProps } from "react-router";
 
-const ActorPage = () => {
-    return <Catalogue/>
-}
+type DetailsProps = RouteComponentProps<{ slug: string }>;
+const ActorPage = (props: DetailsProps) => {
+    //@ts-ignore
+  return <Actor slug={props.match.params.slug} />;
+};
 
 export default ActorPage;

@@ -1,20 +1,21 @@
 import React from "react";
-import Poster from "../components/Poster/Poster";
+import Movieinfo from "../components/Movieinfo";
 
 class MovieInfoContainer extends React.Component {
   state = {
     loading: false,
-    movie: null
+    movie: ""
   };
 
   async componentDidMount() {
     //@ts-ignore
-    const url = `https://api.themoviedb.org/3/movie/${this.props.id}?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US`;
+    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos,credits,similar`;
 
-    const data = await fetch(url);
-    const item = await data.json();
-    console.log(item);
-    this.setState({ movie: item });
+    fetch(url)
+    .then(response => response.json())
+    .then(movie =>
+      this.setState({ loading: false, movie: movie})
+    );
   }
 
   componentWillUnmount() {
@@ -30,13 +31,7 @@ class MovieInfoContainer extends React.Component {
     }
 
     return (
-      <div>
-        <Poster
-          size="w185"
-          //@ts-ignore
-          imgPath={this.state.movie.poster_path}
-        />
-      </div>
+      <Movieinfo movie={this.state.movie} />
     );
   }
 }
