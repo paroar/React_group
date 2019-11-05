@@ -1,10 +1,16 @@
 import React from "react";
 import MovieInfo from "../containers/MovieInfo";
+import { RouteComponentProps } from "react-router";
 
-const MovieInfoPage = (props:any) => {
-    {console.log("MOVIEINFO")}
-    //@ts-ignore
-    return <MovieInfo id={props.id}/>
-}
+type DetailsProps = RouteComponentProps<{ slug: string }>;
+const MovieInfoPage = (props: DetailsProps) => {
+  return (
+    <>
+      <h2>YEIIII</h2>
+      //@ts-ignore
+      <MovieInfo id={props.match.params.slug} />
+    </>
+  );
+};
 
 export default MovieInfoPage;

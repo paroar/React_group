@@ -1,26 +1,20 @@
 import React from "react";
-import Grid from "../components/Grid";
+import Poster from "../components/Poster/Poster";
 
 class MovieInfoContainer extends React.Component {
-
-  constructor(props:any){
-    super(props);
-  }
-
   state = {
     loading: false,
-    movies: []
+    movie: null
   };
 
   async componentDidMount() {
     //@ts-ignore
-    const url = `http://api.themoviedb.org/3/movie/${this.props.id}/api_key=d893f1827f15c0a1128e80650af1466f`;
+    const url = `https://api.themoviedb.org/3/movie/${this.props.id}?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(movies =>
-        this.setState({ loading: false, movies: movies.results })
-      );
+    const data = await fetch(url);
+    const item = await data.json();
+    console.log(item);
+    this.setState({ movie: item });
   }
 
   componentWillUnmount() {
@@ -31,13 +25,17 @@ class MovieInfoContainer extends React.Component {
     if (this.state.loading) {
       return <div>loading...</div>;
     }
-    if (!this.state.movies) {
+    if (!this.state.movie) {
       return <div>didn't get movies</div>;
     }
 
     return (
       <div>
-        <Grid arr={this.state.movies} />
+        <Poster
+          size="w185"
+          //@ts-ignore
+          imgPath={this.state.movie.poster_path}
+        />
       </div>
     );
   }
