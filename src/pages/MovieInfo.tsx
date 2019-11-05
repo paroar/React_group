@@ -1,8 +1,10 @@
 import React from "react";
-import Catalogue from "../containers/Catalogue";
+import MovieInfo from "../containers/MovieInfo";
 
-const ActorPage = () => {
-    return <Catalogue/>
+const MovieInfoPage = (props:any) => {
+    {console.log("MOVIEINFO")}
+    //@ts-ignore
+    return <MovieInfo id={props.id}/>
 }
 
-export default ActorPage;
+export default MovieInfoPage;

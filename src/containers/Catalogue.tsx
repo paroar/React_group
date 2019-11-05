@@ -14,7 +14,7 @@ class CatalogueContainer extends React.Component {
     fetch(url)
       .then(response => response.json())
       .then(movies =>
-        this.setState({ loading: false, movies: movies.results })
+        this.setState({ loading: false, movies: movies.results})
       );
   }
 

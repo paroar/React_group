@@ -7,7 +7,7 @@ const Grid = (props: any) => {
     <div className="grid">
       {props.arr.map((movie: { poster_path: string; id: string }) => (
         <Link key={movie.id} to={`/catalogue/${movie.id}`}>
-          <Poster key={movie.id} size="original" imgPath={movie.poster_path} />
+          <Poster key={movie.id} size="original" imgPath={movie.poster_path}/>
         </Link>
       ))}
     </div>

@@ -1,10 +1,9 @@
 import React from "react";
 import Grid from "../components/Grid";
-import { Movie } from "../utils/types";
 
 class MovieInfoContainer extends React.Component {
 
-  constructor(props: Movie<{id:string}>){
+  constructor(props:any){
     super(props);
   }
 
@@ -14,8 +13,8 @@ class MovieInfoContainer extends React.Component {
   };
 
   async componentDidMount() {
-    const url =
-      "http://api.themoviedb.org/3/movie/similar/api_key=d893f1827f15c0a1128e80650af1466f";
+    //@ts-ignore
+    const url = `http://api.themoviedb.org/3/movie/${this.props.id}/api_key=d893f1827f15c0a1128e80650af1466f`;
 
     fetch(url)
       .then(response => response.json())
