@@ -4,7 +4,6 @@ import { FetchMovie } from "../utils/types";
 import Grid from "./Grid";
 
 const Similars: React.FC<FetchMovie> = props => {
-  console.log("//////////",props)
   if (!props.similar) {
     return null;
   } else {

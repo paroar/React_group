@@ -3,7 +3,6 @@ import Poster from "./Poster";
 import { Link } from "react-router-dom";
 
 const Grid = (props: any) => {
-  console.log("******", props);
   if (!props) {
     return null;
   } else {

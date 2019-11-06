@@ -12,11 +12,8 @@ class ActorContainer extends Component {
     const url = `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=d893f1827f15c0a1128e80650af1466f&language=en-US&append_to_response=external_ids,combined_credits`;
 
     fetch(url)
-    .then(response => response.json())
-    .then(movies =>
-      this.setState({ loading: false, movies: movies})
-    );
-
+      .then(response => response.json())
+      .then(movies => this.setState({ loading: false, movies: movies }));
   }
 
   componentWillUnmount() {
@@ -24,19 +21,13 @@ class ActorContainer extends Component {
   }
 
   render() {
-    console.log("?????",this.state.movies);
     if (this.state.loading) {
       return <div>loading...</div>;
     }
-    if (!this.state.movies) {
+    if (this.state.movies.length === 0) {
       return <div>didn't get movies</div>;
     }
-    //console.log("?????",this.state.movies);
-      return (
-        <Actor movies={this.state.movies}/>
-      );
-    
-
+    return <Actor movies={this.state.movies} />;
   }
 }
 
