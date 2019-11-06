@@ -18,7 +18,7 @@ const Cast: React.FC<FetchMovie> = props => {
     return (
       <div className="details--movieInfo__cast">
         {createArr(props.credits.cast).map(crew => (
-          <Link to={`/actor/${crew.id}`}>
+          <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
             <Poster
               key={crew.profile_path}
               imgPath={crew.profile_path}

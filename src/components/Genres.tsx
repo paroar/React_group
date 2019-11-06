@@ -1,5 +1,6 @@
 import React from "react";
 import {MovieGenres} from "../utils/types";
+import { Link } from "react-router-dom";
 
 
 const Genres: React.FC<MovieGenres> = props => {
@@ -7,13 +8,13 @@ const Genres: React.FC<MovieGenres> = props => {
     return null;
   } else {
     return (
-      <div>
+      <Link to={"/catalogue/[]"}>
         <h3>
           {props.genres.map(genre => (
             <span key={genre.id}>{genre.name}, </span>
           ))}
         </h3>
-      </div>
+      </Link>
     );
   }
 };

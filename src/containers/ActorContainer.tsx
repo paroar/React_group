@@ -8,7 +8,7 @@ class ActorContainer extends Component {
     movies: []
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     //@ts-ignore
     const url = `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`;
 

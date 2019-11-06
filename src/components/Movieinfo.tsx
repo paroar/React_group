@@ -11,11 +11,7 @@ const Movieinfo = (props: any) => {
     background:
       "url(https://image.tmdb.org/t/p/original" +
       props.movie.backdrop_path +
-      ")",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
-    backgroundSize: "contain",
-    backgroundClip: "content-box"
+      ")"
   };
   return (
     <div data-testid="details-page" className="details">
@@ -33,6 +29,7 @@ const Movieinfo = (props: any) => {
       <Videos {...props.movie} />
       <Similars {...props.movie} />
     </div>
+
   );
 };
 

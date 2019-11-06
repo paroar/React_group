@@ -4,6 +4,9 @@
   font-weight: bold;
 
   &--movieInfo {
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
     min-height: auto;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);

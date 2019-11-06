@@ -4,7 +4,6 @@ import { RouteComponentProps } from "react-router";
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 const MovieInfoPage = (props: DetailsProps) => {
-  console.log(props)
   return (
     //@ts-ignore
       <MovieInfoContainer slug={props.match.params.slug} />
