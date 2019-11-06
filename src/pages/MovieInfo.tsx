@@ -1,12 +1,13 @@
 import React from "react";
-import MovieInfo from "../containers/MovieInfo";
+import MovieInfoContainer from "../containers/MovieInfoContainer";
 import { RouteComponentProps } from "react-router";
 
 type DetailsProps = RouteComponentProps<{ slug: string }>;
 const MovieInfoPage = (props: DetailsProps) => {
+  console.log(props)
   return (
     //@ts-ignore
-      <MovieInfo slug={props.match.params.slug} />
+      <MovieInfoContainer slug={props.match.params.slug} />
   );
 };
 

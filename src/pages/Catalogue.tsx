@@ -1,8 +1,8 @@
 import React from "react";
-import Catalogue from "../containers/Catalogue";
+import CatalogueContainer from "../containers/CatalogueContainer";
 
 const CataloguePage = () => {
-    return <Catalogue/>
+    return <CatalogueContainer/>
 }
 
 export default CataloguePage;
