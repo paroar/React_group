@@ -15,7 +15,7 @@ const Movieinfo = (props: any) => {
   };
   return (
     <div data-testid="details-page" className="details">
-      <div style={background}>
+      <div style={background} className="back">
         <div className="details--movieInfo">
           <Poster
             imgPath={props.movie.poster_path}

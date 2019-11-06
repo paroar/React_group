@@ -3,13 +3,17 @@
   border-radius: 2px;
   font-weight: bold;
 
-  &--movieInfo {
+  .back{
+    transform: perspective(40rem);
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: contain !important;
+  }
+
+  &--movieInfo {
     min-height: auto;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 5rem;
     display: grid;
     grid-template-columns: 25% 40%; 
