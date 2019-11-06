@@ -1,5 +1,6 @@
 import React from "react";
 import Movieinfo from "../components/Movieinfo";
+import {config} from "../config";
 
 class MovieInfoContainer extends React.Component {
   state = {
@@ -9,7 +10,7 @@ class MovieInfoContainer extends React.Component {
 
   async componentDidMount() {
     //@ts-ignore
-    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=d893f1827f15c0a1128e80650af1466f&append_to_response=videos,credits,similar`;
+    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits,similar`;
 
     fetch(url)
     .then(response => response.json())
