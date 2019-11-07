@@ -11,7 +11,7 @@ class CatalogueContainer extends React.Component {
 
   fetchCatalogue = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/latest?api_key=${config.apiKey}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${config.apiKey}&language=en-US&page=1`
     )
       .then(response => response.json())
       .then(movies =>
