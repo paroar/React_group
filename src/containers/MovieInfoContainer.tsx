@@ -21,8 +21,7 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
   }
 
   componentDidMount() {
-    this.fetchMovieInfo()
-    
+    this.fetchMovieInfo();
   }
 
   componentDidUpdate() {

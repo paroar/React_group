@@ -1,20 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import Actor from "../components/Actor";
-import {config} from "../config";
+import { config } from "../config";
 
-class ActorContainer extends Component {
+type DetailsProps = {
+  slug: string;
+};
+class ActorContainer extends React.Component<DetailsProps> {
   state = {
     loading: false,
     movies: []
   };
 
-  componentDidMount() {
-    //@ts-ignore
-    const url = `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`;
-
-    fetch(url)
+  fetchActorMovies = () => {
+    fetch(
+      `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`
+    )
       .then(response => response.json())
       .then(movies => this.setState({ loading: false, movies: movies }));
+  };
+
+  componentDidMount() {
+    this.fetchActorMovies();
   }
 
   componentWillUnmount() {
