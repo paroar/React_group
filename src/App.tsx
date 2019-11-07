@@ -8,6 +8,7 @@ import Help from "./pages/Help";
 import Catalogue from "./pages/Catalogue";
 import MovieInfo from "./pages/MovieInfo";
 import Error from "./pages/Error";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Route exact path="/help" component={Help} />
         <Route component={Error} />
       </Switch>
+      <Footer/>
     </>
   );
 };
