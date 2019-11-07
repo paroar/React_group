@@ -32,4 +32,11 @@
       margin: 0 2rem 0 0;
     }
   }
+
+  &--videos{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

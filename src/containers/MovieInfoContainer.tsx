@@ -32,6 +32,7 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
           this.setState({ loading: false, movie: movie, slug: this.props.slug })
         );
     }
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
