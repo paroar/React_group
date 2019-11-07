@@ -12,27 +12,24 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
     slug: null
   };
 
-  componentDidMount() {
-    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits,similar`;
-
-    fetch(url)
+  fetchMovieInfo = () => {
+    fetch(`http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits,similar`)
       .then(response => response.json())
       .then(movie =>
         this.setState({ loading: false, movie: movie, slug: this.props.slug })
       );
   }
 
+  componentDidMount() {
+    this.fetchMovieInfo()
+    
+  }
+
   componentDidUpdate() {
     if (this.state.slug !== this.props.slug) {
-      const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits,similar`;
-
-      fetch(url)
-        .then(response => response.json())
-        .then(movie =>
-          this.setState({ loading: false, movie: movie, slug: this.props.slug })
-        );
+      this.fetchMovieInfo();
+      window.scrollTo(0, 0);
     }
-    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
