@@ -1,12 +1,16 @@
 import React from "react";
-import Grid from "../components/Grid";
-import { urls } from "../urls";
+import Similars from "../components/Similars";
+import { config } from "../config";
 
-class CatalogueContainer extends React.Component {
+type DetailsProps = {
+  slug: string;
+};
+class SimilarContainer extends React.Component<DetailsProps> {
   state = {
     loading: false,
     movies: [],
-    currentPage: 1
+    currentPage: 1,
+    slug: null
   };
 
   handleLeftClick = () => {
@@ -22,11 +26,7 @@ class CatalogueContainer extends React.Component {
   };
 
   fetchCatalogue = () => {
-    const url =
-      urls.catalogueUrl.fixed +
-      urls.catalogueUrl.apiKey +
-      "&page=" +
-      this.state.currentPage;
+    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}/similar?api_key=${config.apiKey}&page=${this.state.currentPage}`;
     fetch(url)
       .then(response => response.json())
       .then(movies =>
@@ -52,17 +52,17 @@ class CatalogueContainer extends React.Component {
     if (!this.state.movies) {
       return <div>didn't get movies</div>;
     }
-
     return (
-      <div>
-        <Grid
-          arr={this.state.movies}
+      <>
+        //@ts-ignore
+        <Similars
+          similar={this.state.movies}
           left={this.handleLeftClick}
           right={this.handleRightClick}
         />
-      </div>
+      </>
     );
   }
 }
 
-export default CatalogueContainer;
+export default SimilarContainer;

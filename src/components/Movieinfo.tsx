@@ -1,12 +1,9 @@
 import React from "react";
 import Poster from "./Poster";
-import Videos from "./Videos";
-import Similars from "./Similars";
-import Cast from "./Cast";
 import TextMovieInfo from "./TextMovieInfo";
+import Cast from "./Cast";
 
 const Movieinfo = (props: any) => {
-  console.log("DUMMY",props)
   const background = {
     background:
       "url(https://image.tmdb.org/t/p/original" +
@@ -26,10 +23,7 @@ const Movieinfo = (props: any) => {
         </div>
       </div>
       <Cast {...props.movie} />
-      <Videos {...props.movie} />
-      <Similars {...props.movie} />
     </div>
-
   );
 };
 

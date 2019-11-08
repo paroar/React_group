@@ -1,6 +1,5 @@
 import React from "react";
 import Poster from "./Poster";
-import { FetchMovie } from "../utils/types";
 import { Link } from "react-router-dom";
 
 const createArr = (arr: any[]) => {
@@ -11,7 +10,7 @@ const createArr = (arr: any[]) => {
   return table;
 };
 
-const Cast: React.FC<FetchMovie> = props => {
+const Cast: React.FC = (props: any) => {
   if (!props.credits.cast) {
     return null;
   } else {

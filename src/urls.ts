@@ -1,4 +1,4 @@
-import { config } from "../config";
+import { config } from "./config";
 
 export const urls = {
   catalogueUrl: {
@@ -7,7 +7,7 @@ export const urls = {
   },
   similarsUrl: {
     fixed: `http://api.themoviedb.org/3/movie/`,
-    apiKey: `?api_key=${config.apiKey}`
+    apiKey: `/similar?api_key=${config.apiKey}`
   },
   videosUrl: {
     fixed: `http://api.themoviedb.org/3/movie/`,
@@ -16,5 +16,5 @@ export const urls = {
   creditsUrl: {
     fixed: `http://api.themoviedb.org/3/movie/`,
     apiKey: `?api_key=${config.apiKey}`
-  },
+  }
 };
