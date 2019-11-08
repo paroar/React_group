@@ -17,5 +17,4 @@ export const urls = {
     fixed: `http://api.themoviedb.org/3/movie/`,
     apiKey: `?api_key=${config.apiKey}`
   },
-
 };

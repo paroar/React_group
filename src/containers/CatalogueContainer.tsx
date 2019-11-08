@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "../components/Grid";
-import {urls} from "../utils/urls";
+import { urls } from "../utils/urls";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
@@ -26,6 +26,7 @@ class CatalogueContainer extends React.Component {
   };
 
   fetchCatalogue = () => {
+    console.log(`${urls.catalogueUrl.fixed}${urls.catalogueUrl.apiKey}${this.state.currentPage}`)
     fetch(
       `${urls.catalogueUrl}${urls.catalogueUrl.apiKey}${this.state.currentPage}`
     )
