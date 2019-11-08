@@ -1,17 +1,39 @@
 .footer {
-    font-size: 1.5rem;
     height: 10rem;
-    background: $fifth-color;
-    position: sticky;
-    top: 0;
-    border-top: 10px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid #ffffff80;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
 
-    //"linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)"
-  
+    &--copyright{
+        margin: 0 auto;
+        font-size: 3rem;
+        & span{
+            color:#ffffff80;
+            opacity: 20%;
+        }
+
+    }
+
+    &--logo{
+        margin: 0 auto;
+    }
+
+    &--socialmedia{
+        margin: 0 auto;
+        & a{
+            margin-left: 1rem;
+        }
+        &--facebook > *:hover{
+            @include transition-socialmedia($facebook-color);
+        }
     
-  
-}
-
-.instagram {
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        &--twitter > *:hover{
+            @include transition-socialmedia($twitter-color);
+        }
+    
+        &--youtube > *:hover{
+            @include transition-socialmedia($youtube-color);
+        }
+    } 
 }

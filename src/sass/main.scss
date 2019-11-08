@@ -2,6 +2,7 @@
 
 @import 'abstracts/reset';
 @import 'abstracts/color';
+@import 'abstracts/mixins';
 
 @import 'layout/grid';
 @import 'layout/media';
@@ -12,3 +13,4 @@
 @import 'components/Hero';
 @import 'components/MovieInfo';
 @import 'components/Cast';
+@import 'components/Footer';
