@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "../components/Grid";
-import { config } from "../config";
+import {urls} from "../utils/urls";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
@@ -25,13 +25,9 @@ class CatalogueContainer extends React.Component {
     this.forceUpdate();
   };
 
-  componentDidUpdate() {
-    this.fetchCatalogue();
-  }
-
   fetchCatalogue = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${config.apiKey}&language=en-US&page=${this.state.currentPage}`
+      `${urls.catalogueUrl}${urls.catalogueUrl.apiKey}${this.state.currentPage}`
     )
       .then(response => response.json())
       .then(movies =>

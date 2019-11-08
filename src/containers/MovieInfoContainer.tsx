@@ -8,7 +8,8 @@ type DetailsProps = {
 class MovieInfoContainer extends React.Component<DetailsProps> {
   state = {
     loading: false,
-    movie: "",
+    movie: null,
+    similars: null,
     slug: null
   };
 
@@ -17,7 +18,7 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
       .then(response => response.json())
       .then(movie =>
         this.setState({ loading: false, movie: movie, slug: this.props.slug })
-      );
+      ); 
   }
 
   componentDidMount() {
@@ -42,7 +43,7 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
     if (!this.state.movie) {
       return <div>didn't get movies</div>;
     }
-
+    console.log("CONTAINER", this.state.movie); 
     return <Movieinfo movie={this.state.movie} />;
   }
 }

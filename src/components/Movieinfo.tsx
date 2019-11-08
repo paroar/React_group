@@ -6,7 +6,7 @@ import Cast from "./Cast";
 import TextMovieInfo from "./TextMovieInfo";
 
 const Movieinfo = (props: any) => {
-  console.log(props)
+  console.log("DUMMY",props)
   const background = {
     background:
       "url(https://image.tmdb.org/t/p/original" +
