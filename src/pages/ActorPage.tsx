@@ -2,9 +2,8 @@ import React from "react";
 import ActorContainer from "../containers/ActorContainer";
 import { RouteComponentProps } from "react-router";
 
-type DetailsProps = RouteComponentProps<{ slug: string }>;
-const ActorPage = (props: DetailsProps) => {
-    //@ts-ignore
+type UrlProps = RouteComponentProps<{ slug: string }>;
+const ActorPage:React.FC<UrlProps> = (props) => {
   return <ActorContainer slug={props.match.params.slug} />;
 };
 

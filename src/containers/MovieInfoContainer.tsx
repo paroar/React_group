@@ -1,13 +1,13 @@
 import React from "react";
-import Movieinfo from "../components/Movieinfo";
+import MovieInfo from "../components/MovieInfo";
 import { config } from "../config";
 import { FetchMovie } from "../utils/types";
 
-type DetailsProps = {
+type MovieId = {
   slug: string;
 };
 
-class MovieInfoContainer extends React.Component<DetailsProps> {
+class MovieInfoContainer extends React.Component<MovieId> {
   state = {
     loading: false,
     movie: {} as FetchMovie,
@@ -45,10 +45,9 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
     if (!this.state.movie) {
       return <div>didn't get movies</div>;
     }
-    console.log(this.state.movie);
     return (
 
-    <Movieinfo movie={this.state.movie} />
+    <MovieInfo movie={this.state.movie} />
     )
   }
 

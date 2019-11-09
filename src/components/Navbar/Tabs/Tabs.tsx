@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Tags: React.FC = () => {
+const Tabs = () => {
   return (
     <ul className="navbar--list">
       <Link to="/">
@@ -20,4 +20,4 @@ const Tags: React.FC = () => {
   );
 };
 
-export default Tags;
+export default Tabs;

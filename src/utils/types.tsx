@@ -1,16 +1,10 @@
 export type ActorInfo = {
   birthday: string | null;
-  known_for_department: string;
   deathday: string | null;
   id: number;
   name: string;
-  also_known_as: string[];
-  gender: 0 | 1 | 2;
   biography: string;
-  popularity: number;
-  place_of_birth: string | null;
   profile_path: string;
-  adult: boolean;
   imdb_id: string;
   homepage: string | null;
   combined_credits: {
@@ -18,15 +12,9 @@ export type ActorInfo = {
   };
 };
 
-export type MoviePoster = {
+export type PosterImg = {
   imgPath: string;
-  size: "w92" | "w154" | "w185" | "w342" | "w500" | "w780" | "original";
-  className?: string;
-};
-
-export type Profile = {
-  imgPath: string;
-  size: "w45" | "w185" | "h632" | "original";
+  size: "w92" | "w154" | "w185" | "w342" | "w500" | "w780" | "original" |"w45" | "w185" | "h632" | "original";
   className?: string;
 };
 
@@ -84,11 +72,7 @@ export type FetchMovie = {
 
 export type PosterMovie = {
   id: number;
-  poster_path?: string;
-  profile_path?: string;
-  combined_credits?: {
-    cast: any[];
-  }
+  poster_path: string;
 };
 
 /*

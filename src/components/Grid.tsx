@@ -3,12 +3,12 @@ import Poster from "./Poster";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
-type State={
-  arr:any[];
+type GridProps={
+  arr: any[];
   left?: any;
   right?: any;
 }
-const Grid:React.FC<State> = (props) => {
+const Grid:React.FC<GridProps> = (props) => {
   if (!props) {
     return null;
   } else {

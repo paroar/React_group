@@ -1,14 +1,14 @@
 import React from "react";
 import Hero from "../components/Hero";
 
-const News = () => {
+const HelpPage = () => {
   return (
-    <div data-testid="news-page">
+    <div data-testid="help-page">
       <Hero hero="homeHero">
-        <div>Hello from News</div>
+        <div>Hello from Help</div>
       </Hero>
     </div>
   );
 };
 
-export default News;
+export default HelpPage;

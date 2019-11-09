@@ -1,15 +1,15 @@
 import React from "react";
 import Search from "./Search/Search";
-import Tags from "./Tags/Tags";
+import Tabs from "./Tabs/Tabs";
 import Logo from "./Logo/Logo";
 
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   return (
     <nav className="navbar" data-testid="navbar">
       <Logo/>
       <Search/>
-      <Tags/>
+      <Tabs/>
     </nav>
   );
 };

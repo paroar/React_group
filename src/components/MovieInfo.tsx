@@ -4,10 +4,11 @@ import TextMovieInfo from "./TextMovieInfo";
 import { FetchMovie } from "../utils/types";
 import Cast from "./Cast";
 
-type MyState={
+type MovieInfoProps = {
   movie: FetchMovie;
 }
-const Movieinfo = (props: MyState) => {
+
+const MovieInfo:React.FC<MovieInfoProps> = (props) => {
   const background = {
     background:
       "url(https://image.tmdb.org/t/p/original" +
@@ -26,15 +27,9 @@ const Movieinfo = (props: MyState) => {
           <TextMovieInfo {...props.movie} />
         </div>
       </div>
-      <Cast {...props.movie} />
+      <Cast credits={props.movie.credits} />
     </div>
   );
 };
 
-export default Movieinfo;
-
-/**
- * import Cast from "./Cast";
- *       //@ts-ignore
-      
- */
+export default MovieInfo;

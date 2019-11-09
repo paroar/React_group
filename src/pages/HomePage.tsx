@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div data-testid="home-page">
       <Hero hero="homeHero">
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

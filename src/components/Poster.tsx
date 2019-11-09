@@ -1,14 +1,12 @@
 import React from "react";
-import { MoviePoster, Profile } from "../utils/types";
+import { PosterImg } from "../utils/types";
 
-const Poster: React.FC<MoviePoster | Profile> = props => {
+const Poster: React.FC<PosterImg> = props => {
   return (
-    <div className="a">
-      <img
-        src={`https://image.tmdb.org/t/p/` + props.size + props.imgPath}
-        alt="img"
-      />
-    </div>
+    <img
+      src={`https://image.tmdb.org/t/p/` + props.size + props.imgPath}
+      alt="img"
+    />
   );
 };
 

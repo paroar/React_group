@@ -1,12 +1,12 @@
 import React from "react";
-import Similars from "../components/Similars";
 import { config } from "../config";
 import { PosterMovie } from "../utils/types";
+import Grid from "../components/Grid";
 
-type DetailsProps = {
+type MovieId = {
   slug: string;
 };
-class SimilarContainer extends React.Component<DetailsProps> {
+class SimilarContainer extends React.Component<MovieId> {
   state = {
     loading: false,
     movies: [] as PosterMovie[],
@@ -53,11 +53,10 @@ class SimilarContainer extends React.Component<DetailsProps> {
     if (!this.state.movies) {
       return <div>didn't get movies</div>;
     }
-    console.log("Similars", this.state.movies)
     return (
       <>
-        <Similars
-          similar={this.state.movies}
+        <Grid
+          arr={this.state.movies}
           left={this.handleLeftClick}
           right={this.handleRightClick}
         />

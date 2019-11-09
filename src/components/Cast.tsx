@@ -2,21 +2,32 @@ import React from "react";
 import Poster from "./Poster";
 import { Link } from "react-router-dom";
 
-const createArr = (arr: any[]) => {
-  let table = [];
+const pickFromArr = (xs: any[]) => {
+  let ys = [];
   for (let i = 0; i < 6; i++) {
-    table.push(arr[i]);
+    ys.push(xs[i]);
   }
-  return table;
+  return ys;
 };
 
-const Cast: React.FC<any> = (props) => {
+type CastProps = {
+  credits: {
+    cast: {
+        character: string;
+        id: number;
+        name: string;
+        profile_path: string;
+    }[];
+}
+}
+
+const Cast: React.FC<CastProps> = (props) => {
   if (!props.credits) {
     return null;
   } else {
     return (
       <div className="details--movieInfo__cast">
-        {createArr(props.credits.cast).map(crew => (
+        {pickFromArr(props.credits.cast).map(crew => (
           <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
             <Poster
               key={crew.profile_path}

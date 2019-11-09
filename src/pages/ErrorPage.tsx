@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 
-const Error = () => {
+const ErrorPage = () => {
   return (
     <div data-testid="error-page">
       <Hero hero="homeHero">
@@ -11,4 +11,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default ErrorPage;

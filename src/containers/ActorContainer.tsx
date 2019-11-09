@@ -1,26 +1,27 @@
 import React from "react";
 import Actor from "../components/Actor";
 import { config } from "../config";
+import { ActorInfo } from "../utils/types";
 
-type DetailsProps = {
+type ActorIdProps = {
   slug: string;
 };
-class ActorContainer extends React.Component<DetailsProps> {
+class ActorContainer extends React.Component<ActorIdProps> {
   state = {
     loading: false,
-    movies: []
+    info: {} as ActorInfo
   };
 
-  fetchActorMovies = () => {
+  fetchActorinfo = () => {
     fetch(
       `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`
     )
-      .then(response => response.json())
-      .then(movies => this.setState({ loading: false, movies: movies }));
+      .then<ActorInfo>(response => response.json())
+      .then(info => this.setState({ loading: false, info: info }));
   };
 
   componentDidMount() {
-    this.fetchActorMovies();
+    this.fetchActorinfo();
   }
 
   componentWillUnmount() {
@@ -31,11 +32,11 @@ class ActorContainer extends React.Component<DetailsProps> {
     if (this.state.loading) {
       return <div>loading...</div>;
     }
-    if (this.state.movies.length === 0) {
-      return <div>didn't get movies</div>;
+    if (!this.state.info.combined_credits) {
+      return <div>didn't get info</div>;
     }
-    console.log(this.state.movies)
-    return <Actor movies={this.state.movies} />;
+    console.log(this.state.info)
+    return <Actor info={this.state.info} />;
   }
 }
 

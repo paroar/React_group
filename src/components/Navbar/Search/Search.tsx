@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search: React.FC = () => {
+const Search = () => {
   return (
     <div className="navbar--search">
       <input type="search" placeholder='Search'/>
