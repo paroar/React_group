@@ -2,6 +2,7 @@ import React from "react";
 import { config } from "../config";
 import { PosterMovie } from "../utils/types";
 import Grid from "../components/Grid";
+import Arrows from "../components/Arrows";
 
 type MovieId = {
   slug: string;
@@ -55,11 +56,9 @@ class SimilarContainer extends React.Component<MovieId> {
     }
     return (
       <>
-        <Grid
-          arr={this.state.movies}
-          left={this.handleLeftClick}
-          right={this.handleRightClick}
-        />
+        <Grid arr={this.state.movies}>
+          <Arrows left={this.handleLeftClick} right={this.handleRightClick} />
+        </Grid>
       </>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "../components/Grid";
 import { urls } from "../urls";
+import Arrows from "../components/Arrows";
 
 class CatalogueContainer extends React.Component {
   state = {
@@ -55,11 +56,9 @@ class CatalogueContainer extends React.Component {
 
     return (
       <div>
-        <Grid
-          arr={this.state.movies}
-          left={this.handleLeftClick}
-          right={this.handleRightClick}
-        />
+        <Grid arr={this.state.movies}>
+          <Arrows left={this.handleLeftClick} right={this.handleRightClick} />
+        </Grid>
       </div>
     );
   }

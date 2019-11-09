@@ -1,28 +1,20 @@
 import React from "react";
 import Poster from "./Poster";
 import { Link } from "react-router-dom";
-import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
-type GridProps={
+type GridProps = {
   arr: any[];
-  left?: any;
-  right?: any;
-}
-const Grid:React.FC<GridProps> = (props) => {
+};
+
+const Grid: React.FC<GridProps> = props => {
   if (!props) {
     return null;
   } else {
     return (
       <div>
-        <span onClick={props.left}>
-          <IoIosArrowDropleft size={40} />
-        </span>
-        <span onClick={props.right}>
-          <IoIosArrowDropright size={40} />
-        </span>
-
+        {props.children}
         <div className="grid">
-          {props.arr.map((movie) => (
+          {props.arr.map(movie => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster
                 key={movie.id}
