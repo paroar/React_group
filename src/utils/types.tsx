@@ -1,47 +1,3 @@
-export type Movie = {
-  id: string;
-  poster_path: string;
-  backdrop_path: string;
-  title: string;
-  vote_average: string;
-  overview: string;
-  videos: {
-    results: { key: string }[];
-  };
-};
-
-export type FetchMovie = {
-  poster_path: string;
-  backdrop_path: string;
-  title: string;
-  vote_average: string;
-  overview: string;
-  tagline: string;
-  genres: {
-    id: string;
-    name: string;
-  }[];
-  videos: {
-    results: {
-      key: string;
-    }[];
-  };
-  credits: {
-    cast: {
-      name: string;
-      character: string;
-      profile_path: string;
-    }[];
-  };
-  similar: {
-    results: {
-      id: string;
-      poster_path: string;
-    }[];
-  };
-  className?: string;
-};
-
 export type ActorInfo = {
   birthday: string | null;
   known_for_department: string;
@@ -81,10 +37,60 @@ export type HeroProps = {
 
 export type MovieGenres = {
   genres: {
-    id: string;
+    id: number;
     name: string;
   }[];
 };
+
+export type FetchMovie = {
+  adult: false;
+  backdrop_path: string;
+  budget: number;
+  credits: {
+    cast: {
+      character: string;
+      id: number;
+      name: string;
+      profile_path: string;
+    }[];
+  };
+  genres: {
+    id: number;
+    name: string;
+  }[];
+  homepage: string;
+  id: number;
+  imdb_id: string;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  production_companies: {
+    id: number;
+    logo_path: string;
+    name: string;
+    origin_country: string;
+  }[];
+  tagline: string;
+  title: string;
+  videos: {
+    results: {
+      key: string;
+    }[];
+  };
+  vote_average: number;
+};
+
+export type PosterMovie = {
+  id: number;
+  poster_path?: string;
+  profile_path?: string;
+  combined_credits?: {
+    cast: any[];
+  }
+};
+
 /*
 type Movie = {
   posterPath: string;

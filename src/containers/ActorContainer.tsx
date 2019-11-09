@@ -34,6 +34,7 @@ class ActorContainer extends React.Component<DetailsProps> {
     if (this.state.movies.length === 0) {
       return <div>didn't get movies</div>;
     }
+    console.log(this.state.movies)
     return <Actor movies={this.state.movies} />;
   }
 }

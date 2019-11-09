@@ -1,6 +1,7 @@
 import React from "react";
 import Similars from "../components/Similars";
 import { config } from "../config";
+import { PosterMovie } from "../utils/types";
 
 type DetailsProps = {
   slug: string;
@@ -8,7 +9,7 @@ type DetailsProps = {
 class SimilarContainer extends React.Component<DetailsProps> {
   state = {
     loading: false,
-    movies: [],
+    movies: [] as PosterMovie[],
     currentPage: 1,
     slug: null
   };
@@ -52,9 +53,9 @@ class SimilarContainer extends React.Component<DetailsProps> {
     if (!this.state.movies) {
       return <div>didn't get movies</div>;
     }
+    console.log("Similars", this.state.movies)
     return (
       <>
-        //@ts-ignore
         <Similars
           similar={this.state.movies}
           left={this.handleLeftClick}

@@ -3,7 +3,12 @@ import Poster from "./Poster";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
-const Grid = (props: any) => {
+type State={
+  arr:any[];
+  left?: any;
+  right?: any;
+}
+const Grid:React.FC<State> = (props) => {
   if (!props) {
     return null;
   } else {
@@ -17,7 +22,7 @@ const Grid = (props: any) => {
         </span>
 
         <div className="grid">
-          {props.arr.map((movie: { poster_path: string; id: string }) => (
+          {props.arr.map((movie) => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster
                 key={movie.id}

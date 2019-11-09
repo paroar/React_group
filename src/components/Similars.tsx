@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import Poster from "./Poster";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
-const Similars: React.FC = (props: any) => {
-  if (!props.similar) {
+type State={
+  similar:any[];
+  left: any;
+  right: any;
+}
+const Similars: React.FC<State> = (props) => {
+  if (!props) {
     return null;
   } else {
     return (
@@ -16,7 +21,7 @@ const Similars: React.FC = (props: any) => {
           <IoIosArrowDropright size={40} />
         </span>
         <div className="grid">
-          {props.similar.map((movie: any) => (
+          {props.similar.map((movie) => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster
                 key={movie.id}

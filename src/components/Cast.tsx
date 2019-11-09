@@ -10,8 +10,8 @@ const createArr = (arr: any[]) => {
   return table;
 };
 
-const Cast: React.FC = (props: any) => {
-  if (!props.credits.cast) {
+const Cast: React.FC<any> = (props) => {
+  if (!props.credits) {
     return null;
   } else {
     return (

@@ -1,21 +1,23 @@
 import React from "react";
 import Movieinfo from "../components/Movieinfo";
 import { config } from "../config";
+import { FetchMovie } from "../utils/types";
 
 type DetailsProps = {
   slug: string;
 };
+
 class MovieInfoContainer extends React.Component<DetailsProps> {
   state = {
     loading: false,
-    movie: null,
+    movie: {} as FetchMovie,
     slug: null
   };
 
   fetchMovieInfo = () => {
     const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits`;
     fetch(url)
-      .then(response => response.json())
+      .then<FetchMovie>(response => response.json())
       .then(movie =>
         this.setState({ loading: false, movie: movie, slug: this.props.slug })
       );
@@ -43,8 +45,13 @@ class MovieInfoContainer extends React.Component<DetailsProps> {
     if (!this.state.movie) {
       return <div>didn't get movies</div>;
     }
-    return <Movieinfo movie={this.state.movie} />;
+    console.log(this.state.movie);
+    return (
+
+    <Movieinfo movie={this.state.movie} />
+    )
   }
+
 }
 
 export default MovieInfoContainer;

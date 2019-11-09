@@ -7,7 +7,7 @@ type DetailsProps = RouteComponentProps<{ slug: string }>;
 const MovieInfoPage = (props: DetailsProps) => {
   return (
     <>
-      <MovieInfoContainer slug={props.match.params.slug} />
+      <MovieInfoContainer slug={props.match.params.slug} /> 
       <SimilarContainer slug={props.match.params.slug} />
     </>
   );

@@ -1,9 +1,13 @@
 import React from "react";
 import Poster from "./Poster";
 import TextMovieInfo from "./TextMovieInfo";
+import { FetchMovie } from "../utils/types";
 import Cast from "./Cast";
 
-const Movieinfo = (props: any) => {
+type MyState={
+  movie: FetchMovie;
+}
+const Movieinfo = (props: MyState) => {
   const background = {
     background:
       "url(https://image.tmdb.org/t/p/original" +
@@ -28,3 +32,9 @@ const Movieinfo = (props: any) => {
 };
 
 export default Movieinfo;
+
+/**
+ * import Cast from "./Cast";
+ *       //@ts-ignore
+      
+ */
