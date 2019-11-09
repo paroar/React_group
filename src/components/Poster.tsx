@@ -1,7 +1,7 @@
 import React from "react";
-import { PosterImg } from "../utils/types";
+import { PosterImgProps } from "../utils/types";
 
-const Poster: React.FC<PosterImg> = props => {
+const Poster: React.FC<PosterImgProps> = props => {
   return (
     <img
       src={`https://image.tmdb.org/t/p/` + props.size + props.imgPath}

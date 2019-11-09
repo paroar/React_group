@@ -6,7 +6,7 @@ import { ActorInfo } from "../utils/types";
 type ActorProps = {
   info: ActorInfo;
 }
-const Actor:React.FC<ActorProps> = (props:ActorProps) => {
+const Actor = (props:ActorProps) => {
   return (
     <>
       <Poster size="original" imgPath={props.info.profile_path}/>

@@ -3,11 +3,11 @@ import MovieInfo from "../components/MovieInfo";
 import { config } from "../config";
 import { FetchMovie } from "../utils/types";
 
-type MovieId = {
+type MovieIdProps = {
   slug: string;
 };
 
-class MovieInfoContainer extends React.Component<MovieId> {
+class MovieInfoContainer extends React.Component<MovieIdProps> {
   state = {
     loading: false,
     movie: {} as FetchMovie,
@@ -17,7 +17,7 @@ class MovieInfoContainer extends React.Component<MovieId> {
   fetchMovieInfo = () => {
     const url = `http://api.themoviedb.org/3/movie/${this.props.slug}?api_key=${config.apiKey}&append_to_response=videos,credits`;
     fetch(url)
-      .then<FetchMovie>(response => response.json())
+      .then(response => response.json())
       .then(movie =>
         this.setState({ loading: false, movie: movie, slug: this.props.slug })
       );
@@ -46,7 +46,6 @@ class MovieInfoContainer extends React.Component<MovieId> {
       return <div>didn't get movies</div>;
     }
     return (
-
     <MovieInfo movie={this.state.movie} />
     )
   }

@@ -4,10 +4,10 @@ import { PosterMovie } from "../utils/types";
 import Grid from "../components/Grid";
 import Arrows from "../components/Arrows";
 
-type MovieId = {
+type MovieIdProps = {
   slug: string;
 };
-class SimilarContainer extends React.Component<MovieId> {
+class SimilarContainer extends React.Component<MovieIdProps> {
   state = {
     loading: false,
     movies: [] as PosterMovie[],

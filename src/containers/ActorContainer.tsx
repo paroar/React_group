@@ -16,7 +16,7 @@ class ActorContainer extends React.Component<ActorIdProps> {
     fetch(
       `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`
     )
-      .then<ActorInfo>(response => response.json())
+      .then(response => response.json())
       .then(info => this.setState({ loading: false, info: info }));
   };
 
@@ -35,7 +35,6 @@ class ActorContainer extends React.Component<ActorIdProps> {
     if (!this.state.info.combined_credits) {
       return <div>didn't get info</div>;
     }
-    console.log(this.state.info)
     return <Actor info={this.state.info} />;
   }
 }
