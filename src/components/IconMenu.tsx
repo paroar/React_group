@@ -3,11 +3,11 @@ import Tabs from "./Navbar/Tabs/Tabs";
 
 class IconMenu extends Component {
   state = {
-    crossed: true
+    crossed: true,
+    handler: this
   };
 
-  f(e: any) {
-    e.preventDefault();
+  not() {
     this.setState({
       crossed: !this.state.crossed
     });
@@ -18,12 +18,12 @@ class IconMenu extends Component {
       <>
         <div
           className={`${this.state.crossed ? "menu" : "cross"}`}
-          onClick={e => this.f(e)}
+          onClick={() => this.not()}
         >
           <span className="bar" />
         </div>
         <div className={`${this.state.crossed ? "overlay hidden" : "overlay"}`}>
-          <Tabs />
+          <Tabs handler={this.state.handler}/>
         </div>
       </>
     );
