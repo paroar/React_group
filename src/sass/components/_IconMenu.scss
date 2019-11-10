@@ -1,0 +1,66 @@
+.menu{
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 999;
+    padding: 2.5rem;
+    cursor: pointer;
+}
+
+.menu .bar,
+.menu .bar::before,
+.menu .bar::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 4rem;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 650ms;
+}
+
+.menu .bar::before{
+    margin-top: -1rem;
+}
+.menu .bar::after{
+    margin-top: 1rem;
+}
+
+.cross{
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 999;
+    padding: 2.5rem;
+    cursor: pointer;
+}
+
+.cross .bar::before,
+.cross .bar::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 4rem;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 650ms;
+}
+
+.cross .bar{
+    background: transparent;
+}
+
+.cross .bar::before{
+    transform: rotate(-45deg);
+}
+.cross .bar::after{
+    transform: rotate(45deg);
+}

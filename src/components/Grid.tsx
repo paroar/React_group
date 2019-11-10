@@ -12,7 +12,6 @@ const Grid: React.FC<GridProps> = props => {
   } else {
     return (
       <div>
-        {props.children}
         <div className="grid">
           {props.arr.map(movie => (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
@@ -20,11 +19,11 @@ const Grid: React.FC<GridProps> = props => {
                 key={movie.id}
                 size="original"
                 imgPath={movie.poster_path}
-                className="grid--img"
               />
             </Link>
           ))}
         </div>
+        {props.children}
       </div>
     );
   }

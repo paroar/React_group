@@ -26,7 +26,7 @@ const Cast: React.FC<CastProps> = (props) => {
     return null;
   } else {
     return (
-      <div className="details--movieInfo__cast">
+      <div className="grid">
         {pickFromArr(props.credits.cast).map(crew => (
           <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
             <Poster

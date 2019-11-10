@@ -1,16 +1,9 @@
 .grid {
   margin: 5rem;
-  display: grid;
-  grid-template-columns: repeat(10, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-
-  &--img {
-    border-radius: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  &--img:hover {
-    border: 1px solid $first-color;
+  &>*{
+    margin: 1rem;
   }
 }
