@@ -11,9 +11,9 @@ const Grid: React.FC<GridProps> = props => {
     return null;
   } else {
     return (
-      <div>
-        <div className="grid">
-          {props.arr.map(movie => (
+      <>
+        {props.arr.map(movie =>
+          movie.poster_path ? (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster
                 key={movie.id}
@@ -21,10 +21,11 @@ const Grid: React.FC<GridProps> = props => {
                 imgPath={movie.poster_path}
               />
             </Link>
-          ))}
-        </div>
-        {props.children}
-      </div>
+          ) : (
+            null
+          )
+        )}
+      </>
     );
   }
 };

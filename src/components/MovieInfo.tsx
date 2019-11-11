@@ -9,12 +9,6 @@ export type MovieInfoProps = {
 }
 
 const MovieInfo:React.FC<MovieInfoProps> = (props) => {
-  /*const background = {
-    background:
-      "url(https://image.tmdb.org/t/p/original" +
-      props.movie.backdrop_path +
-      ")"
-  };*/
   return (
     <div data-testid="details-page" className="details">
       <div  className="back">

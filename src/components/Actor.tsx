@@ -5,14 +5,16 @@ import { ActorInfo } from "../utils/types";
 
 type ActorProps = {
   info: ActorInfo;
-}
-const Actor = (props:ActorProps) => {
+};
+const Actor = (props: ActorProps) => {
   return (
     <>
-      <Poster size="original" imgPath={props.info.profile_path}/>
-      <Grid arr={props.info.combined_credits.cast}/>
+      <Poster size="original" imgPath={props.info.profile_path} />
+      <div className="grid">
+        <Grid arr={props.info.combined_credits.cast} />
+      </div>
     </>
   );
 };
 
-export default Actor;         
+export default Actor;

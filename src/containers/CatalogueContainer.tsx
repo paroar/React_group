@@ -1,25 +1,16 @@
 import React from "react";
 import Grid from "../components/Grid";
 import { urls } from "../urls";
-import Arrows from "../components/Arrows";
 
-class CatalogueContainer extends React.Component {
+type CatalogueContainerProps = {
+  page: number;
+};
+
+class CatalogueContainer extends React.Component<CatalogueContainerProps> {
   state = {
     loading: false,
     movies: [],
-    currentPage: 1
-  };
-
-  handleLeftClick = () => {
-    if (this.state.currentPage > 1) {
-      this.setState({ currentPage: this.state.currentPage - 1 });
-      this.fetchCatalogue();
-    }
-  };
-
-  handleRightClick = () => {
-    this.setState({ currentPage: this.state.currentPage + 1 });
-    this.fetchCatalogue();
+    currentPage: this.props.page
   };
 
   fetchCatalogue = () => {
@@ -48,20 +39,7 @@ class CatalogueContainer extends React.Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-    if (!this.state.movies) {
-      return <div>didn't get movies</div>;
-    }
-
-    return (
-      <div>
-        <Grid arr={this.state.movies}>
-          <Arrows left={this.handleLeftClick} right={this.handleRightClick} />
-        </Grid>
-      </div>
-    );
+    return <Grid arr={this.state.movies} />;
   }
 }
 

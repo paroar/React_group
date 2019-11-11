@@ -22,7 +22,7 @@ class IconMenu extends Component {
         >
           <span className="bar" />
         </div>
-        <div className={`${this.state.crossed ? "overlay hidden" : "overlay"}`}>
+        <div className={`${this.state.crossed ? "overlay hidden" : "overlay"}`} onClick={() => this.not()}>
           <Tabs not={this.not.bind(this.state.handler)}/>
         </div>
       </>

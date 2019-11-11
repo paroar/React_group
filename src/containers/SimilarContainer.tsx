@@ -1,7 +1,6 @@
 import React from "react";
 import { PosterMovie } from "../utils/types";
 import Grid from "../components/Grid";
-import Arrows from "../components/Arrows";
 import { urls } from "../urls";
 
 type MovieIdProps = {
@@ -62,11 +61,9 @@ class SimilarContainer extends React.Component<MovieIdProps> {
       return <div>didn't get movies</div>;
     }
     return (
-      <>
-        <Grid arr={this.state.movies}>
-          <Arrows left={this.handleLeftClick} right={this.handleRightClick} />
-        </Grid>
-      </>
+      <div className="grid">
+        <Grid arr={this.state.movies}/>
+      </div>
     );
   }
 }
