@@ -23,7 +23,7 @@ class IconMenu extends Component {
           <span className="bar" />
         </div>
         <div className={`${this.state.crossed ? "overlay hidden" : "overlay"}`}>
-          <Tabs handler={this.state.handler}/>
+          <Tabs not={this.not.bind(this.state.handler)}/>
         </div>
       </>
     );

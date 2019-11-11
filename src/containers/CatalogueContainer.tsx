@@ -24,8 +24,9 @@ class CatalogueContainer extends React.Component {
 
   fetchCatalogue = () => {
     const url =
-      urls.catalogueUrl.fixed +
-      urls.catalogueUrl.apiKey +
+      urls.domain +
+      "movie/now_playing" +
+      urls.apikey +
       "&page=" +
       this.state.currentPage;
     fetch(url)

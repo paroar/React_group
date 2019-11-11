@@ -1,7 +1,7 @@
 import React from "react";
 import Actor from "../components/Actor";
-import { config } from "../config";
 import { ActorInfo } from "../utils/types";
+import { urls } from "../urls";
 
 type ActorIdProps = {
   slug: string;
@@ -13,9 +13,13 @@ class ActorContainer extends React.Component<ActorIdProps> {
   };
 
   fetchActorinfo = () => {
-    fetch(
-      `https://api.themoviedb.org/3/person/${this.props.slug}?api_key=${config.apiKey}&language=en-US&append_to_response=external_ids,combined_credits`
-    )
+    const url =
+      urls.domain +
+      "person/" +
+      this.props.slug +
+      urls.apikey +
+      "&append_to_response=external_ids,combined_credits";
+    fetch(url)
       .then(response => response.json())
       .then(info => this.setState({ loading: false, info: info }));
   };

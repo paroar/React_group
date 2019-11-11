@@ -1,8 +1,8 @@
 import React from "react";
-import { config } from "../config";
 import { PosterMovie } from "../utils/types";
 import Grid from "../components/Grid";
 import Arrows from "../components/Arrows";
+import { urls } from "../urls";
 
 type MovieIdProps = {
   slug: string;
@@ -28,7 +28,14 @@ class SimilarContainer extends React.Component<MovieIdProps> {
   };
 
   fetchCatalogue = () => {
-    const url = `http://api.themoviedb.org/3/movie/${this.props.slug}/similar?api_key=${config.apiKey}&page=${this.state.currentPage}`;
+    const url =
+      urls.domain +
+      "movie/" +
+      this.props.slug +
+      "/similar" +
+      urls.apikey +
+      "&page=" +
+      this.state.currentPage;
     fetch(url)
       .then(response => response.json())
       .then(movies =>

@@ -4,20 +4,20 @@ import TextMovieInfo from "./TextMovieInfo";
 import { FetchMovie } from "../utils/types";
 import Cast from "./Cast";
 
-type MovieInfoProps = {
+export type MovieInfoProps = {
   movie: FetchMovie;
 }
 
 const MovieInfo:React.FC<MovieInfoProps> = (props) => {
-  const background = {
+  /*const background = {
     background:
       "url(https://image.tmdb.org/t/p/original" +
       props.movie.backdrop_path +
       ")"
-  };
+  };*/
   return (
     <div data-testid="details-page" className="details">
-      <div style={background} className="back">
+      <div  className="back">
         <div className="details--movieInfo">
           <Poster
             imgPath={props.movie.poster_path}

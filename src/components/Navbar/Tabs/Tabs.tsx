@@ -3,26 +3,20 @@ import { Link } from "react-router-dom";
 
 class Tabs extends React.Component<any> {
 
-  not() {
-    this.props.handler.setState({
-      crossed: !this.props.handler
-    });
-  }
-
   render() {
     return (
-      <ul className="navbar--list" onClick={() => this.not}>
+      <ul className="navbar--list">
         <Link to="/">
-          <li>Home</li>
+          <li onClick={this.props.not}>Home</li>
         </Link>
         <Link to="/catalogue">
-          <li>Catalogue</li>
+          <li onClick={this.props.not}>Catalogue</li>
         </Link>
         <Link to="/news">
-          <li>News</li>
+          <li onClick={this.props.not}>News</li>
         </Link>
         <Link to="/help">
-          <li>Help</li>
+          <li onClick={this.props.not}>Help</li>
         </Link>
       </ul>
     );
