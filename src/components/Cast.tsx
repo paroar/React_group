@@ -3,9 +3,12 @@ import Poster from "./Poster";
 import { Link } from "react-router-dom";
 
 const pickFromArr = (xs: any[]) => {
+
   let ys = [];
   for (let i = 0; i < 6; i++) {
-    ys.push(xs[i]);
+    if(xs[i] !== ""){
+      ys.push(xs[i]);
+    }
   }
   return ys;
 };
@@ -22,12 +25,14 @@ type CastProps = {
 }
 
 const Cast: React.FC<CastProps> = (props) => {
-  if (!props.credits) {
+  const crewArr = pickFromArr(props.credits.cast);
+  console.log(crewArr);
+  if (crewArr.length === 0) {
     return null;
   } else {
     return (
       <div className="grid">
-        {pickFromArr(props.credits.cast).map(crew => (
+        {crewArr.map(crew => (
           <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
             <Poster
               key={crew.profile_path}
