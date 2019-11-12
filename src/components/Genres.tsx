@@ -8,7 +8,7 @@ const Genres: React.FC<MovieGenres> = props => {
     return null;
   } else {
     return (
-      <Link to={"/catalogue/[]"}>
+      <Link to={""}>
         <h3>
           {props.genres.map(genre => (
             <span key={genre.id}>{genre.name}, </span>

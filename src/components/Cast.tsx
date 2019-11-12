@@ -2,11 +2,18 @@ import React from "react";
 import Poster from "./Poster";
 import { Link } from "react-router-dom";
 
-const pickFromArr = (xs: any[]) => {
 
+type Pick = {
+    character: string;
+    id: number;
+    name: string;
+    profile_path: string;
+}
+
+const pickFromArr = (xs: Pick[]) => {
   let ys = [];
   for (let i = 0; i < 6; i++) {
-    if(xs[i] !== ""){
+    if(xs[i].profile_path !== null){
       ys.push(xs[i]);
     }
   }
@@ -31,7 +38,7 @@ const Cast: React.FC<CastProps> = (props) => {
     return null;
   } else {
     return (
-      <div className="grid">
+      <div className="grid--actor">
         {crewArr.map(crew => (
           <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
             <Poster
