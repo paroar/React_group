@@ -1,12 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Button from "../components/Button";
+import Search from "../components/Search";
 
 const HomePage = () => {
   return (
     <div data-testid="home-page">
       <Hero hero="homeHero">
-        <Button>Browse</Button>
+        <Search/>
       </Hero>
     </div>
   );
