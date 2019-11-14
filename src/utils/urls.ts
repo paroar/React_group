@@ -1,4 +1,4 @@
-import { config } from "./config";
+import { config } from "../config";
 
 export const urls = {
   domain: "http://api.themoviedb.org/3/",

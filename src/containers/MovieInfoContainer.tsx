@@ -1,59 +1,34 @@
-import React from "react";
-import MovieInfo, { MovieInfoProps } from "../components/MovieInfo";
-import { urls } from "../urls";
+import React, { useState, useEffect } from "react";
+import MovieInfo from "../components/MovieInfo";
+import { urls } from "../utils/urls";
+import { FetchMovie, MovieInfoContainerProps } from "../utils/types";
 
-type MovieInfoContainerProps = {
-  slug: string;
-};
+const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
+  const [state, changeState] = useState({
+    loading: false,
+    movie: {} as FetchMovie
+  });
 
-type MovieInfoState = Partial<MovieInfoProps> & {
-  loading: boolean;
-};
-
-class MovieInfoContainer extends React.Component<
-  MovieInfoContainerProps,
-  MovieInfoState
-> {
-  state: MovieInfoState = {
-    loading: false
-  };
-
-  fetchMovieInfo = () => {
+  useEffect(() => {
     const url =
       urls.domain +
       "movie/" +
-      this.props.slug +
+      props.slug +
       urls.apikey +
       "&append_to_response=videos,credits";
     fetch(url)
       .then(response => response.json())
-      .then(movie => this.setState({ loading: false, movie: movie }));
-  };
+      .then(movie => changeState({ loading: false, movie: movie }));
+    window.scrollTo(0, 0);
+  }, [props]);
 
-  componentDidMount() {
-    this.fetchMovieInfo();
+  if (state.loading) {
+    return <div>loading...</div>;
   }
-
-  componentDidUpdate(prevProp: MovieInfoContainerProps) {
-    if (prevProp.slug !== this.props.slug) {
-      this.fetchMovieInfo();
-      window.scrollTo(0, 0);
-    }
+  if (!state.movie) {
+    return <div>didn't get info</div>;
   }
-
-  componentWillUnmount() {
-    this.setState({ loading: false });
-  }
-
-  render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-    if (!this.state.movie) {
-      return <div>didn't get movies</div>;
-    }
-    return <MovieInfo movie={this.state.movie} />;
-  }
-}
+  return <MovieInfo movie={state.movie} />;
+};
 
 export default MovieInfoContainer;

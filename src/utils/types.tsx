@@ -1,3 +1,46 @@
+import { RouteComponentProps } from "react-router";
+
+export type UrlProps = RouteComponentProps<{ slug: string }>;
+export type TabsProps = {
+  not: any;
+};
+export type ActorProps = {
+  info: ActorInfo;
+};
+export type CastProps = {
+  credits: {
+    cast: {
+      character: string;
+      id: number;
+      name: string;
+      profile_path: string;
+    }[];
+  };
+};
+export type Pick = {
+  character: string;
+  id: number;
+  name: string;
+  profile_path: string;
+};
+export type GridProps = {
+  arr: any[];
+};
+export type MovieInfoProps = {
+  movie: FetchMovie;
+};
+export type CatalogueContainerProps = {
+  page: number;
+};
+export type ActorIdProps = {
+  slug: string;
+};
+export type MovieInfoContainerProps = {
+  slug: string;
+};
+export type MovieIdProps = {
+  slug: string;
+};
 export type ActorInfo = {
   birthday: string | null;
   deathday: string | null;
@@ -14,7 +57,18 @@ export type ActorInfo = {
 
 export type PosterImgProps = {
   imgPath: string;
-  size: "w92" | "w154" | "w185" | "w342" | "w500" | "w780" | "original" |"w45" | "w185" | "h632" | "original";
+  size:
+    | "w92"
+    | "w154"
+    | "w185"
+    | "w342"
+    | "w500"
+    | "w780"
+    | "original"
+    | "w45"
+    | "w185"
+    | "h632"
+    | "original";
   className?: string;
 };
 

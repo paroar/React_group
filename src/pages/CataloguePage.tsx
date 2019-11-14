@@ -1,36 +1,30 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CatalogueContainer from "../containers/CatalogueContainer";
 
-class CataloguePage extends Component {
-  state = {
-    currentPage: [1]
-  };
+const CataloguePage = () => {
+  const [state, changeState] = useState({ currentPage: [1] });
 
-  componentDidMount() {
-    window.addEventListener("scroll", () => {
-      console.log(window.scrollY);
+  useEffect(() => {
+    const listener = () => {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        this.setState({
-          currentPage: this.state.currentPage.concat(
-            this.state.currentPage.length + 1
-          )
+        changeState({
+          currentPage: state.currentPage.concat(state.currentPage.length + 1)
         });
       }
-    });
-  }
+    };
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  }, [state]);
 
-  componentWillUnmount() {}
-
-  render() {
-    console.log(this.state.currentPage);
-    return (
-      <div className="grid">
-        {this.state.currentPage.map(x => (
-          <CatalogueContainer key={x} page={x} />
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="grid">
+      {state.currentPage.map(x => (
+        <CatalogueContainer key={x} page={x} />
+      ))}
+    </div>
+  );
+};
 
 export default CataloguePage;

@@ -1,10 +1,9 @@
 import React from "react";
 import MovieInfoContainer from "../containers/MovieInfoContainer";
 import SimilarContainer from "../containers/SimilarContainer";
-import { RouteComponentProps } from "react-router";
 import Heading from "../components/Heading";
+import { UrlProps } from "../utils/types";
 
-type UrlProps = RouteComponentProps<{ slug: string }>;
 const MovieInfoPage:React.FC<UrlProps> = (props) => {
   return (
     <>
