@@ -1,5 +1,5 @@
 import React from "react";
-import { urls } from "../urls";
+import { urls } from "../utils/urls";
 import SearchDisplay from "../components/SearchDisplay";
 
 export type SearchMovie = {
