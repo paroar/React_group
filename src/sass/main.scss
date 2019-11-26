@@ -2,6 +2,7 @@
 
 @import 'abstracts/reset';
 @import 'abstracts/color';
+@import 'abstracts/mixins';
 
 @import 'layout/grid';
 @import 'layout/media';
@@ -14,3 +15,4 @@
 @import 'components/Button';
 @import 'components/Heading';
 @import 'components/IconMenu';
+@import 'components/Footer';
