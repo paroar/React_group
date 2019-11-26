@@ -1,46 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "../components/Grid";
-import { urls } from "../urls";
+import { urls } from "../utils/urls";
+import { CatalogueContainerProps } from "../utils/types";
 
-type CatalogueContainerProps = {
-  page: number;
-};
-
-class CatalogueContainer extends React.Component<CatalogueContainerProps> {
-  state = {
+const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
+  const [state, changeState] = useState({
     loading: false,
     movies: [],
-    currentPage: this.props.page
-  };
+    currentPage: props.page
+  });
 
-  fetchCatalogue = () => {
+  useEffect(() => {
     const url =
       urls.domain +
       "movie/now_playing" +
       urls.apikey +
       "&page=" +
-      this.state.currentPage;
+      state.currentPage;
     fetch(url)
       .then(response => response.json())
       .then(movies =>
-        this.setState({
+        changeState({
           loading: false,
-          movies: movies.results
+          movies: movies.results,
+          currentPage: props.page
         })
       );
-  };
+  },[props, state.currentPage]);
 
-  componentDidMount() {
-    this.fetchCatalogue();
+  if (state.loading) {
+    return <div>loading...</div>;
   }
-
-  componentWillUnmount() {
-    this.setState({ loading: false });
+  if (state.movies.length === 0) {
+    return <div>didn't get info</div>;
   }
-
-  render() {
-    return <Grid arr={this.state.movies} />;
-  }
-}
+  return <Grid arr={state.movies} />;
+};
 
 export default CatalogueContainer;

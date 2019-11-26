@@ -1,71 +1,37 @@
-import React from "react";
-import { PosterMovie } from "../utils/types";
+import React, { useState, useEffect } from "react";
+import { PosterMovie, MovieIdProps } from "../utils/types";
 import Grid from "../components/Grid";
-import { urls } from "../urls";
+import { urls } from "../utils/urls";
 
-type MovieIdProps = {
-  slug: string;
-};
-class SimilarContainer extends React.Component<MovieIdProps> {
-  state = {
+const SimilarContainer: React.FC<MovieIdProps> = props => {
+  const [state, changeState] = useState({
     loading: false,
-    movies: [] as PosterMovie[],
-    currentPage: 1,
-    slug: null
-  };
+    movies: [] as PosterMovie[]
+  });
 
-  handleLeftClick = () => {
-    if (this.state.currentPage > 1) {
-      this.setState({ currentPage: this.state.currentPage - 1 });
-      this.fetchCatalogue();
-    }
-  };
-
-  handleRightClick = () => {
-    this.setState({ currentPage: this.state.currentPage + 1 });
-    this.fetchCatalogue();
-  };
-
-  fetchCatalogue = () => {
-    const url =
-      urls.domain +
-      "movie/" +
-      this.props.slug +
-      "/similar" +
-      urls.apikey +
-      "&page=" +
-      this.state.currentPage;
+  useEffect(() => {
+    const url = urls.domain + "movie/" + props.slug + "/similar" + urls.apikey;
     fetch(url)
       .then(response => response.json())
       .then(movies =>
-        this.setState({
+        changeState({
           loading: false,
           movies: movies.results
         })
       );
-  };
+  }, [props]);
 
-  componentDidMount() {
-    this.fetchCatalogue();
+  if (state.loading) {
+    return <div>loading...</div>;
   }
-
-  componentWillUnmount() {
-    this.setState({ loading: false });
+  if (!state.movies) {
+    return <div>didn't get movies</div>;
   }
-
-  render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-    if (!this.state.movies) {
-      return <div>didn't get movies</div>;
-    }
-    return (
-      <div className="grid">
-        <Grid arr={this.state.movies}/>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="grid">
+      <Grid arr={state.movies} />
+    </div>
+  );
+};
 
 export default SimilarContainer;

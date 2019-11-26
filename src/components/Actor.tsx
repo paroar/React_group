@@ -1,16 +1,12 @@
 import React from "react";
 import Poster from "./Poster";
 import Grid from "./Grid";
-import { ActorInfo } from "../utils/types";
+import { ActorProps } from "../utils/types";
 import Heading from "./Heading";
 
-type ActorProps = {
-  info: ActorInfo;
-};
 const Actor = (props: ActorProps) => {
-  console.log(props);
   return (
-    <>
+    <div>
       <div data-testid="details-page" className="details">
         <div className="back">
           <div className="details--movieInfo">
@@ -29,7 +25,7 @@ const Actor = (props: ActorProps) => {
       <div className="grid">
         <Grid arr={props.info.combined_credits.cast} />
       </div>
-    </>
+    </div>
   );
 };
 

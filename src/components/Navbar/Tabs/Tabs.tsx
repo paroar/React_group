@@ -1,26 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {TabsProps} from "../../../utils/types";
 
-class Tabs extends React.Component<any> {
-
-  render() {
+const Tabs:React.FC<TabsProps> = (props) => {
     return (
       <ul className="navbar--list">
         <Link to="/">
-          <li onClick={this.props.not}>Home</li>
+          <li onClick={props.not}>Home</li>
         </Link>
         <Link to="/catalogue">
-          <li onClick={this.props.not}>Catalogue</li>
+          <li onClick={props.not}>Catalogue</li>
         </Link>
         <Link to="/news">
-          <li onClick={this.props.not}>News</li>
+          <li onClick={props.not}>News</li>
         </Link>
         <Link to="/help">
-          <li onClick={this.props.not}>Help</li>
+          <li onClick={props.not}>Help</li>
         </Link>
       </ul>
     );
-  }
 }
 
 export default Tabs;

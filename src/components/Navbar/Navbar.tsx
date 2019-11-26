@@ -1,5 +1,5 @@
 import React from "react";
-import IconMenu from "../IconMenu";
+import IconMenu from "./IconMenu";
 
 const Navbar = () => {
   return (

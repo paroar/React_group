@@ -1,10 +1,7 @@
 import React from "react";
 import Poster from "./Poster";
 import { Link } from "react-router-dom";
-
-type GridProps = {
-  arr: any[];
-};
+import { GridProps } from "../utils/types";
 
 const Grid: React.FC<GridProps> = props => {
   if (!props) {
@@ -21,9 +18,7 @@ const Grid: React.FC<GridProps> = props => {
                 imgPath={movie.poster_path}
               />
             </Link>
-          ) : (
-            null
-          )
+          ) : null
         )}
       </>
     );

@@ -28,7 +28,6 @@ test("app renders Home and I can navigate to catalogue, news, help pages", async
   expect(queryByTestId("news-page")).not.toBeInTheDocument();
   expect(queryByTestId("catalogue-page")).not.toBeInTheDocument();
   expect(getByTestId("navbar")).toBeInTheDocument();
-  //expect(getByTestId("error-page")).toBeInTheDocument(); Preguntar al profesor
 });
 
 test("landing on a bad page shows error page", () => {

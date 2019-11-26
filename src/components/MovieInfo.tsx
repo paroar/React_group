@@ -1,14 +1,9 @@
 import React from "react";
 import Poster from "./Poster";
 import TextMovieInfo from "./TextMovieInfo";
-import { FetchMovie } from "../utils/types";
+import { MovieInfoProps } from "../utils/types";
 import Cast from "./Cast";
 import Heading from "./Heading";
-
-
-export type MovieInfoProps = {
-  movie: FetchMovie;
-}
 
 const MovieInfo:React.FC<MovieInfoProps> = (props) => {
   return (
