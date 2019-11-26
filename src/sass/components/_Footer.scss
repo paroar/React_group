@@ -1,39 +1,45 @@
 .footer {
-    height: 10rem;
-    border-top: 1px solid #ffffff80;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
+  width: 100%;
+  height: 7rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0,1);
 
-    &--copyright{
-        margin: 0 auto;
-        font-size: 3rem;
-        & span{
-            color:#ffffff80;
-            opacity: 20%;
-        }
+  &--copyright {
+    margin: 0 auto;
+    font-size: 2rem;
+    & span {
+      color: #ffffff80;
+      opacity: 20%;
+    }
+  }
 
+  &--logo {
+    margin: 0 auto;
+  }
+
+  &--socialmedia {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    & a {
+      margin-left: 1rem;
+    }
+    &--facebook > *:hover {
+      @include transition-socialmedia($facebook-color);
     }
 
-    &--logo{
-        margin: 0 auto;
+    &--twitter > *:hover {
+      @include transition-socialmedia($twitter-color);
     }
 
-    &--socialmedia{
-        margin: 0 auto;
-        & a{
-            margin-left: 1rem;
-        }
-        &--facebook > *:hover{
-            @include transition-socialmedia($facebook-color);
-        }
-    
-        &--twitter > *:hover{
-            @include transition-socialmedia($twitter-color);
-        }
-    
-        &--youtube > *:hover{
-            @include transition-socialmedia($youtube-color);
-        }
-    } 
+    &--youtube > *:hover {
+      @include transition-socialmedia($youtube-color);
+    }
+  }
 }

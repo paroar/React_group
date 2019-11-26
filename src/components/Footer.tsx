@@ -12,13 +12,13 @@ const Footer: React.FC = () => {
 
             <div className="footer--socialmedia">
                 <a href="https://es-es.facebook.com" target="blank" className="footer--socialmedia--facebook">
-                    <FaFacebookF size={33} color={"#ffffff80"}/>
+                    <FaFacebookF size={30} color={"#ffffff80"}/>
                 </a>
                 <a href="https://twitter.com" target="blank" className="footer--socialmedia--twitter">
-                    <FaTwitter size={38} color={"#ffffff80"}/>
+                    <FaTwitter size={30} color={"#ffffff80"}/>
                 </a>    
                 <a href="https://www.youtube.com" target="blank" className="footer--socialmedia--youtube">
-                    <FaYoutube size={40} color={"#ffffff80"} />
+                    <FaYoutube size={30} color={"#ffffff80"} />
                 </a>
             </div>
             

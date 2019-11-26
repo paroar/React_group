@@ -1,6 +1,6 @@
 import React from "react";
 import { urls } from "../urls";
-import SearchDisplay from "./SearchDisplay";
+import SearchDisplay from "../components/SearchDisplay";
 
 export type SearchMovie = {
   poster_path: string;
@@ -36,10 +36,9 @@ class Search extends React.Component {
   };
 
   handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if (e.target.value !== "") {
-      this.searchMovies(e.target.value);
-    }
+    this.searchMovies(e.target.value);
   }
+
   render() {
     return (
       <>

@@ -1,12 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Search from "../components/Search";
+import SearchContainer from "../containers/SearchContainer";
 
 const HomePage = () => {
   return (
     <div data-testid="home-page">
       <Hero hero="homeHero">
-        <Search/>
+        <SearchContainer/>
       </Hero>
     </div>
   );
