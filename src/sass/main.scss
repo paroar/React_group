@@ -2,12 +2,14 @@
 
 @import 'abstracts/reset';
 @import 'abstracts/color';
+@import 'abstracts/variables';
 @import 'abstracts/mixins';
 
 @import 'layout/grid';
 @import 'layout/media';
 
 @import 'pages/Details';
+@import 'pages/HelpPage';
 
 @import 'components/Navbar';
 @import 'components/Hero';
@@ -17,3 +19,8 @@
 @import 'components/IconMenu';
 @import 'components/Footer';
 @import 'components/Search';
+@import 'components/HelpBlock';
+@import 'components/Modal';
+@import 'components/Backdrop';
+@import 'components/ContactForm';
+@import 'components/FAQ';

@@ -49,5 +49,9 @@
     "eslint-plugin-react-hooks": "^2.2.0",
     "faker": "^4.1.0",
     "node-sass": "^4.13.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/paroar/React_group.git",
+  "author": "Ana S <asersic9@gmail.com>",
+  "license": "MIT"
 }

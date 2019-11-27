@@ -1,0 +1,141 @@
+.contact-form-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.contact-form-image {
+    width: 50%;
+    height: 100%;
+    img{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+.contact-form-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+form {
+    width: 80%;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+    color: black;
+}
+form h2 {
+}
+.personal-info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.input-container {
+    position: relative;
+    margin-bottom: 5%;
+    padding-top: 2%;
+}
+label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid rgba(5, 10, 40, 0.9);
+}
+.input-animation {
+    position: absolute;
+    bottom: 1rem;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+label::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(5, 10, 40, 0.9);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+}
+
+input[type='text'], input[type='tel'], input[type='email'], input[type='date']{
+    width: 100%;
+    height: 100%;
+    padding-top: 1.2rem;
+    border: none;
+    outline: none;
+}
+input:focus + .label-animation .input-animation,
+input:valid + .label-animation .input-animation
+{
+    transform: translateY(-150%);
+    font-size: 0.9rem;
+    outline: none;
+}
+input:focus .label-animation::after,
+input:valid .label-animation::after {
+    transform: translateX(0%);
+    outline: none;
+
+}
+textarea {
+    padding: 1rem;
+    width: 80%;
+    height: 7rem;
+}
+
+.btn-form {
+    outline: none;
+    height: 3rem;
+    text-align: center;
+    width: 10rem;
+    border-radius:40px;
+    background: #fff;
+    border: 2px solid black;
+    color: black;
+    letter-spacing: 0.2rem;
+    text-shadow:0;
+    font-size: 1.4rem;
+    font-weight:bold;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    &:hover {
+      color:white;
+      background: black;
+    }
+    &:active {
+      letter-spacing: 0.2rem;
+    }
+    &:after {
+    }
+}
+/*
+.container {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -65px;
+    margin-top: -20px;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+  }
+  button {
+   
+  .onclic {
+    width: 40px;
+    border-color:$gray;
+    border-width:3px;
+    font-size:0;
+    border-left-color:$green;
+    */

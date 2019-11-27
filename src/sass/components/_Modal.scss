@@ -1,0 +1,14 @@
+.modal-wrapper {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    max-width: 700px;
+    height: 70vh;
+    //border: 1px solid #ccc;
+    top: 15%;
+    box-sizing: border-box;
+    transition: all 0.4s ease-in-out;
+    border-radius: 3px;
+    overflow: auto;
+}
+
