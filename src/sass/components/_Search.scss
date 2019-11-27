@@ -1,17 +1,18 @@
 .input {
-  position: fixed;
-  top: 0;
-  right: 7rem;
-  width: 27rem;
-  font-size: 2rem;
-  text-align: center;
-  border: none;
-  padding: 1rem 0rem;
-  border-radius: 0.2rem;
-  z-index: 10;
-  background-color: rgba(100,100,100,0.5);
-  color: white;
-  margin: 1.5rem;
+  position: fixed !important;
+  top: 0  !important;
+  right: 7rem !important;
+  width: 27rem !important;
+  height: 2rem  !important;
+  font-size: 2rem !important;
+  text-align: center !important;
+  border: none !important;
+  padding: 1rem 0rem !important;
+  border-radius: 0.2rem !important;
+  z-index: 10 !important;
+  background-color: rgba(100,100,100,0.5) !important;
+  color: white !important;
+  margin: 1.5rem !important;
   
 }
 
