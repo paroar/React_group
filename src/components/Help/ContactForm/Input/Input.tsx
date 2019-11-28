@@ -1,10 +1,11 @@
 import React from "react";
 
-const Input = ({labelName, labelContent, inputName, inputType, placeholderText}: 
+const Input = ({labelName, labelContent, labelContentBold, inputName, inputType, placeholderText}: 
     {
         inputName: string;
         labelName?: string;
         labelContent?: string;
+        labelContentBold?: string;
         inputType?: string;
         placeholderText?: string;
     }
@@ -28,6 +29,7 @@ const Input = ({labelName, labelContent, inputName, inputType, placeholderText}:
             <label htmlFor={labelName} className="label-animation">
                 <span className="input-animation">
                     {labelContent}
+                    <span style={{fontWeight: "bold"}}>{labelContentBold}</span>
                 </span>
             </label>
         </div>

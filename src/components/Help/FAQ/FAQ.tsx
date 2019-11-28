@@ -1,32 +1,39 @@
 import React from "react";
+import Accordion from "./../Accordion/Accordion";
 import questionData from "./../../../assets/questions.json";
-import Collapsible from "../Collapsible/Collapsible";
 import { FaSearch } from "react-icons/fa";
+
 
 const FAQ = () => {
     return (
         <div className="faq-wrapper">
-            <h2>Frequently Asked Questions</h2>
-            <form action="">
+            <div className="faq-header">
+                <h2>Have a <span style={{color: "#f76c5e"}}>Question?</span></h2>
+                <p style={{letterSpacing: "0.1rem"}}>Look Here</p>
+                <form action="">
                 <div className="local-search-wrapper">
-                    <input type="search" className="local-search" placeholder="Search Our FAQ" />
-                    <FaSearch className="local-search-icon"></FaSearch>
+                    <input type="search" className="local-search" placeholder="Search Our FAQs" />
+                    <FaSearch className="local-search-icon" size="1.6rem" color={"#737373"}></FaSearch>
                 </div>
             </form>
+
+            </div>
             {
                 questionData.map((detail, _index) => {
                     return (
-                    <Collapsible
+                    <Accordion
                         title={detail.topicId}
                     >
                         <h2>{detail.question}</h2>
                         <p>{detail.answer}</p>
-                    </Collapsible>
+                    </Accordion>
                     )
                 })
             }
         </div>
-    )
-}
+
+    );
+};
 
 export default FAQ;
+

@@ -1,31 +1,32 @@
 import React from "react";
 import Input from "./Input/Input";
-import SideImage from "./../../../img/contact01.jpg";
+/*import SideImage from "./../../../img/2001.jpg";*/
 
 const ContactForm = () => {
     return (
         <div className="contact-form-wrapper">
             <div className="contact-form-image">
-                <img src={SideImage} alt="contact"/>
             </div>
             <div className="contact-form-content">
-                <form action="">
-                    <h2>Get in Touch</h2>
+                <form action="" className="help-form">
+                    <h2>Get in touch</h2>
                     <Input 
                         labelName="person-name"
-                        labelContent="Name:"
+                        labelContent="Your "
+                        labelContentBold="Name *"
                         inputName="input"
                         inputType="text"
                     ></Input>
                     <Input 
                         labelName="person-email"
-                        labelContent="Email"
+                        labelContent="Your "
+                        labelContentBold="Email *"
                         inputName="input"
                         inputType="email"
                     ></Input>
                     <Input 
                         labelName="subject"
-                        labelContent="Subject:"
+                        labelContent="Subject"
                         inputName="input"
                         inputType="text"
                     ></Input>
@@ -41,3 +42,7 @@ const ContactForm = () => {
 }
 
 export default ContactForm;
+
+
+
+/*<img src={SideImage} alt="contact"/>*/
