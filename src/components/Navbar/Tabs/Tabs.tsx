@@ -8,11 +8,11 @@ const Tabs:React.FC<TabsProps> = (props) => {
         <Link to="/">
           <li onClick={props.not}>Home</li>
         </Link>
+        <Link to="/search">
+          <li onClick={props.not}>Search</li>
+        </Link>
         <Link to="/catalogue">
           <li onClick={props.not}>Catalogue</li>
-        </Link>
-        <Link to="/news">
-          <li onClick={props.not}>News</li>
         </Link>
         <Link to="/help">
           <li onClick={props.not}>Help</li>
