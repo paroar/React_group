@@ -2,9 +2,9 @@ import Hero from "../components/Hero";
 
 import React from "react";
 import HelpBlock from "./../components/Help/HelpBlock/HelpBlock";
-import { FaQuestion, FaBook, FaSpeakap} from "react-icons/fa";
+import { FaQuestion, FaBook, FaCommentAlt} from "react-icons/fa";
 import ContactForm from "./../components/Help/ContactForm/ContactForm";
-import FAQ from "./../components/Help/FAQ/FAQ";
+import FAQ from "../components/Help/FAQ/FAQ";
 
 const HelpPage = () => {
     return (
@@ -31,20 +31,20 @@ const HelpPage = () => {
                     description="Frequently Asked Questions"
                     buttonText="Take a Look"
                     buttonClass="btn btn-help"
-                    modalWidth="40%"
-                    modalLeft="30%"
+                    modalWidth="50%"
+                    modalLeft="25%"
                 >
-                    <FAQ></FAQ>
+                  <FAQ />
                 </HelpBlock>
             </div>
             <div className="help-box">
               <div className="icons">
-                <FaSpeakap size="3rem" />
+                <FaCommentAlt size="3rem" />
               </div>
                 <HelpBlock 
                     title="Contact Us"
                     description="Any doubts or questions?"
-                    buttonText="Ask Away!"
+                    buttonText="Ask Away"
                     buttonClass="btn btn-help"
                     modalWidth="48%"
                     modalLeft="26%"
