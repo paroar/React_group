@@ -3,8 +3,11 @@
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  text-transform: uppercase;
   font-size: 3rem;
+
+  &-mark{
+    color: coral;
+  }
 }
 
 .table-icons{
@@ -18,13 +21,14 @@
   &-icon{
     display: inline-table;
     padding: 1rem 1.5rem 0.5rem 1.5rem;
-    border:5px solid white;
+    border:3px solid rgba(255,255,255,0.2);
     border-radius: 2rem;
     margin: 1rem;
     background-color: rgba(0,0,0,0.5);
 
     &:hover{
       opacity: 0.6;
+      border-color: coral;
     }
   }
 

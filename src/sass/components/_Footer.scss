@@ -8,14 +8,16 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(27, 27, 27, 0.5);
+  background-color: rgba(27, 27, 27, 0.8);
 
   &--copyright {
     margin: 0 auto;
     font-size: 2rem;
-    & span {
+    &--opacity {
       color: #ffffff80;
-      opacity: 20%;
+    }
+    &--name{
+      color: coral;
     }
   }
 

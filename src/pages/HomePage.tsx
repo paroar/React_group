@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div data-testid="home-page">
       <Hero hero="homeHero">
-        <h1 className="maintitle">Welcome to 4Birds</h1>
+        <h1 className="maintitle">Welcome to <span className="maintitle-mark">4Birds</span></h1>
         <div className="table-icons">
           <div className="table-icons-icon">
             <Link to="/"><TiHome size="90"/></Link>
