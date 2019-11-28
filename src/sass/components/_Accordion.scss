@@ -1,11 +1,9 @@
 .faq-wrapper {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    overflow: hidden;
     background-color: $help-form-dark;
-    padding-bottom: 1rem;
     &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 0.6rem rgba(0,0,0,0.3);
         background-color: #F5F5F5;
@@ -23,8 +21,6 @@
 	                   color-stop(.5, rgba(255, 255, 255, .2)),
 					   color-stop(.5, transparent), to(transparent));
     }
-
-
 }
 
 .faq-header {
