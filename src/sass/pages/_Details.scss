@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-size: 1.5rem;
+    ///font-size: 1.5rem;
 
     img {
       height: auto;
@@ -23,7 +23,7 @@
 
     &--grid {
       background-color: rgba(100, 100, 100, 0.2);
-      padding: 4rem;
+      padding: 1rem;
       margin: 5rem auto;
       border-radius: 2px;
       max-width: 60rem;
@@ -36,9 +36,9 @@
       }
       h3,p{
         padding: 0 0 1rem;
-        line-height: 2.5rem;
+        //line-height: 2.5rem;
         letter-spacing: 0.1rem;
-        font-size: 2.5rem;
+        //font-size: 2.5rem;
       }
     }
   

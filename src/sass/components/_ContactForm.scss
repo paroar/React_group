@@ -21,13 +21,14 @@
     justify-content: center;
     align-items: center;
     h2 {
-        font-size: 3rem;
+        ///font-size: 3rem;
         text-transform: uppercase;
         letter-spacing: 0.3rem;
     }
     @media screen and (max-width: 600px) {
-        width: 0;
-        height: 0;
+        display: none;
+        // width: 0;
+        // height: 0;
     }
 }
 .contact-form-content {
@@ -49,7 +50,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-shrink: 0;
-        font-size: 1rem;
+        //font-size: 1rem;
         .btn-form {
             float: none;
         }
@@ -70,7 +71,7 @@
     h2 {
         text-transform: uppercase;
         color: white;
-        font-size: 2.3rem;
+        //font-size: 2.3rem;
         letter-spacing: 0.3rem;
 
         margin-bottom: 3rem;
@@ -125,7 +126,7 @@
     input:valid + .label-animation .input-animation
     {
         transform: translateY(-150%);
-        font-size: 1.2rem;
+        //font-size: 1.2rem;
         outline: none;
         color: #b8b6b6;
 
@@ -159,7 +160,7 @@
     color: black;
     letter-spacing: 0.3rem;
     text-shadow: 0;
-    font-size: 1.4rem;
+    //font-size: 1.4rem;
     font-weight: bold;
     margin-top: 2rem;
     cursor: pointer;

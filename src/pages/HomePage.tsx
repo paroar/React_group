@@ -12,20 +12,20 @@ const HomePage = () => {
         <h1 className="maintitle">Welcome to <span className="maintitle-mark">4Birds</span></h1>
         <div className="table-icons">
           <div className="table-icons-icon">
-            <Link to="/"><TiHome size="90"/></Link>
-            <h6>HOME</h6>
+            <Link to="/"><TiHome size="60"/></Link>
+            <h4>HOME</h4>
           </div>
           <div className="table-icons-icon">
-            <Link to="/search"><IoMdSearch size="90"/></Link>
-            <h6>SEARCH</h6>
+            <Link to="/search"><IoMdSearch size="60"/></Link>
+            <h4>SEARCH</h4>
           </div>
           <div className="table-icons-icon">
-            <Link to="/help"><IoMdHelp size="90"/></Link>
-            <h6>HELP</h6>
+            <Link to="/help"><IoMdHelp size="60"/></Link>
+            <h4>HELP</h4>
           </div>
           <div className="table-icons-icon">
-            <Link to="/catalogue"><GiFilmSpool size="90"/></Link>
-            <h6>CATALOGUE</h6>
+            <Link to="/catalogue"><GiFilmSpool size="60"/></Link>
+            <h4>CATALOGUE</h4>
           </div>
         </div>
       </Hero>
