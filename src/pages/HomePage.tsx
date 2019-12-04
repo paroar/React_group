@@ -9,23 +9,30 @@ const HomePage = () => {
   return (
     <div data-testid="home-page">
       <Hero hero="homeHero">
-        <h1 className="maintitle">Welcome to <span className="maintitle-mark">4Birds</span></h1>
+        <h1 className="maintitle">
+          Welcome to <span className="maintitle-mark">4Birds</span>
+        </h1>
         <div className="table-icons">
           <div className="table-icons-icon">
-            <Link to="/"><TiHome size="60"/></Link>
-            <h4>HOME</h4>
+            <Link to="/">
+              <TiHome size="60" />
+              <h4>HOME</h4>
+            </Link>
           </div>
           <div className="table-icons-icon">
-            <Link to="/search"><IoMdSearch size="60"/></Link>
-            <h4>SEARCH</h4>
+            <Link to="/search">
+              <IoMdSearch size="60" /> <h4>SEARCH</h4>
+            </Link>
           </div>
           <div className="table-icons-icon">
-            <Link to="/help"><IoMdHelp size="60"/></Link>
-            <h4>HELP</h4>
+            <Link to="/help">
+              <IoMdHelp size="60" /> <h4>HELP</h4>
+            </Link>
           </div>
           <div className="table-icons-icon">
-            <Link to="/catalogue"><GiFilmSpool size="60"/></Link>
-            <h4>CATALOGUE</h4>
+            <Link to="/catalogue">
+              <GiFilmSpool size="60" /> <h4>CATALOGUE</h4>
+            </Link>
           </div>
         </div>
       </Hero>

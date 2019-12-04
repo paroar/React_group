@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="footer--copyright">
-                <h5><span className="footer--copyright--opacity">@2019</span><span className="footer--copyright--name">4BIRDS</span></h5>
+                <h4><span className="footer--copyright--opacity">@2019</span><span className="footer--copyright--name">4BIRDS</span></h4>
             </div>
                
 
