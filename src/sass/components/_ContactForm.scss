@@ -154,13 +154,13 @@
     height: 3rem;
     text-align: center;
     width: 10rem;
-    border-radius: 50rem;
+    border-radius: 0.6rem;
     background: whitesmoke;
     border: 1px solid $help-form-dark;
     color: black;
     letter-spacing: 0.3rem;
     text-shadow: 0;
-    //font-size: 1.4rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-top: 2rem;
     cursor: pointer;
@@ -172,26 +172,4 @@
     &:active {
       letter-spacing: 0.2rem;
     }
-    &:after {
-    }
 }
-/*
-.container {
-    position: absolute;
-    top:50%;
-    left:50%;
-    margin-left: -65px;
-    margin-top: -20px;
-    width: 130px;
-    height: 40px;
-    text-align: center;
-  }
-  button {
-   
-  .onclic {
-    width: 40px;
-    border-color:$gray;
-    border-width:3px;
-    font-size:0;
-    border-left-color:$green;
-    */

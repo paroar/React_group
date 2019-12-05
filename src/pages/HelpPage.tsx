@@ -18,7 +18,7 @@ const HelpPage = () => {
                   title="Terms"
                   description="Our Terms and Conditions policy"
                   buttonText="Read"
-                  buttonClass="btn btn-help"
+                  buttonClass="btn btn-form"
               >
               </HelpBlock>
             </div>
@@ -30,9 +30,9 @@ const HelpPage = () => {
                     title="FAQ"
                     description="Frequently Asked Questions"
                     buttonText="Take a Look"
-                    buttonClass="btn btn-help"
-                    modalWidth="50%"
-                    modalLeft="25%"
+                    buttonClass="btn btn-form"
+                    modalWidth="80%"
+                    modalLeft="50%"
                 >
                   <FAQ />
                 </HelpBlock>
@@ -45,9 +45,9 @@ const HelpPage = () => {
                     title="Contact Us"
                     description="Any doubts or questions?"
                     buttonText="Ask Away"
-                    buttonClass="btn btn-help"
-                    modalWidth="48%"
-                    modalLeft="26%"
+                    buttonClass="btn btn-form"
+                    modalWidth="80%"
+                    modalLeft="50%"
                 >
                     <ContactForm />
                 </HelpBlock>

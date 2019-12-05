@@ -6,7 +6,7 @@
   //font-size: 3rem;
 
   &-mark {
-    color: coral;
+    color: rgb(247, 108, 94);
   }
 }
 
@@ -16,7 +16,15 @@
   left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(2, auto);
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(4, auto);
+  }
+
 
   &-icon {
     display: flex;
@@ -31,7 +39,7 @@
 
     &:hover {
       opacity: 0.6;
-      border-color: coral;
+      border-color: rgb(247, 108, 94);
     }
   }
 }
