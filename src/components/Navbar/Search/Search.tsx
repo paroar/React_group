@@ -3,7 +3,7 @@ import React from "react";
 const Search = () => {
   return (
     <div className="navbar--search">
-      <input type="search" placeholder='Search'/>
+      <input aria-label="Search..." type="search" placeholder='Search'/>
     </div>
   );
 };

@@ -13,8 +13,10 @@ type SearchDisplayProps = {
 const SearchDisplay: React.FC<SearchDisplayProps> = props => {
   if(props.arr){
     return (
+      <div className="search-grid">
       <div className="grid">
         <Grid arr={props.arr} />
+      </div>
       </div>
     );
   }else{

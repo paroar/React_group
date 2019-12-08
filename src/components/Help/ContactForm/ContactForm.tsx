@@ -30,7 +30,7 @@ const ContactForm = () => {
                         inputName="input"
                         inputType="text"
                     ></Input>
-                    <textarea placeholder="Write your message here..."></textarea>
+                    <textarea aria-label="Textarea" placeholder="Write your message here..."></textarea>
                     <button className="btn-form">
                         Send
                     </button>

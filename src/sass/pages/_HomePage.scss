@@ -1,28 +1,44 @@
+.home-page{
+ display: flex;
+
+}
+
 .maintitle {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 50%;
-  transform: translateX(-50%);
-  //font-size: 3rem;
-
+  transform: translate(-50%,-50%);
   &-mark {
     color: rgb(247, 108, 94);
   }
+
+
+  @media (max-width: 6
+  00px) {
+    display: none;
+  }
+
 }
 
 .table-icons {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
   display: grid;
+  justify-content: center;
 
-  @media (max-width: 600px) {
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @media (max-width: 500px) {
     grid-template-columns: repeat(2, auto);
   }
 
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(4, auto);
+  @media (min-width: 500px),(max-width:600px) {
+    gap: 1rem;
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 500px) {
+    gap: 0rem;
   }
 
 
@@ -37,9 +53,18 @@
     width: 8rem;
     height: 8rem;
 
+    @media (min-width: 500px) {
+      padding: 0rem;
+      margin: 0rem;
+    }
+
     &:hover {
       opacity: 0.6;
       border-color: rgb(247, 108, 94);
     }
+  }
+
+  &__name{
+    text-transform: uppercase;
   }
 }

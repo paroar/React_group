@@ -1,5 +1,9 @@
 import { RouteComponentProps } from "react-router";
 
+export type IconProps = {
+  name: String;
+  logo: JSX.Element;
+};
 export type UrlProps = RouteComponentProps<{ slug: string }>;
 export type TabsProps = {
   not: any;

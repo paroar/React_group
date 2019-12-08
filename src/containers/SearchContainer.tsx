@@ -44,6 +44,7 @@ class Search extends React.Component {
       <>
         <div>
           <input
+            aria-label="Search..."
             type="text"
             placeholder="Search..."
             className="input"

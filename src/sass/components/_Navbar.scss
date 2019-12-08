@@ -3,8 +3,6 @@
   display: flex;
   justify-content: center;
   .navbar {
-    //font-size: 2rem;
-    line-height: 7rem;
     width: 100%;
     background-color: rgba(0, 0, 0,1);
     .overlay{
@@ -21,10 +19,18 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        & > a > li{
+        justify-content: space-evenly;
+        &__li{
           text-transform: uppercase;
           letter-spacing: 3px;
+
+          &>a{
+            padding: 1rem 5rem;
+          }
+
+          &:hover{
+            color: rgb(247, 108, 94);
+          }
         }
       }
     }
@@ -34,64 +40,5 @@
 .hidden{
   opacity: 0;
   z-index: -1 !important;
+  transform: translate(100%,-100%);
 }
-
-/*
-  &--logo {
-    position: absolute;
-    left: 0vw;
-    top: 50%;
-    margin: 0 2.5rem;
-    padding: 1rem;
-    transform: translateY(-50%);
-
-    &:hover {
-      color: $first-color;
-      transition-duration: 0.3s;
-    }
-  }
-
-  &--search {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    input {
-      margin: 0 5rem;
-      border-radius: 100rem;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      background: $fifth-color;
-      height: 3rem;
-      width: 15rem;
-      text-align: center;
-      font-size: 1.5rem;
-
-      &:hover {
-        border-color: $first-color;
-        transition-duration: 0.3s;
-      }
-
-      &:focus {
-        background: white;
-        color: black;
-      }
-    }
-  }
-
-  &--list {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    li {
-      padding: 2rem;
-      &:hover {
-        color: $first-color;
-        transition-duration: 0.3s;
-        text-decoration: underline;
-      }
-    }
-  }
-}
-*/

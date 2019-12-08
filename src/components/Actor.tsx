@@ -12,7 +12,7 @@ const Actor = (props: ActorProps) => {
           <div className="details--movieInfo">
             <Poster
               imgPath={props.info.profile_path}
-              size={"original"}
+              size={"w185"}
               className={"poster"}
             />
             <div className="details--movieInfo--grid">
