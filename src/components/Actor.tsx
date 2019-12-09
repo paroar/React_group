@@ -4,26 +4,35 @@ import Grid from "./Grid";
 import { ActorProps } from "../utils/types";
 import Heading from "./Heading";
 
-const Actor = (props: ActorProps) => {
+type BioProps = {
+  bio: string;
+};
+
+//@ts-ignore
+const Biography: React.FC<BioProps> = ({bio}) => {
+  return bio ? <p>{bio}</p> : <p>No biography yet</p>;
+};
+
+const Actor: React.FC<ActorProps> = ({ info }) => {
   return (
     <div>
       <div data-testid="details-page" className="details">
         <div className="back">
           <div className="details--movieInfo">
             <Poster
-              imgPath={props.info.profile_path}
+              imgPath={info.profile_path}
               size={"w185"}
               className={"poster"}
             />
             <div className="details--movieInfo--grid">
-              <p>{props.info.biography}</p>
+              <Biography bio={info.biography} />
             </div>
           </div>
         </div>
       </div>
       <Heading>Filmography</Heading>
       <div className="grid">
-        <Grid arr={props.info.combined_credits.cast} />
+        <Grid arr={info.combined_credits.cast} />
       </div>
     </div>
   );

@@ -1,25 +1,35 @@
-html{
+html {
+  @include respond(desktop4k) {
+    font-size: 160%;
+  }
 
-    @media (min-width:1200px) {
-        font-size: 120%;
-    }
+  @include respond(desktop2k) {
+    font-size: 140%;
+  }
 
-    @media (max-width:1200px) {
-        font-size: 110%;
-    }
+  @include respond(desktop) {
+    font-size: 120%;
+  }
 
-    @media (max-width:900px) {
-        font-size: 100%;
-    }
+  @include respond(tablet-land) {
+    font-size: 100%;
+  }
 
-    @media (max-width:500px) {
-        font-size: 90%;
-    }
+  @include respond(tablet-port) {
+    font-size: 100%;
+  }
+
+  @include respond(phone-land) {
+    font-size: 62%;
+  }
+
+  @include respond(phone-port) {
+    font-size: 62%;
+  }
 }
 
-body{
-    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
-    background: rgba(0, 0, 0, 1);
-    color: rgba(255, 255, 255, 0.8);
+body {
+  font-family: "Calibri", "Trebuchet MS", sans-serif;
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 0.8);
 }
-

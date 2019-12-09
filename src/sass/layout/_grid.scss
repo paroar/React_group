@@ -3,57 +3,69 @@
   display: grid;
   justify-content: center;
 
-  &>*{
+  & > * {
     margin: 1rem;
   }
 
-  @media (min-width: 1500px) {
-    grid-template-columns: repeat(10,auto);
+  @include respond(desktop4k) {
+    grid-template-columns: repeat(5, auto);
   }
 
-  @media (max-width: 1500px) {
-    grid-template-columns: repeat(5,auto);
+  @include respond(desktop2k) {
+    grid-template-columns: repeat(5, auto);
   }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(4,auto);
+  @include respond(desktop) {
+    grid-template-columns: repeat(4, auto);
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2,auto);
+  @include respond(tablet-land) {
+    grid-template-columns: repeat(4, auto);
   }
 
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(1,auto);
+  @include respond(tablet-port) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include respond(phone-land) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include respond(phone-port) {
+    grid-template-columns: repeat(1, auto);
   }
 }
 
-.grid--actor{
+.grid--actor {
   margin: 5rem 0 0;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(1,auto);
-  &>a{
+  grid-template-columns: repeat(1, auto);
+  & > a {
     margin: 1rem;
-    &>img{
+    & > img {
       max-width: 15rem;
     }
   }
 
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(6,auto);
+  @include respond(desktop4k) {
+    grid-template-columns: repeat(6, auto);
   }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3,auto);
+  @include respond(desktop2k) {
+    grid-template-columns: repeat(6, auto);
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2,auto);
+  @include respond(tablet-land) {
+    grid-template-columns: repeat(3, auto);
   }
 
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(1,auto);
+
+  @include respond(phone-land) {
+    grid-template-columns: repeat(2, auto);
   }
-  
+
+  @include respond(phone-port) {
+    grid-template-columns: repeat(1, auto);
+  }
 }

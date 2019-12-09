@@ -1,46 +1,39 @@
-.home-page{
- display: flex;
-
+.home-page {
+  display: flex;
 }
 
 .maintitle {
   position: absolute;
   top: 20%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   &-mark {
     color: rgb(247, 108, 94);
   }
 
-
-  @media (max-width: 6
-  00px) {
+  @include respond(phone-land) {
     display: none;
   }
-
 }
 
 .table-icons {
   display: grid;
   justify-content: center;
 
-  @media (min-width: 500px) {
+  @include respond(desktop4k) {
     grid-template-columns: repeat(4, auto);
-  }
-
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  @media (min-width: 500px),(max-width:600px) {
     gap: 1rem;
-    transform: scale(0.8);
   }
 
-  @media (max-width: 500px) {
-    gap: 0rem;
+  @include respond(desktop2k) {
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
   }
 
+  @include respond(phone-port) {
+    grid-template-columns: repeat(2, auto);
+    gap: 0.5rem;
+  }
 
   &-icon {
     display: flex;
@@ -64,7 +57,7 @@
     }
   }
 
-  &__name{
+  &__name {
     text-transform: uppercase;
   }
 }

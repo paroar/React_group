@@ -25,36 +25,32 @@
       padding: 1rem;
       margin: 5rem auto 0;
       border-radius: 2px;
+      white-space: pre-line;
 
+      @include respond(desktop4k) {
+        width: 65%;
+      }
 
-    @media (min-width:1200px) {
-      width: 50%;
-    }
+      @include respond(desktop2k) {
+        width: 75%;
+      }
 
-    @media (max-width:1200px) {
-      width: 60%;
-    }
+      @include respond(desktop) {
+        width: 85%;
+      }
 
-    @media (max-width:900px) {
-      width: 70%;
-    }
-
-    @media (max-width:500px) {
-      width: 90%;
-    }
-
-      h1{
+      h1 {
         padding: 0 0 3rem;
       }
-      h2{
+      h2 {
         padding: 0 0 2rem;
       }
-      h3,p{
+      h3,
+      p {
         padding: 0 0 1rem;
         letter-spacing: 1px;
       }
     }
-  
   }
 
   &--videos {

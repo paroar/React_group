@@ -1,19 +1,77 @@
-@mixin transition-socialmedia($color){
-    fill: $color;
-    transition: 0.5s;
+@mixin transition-socialmedia($color) {
+  fill: $color;
+  transition: 0.5s;
 }
 
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 @mixin absCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//MEDIA QUERY MANAGER
+/*
+0-450px: Phone portrait
+450-750px: Phone landscape
+750-900px: Tablet portrait
+900-1250px: Tablet landscape
+1250-1950px: Desktop Screens
+1950px-2050px: 2k Screens
+2050px-+: 4k- Screens 
+
+$breakpoint arguments choices:
+- phone-port
+- phone-land
+- tablet-port
+- tablet-land
+- desktop
+- desktop2k
+- desltop4k 
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-port {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-land {
+    @media (max-width: 750px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-land {
+    @media (max-width: 1250px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: 1950px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop2k {
+    @media (max-width: 2050px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop4k {
+    @media (min-width: 2050px) {
+      @content;
+    }
+  }
 }

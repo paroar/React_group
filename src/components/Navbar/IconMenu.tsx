@@ -19,7 +19,7 @@ const IconMenu = () => {
         <span className="bar" />
       </div>
       <div
-        className={`${state.crossed ? "overlay hidden" : "overlay"}`}
+        className={`overlay ${state.crossed ? "hidden" : "show"}`}
         onClick={() => not()}
       >
         <Tabs not={not.bind(state)} />
