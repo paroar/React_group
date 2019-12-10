@@ -14,7 +14,6 @@ const Grid: React.FC<GridProps> = props => {
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Poster
                 key={movie.id}
-                size="w185"
                 imgPath={movie.poster_path}
               />
             </Link>

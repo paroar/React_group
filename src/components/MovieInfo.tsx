@@ -12,8 +12,6 @@ const MovieInfo:React.FC<MovieInfoProps> = (props) => {
         <div className="details--movieInfo">
           <Poster
             imgPath={props.movie.poster_path}
-            size={"w185"}
-            className={"poster"}
           />
           <TextMovieInfo {...props.movie} />
         </div>
