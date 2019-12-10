@@ -2,7 +2,7 @@
  tutoriales:
  https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/
  https://www.youtube.com/watch?v=mUdo6w87rh4
- 
+
 */
 
 .user-container {
@@ -32,7 +32,7 @@
 }
 
 .sign-up-container {
-    left: 0;
+    right: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
@@ -85,7 +85,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 4rem;
     text-align: center;
     top: 0;
     height: 100%;
@@ -108,5 +107,29 @@
 }
 
 .user-container.right-panel-active .overlay-right {
-    transform: translateX(20%);
+    transform: translateX(0%);
+}
+
+.form-overlay-btn {
+    outline: none;
+    height: 3rem;
+    text-align: center;
+    width: 10rem;
+    border-radius: 0.6rem;
+    background: transparent;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    letter-spacing: 0.3rem;
+    text-shadow: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    &:hover {
+      color: darken(whitesmoke, 20%);
+    }
+    &:active {
+      letter-spacing: 0.2rem;
+    }
 }

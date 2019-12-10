@@ -18,11 +18,11 @@ const UserPage = () => {
                 <div className="form-overlay">
                     <div className="overlay-panel overlay-left">
                         <h2>Already have an account?</h2>
-                        <button className="ghost" id="signIn" onClick={toggleClass}>Sign In</button>
+                        <button className="form-overlay-btn" id="signIn" onClick={toggleClass}>Sign In</button>
                     </div>
                     <div className="overlay-panel overlay-right">
                         <h2>Create an account</h2>
-                        <button className="ghost" id="signUp" onClick={toggleClass}>Sign Up</button>
+                        <button className="form-overlay-btn" id="signUp" onClick={toggleClass}>Sign Up</button>
                     </div>
                 </div>
             </div>
