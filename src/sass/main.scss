@@ -3,6 +3,8 @@
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
+@import 'base/animations';
+
 @import 'typography/typography';
 
 @import 'layout/grid';
@@ -10,6 +12,7 @@
 @import 'pages/Details';
 @import 'pages/HomePage';
 @import 'pages/HelpPage';
+@import 'pages/UserPage';
 
 
 @import 'components/Navbar';
@@ -27,3 +30,4 @@
 @import 'components/FAQ';
 @import 'components/Accordion';
 @import 'components/SignUpForm';
+

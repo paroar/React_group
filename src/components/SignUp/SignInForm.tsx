@@ -1,11 +1,11 @@
 import React from "react";
 import Input from "../Help/ContactForm/Input/Input";
-import ButtonComponent from "../Help/ButtonComponent/ButtonComponent";
 
 const SignInForm: React.FC = () => {
     return (
-        <>
-            <form className="help-form">
+        <div className="form-container contact-form-content sign-in-container">
+            <form action="#" className="sign-in-form">
+                <h2>Sign In</h2>
                 <Input
                     labelName="username"
                     labelContent="Username"    
@@ -18,15 +18,11 @@ const SignInForm: React.FC = () => {
                     inputName="input"
                     inputType="password"
                 />
-                <ButtonComponent
-                    action="submit"
-                    class="btn btn-submit"
-                >
-                    Sign In
-                </ButtonComponent>
-
+                <button className="btn-form">
+                    Send
+                </button>
             </form>
-        </>
+        </div>
         
     );
 };

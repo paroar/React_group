@@ -1,4 +1,4 @@
-.signup-form-wrapper {
+/*.signup-form-wrapper {
     width: 100%;
     box-sizing: border-box;
     height: 100%;
@@ -13,3 +13,109 @@
         height: 100vh;
     }
 }
+*/
+
+/*
+form.sign-up-form,
+form.sign-in-form {
+    background-color: white;
+    font-size: 1.3rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 5rem;
+    height: 100%;
+    text-align: center;
+
+    & input {
+        background-color: #eee;
+        border: none;
+        padding: 1.2rem 1.5rem;
+        margin: 0.8rem;
+        width: 100%;
+    }
+}
+*/
+
+form.sign-up-form,
+form.sign-in-form {
+    width: 80%;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+    color: #b8b6b6;
+    letter-spacing: 0.2rem;
+    
+    h2 {
+        text-transform: uppercase;
+        color: white;
+        //font-size: 2.3rem;
+        letter-spacing: 0.3rem;
+        margin-bottom: 3rem;
+    }
+    .personal-info {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .input-container {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-top: 2%;
+    }
+    label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid #b8b6b6;
+    }
+    .input-animation {
+        position: absolute;
+        bottom: 1rem;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    label::after {
+        content: "";
+        position: absolute;
+        left: -1px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #b8b6b6;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+    }
+
+    input[type='text'], input[type='password'], input[type='email'], input[type='date']{
+        width: 100%;
+        height: 100%;
+        padding-top: 1.2rem;
+        padding-bottom: 0.5rem;
+        border: none;
+        outline: none;
+        color: #b8b6b6;
+    }
+    input:focus + .label-animation .input-animation,
+    input:valid + .label-animation .input-animation
+    {
+        transform: translateY(-150%);
+        //font-size: 1.2rem;
+        outline: none;
+        color: #b8b6b6;
+
+    }
+    input:focus .label-animation::after,
+    input:valid .label-animation::after {
+        transform: translateX(0%);
+        outline: none;
+        color: #b8b6b6;
+
+    }
+}
+

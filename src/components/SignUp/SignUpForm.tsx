@@ -1,19 +1,19 @@
 import React from "react";
 import Input from "../Help/ContactForm/Input/Input";
-import ButtonComponent from "../Help/ButtonComponent/ButtonComponent";
 
 const SignUpForm: React.FC = () => {
     return (
-        <>
-            <form className="help-form">
+        <div className="form-container contact-form-content sign-up-container">
+            <form action="#" className="sign-up-form">
+                <h2>Sign Up</h2>
                 <Input
-                    labelName="first_name"
+                    labelName="first-name"
                     labelContent="First Name"    
                     inputName="input"
                     inputType="text"
                 />
                 <Input
-                    labelName="last_name"
+                    labelName="last-name"
                     labelContent="Last Name"    
                     inputName="input"
                     inputType="text"
@@ -42,13 +42,11 @@ const SignUpForm: React.FC = () => {
                     inputName="input"
                     inputType="password"
                 />
-                <ButtonComponent
-                    action="Sign Up"
-                    class="btn btn-submit"
-                >
-                </ButtonComponent>
+                <button className="btn-form">
+                    Send
+                </button>
             </form>
-        </>
+        </div>
         
     );
 };
