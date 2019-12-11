@@ -46,11 +46,6 @@
     width: 8rem;
     height: 8rem;
 
-    @media (min-width: 500px) {
-      padding: 0rem;
-      margin: 0rem;
-    }
-
     &:hover {
       opacity: 0.6;
       border-color: rgb(247, 108, 94);

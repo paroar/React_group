@@ -25,8 +25,6 @@ const Cast: React.FC<CastProps> = props => {
             <Poster
               key={crew.profile_path}
               imgPath={crew.profile_path}
-              size={"w185"}
-              className="details--movieInfo__cast--img"
             />
           </Link>
         ))}
