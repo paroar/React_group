@@ -1,19 +1,17 @@
 import React from "react";
-import Poster from "./Poster";
 import TextMovieInfo from "./TextMovieInfo";
 import { MovieInfoProps } from "../utils/types";
 import Cast from "./Cast";
 import Heading from "./Heading";
+import Card from "./Card";
 
-const MovieInfo:React.FC<MovieInfoProps> = (props) => {
+const MovieInfo: React.FC<MovieInfoProps> = props => {
   console.log(props);
   return (
     <div data-testid="details-page" className="details">
       <div className="back">
         <div className="details--movieInfo">
-          <Poster
-            imgPath={props.movie.poster_path}
-          />
+          <Card/>
           <TextMovieInfo {...props.movie} />
         </div>
       </div>
@@ -24,3 +22,4 @@ const MovieInfo:React.FC<MovieInfoProps> = (props) => {
 };
 
 export default MovieInfo;
+//poster_path={props.movie.poster_path}
