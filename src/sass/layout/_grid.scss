@@ -16,7 +16,7 @@
   }
 
   @include respond(desktop) {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
   }
 
   @include respond(tablet-land) {

@@ -6,6 +6,7 @@ import Cast from "./Cast";
 import Heading from "./Heading";
 
 const MovieInfo:React.FC<MovieInfoProps> = (props) => {
+  console.log(props);
   return (
     <div data-testid="details-page" className="details">
       <div className="back">

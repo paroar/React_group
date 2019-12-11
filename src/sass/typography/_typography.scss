@@ -20,11 +20,11 @@ html {
   }
 
   @include respond(phone-land) {
-    font-size: 62%;
+    font-size: 75%;
   }
 
   @include respond(phone-port) {
-    font-size: 62%;
+    font-size: 75%;
   }
 }
 

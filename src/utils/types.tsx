@@ -61,6 +61,7 @@ export type ActorInfo = {
 
 export type PosterImgProps = {
   imgPath: string;
+  className?: string;
 };
 
 export type HeroProps = {

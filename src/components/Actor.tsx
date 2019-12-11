@@ -21,6 +21,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
           <div className="details--movieInfo">
             <Poster
               imgPath={info.profile_path}
+              className="actor__img"
             />
             <div className="details--movieInfo--grid">
               <Biography bio={info.biography} />

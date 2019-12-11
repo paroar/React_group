@@ -1,16 +1,16 @@
 .footer {
   width: 100%;
-  height: 70px;
+  height: 5rem;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
   position: fixed;
   bottom: 0;
-  background-color: rgba(27, 27, 27, 0.8);
+  background-color: rgba(27, 27, 27, 1);
+  border-top: 2px solid rgba(255,255,255,0.05);
 
   &--copyright {
     margin: 0 auto;
-   // font-size: 2rem;
     &--opacity {
       color: #ffffff80;
     }
