@@ -2,7 +2,7 @@
  tutoriales:
  https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/
  https://www.youtube.com/watch?v=mUdo6w87rh4
-
+ - coral pal titulo y el botón
 */
 
 .user-container {
@@ -11,7 +11,7 @@
     box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25), 0 1rem 1rem rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 86%;
+    width: 70%;
     height: 70%;
     max-width: 100%;
     min-height: 48%;
@@ -58,6 +58,13 @@
     overflow: hidden;
     transition: transform .6s ease-in-out;
     z-index: 100;
+
+    h2 {
+        color: whitesmoke;
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        letter-spacing: 0.3rem;
+    }
 }
 
 .user-container.right-panel-active .form-overlay-container {
@@ -117,11 +124,11 @@
     width: 10rem;
     border-radius: 0.6rem;
     background: transparent;
-    border: 1px solid whitesmoke;
+    border: 1px solid $coral;
     color: whitesmoke;
     letter-spacing: 0.3rem;
     text-shadow: 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-top: 2rem;
     cursor: pointer;
