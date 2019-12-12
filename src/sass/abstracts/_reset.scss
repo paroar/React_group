@@ -27,31 +27,3 @@ picture {
   margin: auto;
   max-width: 20rem;
 }
-
-.card {
-  perspective: 50rem;
-  -ms-perspective: 50rem;
-  width: 185px;
-  height: 277.5px;
-
-  &__side {
-    transition: all 1s;
-    position: absolute;
-    backface-visibility: hidden;
-    width: 185px;
-    height: 277.5px;
-
-    &--back {
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: rotateY(180deg);
-    }
-  }
-  &:hover &__side--front {
-    transform: rotateY(-180deg);
-  }
-  &:hover &__side--back {
-    transform: rotateY(0deg);
-  }
-}

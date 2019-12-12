@@ -18,6 +18,14 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin box {
+  margin: 7rem auto;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.9);
+  border: 2px solid rgba(255,255,255,0.05);
+  border-radius: 5px;
+}
+
 //MEDIA QUERY MANAGER
 /*
 0-450px: Phone portrait

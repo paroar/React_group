@@ -1,5 +1,5 @@
 .grid {
-  margin: 5rem 2rem 10rem 2rem;
+  //margin: 5rem 0 5rem 0;
   display: grid;
   justify-content: center;
 
@@ -37,10 +37,10 @@
 }
 
 .grid--actor {
-  margin: 5rem 0 0;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(1, auto);
+
   & > a {
     margin: 1rem;
     & > img {
@@ -49,15 +49,19 @@
   }
 
   @include respond(desktop4k) {
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(8, auto);
   }
 
   @include respond(desktop2k) {
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(4, auto);
   }
 
   @include respond(tablet-land) {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @include respond(tablet-port) {
+    grid-template-columns: repeat(2, auto);
   }
 
 

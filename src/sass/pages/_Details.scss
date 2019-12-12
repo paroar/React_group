@@ -3,40 +3,47 @@
   padding: 2.5rem;
   margin-top: 3rem;
 
-  .back {
-    transform: perspective(40rem);
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-size: contain !important;
-  }
-
   &--movieInfo {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
     justify-content: center;
-    flex-direction: column;
+    padding: 2rem;
+    @include box;
 
-    img {
-      height: auto;
-      margin: auto;
+    @include respond(desktop4k) {
+      grid-template-columns: repeat(2, auto);
+    }
+  
+    @include respond(desktop2k) {
+      grid-template-columns: repeat(2, auto);
+    }
+  
+    @include respond(phone-port) {
+      grid-template-columns: repeat(1, auto);
+    }
+
+    &--portrait{
+      width: 100% !important;
+      height: auto !important;
     }
 
     &--grid {
-      background-color: rgba(100, 100, 100, 0.2);
+      background-color: rgba(255, 255, 255, 0.1);
       padding: 1rem;
-      margin: 5rem auto 0;
+      margin-top: 2rem;
       border-radius: 2px;
       white-space: pre-line;
 
       @include respond(desktop4k) {
-        width: 65%;
+        margin: 0 0 0 2rem;
       }
-
+    
       @include respond(desktop2k) {
-        width: 75%;
+        margin: 0 0 0 2rem;
       }
-
-      @include respond(desktop) {
-        width: 85%;
+    
+      @include respond(phone-port) {
+        margin: 2rem 0 0 0;
       }
 
       h1 {
@@ -59,4 +66,8 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+.cast, .similars{
+  @include box;
 }

@@ -2,9 +2,10 @@
   color: white;
   border-radius: 2px;
   padding: 1.5rem 2.5rem;
-  //font-size: 2rem;
-  //font-size: 3rem;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  
 }
 
 .separator {
@@ -14,8 +15,8 @@
       content: "";
       position: absolute;
       background-color: white;
-      height: 0.1rem;
-      width: 80vw;
+      height: 1px;
+      width: 70vw;
       left: 50%;
       transform: translateX(-50%);
       top: 85%;

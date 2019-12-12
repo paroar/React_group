@@ -5,6 +5,7 @@ import { GridProps } from "../utils/types";
 import Card from "./Card";
 
 const Grid: React.FC<GridProps> = props => {
+  console.log(props)
   if (!props) {
     return null;
   } else {
@@ -12,11 +13,11 @@ const Grid: React.FC<GridProps> = props => {
       <>
         {props.arr.map(movie =>
           movie.poster_path ? (
-            <Card poster_path={movie.poster_path}>
-              <Link key={movie.id} to={`/catalogue/${movie.id}`}>
+            <Link key={movie.id} to={`/catalogue/${movie.id}`}>
+              <Card title={movie.title} vote={movie.vote_average}>
                 <Poster key={movie.id} imgPath={movie.poster_path} />
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           ) : null
         )}
       </>

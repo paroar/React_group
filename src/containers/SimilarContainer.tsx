@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PosterMovie, MovieIdProps } from "../utils/types";
 import Grid from "../components/Grid";
 import { urls } from "../utils/urls";
+import Heading from "../components/Heading";
 
 const SimilarContainer: React.FC<MovieIdProps> = props => {
   const [state, changeState] = useState({
@@ -28,8 +29,11 @@ const SimilarContainer: React.FC<MovieIdProps> = props => {
     return <div>didn't get movies</div>;
   }
   return (
-    <div className="grid">
-      <Grid arr={state.movies} />
+    <div className="similars">
+      <Heading>Similars</Heading>
+      <div className="grid">
+        <Grid arr={state.movies} />
+      </div>
     </div>
   );
 };
