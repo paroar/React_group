@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Chevron from "./Chevron";
+import Plus from "./Plus";
 
 type AccordionProps = {
     title: string;
@@ -29,11 +29,11 @@ const Accordion = (props: AccordionProps) => {
         <div className="accordion-section">
             <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
                 <p className="accordion-title">{props.title}</p>
-                <Chevron 
+                <Plus 
                     width={20}
                     fill={"white"}
                     height="1.2rem"
-                    chevronClass={`${setRotate}`}
+                    plusClass={`${setRotate}`}
                 />
             </button>
             <div ref={content} style={{maxHeight: `${setHeight}`}} className="accordion-content">
