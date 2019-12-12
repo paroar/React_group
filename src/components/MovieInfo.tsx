@@ -11,7 +11,7 @@ const MovieInfo: React.FC<MovieInfoProps> = props => {
     <div data-testid="details-page" className="details">
       <div className="back">
         <div className="details--movieInfo">
-          <Card/>
+          <Card poster_path={props.movie.poster_path}/>
           <TextMovieInfo {...props.movie} />
         </div>
       </div>
@@ -22,4 +22,3 @@ const MovieInfo: React.FC<MovieInfoProps> = props => {
 };
 
 export default MovieInfo;
-//poster_path={props.movie.poster_path}

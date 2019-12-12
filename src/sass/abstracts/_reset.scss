@@ -18,8 +18,8 @@ ul {
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 185px;
+  height: 277.5px;
   border-radius: 2px;
 }
 
@@ -29,31 +29,29 @@ picture {
 }
 
 .card {
-  perspective: 100px;
-  position: relative;
-  height: 10rem;
-  width: 10rem;
-  transition: all 1s;
+  perspective: 50rem;
+  -ms-perspective: 50rem;
+  width: 185px;
+  height: 277.5px;
 
-  &__side{
-    background-color: orangered;
-    height: 10rem;
-    top: 0;
-    left: 0;
-    width: 10rem;
+  &__side {
+    transition: all 1s;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 185px;
+    height: 277.5px;
 
-    &--front{
-        background-color: orange;
+    &--back {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: rotateY(180deg);
     }
-
-    &--back{
-        background-color: blue;
-        transform: rotateY(180deg);
-    }
-
   }
-  &:hover{
-    transform: rotateY(180deg);
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
   }
-
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
 }
