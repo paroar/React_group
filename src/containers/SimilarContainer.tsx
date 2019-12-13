@@ -31,7 +31,7 @@ const SimilarContainer: React.FC<MovieIdProps> = props => {
   return (
     <div className="similars">
       <Heading>Similars</Heading>
-      <div className="grid">
+      <div className="grid--similar">
         <Grid arr={state.movies} />
       </div>
     </div>

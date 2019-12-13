@@ -36,6 +36,35 @@
   }
 }
 
+.grid--similar{
+  display: grid;
+  justify-content: center;
+
+  & > * {
+    margin: 1rem;
+  }
+
+  @include respond(desktop4k) {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  @include respond(desktop2k) {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @include respond(tablet-land) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include respond(phone-land) {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
 .grid--actor {
   display: grid;
   justify-content: center;
@@ -49,7 +78,7 @@
   }
 
   @include respond(desktop4k) {
-    grid-template-columns: repeat(8, auto);
+    grid-template-columns: repeat(4, auto);
   }
 
   @include respond(desktop2k) {
@@ -57,19 +86,15 @@
   }
 
   @include respond(tablet-land) {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
   }
 
   @include respond(tablet-port) {
     grid-template-columns: repeat(2, auto);
   }
 
-
   @include respond(phone-land) {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  @include respond(phone-port) {
     grid-template-columns: repeat(1, auto);
   }
+
 }

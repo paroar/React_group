@@ -1,13 +1,14 @@
 .details {
   border-radius: 2px;
-  padding: 2.5rem;
-  margin-top: 3rem;
+  padding: 0.1rem 2rem;
+  margin-top: 6rem;
 
   &--movieInfo {
     display: grid;
     grid-template-columns: repeat(1, auto);
     justify-content: center;
     padding: 2rem;
+    width: 70%;
     @include box;
 
     @include respond(desktop4k) {
