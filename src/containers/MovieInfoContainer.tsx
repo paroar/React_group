@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieInfo from "../components/MovieInfo";
 import { urls } from "../utils/urls";
 import { FetchMovie, MovieInfoContainerProps } from "../utils/types";
-import SimilarContainer from "./SimilarContainer";
+import SlugContext from "../components/SlugContext";
 
 const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
   const [state, changeState] = useState({
@@ -30,9 +30,9 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
     return <div>didn't get info</div>;
   }
   return (
-    <MovieInfo movie={state.movie}>
-      <SimilarContainer slug={props.slug} />
-    </MovieInfo>
+    <SlugContext.Provider value={props}>
+      <MovieInfo movie={state.movie} />
+    </SlugContext.Provider>
   );
 };
 

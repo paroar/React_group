@@ -20,6 +20,10 @@
       left: 50%;
       transform: translateX(-50%);
       top: 85%;
+
+      @include respond(desktop4k) {
+        width: 70%;
+      }
     }
   }
 }

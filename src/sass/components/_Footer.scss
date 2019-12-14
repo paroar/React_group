@@ -6,16 +6,16 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-  background-color: rgba(27, 27, 27, 1);
-  border-top: 2px solid rgba(255,255,255,0.05);
+  background-color: $main-black;
+  border-top: 2px solid $off-white;
 
   &--copyright {
     margin: 0 auto;
     &--opacity {
-      color: #ffffff80;
+      color: $off-white;
     }
     &--name{
-      color: rgb(247, 108, 94);
+      color: $first-color;
     }
   }
 

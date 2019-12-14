@@ -9,11 +9,11 @@
         //font-size: 1.5rem;
         padding: 1rem 2rem;
         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-        border: 1px solid white;
-        color: black;
+        border: 1px solid $main-white;
+        color: $main-black;
         border-radius: 0.2rem;
         margin-top: 2rem;
-        background-color: white;
+        background-color: $main-white;
         &:hover {
             cursor: pointer;
         }
@@ -21,12 +21,12 @@
 }
 
 .help-box {
-    background-color: rgba($color: #000000, $alpha: 0.8);
-    border: 1px solid white;
+    background-color: $off-black;
+    border: 1px solid $main-white;
     padding: 2.5rem;
     border-radius: 0.6rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-    color: white;
+    color: $main-white;
     height: 22rem;
     width: 15rem;
     display: flex;
@@ -38,8 +38,8 @@
 }
 
 .help-wrapper .icons {
-    background: white;
-    color: rgba($color: #000000, $alpha: 0.9);
+    background: $main-white;
+    color: $off-black;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;

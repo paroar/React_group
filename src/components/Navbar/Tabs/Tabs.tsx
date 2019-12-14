@@ -24,11 +24,11 @@ const Tab: React.FC<TabProps> = ({ name, path, fn }) => {
   );
 };
 
-const Tabs: React.FC<TabsProps> = props => {
+const Tabs: React.FC<TabsProps> = ({ not }) => {
   return (
     <ul className="navbar--list">
       {tabList.map(tab => (
-        <Tab name={tab.name} path={tab.path} fn={props.not} />
+        <Tab key={tab.path} name={tab.name} path={tab.path} fn={not} />
       ))}
     </ul>
   );

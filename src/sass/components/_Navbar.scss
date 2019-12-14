@@ -1,6 +1,6 @@
 .overlay {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: $off-black;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,10 +19,9 @@
       letter-spacing: 3px;
       & > a {
         padding: 1rem 5rem;
-      }
-
-      &:hover {
-        color: rgb(247, 108, 94);
+        &:hover {
+          color: $first-color;
+        }
       }
     }
   }
