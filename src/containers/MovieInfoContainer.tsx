@@ -16,7 +16,7 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
       "movie/" +
       props.slug +
       urls.apikey +
-      "&append_to_response=videos,credits";
+      "&append_to_response=videos,credits,external_ids,images";
     fetch(url)
       .then(response => response.json())
       .then(movie => changeState({ loading: false, movie: movie }));

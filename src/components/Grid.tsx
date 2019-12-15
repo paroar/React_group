@@ -5,7 +5,6 @@ import { GridProps } from "../utils/types";
 import Card from "./Card";
 
 const Grid: React.FC<GridProps> = props => {
-  console.log(props)
   if (!props) {
     return null;
   } else {

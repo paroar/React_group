@@ -28,6 +28,9 @@ const SimilarContainer: React.FC<MovieIdProps> = props => {
   if (!state.movies) {
     return <div>didn't get movies</div>;
   }
+  if(state.movies.length===0){
+    return null;
+  }
   return (
     <div className="similars">
       <Heading>Similars</Heading>

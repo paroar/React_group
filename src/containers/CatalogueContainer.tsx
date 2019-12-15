@@ -34,6 +34,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   if (state.movies.length === 0) {
     return <div>didn't get info</div>;
   }
+  console.log(state.movies)
   return <Grid arr={state.movies} />;
 };
 

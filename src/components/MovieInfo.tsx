@@ -5,10 +5,10 @@ import Cast from "./Cast";
 import Poster from "./Poster";
 import SimilarContainer from "../containers/SimilarContainer";
 import SlugContext from "./SlugContext";
+import ReviewsContainer from "../containers/ReviewsContainer";
 
 const MovieInfo: React.FC<MovieInfoProps> = ({movie}) => {
-  console.log(movie);
-
+  console.log(movie)
   const backStyle = {
     background: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path}) no-repeat center center fixed`
   };
@@ -28,6 +28,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({movie}) => {
       </div>
       <Cast credits={movie.credits} />
       <SimilarContainer slug={slug} />
+      <ReviewsContainer slug={slug} />
     </div>
   );
 };

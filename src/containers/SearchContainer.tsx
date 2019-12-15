@@ -22,7 +22,7 @@ class Search extends React.Component {
       urls.domain +
       "search/movie" +
       urls.apikey +
-      "&language=en-US&page=1&query=" +
+      "&sort_by=popularity.desc&language=en-US&page=1&query=" +
       title;
     this.setState({ searchVersion: newSearchVersion }, () => {
       fetch(url)

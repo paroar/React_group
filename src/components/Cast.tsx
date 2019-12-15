@@ -6,9 +6,17 @@ import Heading from "./Heading";
 import Card from "./Card";
 
 const pickFromArr = (xs: Pick[]) => {
+  console.log(xs);
+  if(typeof xs[0] == "undefined"){
+    console.log("SOY UNDEFINED")
+    return [];
+  }
+  let n = 0;
+  xs.length < 8 ? n = 4 : n = 8;
   let ys = [];
-  for (let i = 0; i < 8; i++) {
-    if (xs[i].profile_path !== null) {
+  console.log("No SOY UNDEFINED")
+  for (let i = 0; i < n; i++) {
+    if (xs[i].profile_path != "undefined" && xs[i].profile_path != null) {
       ys.push(xs[i]);
     }
   }
@@ -20,13 +28,16 @@ const Cast: React.FC<CastProps> = props => {
     return null;
   } else {
     const cast = pickFromArr(props.credits.cast);
+    if(cast.length === 0){
+      return null;
+    }
     return (
       <div className="cast">
         <Heading>Cast</Heading>
         <div className="grid--actor">
           {cast.map(crew => (
             <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
-              <Card title="" vote="" backdrop_path="">
+              <Card title="" backdrop_path="">
                 <Poster key={crew.profile_path} imgPath={crew.profile_path} />
               </Card>
             </Link>

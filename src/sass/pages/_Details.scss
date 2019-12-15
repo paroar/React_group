@@ -1,6 +1,6 @@
 .details {
   border-radius: 2px;
-  padding: 0.1rem 2rem;
+  padding: 1px 0;
   margin-top: 6rem;
 
   &--movieInfo {
@@ -30,7 +30,7 @@
     }
 
     &--grid {
-      background-color: $off-white;
+      background-color: $off-grey;
       padding: 1rem;
       margin-top: 2rem;
       border-radius: 2px;
@@ -49,14 +49,14 @@
       }
 
       h1 {
-        padding: 0 0 3rem;
+        padding: 0.5rem 0;
       }
       h2 {
-        padding: 0 0 2rem;
+        padding: 0.5rem 0;
       }
       h3,
       p {
-        padding: 0 0 1rem;
+        padding: 0.5rem 0;
         letter-spacing: 1px;
       }
     }
@@ -70,6 +70,6 @@
   }
 }
 
-.cast, .similars{
+.cast, .similars, .reviews{
   @include box;
 }
