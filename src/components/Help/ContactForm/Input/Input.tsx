@@ -1,22 +1,10 @@
 import React from "react";
 
-// export type InputProps = {
-//   element: input | textarea | select, etc
-//   elementType: string;
-//   elementId?: string | undefined;
-//   inputType?: string;
-//   inputValue?: string | number | string[] | undefined;
-//   placeholderText?: string;
-//   atributos label:
-//   labelName?: string;
-//   labelContent?: string;
-//   labelContentBold?: string;
-// };
-
 export type InputProps = {
+  //elementType: input | textarea | select, etc
   elementType: string,
   elementConfig: {
-    type: string,
+    type?: string,
     placeholder?: string
   },
   labelConfig: {
@@ -27,7 +15,6 @@ export type InputProps = {
   value: string | string[] | undefined
 }
 
-
 const Input = (props: InputProps) => {
   let element = null;
   switch (props.elementType) {
@@ -35,8 +22,6 @@ const Input = (props: InputProps) => {
       element = (
         <input
           {...props.elementConfig}
-          // value={props.inputValue}
-          // id={props.elementId}
           aria-label="input"
           className="input-element"
           required

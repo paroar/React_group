@@ -1,54 +1,95 @@
-import React from "react";
-import Input from "../Help/ContactForm/Input/Input";
+import React, { Component } from "react";
+import Input, { InputProps } from "../Help/ContactForm/Input/Input";
 
-const SignUpForm: React.FC = () => {
-    return (
-        <div className="form-container contact-form-content sign-up-container">
-            <form action="#" className="sign-up-form">
-                <h2>Sign Up</h2>
-                <Input
-                    labelName="first-name"
-                    labelContent="First Name"    
-                    inputName="input"
-                    inputType="text"
-                />
-                <Input
-                    labelName="last-name"
-                    labelContent="Last Name"    
-                    inputName="input"
-                    inputType="text"
-                />
-                 <Input
-                    labelName="username"
-                    labelContent="Username"    
-                    inputName="input"
-                    inputType="text"
-                />
-                <Input
-                    labelName="email"
-                    labelContent="Email Address"    
-                    inputName="input"
-                    inputType="email"
-                />
-                <Input
-                    labelName="password"
-                    labelContent="Password"    
-                    inputName="input"
-                    inputType="password"
-                />
-                <Input
-                    labelName="password_repeat"
-                    labelContent="Repeat Password"    
-                    inputName="input"
-                    inputType="password"
-                />
-                <button className="btn-form">
-                    Send
-                </button>
+class SignUpForm extends Component {
+    state = {
+        signUp: {
+            first_name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    labelName: 'first_name',
+                    labelContent: 'First Name'
+                },
+                value: ''
+            },
+            last_name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    labelName: 'last_name',
+                    labelContent: 'Last Name'
+                },
+                value: ''
+            },
+            username: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    labelName: 'username',
+                    labelContent: 'Userame'
+                },
+                value: ''
+            },
+            password: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'password',
+                    labelName: 'password',
+                    labelContent: 'Password'
+                },
+                value: ''
+            },
+            password_repeat: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'password',
+                    labelName: 'password_repeat',
+                    labelContent: 'Repeat Password'
+                },
+                value: ''
+            },
+            submit: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'submit',
+                    labelName: 'submit_signup',
+                },
+                value: ''
+            }
+            //para select podría ser -> options: [{value: '', name: '', etc}]
+        }
+    }
+
+    render() {
+        const formElements: {id: string, config: InputProps}[] = [];
+        for (let key in this.state.signUp) {
+            //name, street, etc
+            formElements.push({
+                id: key,
+                //@ts-ignore
+                config: this.state.signUp[key]
+            });
+        }
+        let form = (
+            <form>
+                {formElements.map((formElement) => {
+                    <Input
+                        key = {formElement.id}
+                        elementType = {formElement.config.elementType}
+                        elementConfig = {formElement.config.elementConfig}
+                        labelConfig = {formElement.config.labelConfig}
+                        value = {formElement.config.value}
+                    />
+                })}
             </form>
-        </div>
-        
-    );
-};
+        );
+
+        return (
+            <div></div>
+        )
+    }
+}
+
 
 export default SignUpForm;
