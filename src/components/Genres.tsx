@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieGenres } from "../utils/types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Genre = styled.span`
   display: inline-block;
@@ -22,6 +23,10 @@ const GenreTags = styled.div`
   margin: 1rem auto;
 `;
 
+const id = (paramId: number) => {
+  return {pathname: "/Catalogue", param1: paramId}
+}
+
 const Genres: React.FC<MovieGenres> = props => {
   if (!props.genres) {
     return null;
@@ -29,7 +34,9 @@ const Genres: React.FC<MovieGenres> = props => {
     return (
       <GenreTags>
         {props.genres.map(genre => (
-          <Genre key={genre.id}>{genre.name}</Genre>
+          <Link to={id(genre.id)}>
+            <Genre key={genre.id}>{genre.name}</Genre>
+          </Link>
         ))}
       </GenreTags>
     );

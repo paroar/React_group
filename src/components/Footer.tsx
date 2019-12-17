@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer--socialmedia">
-        {[].map.call(icons, ({ icon, className, url }: AnchorProps) => (
+        {icons.map(({ icon, className, url }: AnchorProps) => (
           <Anchor key={url} icon={icon} className={className} url={url}/>
         ))}
       </div>

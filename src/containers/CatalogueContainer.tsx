@@ -11,12 +11,14 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   });
 
   useEffect(() => {
+    const id = props.id ? "&with_genres=" + props.id : "";
     const url =
       urls.domain +
       "movie/now_playing" +
       urls.apikey +
       "&page=" +
-      state.currentPage;
+      state.currentPage + 
+      id;
     fetch(url)
       .then(response => response.json())
       .then(movies =>
