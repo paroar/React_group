@@ -22,9 +22,9 @@ type Review = {
 const Reviews: React.FC<ReviewsType> = (props: any) => {
   return (
     <>
-      {[].map.call(props.reviews, _review => (
-        <Accordion title={_review["author"]}>
-          <p>{_review["content"]}</p>
+      {[].map.call(props.reviews, review => (
+        <Accordion key={review["id"]} title={review["author"]}>
+          <p>{review["content"]}</p>
         </Accordion>
       ))}
       <Link to="/user">

@@ -46,8 +46,8 @@ const HomePage = () => {
       </h1>
       <Hero hero="homeHero">
         <div className="table-icons">
-          {[].map.call(tabs, ({ name, logo }: IconProps) => (
-            <Icon name={name} logo={logo} />
+          {tabs.map(({ name, logo, id }) => (
+            <Icon key={id} name={name} logo={logo} />
           ))}
         </div>
       </Hero>
