@@ -1,7 +1,70 @@
-import React from "react";
-import Input from "./Input/Input";
-/*import SideImage from "./../../../img/2001.jpg";*/
+import React, { Component } from "react";
+import Input, { InputProps } from "./Input/Input";
 
+class ContactForm extends React.Component {
+    state = {
+        contact: {
+            person_name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                },
+                labelConfig: {
+                    labelName: 'first_name',
+                    labelContent: 'Your ',
+                    labelContentBold: 'Name *'
+                },
+                value: ''
+            },
+            person_email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                },
+                labelConfig: {
+                    labelName: 'person_email',
+                    labelContent: 'Your ',
+                    labelContentBold: 'E-mail *'
+                },
+                value: ''
+            },
+            subject: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                },
+                labelConfig: {
+                    labelName: 'subject',
+                    labelContent: 'Subject'
+                },
+                value: ''
+            },
+            message: {
+                elementType: 'textarea',
+                elementConfig: {
+                    placeholder: 'Write your message here...'
+                },
+                labelConfig: {
+                    labelName: 'message'
+                },
+                value: ''
+            }
+        }
+    }
+
+    render() {
+        const formElements: {id: string, config: InputProps}[] = [];
+        return (
+
+        );
+    };
+}
+
+export default ContactForm;
+
+
+/*import SideImage from "./../../../img/2001.jpg";*/
+/*
 const ContactForm = () => {
     return (
         <div className="contact-form-wrapper">
@@ -10,7 +73,7 @@ const ContactForm = () => {
             <div className="contact-form-content">
                 <form action="" className="help-form">
                     <h2>Get in touch</h2>
-                    <Input 
+                    <Input
                         labelName="person-name"
                         labelContent="Your "
                         labelContentBold="Name *"
@@ -41,8 +104,7 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm;
-
+*/
 
 
 /*<img src={SideImage} alt="contact"/>*/

@@ -8,6 +8,8 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
+                },
+                labelConfig: {
                     labelName: 'first_name',
                     labelContent: 'First Name'
                 },
@@ -17,6 +19,8 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
+                },
+                labelConfig: {
                     labelName: 'last_name',
                     labelContent: 'Last Name'
                 },
@@ -26,8 +30,10 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
+                },
+                labelConfig: {
                     labelName: 'username',
-                    labelContent: 'Userame'
+                    labelContent: 'Username'
                 },
                 value: ''
             },
@@ -35,6 +41,8 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
+                },
+                labelConfig: {
                     labelName: 'password',
                     labelContent: 'Password'
                 },
@@ -44,6 +52,8 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
+                },
+                labelConfig: {
                     labelName: 'password_repeat',
                     labelContent: 'Repeat Password'
                 },
@@ -53,6 +63,8 @@ class SignUpForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'submit',
+                },
+                labelConfig: {
                     labelName: 'submit_signup',
                 },
                 value: ''
@@ -62,31 +74,34 @@ class SignUpForm extends Component {
     }
 
     render() {
-        const formElements: {id: string, config: InputProps}[] = [];
-        for (let key in this.state.signUp) {
+        const formElements = {...this.state};
+        //const formElements: {id: string, config: InputProps}[] = [];
+        //for (let key in this.state.signUp) {
             //name, street, etc
-            formElements.push({
-                id: key,
-                //@ts-ignore
-                config: this.state.signUp[key]
-            });
-        }
+            // formElements.push({
+            //     id: key,
+            //     config: this.state.signUp[key]
+            // });
+        //}
         let form = (
             <form>
-                {formElements.map((formElement) => {
+                {[].map.call(formElements,(formElement) => {
                     <Input
-                        key = {formElement.id}
-                        elementType = {formElement.config.elementType}
-                        elementConfig = {formElement.config.elementConfig}
-                        labelConfig = {formElement.config.labelConfig}
-                        value = {formElement.config.value}
+                        key = {formElement["id"]}
+                        elementType = {formElement["config"]["elementType"]}
+                        elementConfig = {formElement["config"]["elementConfig"]}
+                        labelConfig = {formElement["config"]["labelConfig"]}
+                        value = {formElement["config"]["value"]}
                     />
                 })}
             </form>
         );
 
         return (
-            <div></div>
+            <div>
+                <h2>Create Your Account</h2>
+                <button type="submit">Sign Up</button>
+            </div>
         )
     }
 }
