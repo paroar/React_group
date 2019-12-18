@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Input, { InputProps } from "./Input/Input";
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
     state = {
         contact: {
             person_name: {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
+                    required: true
                 },
                 labelConfig: {
                     labelName: 'first_name',
@@ -20,6 +21,7 @@ class ContactForm extends React.Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
+                    required: true
                 },
                 labelConfig: {
                     labelName: 'person_email',
@@ -32,6 +34,7 @@ class ContactForm extends React.Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
+                    required: true
                 },
                 labelConfig: {
                     labelName: 'subject',
@@ -52,59 +55,54 @@ class ContactForm extends React.Component {
         }
     }
 
+    handleInputChange = (event: { target: any; }, inputId: string) => {
+        const updatedForm = {...this.state.contact};
+        //@ts-ignore
+        const updatedElement = {...updatedForm[inputId]};
+        updatedElement.value = event.target.value;
+        //@ts-ignore
+        updatedForm[inputId] = updatedForm;
+        this.setState({contact: updatedForm});
+    }
+
     render() {
         const formElements: {id: string, config: InputProps}[] = [];
-        return (
+        for (let key in this.state.contact) {
+            formElements.push({
+                id: key,
+                //@ts-ignore
+                config: this.state.contact[key]
+            });
+        }
 
+        let form = (
+            <form className="help-form">
+                <h2>Get in touch</h2>
+                {formElements.map(formElement => (
+                    <Input
+                        key = {formElement.id}
+                        elementType = {formElement.config.elementType}
+                        elementConfig = {formElement.config.elementConfig}
+                        labelConfig = {formElement.config.labelConfig}
+                        value = {formElement.config.value}
+                    /> 
+                ))}
+                <button className="btn-form">
+                    Send
+                </button>
+            </form>
         );
+
+        return (
+            <div className="contact-form-wrapper">
+                <div className="contact-form-image"></div>
+                <div className="contact-form-content">
+                    {form}
+                </div>
+            </div>
+        );
+
     };
 }
 
 export default ContactForm;
-
-
-/*import SideImage from "./../../../img/2001.jpg";*/
-/*
-const ContactForm = () => {
-    return (
-        <div className="contact-form-wrapper">
-            <div className="contact-form-image">
-            </div>
-            <div className="contact-form-content">
-                <form action="" className="help-form">
-                    <h2>Get in touch</h2>
-                    <Input
-                        labelName="person-name"
-                        labelContent="Your "
-                        labelContentBold="Name *"
-                        inputName="input"
-                        inputType="text"
-                    ></Input>
-                    <Input 
-                        labelName="person-email"
-                        labelContent="Your "
-                        labelContentBold="Email *"
-                        inputName="input"
-                        inputType="email"
-                    ></Input>
-                    <Input 
-                        labelName="subject"
-                        labelContent="Subject"
-                        inputName="input"
-                        inputType="text"
-                    ></Input>
-                    <textarea aria-label="Textarea" placeholder="Write your message here..."></textarea>
-                    <button className="btn-form">
-                        Send
-                    </button>
-
-                </form>
-            </div>
-        </div>
-    )
-}
-
-*/
-
-
-/*<img src={SideImage} alt="contact"/>*/

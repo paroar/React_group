@@ -12,7 +12,8 @@ export type InputProps = {
     labelContent?: string,
     labelContentBold?: string
   },
-  value: string | string[] | undefined
+  value: string | string[] | undefined,
+  changed?: any
 }
 
 const Input = (props: InputProps) => {
@@ -24,7 +25,7 @@ const Input = (props: InputProps) => {
           {...props.elementConfig}
           aria-label="input"
           className="input-element"
-          required
+          onChange={props.changed}
         />
       );
       break;
@@ -34,6 +35,7 @@ const Input = (props: InputProps) => {
           {...props.elementConfig}
           aria-label="Select" 
           className="input-select"
+          onChange={props.changed}
         >
         </select>
       );
@@ -44,6 +46,7 @@ const Input = (props: InputProps) => {
           {...props.elementConfig}
           aria-label="Textarea"
           className="input-textarea"
+          onChange={props.changed}
         />
       );
       break;
