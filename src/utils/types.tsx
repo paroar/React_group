@@ -36,8 +36,12 @@ export type MovieInfoProps = {
   movie: FetchMovie;
 };
 export type CatalogueContainerProps = {
-  page: number;
+  page?: number;
   id?: string;
+  genre?: string;
+  sort?: string;
+  order?: string;
+  rating?: string;  
 };
 export type ActorIdProps = {
   slug: string;

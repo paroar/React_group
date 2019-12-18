@@ -18,7 +18,7 @@ const CataloguePage = (props: any) => {
     };
   }, [state]);
 
-  console.log(props);
+  console.log(props)
   if (props.location.param1) {
     return (
       <div className="grid">
@@ -27,11 +27,32 @@ const CataloguePage = (props: any) => {
         ))}
       </div>
     );
+  } else if (
+    props.location.param2 ||
+    props.location.param3 ||
+    props.location.param4 ||
+    props.location.param5
+  ) {
+    console.log("PARAMS")
+    return (
+      <div className="grid">
+        {state.currentPage.map(x => (
+          <CatalogueContainer
+            key={x}
+            page={x}
+            genre={props.location.param2}
+            sort={props.location.param3}
+            order={props.location.param4}
+            rating={props.location.param5}
+          />
+        ))}
+      </div>
+    );
   } else {
     return (
       <div className="grid">
         {state.currentPage.map(x => (
-          <CatalogueContainer key={x} page={x}/>
+          <CatalogueContainer key={x} page={x} />
         ))}
       </div>
     );

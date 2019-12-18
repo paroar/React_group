@@ -11,14 +11,54 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   });
 
   useEffect(() => {
-    const id = props.id ? "&with_genres=" + props.id : "";
-    const url =
-      urls.domain +
-      "movie/now_playing" +
-      urls.apikey +
-      "&page=" +
-      state.currentPage + 
-      id;
+    var url = "";
+    if (props.id) {
+      const id = "&with_genres=" + props.id;
+      url =
+        urls.domain +
+        "movie/now_playing" +
+        urls.apikey +
+        "&page=" +
+        state.currentPage +
+        id;
+      console.log("URLTAG", url);
+    } else if (props.genre || props.sort || props.order || props.rating) {
+      const genre = props.genre !== "" ? `&with_genres=${props.genre}` : "";
+      const sort = props.sort !== "" ? `&sort_by=${props.sort}` : "";
+      var order = "";
+      if(sort === ""){
+        order = "";
+      }else if(sort !== "" && props.order){
+        order = `.${props.order}`;
+      }else{
+        order = ".desc";
+      }
+      
+      
+      const rating =
+        props.rating !== "" ? `&vote_average.gte=${props.rating}` : "";
+
+      url =
+        urls.domain +
+        "discover/movie" +
+        urls.apikey +
+        genre +
+        sort +
+        order +
+        rating +
+        "&page=" +
+        state.currentPage +
+        "&vote_count.gte=10";
+      console.log("URLPARAM", url);
+    } else {
+      url =
+        urls.domain +
+        "movie/now_playing" +
+        urls.apikey +
+        "&page=" +
+        state.currentPage;
+      console.log("URLDEFECT", url);
+    }
     fetch(url)
       .then(response => response.json())
       .then(movies =>
@@ -28,7 +68,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
           currentPage: props.page
         })
       );
-  },[props, state.currentPage]);
+  }, [props, state.currentPage]);
 
   if (state.loading) {
     return <div>loading...</div>;
@@ -36,7 +76,6 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   if (state.movies.length === 0) {
     return <div>didn't get info</div>;
   }
-  console.log(state.movies)
   return <Grid arr={state.movies} />;
 };
 
