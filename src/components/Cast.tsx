@@ -6,15 +6,10 @@ import Heading from "./Heading";
 import Card from "./Card";
 
 const pickFromArr = (xs: Pick[]) => {
-  console.log(xs);
-  if(typeof xs[0] == "undefined"){
-    console.log("SOY UNDEFINED")
-    return [];
-  }
+  console.log("XS",xs);
   let n = 0;
-  xs.length < 8 ? n = 4 : n = 8;
+  xs.length < 8 ? n = xs.length : n = 8;
   let ys = [];
-  console.log("No SOY UNDEFINED")
   for (let i = 0; i < n; i++) {
     if (xs[i].profile_path != "undefined" && xs[i].profile_path != null) {
       ys.push(xs[i]);
