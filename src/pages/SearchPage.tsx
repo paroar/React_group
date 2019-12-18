@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import SearchContainer from "../containers/SearchContainer";
 import { ids } from "../utils/ids";
 import { Link } from "react-router-dom";
 
 const ratings = Array.from({ length: 10 }, (_x, i) => i);
 
-const sortBy = ["popularity", "release_date", "revenue","original_title","vote_count" ,"vote_average"];
+const sortBy = [
+  "popularity",
+  "release_date",
+  "revenue",
+  "original_title",
+  "vote_count",
+  "vote_average"
+];
 
 const orderBy = ["desc", "asc"];
 
@@ -41,13 +47,8 @@ const SearchPage = () => {
     };
   };
 
-  console.log("GENRE", genreState);
-  console.log("RATING", ratingState);
-  console.log("SORT", sortState);
-  console.log("ORDER", orderState);
   return (
     <div data-testid="search-page">
-      <SearchContainer />
       <div className="search-container">
         <div className="search-container--filter">
           <select

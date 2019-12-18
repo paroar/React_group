@@ -1,48 +1,44 @@
-.search-container{
-    @include absCenter;
-    top: 35%;
-    width: 100%;
-    background-color: $off-grey;
-    margin: 2rem auto;
+.search-container {
+  width: 100%;
+  background-color: $off-grey;
 
-    &--bar{
-        position: relative;
-        padding: 4rem;
+  &--bar {
+    position: relative;
+    padding: 4rem;
 
-        &__input{
-            @include absCenter;
-        }
+    &__input {
+      @include absCenter;
+    }
+  }
+
+  &--filter {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    justify-content: center;
+
+    @include respond(phone-land) {
+      grid-template-columns: repeat(1, auto);
     }
 
-    &--filter{
-        position: relative;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4,auto);
-        gap: 1rem;
-        justify-content: center;
-
-        @include respond(phone-land) {
-            grid-template-columns: repeat(1, auto);
-          }
-
-        &--select{
-            padding: 0.5rem 2rem;
-            border:none;
-            border-radius: 2px;
-            margin: 1rem;
-            width: 4rem;
-        }
+    &--select {
+      padding: 0.5rem 2rem;
+      border: none;
+      border-radius: 2px;
+      margin: 1rem;
+      width: 4rem;
     }
+  }
 
-    &--button{
-        position: relative;
-        padding: 2rem;
-        &__button{
-            @include absCenter;
-            padding: 0.5rem 2rem;
-            background-color: coral;
-        }
+  &--button {
+    position: relative;
+    padding: 2rem;
+    &__button {
+      @include absCenter;
+      padding: 0.5rem 2rem;
+      background-color: coral;
     }
-
+  }
 }

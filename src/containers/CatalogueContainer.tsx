@@ -16,25 +16,15 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
       const id = "&with_genres=" + props.id;
       url =
         urls.domain +
-        "movie/now_playing" +
+        "discover/movie" +
         urls.apikey +
         "&page=" +
         state.currentPage +
         id;
-      console.log("URLTAG", url);
     } else if (props.genre || props.sort || props.order || props.rating) {
       const genre = props.genre !== "" ? `&with_genres=${props.genre}` : "";
-      const sort = props.sort !== "" ? `&sort_by=${props.sort}` : "";
-      var order = "";
-      if(sort === ""){
-        order = "";
-      }else if(sort !== "" && props.order){
-        order = `.${props.order}`;
-      }else{
-        order = ".desc";
-      }
-      
-      
+      const sort = "&sort_by=" + `${props.sort || "popularity"}`;
+      const order = `${props.order || ".desc"}`;
       const rating =
         props.rating !== "" ? `&vote_average.gte=${props.rating}` : "";
 
@@ -49,7 +39,6 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         "&page=" +
         state.currentPage +
         "&vote_count.gte=10";
-      console.log("URLPARAM", url);
     } else {
       url =
         urls.domain +
@@ -57,7 +46,6 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         urls.apikey +
         "&page=" +
         state.currentPage;
-      console.log("URLDEFECT", url);
     }
     fetch(url)
       .then(response => response.json())
