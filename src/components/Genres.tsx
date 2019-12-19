@@ -34,8 +34,8 @@ const Genres: React.FC<MovieGenres> = props => {
     return (
       <GenreTags>
         {props.genres.map(genre => (
-          <Link to={id(genre.id)}>
-            <Genre key={genre.id}>{genre.name}</Genre>
+          <Link key={genre.id} to={id(genre.id)}>
+            <Genre>{genre.name}</Genre>
           </Link>
         ))}
       </GenreTags>

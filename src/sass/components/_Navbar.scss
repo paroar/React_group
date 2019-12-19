@@ -4,7 +4,7 @@ header {
   z-index: 3;
   background-color: $dark-grey;
   border-bottom: 2px solid $off-white;
-  height: 6rem;
+  height: 4rem;
 }
 
 .nav-links {
@@ -33,7 +33,7 @@ header {
     position: sticky;
     background-color: $dark-grey;
     border-bottom: 2px solid $off-white;
-    height: 6rem;
+    height: 4rem;
   }
 
   .line {
@@ -65,6 +65,6 @@ header {
     z-index: 2;
     opacity: 1;
     transition: clip-path 1s ease;
-    clip-path: circle(1400px at 90% -10%);
+    clip-path: circle(1600px at 90% -10%);
   }
 }

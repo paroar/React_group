@@ -7,7 +7,11 @@ export type SearchMovie = {
   title: string;
 };
 
-class SearchContainer extends React.Component {
+type SearchContainerProps = {
+  isOpen: boolean;
+}
+
+class SearchContainer extends React.Component<SearchContainerProps> {
   state = {
     movies: [] as SearchMovie[],
     searchVersion: 0
@@ -42,7 +46,7 @@ class SearchContainer extends React.Component {
   render() {
     return (
       <>
-        <div className="search-input">
+        <div className={this.props.isOpen ? "hidden" : "search-input" }>
           <input
             aria-label="Search..."
             type="text"

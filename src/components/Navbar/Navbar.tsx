@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Tabs from "./Tabs/Tabs";
 import IconMenu from "./IconMenu";
+import SearchContainer from "../../containers/SearchContainer";
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -12,8 +13,8 @@ const Navbar = () => {
   return (
     <header>
       <nav>
+        <SearchContainer isOpen={isOpen}></SearchContainer>
         <IconMenu handleIsOpen={handleIsOpen} isOpen={isOpen}></IconMenu>
-
         <ul
           className={"nav-links " + (isOpen ? "open" : "")}
           onClick={handleIsOpen}

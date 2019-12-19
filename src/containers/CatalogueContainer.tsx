@@ -24,7 +24,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
     } else if (props.genre || props.sort || props.order || props.rating) {
       const genre = props.genre !== "" ? `&with_genres=${props.genre}` : "";
       const sort = "&sort_by=" + `${props.sort || "popularity"}`;
-      const order = `${props.order || ".desc"}`;
+      const order = props.order ? "." + props.order : ".desc";
       const rating =
         props.rating !== "" ? `&vote_average.gte=${props.rating}` : "";
 

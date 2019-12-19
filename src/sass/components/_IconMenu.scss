@@ -1,6 +1,8 @@
 @include respond(tablet-port) {
   .menu {
-    position: fixed;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1rem;
     z-index: 999;
     padding: 2.5rem;
@@ -32,8 +34,9 @@
   }
 
   .cross {
-    position: fixed;
-    top: 0.3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1rem;
     z-index: 999;
     padding: 2.5rem;
