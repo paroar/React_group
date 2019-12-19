@@ -1,47 +1,70 @@
-.header{
+header {
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 999;
-} 
-
-.navbar{
-  height: 5rem;
-  background-color: blue;
-  z-index: 999;
+  z-index: 3;
+  background-color: $dark-grey;
+  border-bottom: 2px solid $off-white;
+  height: 6rem;
 }
 
-.overlay {
-  text-align: center;
-  background-color: $off-black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.nav-links {
+  position: absolute;
+  right: 0;
+  width: 50%;
   height: 100%;
-  z-index: 998;
-  transition: all 650ms;
-  .navbar--list {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    &__li {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      & > a {
-        padding: 1rem 5rem;
-        &:hover {
-          color: $first-color;
-        }
-      }
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: flex;
+  padding-right: 1rem;
+
+  &__li > a {
+    padding: 1rem;
+    transition: all 0.3s ease-out;
+    &:hover {
+      color: $first-color;
     }
   }
 }
 
-.hidden {
-  opacity: 0;
-  z-index: -1 !important;
-  transform: translate(100%, -100%);
+@include respond(tablet-port) {
+  header {
+    position: sticky;
+    background-color: $dark-grey;
+    border-bottom: 2px solid $off-white;
+    height: 6rem;
+  }
+
+  .line {
+    width: 3rem;
+    height: 2px;
+    background: white;
+    margin: 0.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    position: fixed;
+    background: $dark-grey;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    text-transform: uppercase;
+    padding: 0;
+    letter-spacing: 3px;
+    z-index: -2;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    clip-path: circle(100px at 90% -10%);
+  }
+
+  .nav-links.open {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    opacity: 1;
+    transition: clip-path 1s ease;
+    clip-path: circle(1400px at 90% -10%);
+  }
 }

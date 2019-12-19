@@ -18,19 +18,19 @@ type TabProps = {
 
 const Tab: React.FC<TabProps> = ({ name, path, fn }) => {
   return (
-    <li onClick={fn} className="navbar--list__li">
+    <li onClick={fn} className="nav-links__li">
       <Link to={`/${path}`}>{name}</Link>
     </li>
   );
 };
 
-const Tabs: React.FC<TabsProps> = ({ not }) => {
+const Tabs: React.FC<TabsProps> = ({ handleIsOpen }) => {
   return (
-    <ul className="navbar--list">
+    <>
       {tabList.map(tab => (
-        <Tab key={tab.path} name={tab.name} path={tab.path} fn={not} />
+        <Tab key={tab.path} name={tab.name} path={tab.path} fn={handleIsOpen} />
       ))}
-    </ul>
+    </>
   );
 };
 

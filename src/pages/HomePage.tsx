@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../components/Hero";
 import { MdPerson } from "react-icons/md";
 import { IoMdSearch, IoMdHelp } from "react-icons/io";
 import { GiFilmSpool } from "react-icons/gi";
@@ -40,17 +39,15 @@ const Icon: React.FC<IconProps> = ({ name, logo }) => (
 
 const HomePage = () => {
   return (
-    <div data-testid="home-page">
-      <h1 className="maintitle">
-        Welcome to <span className="maintitle-mark">4Birds</span>
-      </h1>
-      <Hero hero="homeHero">
+    <div data-testid="home-page" className="home-page">
+        <h1 className="maintitle">
+          Welcome to <span className="maintitle-mark">4Birds</span>
+        </h1>
         <div className="table-icons">
           {tabs.map(({ name, logo, id }) => (
             <Icon key={id} name={name} logo={logo} />
           ))}
         </div>
-      </Hero>
     </div>
   );
 };

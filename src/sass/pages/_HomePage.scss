@@ -1,19 +1,23 @@
+.home-page{
+  height: calc(100vh - 12rem);
+  background: url("../../img/cinema.jpg") no-repeat center;
+  background-size: cover;
+}
+
 .maintitle {
-  @include absCenter;
-  top: 20%;
+  text-align: center;
+  padding-top: 10%;
 
   &-mark {
     color: $first-color;
   }
-
-  @include respond(phone-land) {
-    display: none;
-  }
 }
 
 .table-icons {
+  text-align: center;
   display: grid;
   justify-content: center;
+  @include absCenter;
 
   @include respond(desktop4k) {
     grid-template-columns: repeat(4, auto);

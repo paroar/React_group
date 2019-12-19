@@ -11,7 +11,7 @@ const pickFromArr = (xs: Pick[]) => {
   xs.length < 8 ? n = xs.length : n = 8;
   let ys = [];
   for (let i = 0; i < n; i++) {
-    if (xs[i].profile_path != "undefined" && xs[i].profile_path != null) {
+    if (xs[i].profile_path !== "undefined" && xs[i].profile_path != null) {
       ys.push(xs[i]);
     }
   }

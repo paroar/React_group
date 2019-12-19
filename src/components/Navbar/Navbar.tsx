@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import Tabs from "./Tabs/Tabs";
 import IconMenu from "./IconMenu";
-import SearchContainer from "../../containers/SearchContainer";
 
 const Navbar = () => {
+  const [isOpen, setisOpen] = useState(false);
+
+  const handleIsOpen = () => {
+    setisOpen(!isOpen);
+  };
+
   return (
-    <header className="header">
-      <nav className="navbar" data-testid="navbar">
-        <SearchContainer/>
-        <IconMenu />
+    <header>
+      <nav>
+        <IconMenu handleIsOpen={handleIsOpen} isOpen={isOpen}></IconMenu>
+
+        <ul
+          className={"nav-links " + (isOpen ? "open" : "")}
+          onClick={handleIsOpen}
+        >
+          <Tabs handleIsOpen={handleIsOpen}></Tabs>
+        </ul>
       </nav>
     </header>
   );

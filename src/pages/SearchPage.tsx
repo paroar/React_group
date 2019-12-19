@@ -56,12 +56,15 @@ const SearchPage = () => {
             name=""
             id=""
             onChange={e => handleGenre(e)}
+            defaultValue=""
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Genre
             </option>
             {ids.genres.map(genre => (
-              <option value={genre.id}>{genre.name}</option>
+              <option key={genre.id} value={genre.id}>
+                {genre.name}
+              </option>
             ))}
           </select>
 
@@ -70,12 +73,15 @@ const SearchPage = () => {
             name=""
             id=""
             onChange={e => handleRating(e)}
+            defaultValue=""
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Rating
             </option>
             {ratings.map(rating => (
-              <option value={rating}>+{rating}</option>
+              <option key={rating} value={rating}>
+                +{rating}
+              </option>
             ))}
           </select>
 
@@ -84,12 +90,15 @@ const SearchPage = () => {
             name=""
             id=""
             onChange={e => handleSort(e)}
+            defaultValue=""
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Sort by
             </option>
             {sortBy.map(sort => (
-              <option value={sort}>{sort}</option>
+              <option key={sort} value={sort}>
+                {sort}
+              </option>
             ))}
           </select>
 
@@ -98,12 +107,15 @@ const SearchPage = () => {
             name=""
             id=""
             onChange={e => handleOrder(e)}
+            defaultValue=""
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Order by
             </option>
             {orderBy.map(order => (
-              <option value={order}>{order}</option>
+              <option key={order} value={order}>
+                {order}
+              </option>
             ))}
           </select>
         </div>

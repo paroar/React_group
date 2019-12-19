@@ -1,15 +1,16 @@
-.menu{
+@include respond(tablet-port) {
+  .menu {
     position: fixed;
     right: 1rem;
     z-index: 999;
     padding: 2.5rem;
     cursor: pointer;
     transition: all 650ms;
-}
+  }
 
-.menu .bar,
-.menu .bar::before,
-.menu .bar::after{
+  .menu .bar,
+  .menu .bar::before,
+  .menu .bar::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -21,16 +22,16 @@
     bottom: 0;
     margin: auto;
     transition: 650ms;
-}
+  }
 
-.menu .bar::before{
+  .menu .bar::before {
     margin-top: -10px;
-}
-.menu .bar::after{
+  }
+  .menu .bar::after {
     margin-top: 10px;
-}
+  }
 
-.cross{
+  .cross {
     position: fixed;
     top: 0.3rem;
     right: 1rem;
@@ -38,10 +39,10 @@
     padding: 2.5rem;
     cursor: pointer;
     transition: all 650ms;
-}
+  }
 
-.cross .bar::before,
-.cross .bar::after{
+  .cross .bar::before,
+  .cross .bar::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -53,20 +54,20 @@
     bottom: 0;
     margin: auto;
     transition: all 650ms;
-}
+  }
 
-.cross .bar{
+  .cross .bar {
     background: transparent;
-}
+  }
 
-.cross .bar::before{
+  .cross .bar::before {
     transform: rotate(-45deg);
-}
-.cross .bar::after{
+  }
+  .cross .bar::after {
     transform: rotate(45deg);
-}
+  }
 
-input[type="text"] {
+  input[type="text"] {
     font-family: monospace;
     font-size: 1.5rem;
   }
@@ -74,3 +75,4 @@ input[type="text"] {
   ::placeholder {
     font-size: 1rem;
   }
+}

@@ -7,7 +7,7 @@ export type SearchMovie = {
   title: string;
 };
 
-class Search extends React.Component {
+class SearchContainer extends React.Component {
   state = {
     movies: [] as SearchMovie[],
     searchVersion: 0
@@ -42,7 +42,7 @@ class Search extends React.Component {
   render() {
     return (
       <>
-        <div>
+        <div className="search-input">
           <input
             aria-label="Search..."
             type="text"
@@ -57,4 +57,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default SearchContainer;

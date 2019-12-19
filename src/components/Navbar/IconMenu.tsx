@@ -1,30 +1,15 @@
-import React, { useState } from "react";
-import Tabs from "./Tabs/Tabs";
+import React from "react";
 
-const IconMenu = () => {
-  const [state, changeState] = useState({ crossed: true });
+type IconMenuProps = {
+  isOpen: boolean;
+  handleIsOpen: () => void;
+};
 
-  const not = () => {
-    changeState({
-      crossed: !state.crossed
-    });
-  };
-
+const IconMenu: React.FC<IconMenuProps> = ({ isOpen, handleIsOpen }) => {
   return (
-    <>
-      <div
-        className={`${state.crossed ? "menu" : "cross"}`}
-        onClick={() => not()}
-      >
-        <span className="bar" />
-      </div>
-      <div
-        className={`overlay ${state.crossed ? "hidden" : "show"}`}
-        onClick={() => not()}
-      >
-        <Tabs not={not.bind(state)} />
-      </div>
-    </>
+    <div className={`${isOpen ? "cross" : "menu"}`} onClick={handleIsOpen}>
+      <span className="bar" />
+    </div>
   );
 };
 

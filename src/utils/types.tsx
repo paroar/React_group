@@ -1,6 +1,5 @@
 import { RouteComponentProps } from "react-router";
 
-
 export type IconProps = {
   name: String;
   logo: JSX.Element;
@@ -8,7 +7,7 @@ export type IconProps = {
 
 export type UrlProps = RouteComponentProps<{ slug: string }>;
 export type TabsProps = {
-  not: any;
+  handleIsOpen: () => void;
 };
 export type ActorProps = {
   info: ActorInfo;
@@ -41,7 +40,7 @@ export type CatalogueContainerProps = {
   genre?: string;
   sort?: string;
   order?: string;
-  rating?: string;  
+  rating?: string;
 };
 export type ActorIdProps = {
   slug: string;
