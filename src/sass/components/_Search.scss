@@ -13,7 +13,7 @@
   transform: translateY(-50%);
   width: 15rem;
 
-  @include respond(tablet-port){
+  @include respond(tablet-port) {
     top: 0;
     right: 10rem;
     text-align: center;
@@ -30,16 +30,48 @@
   }
 }
 
-.search{
+.search {
+  position: absolute;
+  top: 25%;
+
+  &-grid {
+    background: $dark-grey;
     position: absolute;
-    top: 25%;
+    top: calc(4rem + 2px);
+    width: 100%;
+    height: calc(100vh + 4rem + 2px);
+    overflow: scroll;
+
+    &--movie {
+      width: 100%;
+      border-bottom: 2px solid $off-white;
+      display: grid;
+
+      &:hover{
+        background: $off-white;
+      }
+      
+      & > a > picture {
+        margin-right: auto;
+        & > img {
+          width: 50px !important;
+          height: auto;
+          float: left;
+          margin: 1rem;
+        }
+      }
+      & > a > h3 {
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
-.search-input{
+.search-input {
   margin-right: auto;
   width: 50%;
 }
 
-.hidden{
+.hidden {
   display: none;
 }

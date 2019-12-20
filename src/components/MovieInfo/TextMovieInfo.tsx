@@ -1,5 +1,5 @@
 import React from "react";
-import { FetchMovie } from "../utils/types";
+import { FetchMovie } from "../../utils/types";
 import Genres from "./Genres";
 import styled from "styled-components";
 import { GiPopcorn } from "react-icons/gi";

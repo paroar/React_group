@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MovieIdProps } from "../utils/types";
 import { urls } from "../utils/urls";
 import Heading from "../components/Heading";
-import Reviews from "../components/Reviews";
+import Reviews from "../components/MovieInfo/Reviews";
 
 type ReviewsType = {
     id: number;

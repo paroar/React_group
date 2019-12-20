@@ -1,9 +1,9 @@
 import React from "react";
-import Poster from "./Poster";
+import Poster from "../Poster";
 import { Link } from "react-router-dom";
-import { CastProps, Pick } from "../utils/types";
-import Heading from "./Heading";
-import Card from "./Card";
+import { CastProps, Pick } from "../../utils/types";
+import Heading from "../Heading";
+import Card from "../Card";
 
 const pickFromArr = (xs: Pick[]) => {
   console.log("XS",xs);

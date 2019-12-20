@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "./Help/Accordion/Accordion";
+import Accordion from "../Help/Accordion/Accordion";
 import { Link } from "react-router-dom";
 
 type ReviewsType = {

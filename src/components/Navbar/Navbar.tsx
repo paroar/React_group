@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import Tabs from "./Tabs/Tabs";
+import Tabs from "./Tabs";
 import IconMenu from "./IconMenu";
-import SearchContainer from "../../containers/SearchContainer";
+import QuickSearchContainer from "../../containers/QuickSearchContainer";
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
 
   const handleIsOpen = () => {
-    setisOpen(!isOpen);
+    if (window.innerWidth < 900) {
+      setisOpen(!isOpen);
+    }
   };
 
   return (
     <header>
       <nav>
-        <SearchContainer isOpen={isOpen}></SearchContainer>
-        <IconMenu handleIsOpen={handleIsOpen} isOpen={isOpen}></IconMenu>
-        <ul
-          className={"nav-links " + (isOpen ? "open" : "")}
-          onClick={handleIsOpen}
-        >
-          <Tabs handleIsOpen={handleIsOpen}></Tabs>
-        </ul>
+        <QuickSearchContainer isOpen={isOpen} handleIsOpen={handleIsOpen} />
+        <IconMenu isOpen={isOpen} handleIsOpen={handleIsOpen}  />
+        <Tabs
+          isOpen={isOpen}
+          handleIsOpen={handleIsOpen}
+        />
       </nav>
     </header>
   );

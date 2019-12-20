@@ -8,7 +8,7 @@ type BioProps = {
   bio: string;
 };
 
-//@ts-ignore
+
 const Biography: React.FC<BioProps> = ({ bio }) => {
   return bio ? <p>{bio}</p> : <p>No biography yet</p>;
 };

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import TextMovieInfo from "./TextMovieInfo";
-import { MovieInfoProps } from "../utils/types";
+import { MovieInfoProps } from "../../utils/types";
 import Cast from "./Cast";
-import Poster from "./Poster";
-import SimilarContainer from "../containers/SimilarContainer";
-import SlugContext from "./SlugContext";
-import ReviewsContainer from "../containers/ReviewsContainer";
+import Poster from "../Poster";
+import SimilarContainer from "../../containers/SimilarContainer";
+import SlugContext from "../../contexts/SlugContext";
+import ReviewsContainer from "../../containers/ReviewsContainer";
 
 const MovieInfo: React.FC<MovieInfoProps> = ({movie}) => {
   console.log(movie)

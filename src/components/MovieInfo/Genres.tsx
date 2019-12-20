@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieGenres } from "../utils/types";
+import { MovieGenres } from "../../utils/types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 

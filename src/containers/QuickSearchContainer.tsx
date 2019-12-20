@@ -1,21 +1,43 @@
 import React from "react";
 import { urls } from "../utils/urls";
-import SearchDisplay from "../components/SearchDisplay";
+import QuickSearch from "../components/Navbar/QuickSearch";
 
 export type SearchMovie = {
   poster_path: string;
   title: string;
+  id: string;
+  release_date: string;
 };
 
 type SearchContainerProps = {
   isOpen: boolean;
-}
+  handleIsOpen: () => void;
+};
 
 class SearchContainer extends React.Component<SearchContainerProps> {
   state = {
     movies: [] as SearchMovie[],
-    searchVersion: 0
+    searchVersion: 0,
+    input: ""
   };
+
+
+
+  componentDidMount(){
+    const handleEsc = (e: KeyboardEvent) => {
+        if(e.keyCode === 27){
+          this.props.handleIsOpen();
+        }
+    }
+    window.addEventListener("keydown", handleEsc);
+  }
+
+  componentWillUnmount(){
+    const handleEsc = () => {
+      
+    }
+    window.removeEventListener("keydown", handleEsc);
+  }
 
   searchMovies = (title: string) => {
     const { searchVersion } = this.state;
@@ -41,21 +63,32 @@ class SearchContainer extends React.Component<SearchContainerProps> {
 
   handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.searchMovies(e.target.value);
+    this.setState({ input: e.target.value });
+  }
+
+  handleOnClick() {
+    this.searchMovies("");
+    this.setState({ input: "" });
   }
 
   render() {
     return (
       <>
-        <div className={this.props.isOpen ? "hidden" : "search-input" }>
+        <div className={this.props.isOpen ? "hidden" : "search-input"}>
           <input
+            id="search-input"
             aria-label="Search..."
             type="text"
-            placeholder="Search..."
+            placeholder="Quick Search..."
             className="input"
             onChange={e => this.handleOnChange(e)}
+            value={this.state.input}
           />
         </div>
-        <SearchDisplay arr={this.state.movies} />
+        <QuickSearch
+          arr={this.state.movies}
+          handleOnClick={() => this.handleOnClick()}
+        />
       </>
     );
   }

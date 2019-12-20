@@ -7,6 +7,7 @@ export type IconProps = {
 
 export type UrlProps = RouteComponentProps<{ slug: string }>;
 export type TabsProps = {
+  isOpen: boolean;
   handleIsOpen: () => void;
 };
 export type ActorProps = {

@@ -38,7 +38,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         rating +
         "&page=" +
         state.currentPage +
-        "&vote_count.gte=10";
+        "&vote_count.gte=100";
     } else {
       url =
         urls.domain +

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MovieInfo from "../components/MovieInfo";
+import MovieInfo from "../components/MovieInfo/MovieInfo";
 import { urls } from "../utils/urls";
 import { FetchMovie, MovieInfoContainerProps } from "../utils/types";
-import SlugContext from "../components/SlugContext";
+import SlugContext from "../contexts/SlugContext";
 
 const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
   const [state, changeState] = useState({
