@@ -21,24 +21,6 @@ class SearchContainer extends React.Component<SearchContainerProps> {
     input: ""
   };
 
-
-
-  componentDidMount(){
-    const handleEsc = (e: KeyboardEvent) => {
-        if(e.keyCode === 27){
-          this.props.handleIsOpen();
-        }
-    }
-    window.addEventListener("keydown", handleEsc);
-  }
-
-  componentWillUnmount(){
-    const handleEsc = () => {
-      
-    }
-    window.removeEventListener("keydown", handleEsc);
-  }
-
   searchMovies = (title: string) => {
     const { searchVersion } = this.state;
 
