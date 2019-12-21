@@ -13,6 +13,11 @@
   transform: translateY(-50%);
   width: 15rem;
 
+  &:focus{
+    background-color: $main-white;
+    color: $main-black;
+  }
+
   @include respond(tablet-port) {
     top: 0;
     right: 10rem;
@@ -35,33 +40,47 @@
   top: 25%;
 
   &-grid {
-    background: $dark-grey;
+    width: 100%;
     position: absolute;
     top: calc(4rem + 2px);
-    width: 100%;
     height: calc(100vh + 4rem + 2px);
     overflow: scroll;
 
     &--movie {
+      background: linear-gradient(
+        to right,
+        $main-black,
+        rgba(0, 0, 0, 0.7)
+      );
       width: 100%;
       border-bottom: 2px solid $off-white;
       display: grid;
+      transition: all 1s ease;
 
-      &:hover{
-        background: $off-white;
+      &:hover {
+        background: linear-gradient(
+          to right,
+          $dark-grey,
+          rgba(0, 0, 0, 0.8)
+        );
+        color: $main-black;
       }
-      
-      & > a > picture {
-        margin-right: auto;
-        & > img {
-          width: 50px !important;
-          height: auto;
-          float: left;
-          margin: 1rem;
+
+      & > a {
+        width: 70%;
+
+        & > picture {
+          margin-right: auto;
+          & > img {
+            width: 50px !important;
+            height: auto;
+            float: left;
+            margin: 0.3rem;
+          }
         }
-      }
-      & > a > h3 {
-        margin-top: 1rem;
+        & > h3 {
+          margin-top: 0.3rem;
+        }
       }
     }
   }
@@ -74,4 +93,12 @@
 
 .hidden {
   display: none;
+}
+
+.quicksearch-placeholder{
+  width: 50px;
+  height: 75px;
+  background-color: $first-color;
+  float: left;
+  margin: 0.3rem;
 }
