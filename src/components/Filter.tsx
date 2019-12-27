@@ -54,7 +54,6 @@ const Filter = () => {
     };
   };
 
-  console.log(keywords);
   return (
     <div data-testid="search-page">
       <div className="search-container">

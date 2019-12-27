@@ -47,9 +47,11 @@ export type CatalogueContainerProps = {
 };
 export type ActorIdProps = {
   slug: string;
+  lang: string;
 };
 export type MovieInfoContainerProps = {
   slug: string;
+  lang: string;
 };
 export type MovieIdProps = {
   slug: string;

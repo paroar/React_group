@@ -15,7 +15,9 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
       "person/" +
       props.slug +
       urls.apikey +
-      "&append_to_response=external_ids,combined_credits";
+      "&append_to_response=external_ids,combined_credits" + 
+      "&language=" + 
+      props.lang;
     fetch(url)
       .then(response => response.json())
       .then(info => changeState({ loading: false, info: info }));
