@@ -21,12 +21,20 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         "&page=" +
         state.currentPage +
         id;
-    } else if (props.genre || props.sort || props.order || props.rating) {
+    } else if (
+      props.genre ||
+      props.sort ||
+      props.order ||
+      props.rating ||
+      props.keyword
+    ) {
       const genre = props.genre !== "" ? `&with_genres=${props.genre}` : "";
       const sort = "&sort_by=" + `${props.sort || "popularity"}`;
       const order = props.order ? "." + props.order : ".desc";
       const rating =
         props.rating !== "" ? `&vote_average.gte=${props.rating}` : "";
+      const keyword =
+        props.keyword !== "" ? `&with_keywords=${props.keyword}` : "";
 
       url =
         urls.domain +
@@ -36,9 +44,11 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         sort +
         order +
         rating +
+        keyword +
         "&page=" +
         state.currentPage +
         "&vote_count.gte=100";
+      console.log(url);
     } else {
       url =
         urls.domain +

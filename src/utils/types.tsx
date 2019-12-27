@@ -1,8 +1,9 @@
 import { RouteComponentProps } from "react-router";
 
 export type IconProps = {
-  name: String;
-  logo: JSX.Element;
+  id?: number;
+  name: string;
+  logo: string;
 };
 
 export type UrlProps = RouteComponentProps<{ slug: string }>;
@@ -42,6 +43,7 @@ export type CatalogueContainerProps = {
   sort?: string;
   order?: string;
   rating?: string;
+  keyword?: string;
 };
 export type ActorIdProps = {
   slug: string;

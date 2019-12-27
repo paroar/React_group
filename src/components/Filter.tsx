@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ids } from "../utils/ids";
 import { Link } from "react-router-dom";
+import { keywords } from "../utils/keywords";
 
 const ratings = Array.from({ length: 10 }, (_x, i) => i);
 
@@ -20,6 +21,7 @@ const Filter = () => {
   const [ratingState, changeRatingState] = useState("");
   const [sortState, changeSortState] = useState("");
   const [orderState, changeOrderState] = useState("");
+  const [keywordState, changeKeywordState] = useState("");
 
   const handleGenre = (e: React.ChangeEvent<HTMLSelectElement>) => {
     changeGenreState(e.target.value);
@@ -37,20 +39,43 @@ const Filter = () => {
     changeOrderState(e.target.value);
   };
 
+  const handleKeyword = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeKeywordState(e.target.value);
+  };
+
   const handleParams = () => {
     return {
       pathname: "/Catalogue",
       param2: genreState,
       param3: sortState,
       param4: orderState,
-      param5: ratingState
+      param5: ratingState,
+      param6: keywordState
     };
   };
 
+  console.log(keywords);
   return (
     <div data-testid="search-page">
       <div className="search-container">
         <div className="search-container--filter">
+          <select
+            className="search-container--filter--select"
+            name=""
+            id=""
+            onChange={e => handleKeyword(e)}
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Keyword
+            </option>
+            {keywords.sort().map(keyword => (
+              <option key={keyword.id} value={keyword.id}>
+                {keyword.name}
+              </option>
+            ))}
+          </select>
+
           <select
             className="search-container--filter--select"
             name=""

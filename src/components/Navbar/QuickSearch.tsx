@@ -17,7 +17,7 @@ const QuickSearch: React.FC<SearchProps> = props => {
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+  }, [props]);
 
   if (props.arr && props.arr.length > 0) {
     return (

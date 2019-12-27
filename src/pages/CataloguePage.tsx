@@ -31,7 +31,8 @@ const CataloguePage = (props: any) => {
     props.location.param2 ||
     props.location.param3 ||
     props.location.param4 ||
-    props.location.param5
+    props.location.param5 ||
+    props.location.param6
   ) {
     console.log("PARAMS")
     return (
@@ -44,6 +45,7 @@ const CataloguePage = (props: any) => {
             sort={props.location.param3}
             order={props.location.param4}
             rating={props.location.param5}
+            keyword={props.location.param6}
           />
         ))}
       </div>
