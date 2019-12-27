@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Tabs from "./Tabs";
+import Tabs from "./Tabs/Tabs";
 import IconMenu from "./IconMenu";
-import QuickSearchContainer from "../../containers/QuickSearchContainer";
+import QuickSearchContainer from "../../containers/QuickSearchContainer/QuickSearchContainer";
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Poster from "../Poster";
 import { Link } from "react-router-dom";
-import { SearchMovie } from "../../containers/QuickSearchContainer";
+import { SearchMovie } from "../../containers/QuickSearchContainer/QuickSearchContainer";
 
 type SearchProps = {
   arr: SearchMovie[];

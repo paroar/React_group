@@ -1,49 +1,43 @@
 const tabs = {
-  en:
+  tabList:
     [
       {
-        "id": 0,
-        "logo": "./img/user.svg",
-        "name": "user"
+        id: 0,
+        logo: "./img/user.svg",
+        name: {
+          en: "user",
+          es: "usuario"
+        }
       },
       {
-        "id": 1,
-        "logo": "./img/search.svg",
-        "name": "search"
+        id: 1,
+        logo: "./img/search.svg",
+        name: {
+          en: "search",
+          es: "busqueda"
+        }
       },
       {
-        "id": 2,
-        "logo": "./img/help.svg",
-        "name": "help"
+        id: 2,
+        logo: "./img/help.svg",
+        name: {
+          en: "help",
+          es: "ayuda"
+        }
       },
       {
-        "id": 3,
-        "logo": "./img/menu.svg",
-        "name": "catalogue"
+        id: 3,
+        logo: "./img/menu.svg",
+        name: {
+          en: "catalogue",
+          es: "catalogo"
+        }
       }
     ],
-  es: [
-    {
-      "id": 0,
-      "logo": "./img/user.svg",
-      "name": "usuario"
-    },
-    {
-      "id": 1,
-      "logo": "./img/search.svg",
-      "name": "busqueda"
-    },
-    {
-      "id": 2,
-      "logo": "./img/help.svg",
-      "name": "ayuda"
-    },
-    {
-      "id": 3,
-      "logo": "./img/menu.svg",
-      "name": "catalogo"
-    }
-  ]
+    welcome:{
+      "en": "welcome to",
+      "es": "bienvenido a"
+  }
 }
 
 export default tabs;

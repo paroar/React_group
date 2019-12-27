@@ -6,7 +6,7 @@ import tabs from "./lang";
 import styled from "styled-components";
 
 const Img = styled.img`
-  width:60px;
+  width: 60px;
   height: auto;
 `;
 
@@ -23,20 +23,20 @@ const HomePage = () => {
   return (
     <LangConsumer>
       {value => {
-        //const { lang } = value;
-        console.log(value);
-        
-        //@ts-ignore
-        const xs: IconProps[] = tabs["es"];
+        const { lang } = value;
 
         return (
           <div data-testid="home-page" className="home-page">
             <h1 className="maintitle">
-              Welcome to <span className="maintitle-mark">4Birds</span>
+              
+              {
+              //@ts-ignore
+              tabs.welcome[lang]} <span className="maintitle-mark">4Birds</span>
             </h1>
             <div className="table-icons">
-              {xs.map(({ name, logo, id }) => (
-                <Icon key={id} name={name} logo={logo} />
+              {tabs["tabList"].map(({ name, logo, id }) => (
+                //@ts-ignore
+                <Icon key={id} name={name[lang]} logo={logo} />
               ))}
             </div>
           </div>

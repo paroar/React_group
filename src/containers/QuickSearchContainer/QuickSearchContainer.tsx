@@ -1,6 +1,8 @@
 import React from "react";
-import { urls } from "../utils/urls";
-import QuickSearch from "../components/Navbar/QuickSearch";
+import { urls } from "../../utils/urls";
+import QuickSearch from "../../components/Navbar/QuickSearch";
+import { LangConsumer } from "../../contexts/LangContext";
+import language from "./lang";
 
 export type SearchMovie = {
   poster_path: string;
@@ -55,23 +57,31 @@ class SearchContainer extends React.Component<SearchContainerProps> {
 
   render() {
     return (
-      <>
-        <div className={this.props.isOpen ? "hidden" : "search-input"}>
-          <input
-            id="search-input"
-            aria-label="Search..."
-            type="text"
-            placeholder="Quick Search..."
-            className="input"
-            onChange={e => this.handleOnChange(e)}
-            value={this.state.input}
-          />
-        </div>
-        <QuickSearch
-          arr={this.state.movies}
-          handleOnClick={() => this.handleOnClick()}
-        />
-      </>
+      <LangConsumer>
+        {value => {
+          const {lang} = value;
+          return (
+            <>
+              <div className={this.props.isOpen ? "hidden" : "search-input"}>
+                <input
+                  id="search-input"
+                  aria-label="search"
+                  type="text"
+                  //@ts-ignore
+                  placeholder={language["placeholder"][lang]}
+                  className="input"
+                  onChange={e => this.handleOnChange(e)}
+                  value={this.state.input}
+                />
+              </div>
+              <QuickSearch
+                arr={this.state.movies}
+                handleOnClick={() => this.handleOnClick()}
+              />
+            </>
+          );
+        }}
+      </LangConsumer>
     );
   }
 }
