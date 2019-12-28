@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TabsProps } from "../../../utils/types";
 import tabs from "./lang";
-import { LangConsumer } from "../../../contexts/LangContext";
+import { LanguageContext } from "../../../contexts/LanguageContext";
 
 type TabProps = {
   name: string;
@@ -19,29 +19,23 @@ const Tab: React.FC<TabProps> = ({ name, path, fn }) => {
 };
 
 const Tabs: React.FC<TabsProps> = ({ isOpen, handleIsOpen }) => {
+  const { lang } = useContext(LanguageContext);
   return (
-    <LangConsumer>
-      {value => {
-        const {lang} = value;
-        return (
-          <ul
-            className={"nav-links " + (isOpen ? "open" : "")}
-            onClick={handleIsOpen}
-          >
-            //@ts-ignore
-            {tabs["tabList"].map(tab => (
-              <Tab
-                key={tab.path}
-                //@ts-ignore
-                name={tab.name[lang]}
-                path={tab.path}
-                fn={handleIsOpen}
-              />
-            ))}
-          </ul>
-        );
-      }}
-    </LangConsumer>
+    <ul
+      className={"nav-links " + (isOpen ? "open" : "")}
+      onClick={handleIsOpen}
+    >
+      //@ts-ignore
+      {tabs["tabList"].map(tab => (
+        <Tab
+          key={tab.path}
+          //@ts-ignore
+          name={tab.name[lang]}
+          path={tab.path}
+          fn={handleIsOpen}
+        />
+      ))}
+    </ul>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { urls } from "../../utils/urls";
 import QuickSearch from "../../components/Navbar/QuickSearch";
-import { LangConsumer } from "../../contexts/LangContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 
 export type SearchMovie = {
@@ -57,7 +57,7 @@ class SearchContainer extends React.Component<SearchContainerProps> {
 
   render() {
     return (
-      <LangConsumer>
+      <LanguageContext.Consumer>
         {value => {
           const {lang} = value;
           return (
@@ -81,7 +81,7 @@ class SearchContainer extends React.Component<SearchContainerProps> {
             </>
           );
         }}
-      </LangConsumer>
+      </LanguageContext.Consumer>
     );
   }
 }

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MovieInfo from "../components/MovieInfo/MovieInfo";
 import { urls } from "../utils/urls";
 import { FetchMovie, MovieInfoContainerProps } from "../utils/types";
 import SlugContext from "../contexts/SlugContext";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
   const [state, changeState] = useState({
@@ -10,20 +11,22 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
     movie: {} as FetchMovie
   });
 
+  const { lang } = useContext(LanguageContext);
+
   useEffect(() => {
     const url =
       urls.domain +
       "movie/" +
       props.slug +
       urls.apikey +
-      "&append_to_response=videos,credits,external_ids,images" + 
+      "&append_to_response=videos,credits,external_ids,images" +
       "&language=" +
-      props.lang;
+      lang;
     fetch(url)
       .then(response => response.json())
       .then(movie => changeState({ loading: false, movie: movie }));
     window.scrollTo(0, 0);
-  }, [props]);
+  }, []);
 
   if (state.loading) {
     return <div>loading...</div>;
@@ -31,6 +34,8 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
   if (!state.movie) {
     return <div>didn't get info</div>;
   }
+  console.log(state.movie);
+  
   return (
     <SlugContext.Provider value={props}>
       <MovieInfo movie={state.movie} />

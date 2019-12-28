@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Actor from "../components/Actor";
 import { ActorInfo, ActorIdProps } from "../utils/types";
 import { urls } from "../utils/urls";
+import { LanguageContext } from "../contexts/LanguageContext";
+import SlugContext from "../contexts/SlugContext";
 
 const ActorContainer: React.FC<ActorIdProps> = props => {
   const [state, changeState] = useState({
@@ -9,15 +11,18 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
     info: {} as ActorInfo
   });
 
+  const { lang } = useContext(LanguageContext);
+  const { slug } = useContext(SlugContext);
+
   useEffect(() => {
     const url =
       urls.domain +
       "person/" +
-      props.slug +
+      slug +
       urls.apikey +
       "&append_to_response=external_ids,combined_credits" + 
       "&language=" + 
-      props.lang;
+      lang;
     fetch(url)
       .then(response => response.json())
       .then(info => changeState({ loading: false, info: info }));

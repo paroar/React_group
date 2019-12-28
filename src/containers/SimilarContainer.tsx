@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { PosterMovie, MovieIdProps } from "../utils/types";
+import React, { useState, useEffect, useContext } from "react";
+import { PosterMovie } from "../utils/types";
 import Grid from "../components/Grid";
 import { urls } from "../utils/urls";
 import Heading from "../components/Heading";
+import { LanguageContext } from "../contexts/LanguageContext";
+import SlugContext from "../contexts/SlugContext";
 
-const SimilarContainer: React.FC<MovieIdProps> = props => {
+const SimilarContainer: React.FC = () => {
   const [state, changeState] = useState({
     loading: false,
     movies: [] as PosterMovie[]
   });
 
+  const { lang } = useContext(LanguageContext);
+  const { slug } = useContext(SlugContext);
+
   useEffect(() => {
-    const url = urls.domain + "movie/" + props.slug + "/similar" + urls.apikey;
+    const url =
+      urls.domain +
+      "movie/" +
+      slug +
+      "/similar" +
+      urls.apikey +
+      "&language=" +
+      lang;
     fetch(url)
       .then(response => response.json())
       .then(movies =>
@@ -20,7 +32,7 @@ const SimilarContainer: React.FC<MovieIdProps> = props => {
           movies: movies.results
         })
       );
-  }, [props]);
+  }, []);
 
   if (state.loading) {
     return <div>loading...</div>;
@@ -28,7 +40,7 @@ const SimilarContainer: React.FC<MovieIdProps> = props => {
   if (!state.movies) {
     return <div>didn't get movies</div>;
   }
-  if(state.movies.length===0){
+  if (state.movies.length === 0) {
     return null;
   }
   return (

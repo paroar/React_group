@@ -1,20 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import TextMovieInfo from "./TextMovieInfo";
 import { MovieInfoProps } from "../../utils/types";
 import Cast from "./Cast";
 import Poster from "../Poster";
 import SimilarContainer from "../../containers/SimilarContainer";
-import SlugContext from "../../contexts/SlugContext";
 import ReviewsContainer from "../../containers/ReviewsContainer";
 
-const MovieInfo: React.FC<MovieInfoProps> = ({movie}) => {
-  console.log(movie)
+const MovieInfo: React.FC<MovieInfoProps> = ({ movie }) => {
   const backStyle = {
     background: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path}) no-repeat center center fixed`
   };
 
-  const { slug } = useContext(SlugContext);
-
+console.log(movie);
   return (
     <div data-testid="details-page" className="details" style={backStyle}>
       <div className="back">
@@ -27,8 +24,8 @@ const MovieInfo: React.FC<MovieInfoProps> = ({movie}) => {
         </div>
       </div>
       <Cast credits={movie.credits} />
-      <SimilarContainer slug={slug} />
-      <ReviewsContainer slug={slug} />
+      <SimilarContainer/>
+      <ReviewsContainer/>
     </div>
   );
 };

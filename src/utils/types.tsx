@@ -4,6 +4,7 @@ export type IconProps = {
   id?: number;
   name: string;
   logo: string;
+  path: string;
 };
 
 export type UrlProps = RouteComponentProps<{ slug: string }>;
@@ -47,11 +48,9 @@ export type CatalogueContainerProps = {
 };
 export type ActorIdProps = {
   slug: string;
-  lang: string;
 };
 export type MovieInfoContainerProps = {
   slug: string;
-  lang: string;
 };
 export type MovieIdProps = {
   slug: string;

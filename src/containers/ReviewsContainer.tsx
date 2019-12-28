@@ -1,32 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { MovieIdProps } from "../utils/types";
+import React, { useState, useEffect, useContext } from "react";
 import { urls } from "../utils/urls";
 import Heading from "../components/Heading";
 import Reviews from "../components/MovieInfo/Reviews";
+import { LanguageContext } from "../contexts/LanguageContext";
+import SlugContext from "../contexts/SlugContext";
 
 type ReviewsType = {
-    id: number;
-    page: number;
-    results: Review[];
-    total_pages: number;
-    total_results: number;
-}
+  id: number;
+  page: number;
+  results: Review[];
+  total_pages: number;
+  total_results: number;
+};
 
 type Review = {
-    id: number;
-    author: string;
-    content: string;
-    url:string;
-}
+  id: number;
+  author: string;
+  content: string;
+  url: string;
+};
 
-const ReviewsContainer: React.FC<MovieIdProps> = props => {
+const ReviewsContainer: React.FC = () => {
   const [state, changeState] = useState({
     loading: false,
     reviews: {} as ReviewsType
   });
+  
+  const { lang } = useContext(LanguageContext);
+  const { slug } = useContext(SlugContext);
 
   useEffect(() => {
-    const url = urls.domain + "movie/" + props.slug + "/reviews" + urls.apikey;
+    const url =
+      urls.domain +
+      "movie/" +
+      slug +
+      "/reviews" +
+      urls.apikey +
+      "&language=" +
+      lang;
     fetch(url)
       .then(response => response.json())
       .then(reviews =>
@@ -35,7 +46,7 @@ const ReviewsContainer: React.FC<MovieIdProps> = props => {
           reviews: reviews.results
         })
       );
-  }, [props]);
+  }, []);
 
   if (state.loading) {
     return <div>loading...</div>;
@@ -45,8 +56,8 @@ const ReviewsContainer: React.FC<MovieIdProps> = props => {
   }
   return (
     <div className="reviews">
-        <Heading>Reviews</Heading>
-        <Reviews reviews={state.reviews}/>
+      <Heading>Reviews</Heading>
+      <Reviews reviews={state.reviews} />
     </div>
   );
 };
