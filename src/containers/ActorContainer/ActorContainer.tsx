@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import Actor from "../components/Actor";
-import { ActorInfo, ActorIdProps } from "../utils/types";
-import { urls } from "../utils/urls";
-import { LanguageContext } from "../contexts/LanguageContext";
-import SlugContext from "../contexts/SlugContext";
+import Actor from "../../components/Actor/Actor";
+import { ActorInfo, ActorIdProps } from "../../utils/types";
+import { urls } from "../../utils/urls";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import language from "./lang";
 
 const ActorContainer: React.FC<ActorIdProps> = props => {
   const [state, changeState] = useState({
@@ -12,27 +12,30 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
   });
 
   const { lang } = useContext(LanguageContext);
-  const { slug } = useContext(SlugContext);
 
   useEffect(() => {
     const url =
       urls.domain +
       "person/" +
-      slug +
+      props.slug +
       urls.apikey +
-      "&append_to_response=external_ids,combined_credits" + 
-      "&language=" + 
+      "&append_to_response=external_ids,combined_credits" +
+      "&language=" +
       lang;
+      console.log(url);
+      
     fetch(url)
       .then(response => response.json())
       .then(info => changeState({ loading: false, info: info }));
   }, [props]);
 
   if (state.loading) {
-    return <div>loading...</div>;
+    //@ts-ignore
+    return <div>{language["loading"][lang]}</div>;
   }
   if (!state.info.combined_credits) {
-    return <div>didn't get info</div>;
+    //@ts-ignore
+    return <div>{language["noInfo"][lang]}</div>;
   }
   return <Actor info={state.info} />;
 };

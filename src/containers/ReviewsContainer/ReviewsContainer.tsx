@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { urls } from "../utils/urls";
-import Heading from "../components/Heading";
-import Reviews from "../components/MovieInfo/Reviews";
-import { LanguageContext } from "../contexts/LanguageContext";
-import SlugContext from "../contexts/SlugContext";
+import { urls } from "../../utils/urls";
+import Heading from "../../components/Heading";
+import Reviews from "../../components/MovieInfo/Reviews/Reviews";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import SlugContext from "../../contexts/SlugContext";
+import language from "./lang";
+
 
 type ReviewsType = {
   id: number;
@@ -49,14 +51,17 @@ const ReviewsContainer: React.FC = () => {
   }, []);
 
   if (state.loading) {
-    return <div>loading...</div>;
+//@ts-ignore
+return <div>{language["loading"][lang]}</div>;
   }
   if (!state.reviews) {
-    return <div>didn't get reviews</div>;
+//@ts-ignore
+return <div>{language["noInfo"][lang]}</div>;
   }
   return (
     <div className="reviews">
-      <Heading>Reviews</Heading>
+      //@ts-ignore
+      <Heading>{language["reviews"][lang]}</Heading>
       <Reviews reviews={state.reviews} />
     </div>
   );

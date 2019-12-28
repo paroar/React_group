@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Grid from "../components/Grid";
-import { urls } from "../utils/urls";
-import { CatalogueContainerProps } from "../utils/types";
+import React, { useState, useEffect, useContext } from "react";
+import Grid from "../../components/Grid";
+import { urls } from "../../utils/urls";
+import { CatalogueContainerProps } from "../../utils/types";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import language from "./lang";
 
 const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   const [state, changeState] = useState({
@@ -9,6 +11,8 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
     movies: [],
     currentPage: props.page
   });
+
+  const { lang } = useContext(LanguageContext);
 
   useEffect(() => {
     var url = "";
@@ -20,7 +24,9 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         urls.apikey +
         "&page=" +
         state.currentPage +
-        id;
+        id +
+        "&language=" +
+        lang;
     } else if (
       props.genre ||
       props.sort ||
@@ -47,15 +53,18 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
         keyword +
         "&page=" +
         state.currentPage +
-        "&vote_count.gte=100";
-      console.log(url);
+        "&vote_count.gte=100" +
+        "&language=" +
+        lang;
     } else {
       url =
         urls.domain +
         "movie/now_playing" +
         urls.apikey +
         "&page=" +
-        state.currentPage;
+        state.currentPage +
+        "&language=" +
+        lang;
     }
     fetch(url)
       .then(response => response.json())
@@ -69,10 +78,12 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   }, [props, state.currentPage]);
 
   if (state.loading) {
-    return <div>loading...</div>;
+    //@ts-ignore
+    return <div>{language["loading"][lang]}</div>;
   }
   if (state.movies.length === 0) {
-    return <div>didn't get info</div>;
+    //@ts-ignore
+    return <div>{language["noInfo"][lang]}</div>;
   }
   return <Grid arr={state.movies} />;
 };

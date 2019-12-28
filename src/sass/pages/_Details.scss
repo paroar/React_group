@@ -19,7 +19,7 @@
       grid-template-columns: repeat(2, auto);
     }
   
-    @include respond(phone-port) {
+    @include respond(tablet-port) {
       grid-template-columns: repeat(1, auto);
     }
 

@@ -1,12 +1,14 @@
-import React from "react";
-import Poster from "../Poster";
+import React, { useContext } from "react";
+import Poster from "../../Poster";
 import { Link } from "react-router-dom";
-import { CastProps, Pick } from "../../utils/types";
-import Heading from "../Heading";
-import Card from "../Card";
+import { CastProps, Pick } from "../../../utils/types";
+import Heading from "../../Heading";
+import Card from "../../Card/Card";
+import { LanguageContext } from "../../../contexts/LanguageContext";
+import language from "./lang";
 
 const pickFromArr = (xs: Pick[]) => {
-  console.log("XS",xs);
+  //TODO
   let n = 0;
   xs.length < 8 ? n = xs.length : n = 8;
   let ys = [];
@@ -19,6 +21,7 @@ const pickFromArr = (xs: Pick[]) => {
 };
 
 const Cast: React.FC<CastProps> = props => {
+  const { lang } = useContext(LanguageContext);
   if (typeof props.credits === "undefined") {
     return null;
   } else {
@@ -28,7 +31,8 @@ const Cast: React.FC<CastProps> = props => {
     }
     return (
       <div className="cast">
-        <Heading>Cast</Heading>
+        //@ts-ignore
+        <Heading>{language["cast"][lang]}</Heading>
         <div className="grid--actor">
           {cast.map(crew => (
             <Link to={`/actor/${crew.id}`} key={crew.profile_path}>

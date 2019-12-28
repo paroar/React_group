@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import language from "./lang";
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 type CardProps = {
   title: string;
@@ -57,6 +59,8 @@ const SubTitle = styled.h4`
 `;
 
 const Card: React.FC<CardProps> = props => {
+  const { lang } = useContext(LanguageContext);
+
   const style = {
     background: `url(https://image.tmdb.org/t/p/w500${props.backdrop_path}) center`,
     backgroundSize: "cover",
@@ -71,10 +75,18 @@ const Card: React.FC<CardProps> = props => {
         {props.vote ? (
           <>
             <Num>{props.vote}/10</Num>
-            <Genre>Add</Genre>
+            //@ts-ignore
+            <Genre>{language["add"][lang]}</Genre>
           </>
         ) : null}
-        {props.charName ? <SubTitle>as {props.charName}</SubTitle> : null}
+
+        {props.charName ? (
+          <SubTitle>
+                    //@ts-ignore
+            {language["as"][lang]}
+            {props.charName}
+          </SubTitle>
+        ) : null}
       </div>
     </div>
   );

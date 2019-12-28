@@ -6,7 +6,6 @@ export type IconProps = {
   logo: string;
   path: string;
 };
-
 export type UrlProps = RouteComponentProps<{ slug: string }>;
 export type TabsProps = {
   isOpen: boolean;
@@ -68,24 +67,20 @@ export type ActorInfo = {
     cast: { id: string; poster_path: string }[];
   };
 };
-
 export type PosterImgProps = {
   imgPath: string;
   className?: string;
 };
-
 export type HeroProps = {
   children: React.ReactNode;
   hero: string;
 };
-
 export type MovieGenres = {
   genres: {
     id: number;
     name: string;
   }[];
 };
-
 export type FetchMovie = {
   adult: false;
   backdrop_path: string;
@@ -125,12 +120,12 @@ export type FetchMovie = {
   };
   vote_average: number;
 };
-
 export type PosterMovie = {
   id: number;
   poster_path: string;
 };
 
+//TODO
 /*
 type Movie = {
   posterPath: string;

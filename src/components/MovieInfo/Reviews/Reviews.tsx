@@ -1,6 +1,8 @@
-import React from "react";
-import Accordion from "../Help/Accordion/Accordion";
+import React, { useContext } from "react";
+import Accordion from "../../Help/Accordion/Accordion";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../../../contexts/LanguageContext";
+import language from "./lang";
 
 type ReviewsType = {
   reviews: {
@@ -20,6 +22,8 @@ type Review = {
 };
 
 const Reviews: React.FC<ReviewsType> = (props: any) => {
+  const { lang } = useContext(LanguageContext);
+
   return (
     <>
       {[].map.call(props.reviews, review => (
@@ -28,7 +32,8 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
         </Accordion>
       ))}
       <Link to="/user">
-        <Accordion title="Login to leave a comment" />
+        //@ts-ignore
+        <Accordion title={language["login"][lang]} />
       </Link>
     </>
   );

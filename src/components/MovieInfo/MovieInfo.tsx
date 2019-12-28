@@ -1,10 +1,10 @@
 import React from "react";
 import TextMovieInfo from "./TextMovieInfo";
 import { MovieInfoProps } from "../../utils/types";
-import Cast from "./Cast";
+import Cast from "./Cast/Cast";
 import Poster from "../Poster";
-import SimilarContainer from "../../containers/SimilarContainer";
-import ReviewsContainer from "../../containers/ReviewsContainer";
+import SimilarContainer from "../../containers/SimilarContainer/SimilarContainer";
+import ReviewsContainer from "../../containers/ReviewsContainer/ReviewsContainer";
 
 const MovieInfo: React.FC<MovieInfoProps> = ({ movie }) => {
   const backStyle = {

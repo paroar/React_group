@@ -1,19 +1,25 @@
-import React from "react";
-import Poster from "./Poster";
-import Grid from "./Grid";
-import { ActorProps } from "../utils/types";
-import Heading from "./Heading";
+import React, { useContext } from "react";
+import Poster from "../Poster";
+import Grid from "../Grid";
+import { ActorProps } from "../../utils/types";
+import Heading from "../Heading";
+import language from "./lang";
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 type BioProps = {
   bio: string;
 };
 
-
 const Biography: React.FC<BioProps> = ({ bio }) => {
-  return bio ? <p>{bio}</p> : <p>No biography yet</p>;
+  const { lang } = useContext(LanguageContext);
+
+  //@ts-ignore
+  return bio ? <p>{bio}</p> : <p>{language["biography"][lang]}</p>;
 };
 
 const Actor: React.FC<ActorProps> = ({ info }) => {
+  const { lang } = useContext(LanguageContext);
+
   return (
     <div>
       <div data-testid="details-page" className="details">
@@ -28,7 +34,8 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
       </div>
       {info.combined_credits.cast.length < 8 ? null : (
         <>
-          <Heading>Filmography</Heading>
+          //@ts-ignore
+          <Heading>{language["filmography"][lang]}</Heading>
           <div className="grid">
             <Grid arr={info.combined_credits.cast} />
           </div>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { PosterMovie } from "../utils/types";
-import Grid from "../components/Grid";
-import { urls } from "../utils/urls";
-import Heading from "../components/Heading";
-import { LanguageContext } from "../contexts/LanguageContext";
-import SlugContext from "../contexts/SlugContext";
+import { PosterMovie } from "../../utils/types";
+import Grid from "../../components/Grid";
+import { urls } from "../../utils/urls";
+import Heading from "../../components/Heading";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import SlugContext from "../../contexts/SlugContext";
+import language from "./lang";
 
 const SimilarContainer: React.FC = () => {
   const [state, changeState] = useState({
@@ -35,17 +36,20 @@ const SimilarContainer: React.FC = () => {
   }, []);
 
   if (state.loading) {
-    return <div>loading...</div>;
+    //@ts-ignore
+    return <div>{language["loading"][lang]}</div>;
   }
   if (!state.movies) {
-    return <div>didn't get movies</div>;
+    //@ts-ignore
+    return <div>{language["noInfo"][lang]}</div>;
   }
   if (state.movies.length === 0) {
     return null;
   }
   return (
     <div className="similars">
-      <Heading>Similars</Heading>
+          //@ts-ignore
+      <Heading>{language["similars"][lang]}</Heading>
       <div className="grid--similar">
         <Grid arr={state.movies} />
       </div>

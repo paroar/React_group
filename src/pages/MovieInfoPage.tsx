@@ -1,5 +1,5 @@
 import React from "react";
-import MovieInfoContainer from "../containers/MovieInfoContainer";
+import MovieInfoContainer from "../containers/MovieInfoContainer/MovieInfoContainer";
 import { UrlProps } from "../utils/types";
 
 const MovieInfoPage: React.FC<UrlProps> = props => {

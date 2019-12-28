@@ -12,7 +12,7 @@ import SearchPage from "./pages/SearchPage";
 import { LanguageContext } from "./contexts/LanguageContext";
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("es");
   const handleLanguage = (lang: string) => {
     setLang(lang);
   };

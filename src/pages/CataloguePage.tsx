@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CatalogueContainer from "../containers/CatalogueContainer";
+import CatalogueContainer from "../containers/CatalogueContainer/CatalogueContainer";
 
 const CataloguePage = (props: any) => {
   const [state, changeState] = useState({ currentPage: [1] });

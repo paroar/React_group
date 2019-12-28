@@ -2,7 +2,7 @@ import React from "react";
 import Poster from "./Poster";
 import { Link } from "react-router-dom";
 import { GridProps } from "../utils/types";
-import Card from "./Card";
+import Card from "./Card/Card";
 
 const Grid: React.FC<GridProps> = props => {
   if (!props) {
