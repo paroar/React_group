@@ -3,12 +3,10 @@
   background-color: $off-grey;
 
   &--bar {
-    position: relative;
-    padding: 4rem;
-
-    &__input {
-      @include absCenter;
-    }
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    align-items: center;
+    justify-content: center;
   }
 
   &--filter {
@@ -29,21 +27,14 @@
       border-radius: 2px;
       margin: 1rem;
       width: 4rem;
-
-      &__keywords{
-        @include absCenter;
-        position: relative;
-      }
     }
   }
 
   &--button {
-    position: relative;
-    padding: 2rem;
+    padding: 0.5rem 2rem;
     &__button {
-      @include absCenter;
       padding: 0.5rem 2rem;
-      background-color: coral;
+      background-color: $first-color;
     }
   }
 }

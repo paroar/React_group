@@ -57,24 +57,32 @@ const Filter = () => {
   return (
     <div data-testid="search-page">
       <div className="search-container">
-        <div className="search-container--filter">
-          <select
-            className="search-container--filter--select"
-            name=""
-            id=""
-            onChange={e => handleKeyword(e)}
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Keyword
-            </option>
-            {keywords.sort().map(keyword => (
-              <option key={keyword.id} value={keyword.id}>
-                {keyword.name}
+        <div className="search-container--bar">
+          <div>
+            <select
+              className="search-container--filter--select"
+              name=""
+              id=""
+              onChange={e => handleKeyword(e)}
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Keyword
               </option>
-            ))}
-          </select>
-
+              {keywords.sort().map(keyword => (
+                <option key={keyword.id} value={keyword.id}>
+                  {keyword.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="search-container--button">
+            <Link to={handleParams()}>
+              <span className="search-container--button__button">Search</span>
+            </Link>
+          </div>
+        </div>
+        <div className="search-container--filter">
           <select
             className="search-container--filter--select"
             name=""
@@ -142,11 +150,6 @@ const Filter = () => {
               </option>
             ))}
           </select>
-        </div>
-        <div className="search-container--button">
-          <Link to={handleParams()}>
-            <span className="search-container--button__button">Search</span>
-          </Link>
         </div>
       </div>
     </div>

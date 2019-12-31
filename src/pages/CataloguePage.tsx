@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CatalogueContainer from "../containers/CatalogueContainer/CatalogueContainer";
+import Filter from "../components/Filter";
 
 const CataloguePage = (props: any) => {
   const [state, changeState] = useState({ currentPage: [1] });
@@ -20,11 +21,14 @@ const CataloguePage = (props: any) => {
 
   if (props.location.param1) {
     return (
-      <div className="grid">
-        {state.currentPage.map(x => (
-          <CatalogueContainer key={x} page={x} id={props.location.param1} />
-        ))}
-      </div>
+      <>
+        <Filter />
+        <div className="grid">
+          {state.currentPage.map(x => (
+            <CatalogueContainer key={x} page={x} id={props.location.param1} />
+          ))}
+        </div>
+      </>
     );
   } else if (
     props.location.param2 ||
@@ -33,7 +37,10 @@ const CataloguePage = (props: any) => {
     props.location.param5 ||
     props.location.param6
   ) {
+
     return (
+      <>
+      <Filter />
       <div className="grid">
         {state.currentPage.map(x => (
           <CatalogueContainer
@@ -47,14 +54,18 @@ const CataloguePage = (props: any) => {
           />
         ))}
       </div>
+      </>
     );
   } else {
     return (
+      <>
+      <Filter />
       <div className="grid">
         {state.currentPage.map(x => (
           <CatalogueContainer key={x} page={x} />
         ))}
       </div>
+      </>
     );
   }
 };

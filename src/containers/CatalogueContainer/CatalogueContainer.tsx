@@ -85,7 +85,11 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
     //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
-  return <Grid arr={state.movies} />;
+  return (
+    <>
+      <Grid arr={state.movies} />
+    </>
+  );
 };
 
 export default CatalogueContainer;

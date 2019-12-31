@@ -6,7 +6,7 @@
   padding: 0.5rem 0rem;
   border-radius: 100rem;
   z-index: 10;
-  background-color: $off-grey;
+  background-color: grey;
   color: $main-white;
   position: absolute;
   top: 50%;
@@ -19,18 +19,7 @@
   }
 
   @include respond(tablet-port) {
-    top: 0;
     right: 10rem;
-    text-align: center;
-    border: none;
-    padding: 0.5rem 0rem;
-    border-radius: 100rem;
-    z-index: 10;
-    background-color: $off-grey;
-    color: $main-white;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 12rem;
   }
 }

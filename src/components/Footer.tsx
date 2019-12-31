@@ -41,11 +41,11 @@ const Anchor: React.FC<AnchorProps> = ({ url, className, icon }) => {
 };
 
 const Footer: React.FC = () => {
-  const {handleLanguage} = useContext(LanguageContext);
+  const { handleLanguage } = useContext(LanguageContext);
 
-  const changeLang = (e:React.ChangeEvent<HTMLSelectElement>) =>{
+  const changeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
     handleLanguage(e.target.value);
-  }
+  };
 
   return (
     <footer className="footer">
@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer--lang">
-        <select name="" id="" onChange={(e) => changeLang(e)}>
-          <option value="es">es</option>
+        <select name="" id="" onChange={e => changeLang(e)}>
           <option value="en">en</option>
+          <option value="es">es</option>
         </select>
       </div>
     </footer>
