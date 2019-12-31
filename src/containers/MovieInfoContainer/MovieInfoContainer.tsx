@@ -6,19 +6,20 @@ import SlugContext from "../../contexts/SlugContext";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 
-const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
+const MovieInfoContainer: React.FC<MovieInfoContainerProps> = () => {
   const [state, changeState] = useState({
     loading: false,
     movie: {} as FetchMovie
   });
 
   const { lang } = useContext(LanguageContext);
+  const { slug } = useContext(SlugContext);
 
   useEffect(() => {
     const url =
       urls.domain +
       "movie/" +
-      props.slug +
+      slug +
       urls.apikey +
       "&append_to_response=videos,credits,external_ids,images" +
       "&language=" +
@@ -27,7 +28,7 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
       .then(response => response.json())
       .then(movie => changeState({ loading: false, movie: movie }));
     window.scrollTo(0, 0);
-  }, [props]);
+  }, [slug, lang]);
 
   if (state.loading) {
     //@ts-ignore
@@ -37,12 +38,7 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = props => {
     //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
-  
-  return (
-    <SlugContext.Provider value={props}>
-      <MovieInfo movie={state.movie} />
-    </SlugContext.Provider>
-  );
+  return <MovieInfo movie={state.movie} />;
 };
 
 export default MovieInfoContainer;

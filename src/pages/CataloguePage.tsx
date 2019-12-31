@@ -18,7 +18,6 @@ const CataloguePage = (props: any) => {
     };
   }, [state]);
 
-  console.log(props)
   if (props.location.param1) {
     return (
       <div className="grid">
@@ -34,7 +33,6 @@ const CataloguePage = (props: any) => {
     props.location.param5 ||
     props.location.param6
   ) {
-    console.log("PARAMS")
     return (
       <div className="grid">
         {state.currentPage.map(x => (

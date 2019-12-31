@@ -2,6 +2,11 @@
   border-radius: 2px;
   padding: 2rem 0;
 
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+
   &--movieInfo {
     display: grid;
     grid-template-columns: repeat(1, auto);
@@ -14,16 +19,16 @@
       grid-template-columns: repeat(2, auto);
       width: 50%;
     }
-  
+
     @include respond(desktop2k) {
       grid-template-columns: repeat(2, auto);
     }
-  
+
     @include respond(tablet-port) {
       grid-template-columns: repeat(1, auto);
     }
 
-    &--portrait{
+    &--portrait {
       width: 100% !important;
       height: auto !important;
     }
@@ -38,12 +43,12 @@
       @include respond(desktop4k) {
         margin: 0 0 0 2rem;
       }
-    
+
       @include respond(desktop2k) {
         margin: 0 0 0 2rem;
       }
-    
-      @include respond(phone-port) {
+
+      @include respond(tablet-port) {
         margin: 2rem 0 0 0;
       }
 
@@ -69,6 +74,8 @@
   }
 }
 
-.cast, .similars, .reviews{
+.cast,
+.similars,
+.reviews {
   @include box;
 }
