@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { ids } from "../utils/ids";
-import { Link } from "react-router-dom";
 import { keywords } from "../utils/keywords";
 
 const ratings = Array.from({ length: 10 }, (_x, i) => i);
@@ -16,78 +15,34 @@ const sortBy = [
 
 const orderBy = ["desc", "asc"];
 
-const Filter = () => {
-  const [genreState, changeGenreState] = useState("");
-  const [ratingState, changeRatingState] = useState("");
-  const [sortState, changeSortState] = useState("");
-  const [orderState, changeOrderState] = useState("");
-  const [keywordState, changeKeywordState] = useState("");
-
-  const handleGenre = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeGenreState(e.target.value);
-  };
-
-  const handleRating = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeRatingState(e.target.value);
-  };
-
-  const handleSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeSortState(e.target.value);
-  };
-
-  const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeOrderState(e.target.value);
-  };
-
-  const handleKeyword = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeKeywordState(e.target.value);
-  };
-
-  const handleParams = () => {
-    return {
-      pathname: "/Catalogue",
-      param2: genreState,
-      param3: sortState,
-      param4: orderState,
-      param5: ratingState,
-      param6: keywordState
-    };
-  };
-
+const Filter = (props: any) => {
   return (
     <div data-testid="search-page">
       <div className="search-container">
-        <div className="search-container--bar">
-          <div>
-            <select
-              className="search-container--filter--select"
-              name=""
-              id=""
-              onChange={e => handleKeyword(e)}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Keyword
-              </option>
-              {keywords.sort().map(keyword => (
-                <option key={keyword.id} value={keyword.id}>
-                  {keyword.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="search-container--button">
-            <Link to={handleParams()}>
-              <span className="search-container--button__button">Search</span>
-            </Link>
-          </div>
-        </div>
         <div className="search-container--filter">
+
           <select
             className="search-container--filter--select"
             name=""
             id=""
-            onChange={e => handleGenre(e)}
+            onChange={e => props.handleKeyword(e)}
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Keyword
+            </option>
+            {keywords.sort().map(keyword => (
+              <option key={keyword.id} value={keyword.id}>
+                {keyword.name}
+              </option>
+            ))}
+          </select>
+
+          <select
+            className="search-container--filter--select"
+            name=""
+            id=""
+            onChange={e => props.handleGenre(e)}
             defaultValue=""
           >
             <option value="" disabled>
@@ -104,7 +59,7 @@ const Filter = () => {
             className="search-container--filter--select"
             name=""
             id=""
-            onChange={e => handleRating(e)}
+            onChange={e => props.handleRating(e)}
             defaultValue=""
           >
             <option value="" disabled>
@@ -121,7 +76,7 @@ const Filter = () => {
             className="search-container--filter--select"
             name=""
             id=""
-            onChange={e => handleSort(e)}
+            onChange={e => props.handleSort(e)}
             defaultValue=""
           >
             <option value="" disabled>
@@ -138,7 +93,7 @@ const Filter = () => {
             className="search-container--filter--select"
             name=""
             id=""
-            onChange={e => handleOrder(e)}
+            onChange={e => props.handleOrder(e)}
             defaultValue=""
           >
             <option value="" disabled>
@@ -150,6 +105,7 @@ const Filter = () => {
               </option>
             ))}
           </select>
+          
         </div>
       </div>
     </div>

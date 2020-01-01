@@ -4,6 +4,31 @@ import Filter from "../components/Filter";
 
 const CataloguePage = (props: any) => {
   const [state, changeState] = useState({ currentPage: [1] });
+  const [genreState, changeGenreState] = useState("");
+  const [ratingState, changeRatingState] = useState("");
+  const [sortState, changeSortState] = useState("");
+  const [orderState, changeOrderState] = useState("");
+  const [keywordState, changeKeywordState] = useState("");
+
+  const handleGenre = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeGenreState(e.target.value);
+  };
+
+  const handleRating = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeRatingState(e.target.value);
+  };
+
+  const handleSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeSortState(e.target.value);
+  };
+
+  const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeOrderState(e.target.value);
+  };
+
+  const handleKeyword = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeKeywordState(e.target.value);
+  };
 
   useEffect(() => {
     const listener = () => {
@@ -18,56 +43,36 @@ const CataloguePage = (props: any) => {
       window.removeEventListener("scroll", listener);
     };
   }, [state]);
+  console.log("LALA", props.location.param1);
 
-  if (props.location.param1) {
-    return (
-      <>
-        <Filter />
-        <div className="grid">
-          {state.currentPage.map(x => (
-            <CatalogueContainer key={x} page={x} id={props.location.param1} />
-          ))}
-        </div>
-      </>
-    );
-  } else if (
-    props.location.param2 ||
-    props.location.param3 ||
-    props.location.param4 ||
-    props.location.param5 ||
-    props.location.param6
-  ) {
-
-    return (
-      <>
-      <Filter />
+  return (
+    <>
+      <Filter
+        handleGenre={handleGenre}
+        handleSort={handleSort}
+        handleOrder={handleOrder}
+        handleRating={handleRating}
+        handleKeyword={handleKeyword}
+      />
       <div className="grid">
         {state.currentPage.map(x => (
           <CatalogueContainer
             key={x}
             page={x}
-            genre={props.location.param2}
-            sort={props.location.param3}
-            order={props.location.param4}
-            rating={props.location.param5}
-            keyword={props.location.param6}
+            genre={`${
+              typeof props.location.param1 === "undefined"
+                ? genreState
+                : props.location.param1
+            }`}
+            sort={sortState}
+            order={orderState}
+            rating={ratingState}
+            keyword={keywordState}
           />
         ))}
       </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-      <Filter />
-      <div className="grid">
-        {state.currentPage.map(x => (
-          <CatalogueContainer key={x} page={x} />
-        ))}
-      </div>
-      </>
-    );
-  }
+    </>
+  );
 };
 
 export default CataloguePage;

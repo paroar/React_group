@@ -64,7 +64,8 @@ const Card: React.FC<CardProps> = props => {
   const style = {
     background: `url(https://image.tmdb.org/t/p/w500${props.backdrop_path}) center`,
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed"
   };
 
   return (

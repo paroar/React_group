@@ -16,56 +16,34 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
 
   useEffect(() => {
     var url = "";
-    if (props.id) {
-      const id = "&with_genres=" + props.id;
-      url =
-        urls.domain +
-        "discover/movie" +
-        urls.apikey +
-        "&page=" +
-        state.currentPage +
-        id +
-        "&language=" +
-        lang;
-    } else if (
-      props.genre ||
-      props.sort ||
-      props.order ||
-      props.rating ||
-      props.keyword
-    ) {
-      const genre = props.genre !== "" ? `&with_genres=${props.genre}` : "";
-      const sort = "&sort_by=" + `${props.sort || "popularity"}`;
-      const order = props.order ? "." + props.order : ".desc";
-      const rating =
-        props.rating !== "" ? `&vote_average.gte=${props.rating}` : "";
-      const keyword =
-        props.keyword !== "" ? `&with_keywords=${props.keyword}` : "";
+    const genre =
+      props.genre !== "" && typeof props.genre !== "undefined"
+        ? `&with_genres=${props.genre}`
+        : "";
+    const sort = "&sort_by=" + `${props.sort || "popularity"}`;
+    const order = props.order ? "." + props.order : ".desc";
+    const rating =
+      props.rating !== "" && typeof props.rating !== "undefined"? `&vote_average.gte=${props.rating}` : "";
+    const keyword =
+      props.keyword !== "" && typeof props.keyword !== "undefined"? `&with_keywords=${props.keyword}` : "";
 
-      url =
-        urls.domain +
-        "discover/movie" +
-        urls.apikey +
-        genre +
-        sort +
-        order +
-        rating +
-        keyword +
-        "&page=" +
-        state.currentPage +
-        "&vote_count.gte=100" +
-        "&language=" +
-        lang;
-    } else {
-      url =
-        urls.domain +
-        "movie/now_playing" +
-        urls.apikey +
-        "&page=" +
-        state.currentPage +
-        "&language=" +
-        lang;
-    }
+    url =
+      urls.domain +
+      "discover/movie" +
+      urls.apikey +
+      genre +
+      sort +
+      order +
+      rating +
+      keyword +
+      "&page=" +
+      state.currentPage +
+      "&vote_count.gte=20" +
+      "&language=" +
+      lang;
+
+    console.log("URLK", url);
+
     fetch(url)
       .then(response => response.json())
       .then(movies =>

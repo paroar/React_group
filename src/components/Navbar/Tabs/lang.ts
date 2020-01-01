@@ -7,12 +7,6 @@ const tabs = {
             }
         },
         {
-            path: "search", name: {
-                en: "search",
-                es: "busqueda"
-            }
-        },
-        {
             path: "catalogue", name: {
                 en: "catalogue",
                 es: "catalogo"
