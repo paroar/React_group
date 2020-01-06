@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MovieGenres } from "../../utils/types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
   display: inline-block;
@@ -23,18 +24,15 @@ const GenreTags = styled.div`
   margin: 1rem auto;
 `;
 
-const id = (paramId: number) => {
-  return {pathname: "/Catalogue", param1: paramId}
-}
-
 const Genres: React.FC<MovieGenres> = props => {
+  const { handleGenre } = useContext(GenreContext);
   if (!props.genres) {
     return null;
   } else {
     return (
       <GenreTags>
         {props.genres.map(genre => (
-          <Link key={genre.id} to={id(genre.id)}>
+          <Link key={genre.id} to="/Catalogue" onClick={() => handleGenre(genre.id.toString())}>
             <Genre>{genre.name}</Genre>
           </Link>
         ))}

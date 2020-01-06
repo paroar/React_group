@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ids } from "../utils/ids";
 import { keywords } from "../utils/keywords";
+import { GenreContext } from "../contexts/GenreContext";
 
 const ratings = Array.from({ length: 10 }, (_x, i) => i);
 
@@ -16,11 +17,11 @@ const sortBy = [
 const orderBy = ["desc", "asc"];
 
 const Filter = (props: any) => {
+  const { handleGenre } = useContext(GenreContext);
   return (
     <div data-testid="search-page">
       <div className="search-container">
         <div className="search-container--filter">
-
           <select
             className="search-container--filter--select"
             name=""
@@ -42,7 +43,7 @@ const Filter = (props: any) => {
             className="search-container--filter--select"
             name=""
             id=""
-            onChange={e => props.handleGenre(e)}
+            onChange={e => handleGenre(e.target.value)}
             defaultValue=""
           >
             <option value="" disabled>
@@ -105,7 +106,6 @@ const Filter = (props: any) => {
               </option>
             ))}
           </select>
-          
         </div>
       </div>
     </div>

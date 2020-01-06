@@ -4,6 +4,7 @@ import { urls } from "../../utils/urls";
 import { CatalogueContainerProps } from "../../utils/types";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
+import { GenreContext } from "../../contexts/GenreContext";
 
 const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   const [state, changeState] = useState({
@@ -13,12 +14,13 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   });
 
   const { lang } = useContext(LanguageContext);
+  let { genre } = useContext(GenreContext);
 
   useEffect(() => {
     var url = "";
-    const genre =
-      props.genre !== "" && typeof props.genre !== "undefined"
-        ? `&with_genres=${props.genre}`
+    genre =
+      genre !== ""
+        ? `&with_genres=${genre}`
         : "";
     const sort = "&sort_by=" + `${props.sort || "popularity"}`;
     const order = props.order ? "." + props.order : ".desc";
