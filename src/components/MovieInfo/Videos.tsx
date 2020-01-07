@@ -1,23 +1,31 @@
 import React from "react";
-import { FetchMovie } from "../../utils/types";
+import IconMenu from "../Navbar/IconMenu";
 
-const Videos: React.FC<FetchMovie> = props => {
-  if (!props.videos) {
+type VideosProps = {
+  results: {
+    key: string;
+  }[];
+  handleIsOpen: () => void;
+}
+
+const Videos: React.FC<VideosProps> = props => {
+  if (!props.results) {
     return null;
   } else {
+    const vid = props.results[0];
     return (
-      <div className="details--videos">
-        {props.videos.results.map(video => (
-          <iframe
-            width="460"
-            height="270"
+      <div className="details--videos" onClick={() => props.handleIsOpen()}>
+        <div className="video-container">
+          <IconMenu isOpen={true} handleIsOpen={() => true}/>
+        <iframe
+            width="560" height="315"
             frameBorder="0"
             allowFullScreen
-            src={`https://www.youtube.com/embed/${video.key}`}
-            title={video.key}
-            key={video.key}
+            src={`https://www.youtube.com/embed/${vid.key}`}
+            title={vid.key}
+            key={vid.key}
           ></iframe>
-        ))}
+          </div>
       </div>
     );
   }
