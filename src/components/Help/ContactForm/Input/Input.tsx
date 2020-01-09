@@ -26,7 +26,7 @@ const Input = (props: InputProps) => {
           {...props.elementConfig}
           aria-label="input"
           className="input-element"
-          onChange={props.changed}
+          onChange={(event) => {console.log(">>>>>>", props.changed);props.changed(event)}}
         />
       );
       break;

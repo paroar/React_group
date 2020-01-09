@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import app from "../config/base";
-            //@ts-ignore
 
-export const AuthContext = React.createContext({
-});
+export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props: {children?: any}) => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -15,8 +13,6 @@ export const AuthProvider = (props: {children?: any}) => {
 
     return (
         <AuthContext.Provider
-            //@ts-ignore
-
             value={{
                 currentUser
             }}

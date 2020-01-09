@@ -20,8 +20,8 @@ class SignInForm extends React.Component<SignInFormProps> {
                     required: true
                 },
                 labelConfig: {
-                    labelName: 'username',
-                    labelContent: 'Username'
+                    labelName: 'email',
+                    labelContent: 'Email'
                 },
                 value: '',
                 valid: false
@@ -56,12 +56,14 @@ class SignInForm extends React.Component<SignInFormProps> {
     }
 
     handleInputChange = (event: any, inputId: any) => {
+        debugger
         const updatedForm = {...this.state.signIn};
+
         //@ts-ignore
         const updatedElement = {...updatedForm[inputId]};
         updatedElement.value = event.target.value;
         updatedElement.value = this.validate.bind(updatedElement.value, updatedElement.config);
-        console.log(updatedElement.value);
+        console.log("@@@@@", updatedForm);
         //@ts-ignore
         updatedForm[inputId] = updatedForm;
         this.setState({signIn: updatedForm});
@@ -75,6 +77,7 @@ class SignInForm extends React.Component<SignInFormProps> {
 
     async handleSignIn(event: Event) {
         event.preventDefault();
+        debugger
         try {
             await app
             .auth()
@@ -82,16 +85,15 @@ class SignInForm extends React.Component<SignInFormProps> {
             this.props.history.push("/admin");
         } catch (error) {
             alert(error);
-            console.log(this.state.signIn.email.value);
+            console.log("AAAAA",this.state.signIn.email.value);
         }
     };
     
 
     render() {
-        const { currentUser }= this.context;
+        const { currentUser } = this.context;
         if (currentUser) {
             console.log(this.context);
-
             return (
                 <Redirect to="/" />
             );
@@ -118,7 +120,7 @@ class SignInForm extends React.Component<SignInFormProps> {
                         elementConfig = {formElement.config.elementConfig}
                         labelConfig = {formElement.config.labelConfig}
                         value = {formElement.config.value}
-                        changed = {(event: Event) => this.handleInputChange.bind(this, event, formElement.id)}
+                        changed = {(event: Event) => this.handleInputChange(event, formElement.id)}
                     />
                 ))}
                 <button type="submit" className="btn-form">

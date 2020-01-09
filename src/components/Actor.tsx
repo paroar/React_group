@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Poster from "./Poster";
 import Grid from "./Grid";
 import { ActorProps } from "../utils/types";
@@ -14,7 +14,15 @@ const Biography: React.FC<BioProps> = ({bio}) => {
 };
 
 const Actor: React.FC<ActorProps> = ({ info }) => {
+  const [] = useState("");
+  const [] = useState("");
+  const [] = useState("usename");
+  const [] = useState("usename");
   return (
+    <>
+    <form>
+
+    </form>
     <div>
       <div data-testid="details-page" className="details">
         <div className="back">
@@ -33,6 +41,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
         <Grid arr={info.combined_credits.cast} />
       </div>
     </div>
+    </>
   );
 };
 
