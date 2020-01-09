@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 export type InputProps = {
   //elementType: input | textarea | select, etc
@@ -14,7 +14,7 @@ export type InputProps = {
     labelContentBold?: string
   },
   value: string | string[] | undefined,
-  changed?: any
+  changed?: React.EventHandler<ChangeEvent>
 }
 
 const Input = (props: InputProps) => {
@@ -26,7 +26,7 @@ const Input = (props: InputProps) => {
           {...props.elementConfig}
           aria-label="input"
           className="input-element"
-          onChange={(event) => {console.log(">>>>>>", props.changed);props.changed(event)}}
+          onChange={props.changed}
         />
       );
       break;

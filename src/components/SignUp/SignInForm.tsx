@@ -1,15 +1,11 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
-// import { RouteComponentProps } from "react-router";
 import app from "../../config/base";
 import { AuthContext } from "./../../context/Auth";
 import { withRouter, Redirect, RouteComponentProps } from "react-router";
 
-interface SignInFormProps extends RouteComponentProps<any> {
 
-}
-
-class SignInForm extends React.Component<SignInFormProps> {
+class SignInForm extends React.Component<RouteComponentProps> {
     state = {
         signIn: {
             email: {
@@ -43,41 +39,21 @@ class SignInForm extends React.Component<SignInFormProps> {
         }
     }
     static contextType = AuthContext;
-    // handleSubmit = ( event ) => {
-    //     event.preventDefault();
-    //     const formData;
-    // }
-    validate(value: any, rules: any) {
-        let isValid = false;
-        if (rules.required) {
-            isValid = value.trim() !== '';
-        }
-        return isValid;
-    }
 
-    handleInputChange = (event: any, inputId: any) => {
-        debugger
-        const updatedForm = {...this.state.signIn};
-
+    //@ts-ignore
+    handleInputChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
+        const updatedForm = {...this.state.signIn}
+        console.log(updatedForm);
         //@ts-ignore
-        const updatedElement = {...updatedForm[inputId]};
-        updatedElement.value = event.target.value;
-        updatedElement.value = this.validate.bind(updatedElement.value, updatedElement.config);
-        console.log("@@@@@", updatedForm);
+        const updatedFormElement = {...updatedForm[identifier]};
+        updatedFormElement.value = event.target.value;
         //@ts-ignore
-        updatedForm[inputId] = updatedForm;
+        updatedForm[identifier] = updatedFormElement;
         this.setState({signIn: updatedForm});
     }
-    signIn( event: any ) {
-        event.preventDefault();
-        app.auth().signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value).then((_u: any) => {}).catch((error: any) => {
-            console.log(error);
-        })
-    }
 
-    async handleSignIn(event: Event) {
+    async handleSignIn(event: React.FormEvent<HTMLInputElement>) {
         event.preventDefault();
-        debugger
         try {
             await app
             .auth()
@@ -85,7 +61,6 @@ class SignInForm extends React.Component<SignInFormProps> {
             this.props.history.push("/admin");
         } catch (error) {
             alert(error);
-            console.log("AAAAA",this.state.signIn.email.value);
         }
     };
     
@@ -95,8 +70,8 @@ class SignInForm extends React.Component<SignInFormProps> {
         if (currentUser) {
             console.log(this.context);
             return (
-                <Redirect to="/" />
-            );
+                <Redirect to="/admin" />
+            ); 
         } 
 
 
@@ -120,7 +95,7 @@ class SignInForm extends React.Component<SignInFormProps> {
                         elementConfig = {formElement.config.elementConfig}
                         labelConfig = {formElement.config.labelConfig}
                         value = {formElement.config.value}
-                        changed = {(event: Event) => this.handleInputChange(event, formElement.id)}
+                        changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
                     />
                 ))}
                 <button type="submit" className="btn-form">
