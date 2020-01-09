@@ -9,14 +9,14 @@ import MovieInfoPage from "./pages/MovieInfoPage";
 import ErrorPage from "./pages/ErrorPage";
 import Footer from "./components/Footer";
 import SearchPage from "./pages/SearchPage";
-import { LanguageContext } from "./contexts/LanguageContext";
+import { LanguageContext, Lang } from "./contexts/LanguageContext";
 import { GenreContext } from "./contexts/GenreContext";
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState<Lang>("en");
   const [genre, changeGenreState] = useState("");
 
-  const handleLanguage = (lang: string) => {
+  const handleLanguage = (lang: Lang) => {
     setLang(lang);
   };
 

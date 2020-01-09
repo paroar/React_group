@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { LanguageContext } from "../contexts/LanguageContext";
+import { LanguageContext, Lang } from "../contexts/LanguageContext";
 
 const icons = [
   {
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
   const { handleLanguage } = useContext(LanguageContext);
 
   const changeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    handleLanguage(e.target.value);
+    handleLanguage(e.target.value as Lang);
   };
 
   return (
