@@ -20,7 +20,7 @@
     justify-content: center;
 
     @include respond(tablet-port) {
-      grid-template-columns: repeat(1, auto);
+      grid-template-columns: repeat(2, auto);
     }
 
     &--select {

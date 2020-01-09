@@ -6,7 +6,7 @@ const CataloguePage = () => {
   const [state, changeState] = useState({ currentPage: [1] });
   const [ratingState, changeRatingState] = useState("");
   const [sortState, changeSortState] = useState("");
-  const [orderState, changeOrderState] = useState("");
+  // const [orderState, changeOrderState] = useState("");
   const [keywordState, changeKeywordState] = useState("");
 
 
@@ -18,9 +18,9 @@ const CataloguePage = () => {
     changeSortState(e.target.value);
   };
 
-  const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeOrderState(e.target.value);
-  };
+  // const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   changeOrderState(e.target.value);
+  // };
 
   const handleKeyword = (e: React.ChangeEvent<HTMLSelectElement>) => {
     changeKeywordState(e.target.value);
@@ -44,7 +44,7 @@ const CataloguePage = () => {
     <>
       <Filter
         handleSort={handleSort}
-        handleOrder={handleOrder}
+        // handleOrder={handleOrder}
         handleRating={handleRating}
         handleKeyword={handleKeyword}
       />
@@ -54,7 +54,7 @@ const CataloguePage = () => {
             key={x}
             page={x}
             sort={sortState}
-            order={orderState}
+            // order={orderState}
             rating={ratingState}
             keyword={keywordState}
           />

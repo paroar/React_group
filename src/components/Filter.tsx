@@ -14,7 +14,7 @@ const sortBy = [
   "vote_average"
 ];
 
-const orderBy = ["desc", "asc"];
+// const orderBy = ["desc", "asc"];
 
 const Filter = (props: any) => {
   const { handleGenre } = useContext(GenreContext);
@@ -90,7 +90,7 @@ const Filter = (props: any) => {
             ))}
           </select>
 
-          <select
+          {/* <select
             className="search-container--filter--select"
             name=""
             id=""
@@ -105,7 +105,7 @@ const Filter = (props: any) => {
                 {order}
               </option>
             ))}
-          </select>
+          </select> */}
         </div>
       </div>
     </div>
