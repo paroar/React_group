@@ -2,7 +2,11 @@
   //margin: 5rem 0 5rem 0;
   display: grid;
   justify-content: center;
-  background-color: orangered;
+  background-image: linear-gradient(
+    to bottom right,
+    $shade-grey-2,
+    $shade-grey-1
+  );
 
   & > * {
     margin: 1rem;
@@ -37,7 +41,7 @@
   }
 }
 
-.grid--similar{
+.grid--similar {
   display: grid;
   justify-content: center;
 
@@ -97,5 +101,4 @@
   @include respond(phone-land) {
     grid-template-columns: repeat(1, auto);
   }
-
 }

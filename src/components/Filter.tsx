@@ -19,7 +19,7 @@ const orderBy = ["desc", "asc"];
 const Filter = (props: any) => {
   const { handleGenre } = useContext(GenreContext);
   return (
-    <div data-testid="search-page">
+    <div data-testid="search-page" className="search-filter">
       <div className="search-container">
         <div className="search-container--filter">
           <select
