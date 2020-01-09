@@ -1,13 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
+// import { RouteComponentProps } from "react-router";
+import app from "../../config/base";
+import { AuthContext } from "./../../context/Auth";
+import { withRouter, Redirect, RouteComponentProps } from "react-router";
 
-class SignInForm extends Component {
+interface SignInFormProps extends RouteComponentProps<any> {
+
+}
+
+class SignInForm extends React.Component<SignInFormProps> {
     state = {
         signIn: {
-            username: {
+            email: {
                 elementType: 'input',
                 elementConfig: {
-                    type: 'text',
+                    type: 'email',
+                    name: 'email',
                     required: true
                 },
                 labelConfig: {
@@ -21,6 +30,7 @@ class SignInForm extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
+                    name: 'password', 
                     required: true
                 },
                 labelConfig: {
@@ -32,6 +42,7 @@ class SignInForm extends Component {
             }
         }
     }
+    static contextType = AuthContext;
     // handleSubmit = ( event ) => {
     //     event.preventDefault();
     //     const formData;
@@ -50,13 +61,43 @@ class SignInForm extends Component {
         const updatedElement = {...updatedForm[inputId]};
         updatedElement.value = event.target.value;
         updatedElement.value = this.validate.bind(updatedElement.value, updatedElement.config);
-        console.log(updatedElement);
+        console.log(updatedElement.value);
         //@ts-ignore
         updatedForm[inputId] = updatedForm;
         this.setState({signIn: updatedForm});
     }
+    signIn( event: any ) {
+        event.preventDefault();
+        app.auth().signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value).then((_u: any) => {}).catch((error: any) => {
+            console.log(error);
+        })
+    }
+
+    async handleSignIn(event: Event) {
+        event.preventDefault();
+        try {
+            await app
+            .auth()
+            .signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value);
+            this.props.history.push("/admin");
+        } catch (error) {
+            alert(error);
+            console.log(this.state.signIn.email.value);
+        }
+    };
     
+
     render() {
+        const { currentUser }= this.context;
+        if (currentUser) {
+            console.log(this.context);
+
+            return (
+                <Redirect to="/" />
+            );
+        } 
+
+
         const formElements: {id: string, config: InputProps}[] = [];
         for (let key in this.state.signIn) {
             formElements.push({
@@ -67,7 +108,8 @@ class SignInForm extends Component {
         }
 
         let form = (
-            <form className="sign-in-form">
+            //@ts-ignore
+            <form className="sign-in-form" onSubmit={this.handleSignIn.bind(this)}>
                 <h2>Sign In</h2>
                 {formElements.map(formElement => (
                     <Input
@@ -76,10 +118,10 @@ class SignInForm extends Component {
                         elementConfig = {formElement.config.elementConfig}
                         labelConfig = {formElement.config.labelConfig}
                         value = {formElement.config.value}
-                        changed = {(event: any) => this.handleInputChange.bind(event, formElement.id)}
+                        changed = {(event: Event) => this.handleInputChange.bind(this, event, formElement.id)}
                     />
                 ))}
-                <button className="btn-form">
+                <button type="submit" className="btn-form">
                     Send
                 </button>
             </form>
@@ -90,7 +132,8 @@ class SignInForm extends Component {
                 {form}
             </div>
         );
+
     };
 }
-
-export default SignInForm;
+//@ts-ignore
+export default withRouter(SignInForm);

@@ -5,7 +5,8 @@ export type InputProps = {
   elementType: string,
   elementConfig: {
     type?: string,
-    placeholder?: string
+    placeholder?: string,
+    name?: string
   },
   labelConfig: {
     labelName?: string,

@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useCallback } from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
+//import { withRouter } from "react-router";
+import app from "../../config/base";
 
 class SignUpForm extends Component {
     state = {
@@ -88,6 +90,20 @@ class SignUpForm extends Component {
         updatedForm[inputId] = updatedForm;
         this.setState({signUp: updatedForm});
     }
+    //@ts-ignore
+    handleSignUp = ({ history }) => {
+        useCallback(async event => {
+            const { email, password } = event.target.elements;
+            try {
+                await app
+                .auth()
+                .createUserWithEmailAndPassword(email.value, password.value);
+                history.push("/");
+            } catch (error) {
+                alert(error);
+            }
+        }, [history]);
+    }
 
     render() {
         const formElements: {id: string, config: InputProps}[] = [];
@@ -99,7 +115,8 @@ class SignUpForm extends Component {
             });
         }
         let form = (
-            <form className="sign-up-form">
+            //@ts-ignore
+            <form className="sign-up-form" onSubmit={this.handleSignUp}>
                 <h2>Create Your Account</h2>
                 {formElements.map(formElement => (
                     <Input
