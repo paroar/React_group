@@ -51,16 +51,14 @@ const ReviewsContainer: React.FC = () => {
   }, []);
 
   if (state.loading) {
-//@ts-ignore
 return <div>{language["loading"][lang]}</div>;
   }
   if (!state.reviews) {
-//@ts-ignore
 return <div>{language["noInfo"][lang]}</div>;
   }
   return (
     <div className="reviews">
-      //@ts-ignore
+    
       <Heading>{language["reviews"][lang]}</Heading>
       <Reviews reviews={state.reviews} />
     </div>

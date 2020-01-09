@@ -31,7 +31,6 @@ const Cast: React.FC<CastProps> = props => {
     }
     return (
       <div className="cast">
-        //@ts-ignore
         <Heading>{language["cast"][lang]}</Heading>
         <div className="grid--actor">
           {cast.map(crew => (

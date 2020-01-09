@@ -62,7 +62,6 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
     return <div>{language.loading[lang]}</div>;
   }
   if (state.movies.length === 0) {
-    //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
   return (

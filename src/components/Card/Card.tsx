@@ -76,14 +76,12 @@ const Card: React.FC<CardProps> = props => {
         {props.vote ? (
           <>
             <Num>{props.vote}/10</Num>
-            //@ts-ignore
             <Genre>{language["add"][lang]}</Genre>
           </>
         ) : null}
 
         {props.charName ? (
           <SubTitle>
-                    //@ts-ignore
             {language["as"][lang]}
             {props.charName}
           </SubTitle>

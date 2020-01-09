@@ -30,11 +30,9 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
   }, [props]);
 
   if (state.loading) {
-    //@ts-ignore
     return <div>{language["loading"][lang]}</div>;
   }
   if (!state.info.combined_credits) {
-    //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
   return <Actor info={state.info} />;

@@ -67,7 +67,6 @@ class SearchContainer extends React.Component<SearchContainerProps> {
                   id="search-input"
                   aria-label="search"
                   type="text"
-                  //@ts-ignore
                   placeholder={language["placeholder"][lang]}
                   className="input"
                   onChange={e => this.handleOnChange(e)}

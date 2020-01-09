@@ -36,11 +36,9 @@ const SimilarContainer: React.FC = () => {
   }, []);
 
   if (state.loading) {
-    //@ts-ignore
     return <div>{language["loading"][lang]}</div>;
   }
   if (!state.movies) {
-    //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
   if (state.movies.length === 0) {
@@ -48,7 +46,7 @@ const SimilarContainer: React.FC = () => {
   }
   return (
     <div className="similars">
-          //@ts-ignore
+    
       <Heading>{language["similars"][lang]}</Heading>
       <div className="grid--similar">
         <Grid arr={state.movies} />

@@ -31,11 +31,9 @@ const MovieInfoContainer: React.FC<MovieInfoContainerProps> = () => {
   }, [slug, lang]);
 
   if (state.loading) {
-    //@ts-ignore
     return <div>{language["loading"][lang]}</div>;
   }
   if (!state.movie) {
-    //@ts-ignore
     return <div>{language["noInfo"][lang]}</div>;
   }
   return <MovieInfo movie={state.movie} />;

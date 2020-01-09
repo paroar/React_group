@@ -26,14 +26,12 @@ const HomePage = () => {
     <div data-testid="home-page" className="home-page">
       <h1 className="maintitle">
         {
-          //@ts-ignore
           tabs.welcome[lang]
         }
         <span className="maintitle-mark">4Birds</span>
       </h1>
       <div className="table-icons">
         {tabs["tabList"].map(({ name, logo, id }) => (
-          //@ts-ignore
           <Icon key={id} name={name[lang]} logo={logo} path={name["en"]} />
         ))}
       </div>

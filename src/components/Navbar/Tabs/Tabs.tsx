@@ -25,11 +25,9 @@ const Tabs: React.FC<TabsProps> = ({ isOpen, handleIsOpen }) => {
       className={"nav-links " + (isOpen ? "open" : "")}
       onClick={handleIsOpen}
     >
-      //@ts-ignore
       {tabs["tabList"].map(tab => (
         <Tab
           key={tab.path}
-          //@ts-ignore
           name={tab.name[lang]}
           path={tab.path}
           fn={handleIsOpen}

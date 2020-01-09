@@ -32,7 +32,6 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
         </Accordion>
       ))}
       <Link to="/user">
-        //@ts-ignore
         <Accordion title={language["login"][lang]} />
       </Link>
     </>

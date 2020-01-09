@@ -13,7 +13,6 @@ type BioProps = {
 const Biography: React.FC<BioProps> = ({ bio }) => {
   const { lang } = useContext(LanguageContext);
 
-  //@ts-ignore
   return bio ? <p>{bio}</p> : <p>{language["biography"][lang]}</p>;
 };
 
@@ -34,7 +33,6 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
       </div>
       {info.combined_credits.cast.length < 8 ? null : (
         <>
-          //@ts-ignore
           <Heading>{language["filmography"][lang]}</Heading>
           <div className="grid">
             <Grid arr={info.combined_credits.cast} />
