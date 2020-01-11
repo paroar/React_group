@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Route, Switch } from "react-router";
-import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage/HomePage";
 import ActorPage from "./pages/ActorPage";
 import HelpPage from "./pages/HelpPage";
 import CataloguePage from "./pages/CataloguePage";
 import MovieInfoPage from "./pages/MovieInfoPage";
 import ErrorPage from "./pages/ErrorPage";
-import Footer from "./components/Footer";
 import SearchPage from "./pages/SearchPage";
+import UserPage from "./pages/UserPage";
+import AdminPage from "./pages/AdminPage";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer";
+import PrivateRoute from "./components/SignUp/PrivateRoute";
 import { LanguageContext, Lang } from "./contexts/LanguageContext";
 import { GenreContext } from "./contexts/GenreContext";
-import UserPage from "./pages/UserPage";
-import { AuthProvider } from "./context/Auth";
-import PrivateRoute from "./components/SignUp/PrivateRoute";
-import AdminPage from "./pages/AdminPage";
+import { AuthProvider } from "./contexts/Auth";
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Lang>("en");

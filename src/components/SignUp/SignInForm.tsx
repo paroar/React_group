@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
 import app from "../../config/base";
-import { AuthContext } from "./../../context/Auth";
+import { AuthContext } from "../../contexts/Auth";
 import { withRouter, Redirect, RouteComponentProps } from "react-router";
 
 

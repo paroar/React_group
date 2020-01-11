@@ -1,36 +1,34 @@
-@import 'abstracts/reset';
-@import 'abstracts/color';
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@import "abstracts/reset";
+@import "abstracts/color";
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
-@import 'base/animations';
+@import "base/animations";
 
-@import 'typography/typography';
+@import "typography/typography";
 
-@import 'layout/grid';
+@import "layout/grid";
 
-@import 'pages/Details';
-@import 'pages/HomePage';
-@import 'pages/HelpPage';
-@import 'pages/FilterPage';
-@import 'pages/UserPage';
+@import "pages/Details";
+@import "pages/HomePage";
+@import "pages/HelpPage";
+@import "pages/FilterPage";
+@import "pages/UserPage";
 
-
-@import 'components/Navbar';
-@import 'components/Hero';
-@import 'components/Cast';
-@import 'components/Button';
-@import 'components/Heading';
-@import 'components/IconMenu';
-@import 'components/Footer';
-@import 'components/Search';
-@import 'components/HelpBlock';
-@import 'components/Modal';
-@import 'components/Backdrop';
-@import 'components/ContactForm';
-@import 'components/FAQ';
-@import 'components/Accordion';
-@import 'components/Card';
-@import 'components/Reviews';
-@import 'components/SignUpForm';
-
+@import "components/Navbar";
+@import "components/Hero";
+@import "components/Cast";
+@import "components/Button";
+@import "components/Heading";
+@import "components/IconMenu";
+@import "components/Footer";
+@import "components/Search";
+@import "components/HelpBlock";
+@import "components/Modal";
+@import "components/Backdrop";
+@import "components/ContactForm";
+@import "components/FAQ";
+@import "components/Accordion";
+@import "components/Card";
+@import "components/Reviews";
+@import "components/SignUpForm";

@@ -9,7 +9,6 @@ const CataloguePage = () => {
   // const [orderState, changeOrderState] = useState("");
   const [keywordState, changeKeywordState] = useState("");
 
-
   const handleRating = (e: React.ChangeEvent<HTMLSelectElement>) => {
     changeRatingState(e.target.value);
   };

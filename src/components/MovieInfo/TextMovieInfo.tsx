@@ -28,7 +28,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
     background-color: rgba(0, 0, 0, 0.5);
     margin: 1rem auto;
     border-radius: 2px;
-    border: 1px solid f76c5e;
+    border: 1px solid #f76c5e;
     justify-content: center;
     align-items: center;
 
