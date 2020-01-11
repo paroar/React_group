@@ -1,9 +1,10 @@
-import React, { Component, useCallback } from "react";
+import React, { ChangeEvent } from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
-//import { withRouter } from "react-router";
-import app from "../../config/base";
+import base from "../../config/base";
+import { AuthContext } from "../../contexts/Auth";
+import { withRouter, Redirect, RouteComponentProps } from "react-router";
 
-class SignUpForm extends Component {
+class SignUpForm extends React.Component<RouteComponentProps> {
     state = {
         signUp: {
             first_name: {
@@ -27,6 +28,18 @@ class SignUpForm extends Component {
                 labelConfig: {
                     labelName: 'last_name',
                     labelContent: 'Last Name'
+                },
+                value: ''
+            },
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    required: true
+                },
+                labelConfig: {
+                    labelName: 'email',
+                    labelContent: 'Email'
                 },
                 value: ''
             },
@@ -66,46 +79,41 @@ class SignUpForm extends Component {
                 },
                 value: ''
             }
-            // submit: {
-            //     elementType: 'input',
-            //     elementConfig: {
-            //         type: 'submit',
-            //     },
-            //     labelConfig: {
-            //         labelName: 'submit_signup',
-            //     },
-            //     value: 'Sign Up'
-            // }
-
-            //para select podría ser -> options: [{value: '', name: '', etc}]
         }
     }
 
-    handleInputChange = (event: { target: any; }, inputId: string) => {
+    static contextType = AuthContext;
+
+    handleInputChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
         const updatedForm = {...this.state.signUp};
         //@ts-ignore
-        const updatedElement = {...updatedForm[inputId]};
-        updatedElement.value = event.target.value;
+        const updatedFormElement = {...updatedForm[identifier]};
+        updatedFormElement.value = event.target.value;
         //@ts-ignore
-        updatedForm[inputId] = updatedForm;
+        updatedForm[identifier] = updatedFormElement;
         this.setState({signUp: updatedForm});
     }
-    //@ts-ignore
-    handleSignUp = ({ history }) => {
-        useCallback(async event => {
-            const { email, password } = event.target.elements;
-            try {
-                await app
-                .auth()
-                .createUserWithEmailAndPassword(email.value, password.value);
-                history.push("/");
-            } catch (error) {
-                alert(error);
-            }
-        }, [history]);
+
+    async handleSignUp(event: React.FormEvent<HTMLInputElement>) {
+        event.preventDefault();
+        try {
+            await base
+            .auth()
+            .createUserWithEmailAndPassword(this.state.signUp.email.value, this.state.signUp.password.value);
+            this.props.history.push("/admin");
+        } catch (error) {
+            alert(error);
+        }
     }
 
     render() {
+        const { currentUser } = this.context;
+        if(currentUser) {
+            return (
+                <Redirect to ="/admin" />
+            );
+        }
+
         const formElements: {id: string, config: InputProps}[] = [];
         for (let key in this.state.signUp) {
             formElements.push({
@@ -116,7 +124,7 @@ class SignUpForm extends Component {
         }
         let form = (
             //@ts-ignore
-            <form className="sign-up-form" onSubmit={this.handleSignUp}>
+            <form className="sign-up-form" onSubmit={this.handleSignUp.bind(this)}>
                 <h2>Create Your Account</h2>
                 {formElements.map(formElement => (
                     <Input
@@ -125,6 +133,7 @@ class SignUpForm extends Component {
                         elementConfig = {formElement.config.elementConfig}
                         labelConfig = {formElement.config.labelConfig}
                         value = {formElement.config.value}
+                        changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
                     />
                 ))}
                 <button className="btn-form">
@@ -138,7 +147,7 @@ class SignUpForm extends Component {
                 {form}
             </div>
         );
-    };
+    }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);

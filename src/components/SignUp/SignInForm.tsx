@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import Input, { InputProps } from "../Help/ContactForm/Input/Input";
-import app from "../../config/base";
+import base from "../../config/base";
 import { AuthContext } from "../../contexts/Auth";
 import { withRouter, Redirect, RouteComponentProps } from "react-router";
 
@@ -43,7 +43,6 @@ class SignInForm extends React.Component<RouteComponentProps> {
     //@ts-ignore
     handleInputChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
         const updatedForm = {...this.state.signIn}
-        console.log(updatedForm);
         //@ts-ignore
         const updatedFormElement = {...updatedForm[identifier]};
         updatedFormElement.value = event.target.value;
@@ -55,14 +54,14 @@ class SignInForm extends React.Component<RouteComponentProps> {
     async handleSignIn(event: React.FormEvent<HTMLInputElement>) {
         event.preventDefault();
         try {
-            await app
+            await base
             .auth()
             .signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value);
             this.props.history.push("/admin");
         } catch (error) {
             alert(error);
         }
-    };
+    }
     
 
     render() {
@@ -110,7 +109,7 @@ class SignInForm extends React.Component<RouteComponentProps> {
             </div>
         );
 
-    };
+    }
 }
-//@ts-ignore
+
 export default withRouter(SignInForm);
