@@ -1,56 +1,64 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
-type InputProps = {
-  inputName: string;
-  labelName?: string;
-  labelContent?: string;
-  labelContentBold?: string;
-  inputType?: string;
-  placeholderText?: string;
-};
+export type InputProps = {
+  //elementType: input | textarea | select, etc
+  elementType: string,
+  elementConfig: {
+    type?: string,
+    placeholder?: string,
+    name?: string
+  },
+  labelConfig: {
+    labelName?: string,
+    labelContent?: string,
+    labelContentBold?: string
+  },
+  value: string | string[] | undefined,
+  changed?: React.EventHandler<ChangeEvent>
+}
 
-const Input: React.FC<InputProps> = ({
-  labelName,
-  labelContent,
-  labelContentBold,
-  inputName,
-  inputType,
-  placeholderText
-}) => {
-  let inputElement = null;
-  switch (inputName) {
+const Input = (props: InputProps) => {
+  let element = null;
+  switch (props.elementType) {
     case "input":
-      inputElement = (
+      element = (
         <input
-          aria-label="Input"
+          {...props.elementConfig}
+          aria-label="input"
           className="input-element"
-          type={inputType}
-          required
+          onChange={props.changed}
         />
       );
       break;
     case "select":
-      inputElement = (
-        <select aria-label="Select" className="input-select"></select>
+      element = (
+        <select
+          {...props.elementConfig}
+          aria-label="Select" 
+          className="input-select"
+          onChange={props.changed}
+        >
+        </select>
       );
       break;
     case "textarea":
-      inputElement = (
+      element = (
         <textarea
+          {...props.elementConfig}
           aria-label="Textarea"
           className="input-textarea"
-          placeholder={placeholderText}
+          onChange={props.changed}
         />
       );
       break;
   }
   return (
     <div className="input-container">
-      {inputElement}
-      <label htmlFor={labelName} className="label-animation">
+      {element}
+      <label htmlFor={props.labelConfig.labelName} className="label-animation">
         <span className="input-animation">
-          {labelContent}
-          <span style={{ fontWeight: "bold" }}>{labelContentBold}</span>
+          {props.labelConfig.labelContent}
+          <span style={{ fontWeight: "bold" }}>{props.labelConfig.labelContentBold}</span>
         </span>
       </label>
     </div>

@@ -1,16 +1,16 @@
 import React from "react";
 
-type ChevronProps = {
-    chevronClass?: string;
+type PlusProps = {
+    plusClass?: string;
     height: string | number;
     width: string | number;
     fill: string;
 }
 
-const Chevron = (props: ChevronProps) => {
+const Plus = (props: PlusProps) => {
     return (
         <svg
-            className={props.chevronClass} 
+            className={props.plusClass} 
             height={props.height}
             width={props.width}
             xmlns="http://www.w3.org/2000/svg" 
@@ -23,4 +23,4 @@ const Chevron = (props: ChevronProps) => {
     );
 };
 
-export default Chevron;
+export default Plus;
