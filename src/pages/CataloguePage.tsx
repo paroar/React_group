@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CatalogueContainer from "../containers/CatalogueContainer/CatalogueContainer";
 import Filter from "../components/Filter";
+import Droppable from "../components/DnD/Droppable";
 
 const CataloguePage = () => {
   const [state, changeState] = useState({ currentPage: [1] });
@@ -47,6 +48,7 @@ const CataloguePage = () => {
         handleRating={handleRating}
         handleKeyword={handleKeyword}
       />
+      <Droppable id="drop1"/>
       <div className="grid">
         {state.currentPage.map(x => (
           <CatalogueContainer
