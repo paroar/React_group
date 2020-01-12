@@ -26,7 +26,7 @@ const Genre = styled.div`
   text-align: center;
 
   &:hover {
-    background-color: #f76c5e;
+    background-color: var(--coral);
     transform: translate(-50%, -2px);
   }
 `;
