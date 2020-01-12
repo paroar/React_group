@@ -13,7 +13,7 @@ const Grid: React.FC<GridProps> = props => {
         {props.arr.map(movie =>
           movie.poster_path ? (
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
-              <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path}>
+              <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path} id={movie.id} imdb={movie.imdb_id}>
                 <Poster key={movie.id} imgPath={movie.poster_path} />
               </Card>
             </Link>

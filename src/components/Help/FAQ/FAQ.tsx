@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "./../Accordion/Accordion";
+import Accordion from "../../Accordion/Accordion";
 import questionData from "./../../../assets/questions.json";
 import { FaSearch } from "react-icons/fa";
 

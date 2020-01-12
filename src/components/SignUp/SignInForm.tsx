@@ -73,7 +73,6 @@ class SignInForm extends React.Component<RouteComponentProps> {
             ); 
         } 
 
-
         const formElements: {id: string, config: InputProps}[] = [];
         for (let key in this.state.signIn) {
             formElements.push({

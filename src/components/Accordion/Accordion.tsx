@@ -23,7 +23,7 @@ const Accordion = (props: AccordionProps) => {
         setRotateState(
           setActive === "active" ? "accordion-icon" : "accordion-icon rotate"
         );
-        }
+    }
 
     return (
         <div className="accordion-section">

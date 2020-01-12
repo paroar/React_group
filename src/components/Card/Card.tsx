@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import language from "./lang";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import firebase from "firebase";
 
 type CardProps = {
   title: string;
   vote?: number;
   backdrop_path?: string;
   charName?: string;
+  id?: number;
+  imdb?: string | number
 };
 
 const Genre = styled.div`
@@ -59,6 +62,18 @@ const SubTitle = styled.h4`
 `;
 
 const Card: React.FC<CardProps> = props => {
+  const addFavorite = () => {
+    // const [favorite, setFavorite] = useState(false);
+      firebase
+      .firestore()
+      .collection('favorites')
+      .add({
+        title: props.title,
+        backdrop_path: props.backdrop_path,
+        imdb_id: props.imdb
+      })
+  }  
+
   const { lang } = useContext(LanguageContext);
 
   const style = {
@@ -76,7 +91,7 @@ const Card: React.FC<CardProps> = props => {
         {props.vote ? (
           <>
             <Num>{props.vote}/10</Num>
-            <Genre>{language["add"][lang]}</Genre>
+            <Genre onClick={addFavorite}>{language["add"][lang]}</Genre>
           </>
         ) : null}
 

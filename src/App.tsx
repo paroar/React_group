@@ -8,7 +8,7 @@ import MovieInfoPage from "./pages/MovieInfoPage";
 import ErrorPage from "./pages/ErrorPage";
 import SearchPage from "./pages/SearchPage";
 import UserPage from "./pages/UserPage";
-import AdminPage from "./pages/AdminPage";
+import DashboardPage from "./pages/DashboardPage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
 import PrivateRoute from "./components/SignUp/PrivateRoute";
@@ -45,7 +45,7 @@ const App: React.FC = () => {
               <Route exact path="/help" component={HelpPage} />
               <Route exact path="/search" component={SearchPage} />
               <Route exact path="/user" component={UserPage} />
-              <PrivateRoute exact path="/admin" component={AdminPage} />
+              <PrivateRoute exact path="/admin" component={DashboardPage} />
               <Route component={ErrorPage} />
             </Switch>
           </GenreContext.Provider>

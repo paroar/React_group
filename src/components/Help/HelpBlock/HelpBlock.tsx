@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonComponent from "../ButtonComponent/ButtonComponent";
-import Modal from "./../Modal/Modal";
+import ButtonComponent from "../../ButtonComponent/ButtonComponent";
+import Modal from "../../Modal/Modal";
 import { FaTimes } from "react-icons/fa";
 
 type HelpBlockProps = {
