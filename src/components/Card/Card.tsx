@@ -69,6 +69,7 @@ const Card: React.FC<CardProps> = props => {
   };
 
   return (
+
     <div className="card">
       <div className="card__side card__side--front">{props.children}</div>
       <div className="card__side card__side--back" style={style}>
