@@ -5,6 +5,7 @@ import { CatalogueContainerProps } from "../../utils/types";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 import { GenreContext } from "../../contexts/GenreContext";
+import { FilmContext } from "../../contexts/FilmContext";
 
 const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   const [state, changeState] = useState({
@@ -15,19 +16,21 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
 
   const { lang } = useContext(LanguageContext);
   let { genre } = useContext(GenreContext);
+  const { handleFilms } = useContext(FilmContext);
 
   useEffect(() => {
     var url = "";
-    genre =
-      genre !== ""
-        ? `&with_genres=${genre}`
-        : "";
+    genre = genre !== "" ? `&with_genres=${genre}` : "";
     const sort = "&sort_by=" + `${props.sort || "popularity"}`;
     const order = props.order ? "." + props.order : ".desc";
     const rating =
-      props.rating !== "" && typeof props.rating !== "undefined"? `&vote_average.gte=${props.rating}` : "";
+      props.rating !== "" && typeof props.rating !== "undefined"
+        ? `&vote_average.gte=${props.rating}`
+        : "";
     const keyword =
-      props.keyword !== "" && typeof props.keyword !== "undefined"? `&with_keywords=${props.keyword}` : "";
+      props.keyword !== "" && typeof props.keyword !== "undefined"
+        ? `&with_keywords=${props.keyword}`
+        : "";
 
     url =
       urls.domain +
@@ -44,21 +47,19 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
       "&language=" +
       lang;
 
-    console.log("URLK", url);
-
     fetch(url)
       .then(response => response.json())
-      .then(movies =>
+      .then(movies => {
         changeState({
           loading: false,
           movies: movies.results,
           currentPage: props.page
-        })
-      );
+        });
+      });
+      handleFilms(state.movies);
   }, [props, state.currentPage]);
 
   if (state.loading) {
-
     return <div>{language.loading[lang]}</div>;
   }
   if (state.movies.length === 0) {
