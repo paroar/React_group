@@ -3,12 +3,11 @@
   border: none;
   padding: 0.5rem 0rem;
   border-radius: 100rem;
-  z-index: 10;
   background-color: $grey-light-3;
   width: 15rem;
   color: $main-black;
   transition: all .3s;
-  margin-right: 5rem;
+  margin-right: -2rem;
 
   &:focus{
     background-color: $main-white;
@@ -23,6 +22,8 @@
   &-input{
     flex: 1;
     margin-left: 2rem;
+    display: flex;
+    align-items: center;
   }
 
   &-grid {
@@ -82,4 +83,11 @@
   background-color: $first-color;
   float: left;
   margin: 0.3rem;
+
+
+}
+.search-icon{
+  width: 1rem;
+  height: 1rem;
+  fill: $color2;
 }

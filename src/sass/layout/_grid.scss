@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   justify-content: center;
+  background-color: $primary-color-dark;
   
   & > * {
     margin: 1rem;
