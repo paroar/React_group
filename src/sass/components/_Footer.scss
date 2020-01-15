@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   background-color: $dark-grey;
   border-top: 2px solid $off-white;
