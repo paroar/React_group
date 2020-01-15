@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 type DroppableProps = {
@@ -6,19 +6,26 @@ type DroppableProps = {
 };
 
 const StyledDragDiv = styled.div`
-  height: 6rem;
-  background-color: orangered;
-  display: flex;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+  & > *{
+    margin: 1rem;
+  }
 `;
 
 const Droppable: React.FC<DroppableProps> = () => {
+  const [pick, setPick] = useState({
+    id: "",
+    path: ""
+  });
 
   const drop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const data = e.dataTransfer.getData("transfer");
     const node = document.getElementById(data);
     //@ts-ignore
-    e.currentTarget.appendChild(node);
+    setPick({id: node.id, path: node.firstChild.currentSrc});
   };
 
   return (
@@ -27,7 +34,9 @@ const Droppable: React.FC<DroppableProps> = () => {
         onDrop={e => drop(e)}
         onDragOver={e => e.preventDefault()}
         id="dragDiv"
-      ></StyledDragDiv>
+      >
+        <img src={pick.path} alt=""/>
+      </StyledDragDiv>
     </>
   );
 };

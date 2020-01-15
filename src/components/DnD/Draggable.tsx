@@ -5,10 +5,10 @@ type DraggableProps = {
 };
 
 const Draggable: React.FC<DraggableProps> = props => {
-    const drag = (e:React.DragEvent<HTMLDivElement>)=>{
-        const id = (e.currentTarget as HTMLDivElement).id;        
-        e.dataTransfer.setData("transfer", id);
-      }
+  const drag = (e: React.DragEvent<HTMLDivElement>) => {
+    const id = (e.currentTarget as HTMLDivElement).id;
+    e.dataTransfer.setData("transfer", id);
+  };
 
   return (
     <div
