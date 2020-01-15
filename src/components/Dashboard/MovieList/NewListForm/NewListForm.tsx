@@ -1,6 +1,6 @@
 import React from 'react';
 import Input, { InputProps } from '../../../Help/ContactForm/Input/Input';
-import firebase from 'firebase';
+import base from 'firebase';
 
 class NewListForm extends React.Component {
     state = {
@@ -15,6 +15,19 @@ class NewListForm extends React.Component {
                 labelConfig: {
                     labelName: 'list_name',
                     labelContent: 'List Name'
+                },
+                value: '',
+                valid: false
+            },
+            existing_list: {
+                elementType: 'select',
+                elementConfig: {
+                    name: 'existingListName',
+                    required: false
+                },
+                labelConfig: {
+                    labelName: 'existing_list',
+                    labelContent: 'Add to existing list'
                 },
                 value: '',
                 valid: false
@@ -44,19 +57,19 @@ class NewListForm extends React.Component {
         //@ts-ignore
         updatedForm[identifier] = updatedFormElement;
         this.setState({newList: updatedForm});
+
+        base.database()
     }
 
-    handleNewList(event: any) {
+    handleNewList = (event: React.FormEvent) => {
         event.preventDefault();
         const name = this.state.newList.list_name.value;
         const description = this.state.newList.list_description.value;
-        const docRef = firebase.firestore().doc("users/testUser");
-        docRef.collection("lists")
-        .doc(name)
-        .set({
+        const docRef = base.firestore().collection("users/testUser/lists")
+        docRef.add({
             name: name,
             description: description
-        })
+        })        
     }
 
     render() {
@@ -70,22 +83,24 @@ class NewListForm extends React.Component {
         }
 
         let form = (
-            <form onSubmit={this.handleNewList.bind(this)}>
-                <h2>Create a new list</h2>
-                {formElements.map(formElement => (
-                    <Input 
-                        key = {formElement.id}
-                        elementType = {formElement.config.elementType}
-                        elementConfig = {formElement.config.elementConfig}
-                        labelConfig = {formElement.config.labelConfig}
-                        value = {formElement.config.value}
-                        changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
-                    />
-                ))}
-                <button type="submit" className="btn-form">
-                    Send
-                </button>
-            </form>
+            <div className="new-list-form-wrapper">
+                <form onSubmit={this.handleNewList.bind(this)} className="new-list-form">
+                    <h2>Create a new list</h2>
+                    {formElements.map(formElement => (
+                        <Input 
+                            key = {formElement.id}
+                            elementType = {formElement.config.elementType}
+                            elementConfig = {formElement.config.elementConfig}
+                            labelConfig = {formElement.config.labelConfig}
+                            value = {formElement.config.value}
+                            changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
+                        />
+                    ))}
+                    <button type="submit" className="btn-form">
+                        Send
+                    </button>
+                </form>
+            </div>
         );
 
         return (
@@ -95,5 +110,4 @@ class NewListForm extends React.Component {
         )     
     }
 }
-
 export default NewListForm;

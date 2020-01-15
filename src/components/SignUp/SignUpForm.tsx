@@ -100,7 +100,7 @@ class SignUpForm extends React.Component<RouteComponentProps> {
             await base
             .auth()
             .createUserWithEmailAndPassword(this.state.signUp.email.value, this.state.signUp.password.value);
-            this.props.history.push("/admin");
+            this.props.history.push("/dashboard");
         } catch (error) {
             alert(error);
         }
@@ -110,7 +110,7 @@ class SignUpForm extends React.Component<RouteComponentProps> {
         const { currentUser } = this.context;
         if(currentUser) {
             return (
-                <Redirect to ="/admin" />
+                <Redirect to ="/dashboard" />
             );
         }
 

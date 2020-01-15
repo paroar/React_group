@@ -69,8 +69,8 @@ const Card: React.FC<CardProps> = props => {
       .collection('favorites')
       .add({
         title: props.title,
-        backdrop_path: props.backdrop_path,
-        imdb_id: props.imdb
+        backdrop_path: props.backdrop_path
+        // imdb_id: props.imdb
       })
   }  
 

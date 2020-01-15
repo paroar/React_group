@@ -45,7 +45,7 @@ const App: React.FC = () => {
               <Route exact path="/help" component={HelpPage} />
               <Route exact path="/search" component={SearchPage} />
               <Route exact path="/user" component={UserPage} />
-              <PrivateRoute exact path="/admin" component={DashboardPage} />
+              <PrivateRoute exact path="/dashboard" component={DashboardPage} />
               <Route component={ErrorPage} />
             </Switch>
           </GenreContext.Provider>

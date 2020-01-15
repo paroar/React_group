@@ -58,6 +58,11 @@ class MovieReviewForm extends React.Component {
         updatedForm[identifier] = updatedFormElement;
         this.setState({newList: updatedForm});
     }
+
+    handleMovieReview = (event: React.ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        
+    }
     
     render() {
         const formElements: {id: string, config: InputProps}[] = [];

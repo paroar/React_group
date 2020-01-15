@@ -16,9 +16,27 @@ const Dashboard = () => {
             <h1>Hey there</h1>
             <NewList></NewList>
             <MovieReview></MovieReview>
-            <div className="list-container">
+            <div className="section-title">Popular</div>
+            <div className="list-container-wrapper">
+                <div className="list-container">
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                </div>
             </div>
-            <div className="picks-container"></div>
+            
+            <div className="section-title">My lists</div>
+            <div className="picks-container-wrapper">
+                <div className="picks-container">
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                    <div className="list-item"></div>
+                </div>
+            </div>
             <Carousel />
             <button onClick={() => app.auth().signOut()}>Sign Out</button>
         </div>

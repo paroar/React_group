@@ -57,7 +57,7 @@ class SignInForm extends React.Component<RouteComponentProps> {
             await base
             .auth()
             .signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value);
-            this.props.history.push("/admin");
+            this.props.history.push("/dashboard");
         } catch (error) {
             alert(error);
         }
@@ -66,10 +66,11 @@ class SignInForm extends React.Component<RouteComponentProps> {
 
     render() {
         const { currentUser } = this.context;
+
         if (currentUser) {
             console.log(this.context);
             return (
-                <Redirect to="/admin" />
+                <Redirect to="/dashboard" />
             ); 
         } 
 
