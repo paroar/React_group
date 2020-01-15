@@ -2,41 +2,121 @@
   {
     "topic": "Performance by an actor in a leading role nominees:",
     "nominations": [
-      { "name": "Antonio Banderas", "id": "", "path": "" },
-      { "name": "Leonardo DiCaprio", "id": "", "path": "" },
-      { "name": "Adam Driver", "id": "", "path": "" },
-      { "name": "Joaquin Phoenix", "id": "", "path": "" },
-      { "name": "Jonathan Pryce", "id": "", "path": "" }
+      {
+        "name": "Antonio Banderas",
+        "id": "3131",
+        "path": "https://image.tmdb.org/t/p/w500/l39A8Anyhs3iFiW6UVoIhogAldM.jpg"
+      },
+      {
+        "name": "Leonardo DiCaprio",
+        "id": "6193",
+        "path": "https://image.tmdb.org/t/p/w500/aLUFp0zWpLVyIOgY0scIpuuKZLE.jpg"
+      },
+      {
+        "name": "Adam Driver",
+        "id": "1023139",
+        "path": "https://image.tmdb.org/t/p/w500/rsjwgpV2OukxOJ9HEiEyf4qu1vR.jpg"
+      },
+      {
+        "name": "Joaquin Phoenix",
+        "id": "73421",
+        "path": "https://image.tmdb.org/t/p/w500/zixTWuMZ1D8EopgOhLVZ6Js2ux3.jpg"
+      },
+      {
+        "name": "Jonathan Pryce",
+        "id": "378",
+        "path": "https://image.tmdb.org/t/p/w500/hz5mZkM0BM6LwTnyKuXX6iFDVAN.jpg"
+      }
     ]
   },
   {
     "topic": "Performance by an actor in a supporting role nominees:",
     "nominations": [
-      { "name": "Tom Hanks", "id": "", "path": "" },
-      { "name": "Anthony Hopkins", "id": "", "path": "" },
-      { "name": "Al Pacino", "id": "", "path": "" },
-      { "name": "Joe Pesci", "id": "", "path": "" },
-      { "name": "Brad Pitt", "id": "", "path": "" }
+      {
+        "name": "Tom Hanks",
+        "id": "31",
+        "path": "https://image.tmdb.org/t/p/w500/xxPMucou2wRDxLrud8i2D4dsywh.jpg"
+      },
+      {
+        "name": "Anthony Hopkins",
+        "id": "4173",
+        "path": "https://image.tmdb.org/t/p/w500/9ukJS2QWTJ22HcwR1ktMmoJ6RSL.jpg"
+      },
+      {
+        "name": "Al Pacino",
+        "id": "1158",
+        "path": "https://image.tmdb.org/t/p/w500/xS7rcpJrUMZ373FX3H6j9TdbYz1.jpg"
+      },
+      {
+        "name": "Joe Pesci",
+        "id": "4517",
+        "path": "https://image.tmdb.org/t/p/w500/2CaYAhUZgkAeqtpIzuqGcqArsOy.jpg"
+      },
+      {
+        "name": "Brad Pitt",
+        "id": "287",
+        "path": "https://image.tmdb.org/t/p/w500/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg"
+      }
     ]
   },
   {
     "topic": "Performance by an actress in a leading role nominees:",
     "nominations": [
-      { "name": "Cynthia Erivo", "id": "", "path": "" },
-      { "name": "Scarlett Johansson", "id": "", "path": "" },
-      { "name": "Saoirse Ronan", "id": "", "path": "" },
-      { "name": "Charlize Theron", "id": "", "path": "" },
-      { "name": "Renée Zellweger", "id": "", "path": "" }
+      {
+        "name": "Cynthia Erivo",
+        "id": "1765068",
+        "path": "https://image.tmdb.org/t/p/w500/vWLhplaio80fuv5mACLImjstg2v.jpg"
+      },
+      {
+        "name": "Scarlett Johansson",
+        "id": "1245",
+        "path": "https://image.tmdb.org/t/p/w500/tHMgW7Pg0Fg6HmB8Kh8Ixk6yxZw.jpg"
+      },
+      {
+        "name": "Saoirse Ronan",
+        "id": "36592",
+        "path": "https://image.tmdb.org/t/p/w500/wTTvT0GeVjzyUQG9ydX7XaAZKNr.jpg"
+      },
+      {
+        "name": "Charlize Theron",
+        "id": "6885",
+        "path": "https://image.tmdb.org/t/p/w500/k5Xt2mNlraX7yHYaPy9gvayCaKV.jpg"
+      },
+      {
+        "name": "Renée Zellweger",
+        "id": "368",
+        "path": "https://image.tmdb.org/t/p/w500/4EKwBVkZZlEuNgOCwpVHM9PbqOZ.jpg"
+      }
     ]
   },
   {
     "topic": "Performance by an actress in a supporting role nominees:",
     "nominations": [
-      { "name": "Kathy Bates", "id": "", "path": "" },
-      { "name": "Scarlett Johansson", "id": "", "path": "" },
-      { "name": "Florence Pugh", "id": "", "path": "" },
-      { "name": "Charlize Theron", "id": "", "path": "" },
-      { "name": "Margot Robbie", "id": "", "path": "" }
+      {
+        "name": "Kathy Bates",
+        "id": "8534",
+        "path": "https://image.tmdb.org/t/p/w500/yik6ccz1O2JelLJn3Fsx3EA8s1o.jpg"
+      },
+      {
+        "name": "Scarlett Johansson",
+        "id": "1245",
+        "path": "https://image.tmdb.org/t/p/w500/tHMgW7Pg0Fg6HmB8Kh8Ixk6yxZw.jpg"
+      },
+      {
+        "name": "Florence Pugh",
+        "id": "1373737",
+        "path": "https://image.tmdb.org/t/p/w500/32bSZwIdTnq60JuJk8o9rbJewF5.jpg"
+      },
+      {
+        "name": "Charlize Theron",
+        "id": "6885",
+        "path": "https://image.tmdb.org/t/p/w500/k5Xt2mNlraX7yHYaPy9gvayCaKV.jpg"
+      },
+      {
+        "name": "Margot Robbie",
+        "id": "234352",
+        "path": "https://image.tmdb.org/t/p/w500/ecv9SBN9m1cEZFfSopph6wf8fk.jpg"
+      }
     ]
   },
   {
@@ -44,211 +124,619 @@
     "nominations": [
       {
         "name": "HOW TO TRAIN YOUR DRAGON: THE HIDDEN WORLD",
-        "id": "",
-        "path": ""
+        "id": "166428",
+        "path": "https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg"
       },
-      { "name": "I LOST MY BODY", "id": "", "path": "" },
-      { "name": "KLAUS", "id": "", "path": "" },
-      { "name": "MISSING LINK", "id": "", "path": "" },
-      { "name": "TOY STORY 4", "id": "", "path": "" }
+      {
+        "name": "I LOST MY BODY",
+        "id": "586940",
+        "path": "https://image.tmdb.org/t/p/w500/z5dXCywyo8zEPNDkeQY7nbvkrz8.jpg"
+      },
+      {
+        "name": "KLAUS",
+        "id": "508965",
+        "path": "https://image.tmdb.org/t/p/w500/q125RHUDgR4gjwh1QkfYuJLYkL.jpg"
+      },
+      {
+        "name": "MISSING LINK",
+        "id": "458253",
+        "path": "https://image.tmdb.org/t/p/w500/gEkKHiiQRVUSX15Iwo8VFydXrtu.jpg"
+      },
+      {
+        "name": "TOY STORY 4",
+        "id": "301528",
+        "path": "https://image.tmdb.org/t/p/w500/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in cinematography nominees:",
     "nominations": [
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "THE LIGHTHOUSE", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" }
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "THE LIGHTHOUSE",
+        "id": "503919",
+        "path": "https://image.tmdb.org/t/p/w500/3nk9UoepYmv1G9oP18q6JJCeYwN.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in costume design nominees:",
     "nominations": [
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOJO RABBIT", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "LITTLE WOMEN", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" }
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOJO RABBIT",
+        "id": "515001",
+        "path": "https://image.tmdb.org/t/p/w500/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "LITTLE WOMEN",
+        "id": "331482",
+        "path": "https://image.tmdb.org/t/p/w500/mSmiB8XjUnR1GSIljuCPGsk0cwX.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in directing nominees:",
     "nominations": [
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" },
-      { "name": "PARASITE", "id": "", "path": "" }
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   },
   {
     "topic": "Best documentary feature nominees:",
     "nominations": [
-      { "name": "AMERICAN FACTORY", "id": "", "path": "" },
-      { "name": "THE CAVE", "id": "", "path": "" },
-      { "name": "THE EDGE OF DEMOCRACY", "id": "", "path": "" },
-      { "name": "FOR SAMA", "id": "", "path": "" },
-      { "name": "HONEYLAND", "id": "", "path": "" }
+      {
+        "name": "AMERICAN FACTORY",
+        "id": "565716",
+        "path": "https://image.tmdb.org/t/p/w500/7jH3dQOJ3CHMrp9tWsI3rRCDiaD.jpg"
+      },
+      {
+        "name": "THE CAVE",
+        "id": "621729",
+        "path": "https://image.tmdb.org/t/p/w500/2Zb8U2EXBv36DGG9jaEESNEeJv9.jpg"
+      },
+      {
+        "name": "THE EDGE OF DEMOCRACY",
+        "id": "566221",
+        "path": "https://image.tmdb.org/t/p/w500/mIbPkZelgguJMPOx9vvCb5oqMxI.jpg"
+      },
+      {
+        "name": "FOR SAMA",
+        "id": "576017",
+        "path": "https://image.tmdb.org/t/p/w500/mDna51F8QfrJFZOgPGQUz3VKqsB.jpg"
+      },
+      {
+        "name": "HONEYLAND",
+        "id": "566213",
+        "path": "https://image.tmdb.org/t/p/w500/bvO1rKTjohHjdYAZDkG8Ygz1KdC.jpg"
+      }
     ]
   },
   {
     "topic": "Best documentary short subject nominees:",
     "nominations": [
-      { "name": "IN THE ABSENCE", "id": "", "path": "" },
+      {
+        "name": "IN THE ABSENCE",
+        "id": "592303",
+        "path": "https://image.tmdb.org/t/p/w500/A91I9e4G241ikqn3pwahcIUhqDA.jpg"
+      },
       {
         "name": "LEARNING TO SKATEBOARD IN A WARZONE (IF YOU’RE A GIRL)",
-        "id": "",
-        "path": ""
+        "id": "612074",
+        "path": "https://image.tmdb.org/t/p/w500/fhTGumzgP0p6IaKfTWqBMu21lsW.jpg"
       },
-      { "name": "LIFE OVERTAKES ME", "id": "", "path": "" },
-      { "name": "ST. LOUIS SUPERMAN", "id": "", "path": "" },
-      { "name": "WALK RUN CHA-CHA", "id": "", "path": "" }
+      {
+        "name": "LIFE OVERTAKES ME",
+        "id": "593280",
+        "path": "https://image.tmdb.org/t/p/w500/fHO4wOw7u6B9yIzLuKf0UBO7GmO.jpg"
+      },
+      {
+        "name": "ST. LOUIS SUPERMAN",
+        "id": "634767",
+        "path": "https://image.tmdb.org/t/p/w500/52TMpvlhjYR9zKRSQka6QnjWLzW.jpg"
+      },
+      {
+        "name": "WALK RUN CHA-CHA",
+        "id": "634772",
+        "path": "https://image.tmdb.org/t/p/w500/eu7EmRRYH1eF7zfDVLwm2dCAN0U.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in film editing nominees: ",
     "nominations": [
-      { "name": "FORD V FERRARI", "id": "", "path": "" },
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOJO RABBIT", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "PARASITE", "id": "", "path": "" }
+      {
+        "name": "FORD V FERRARI",
+        "id": "359724",
+        "path": "https://image.tmdb.org/t/p/w500/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg"
+      },
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOJO RABBIT",
+        "id": "515001",
+        "path": "https://image.tmdb.org/t/p/w500/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   },
   {
     "topic": "Best international feature film of the year nominees:",
     "nominations": [
-      { "name": "CORPUS CHRISTI", "id": "", "path": "" },
-      { "name": "HONEYLAND", "id": "", "path": "" },
-      { "name": "LES MISÉRABLES", "id": "", "path": "" },
-      { "name": "PAIN AND GLORY", "id": "", "path": "" },
-      { "name": "PARASITE", "id": "", "path": "" }
+      {
+        "name": "CORPUS CHRISTI",
+        "id": "471707",
+        "path": "https://image.tmdb.org/t/p/w500/6VZlm8sEwxkE3L5nXxz17QLj1sF.jpg"
+      },
+      {
+        "name": "HONEYLAND",
+        "id": "566213",
+        "path": "https://image.tmdb.org/t/p/w500/bvO1rKTjohHjdYAZDkG8Ygz1KdC.jpg"
+      },
+      {
+        "name": "LES MISÉRABLES",
+        "id": "586863",
+        "path": "https://image.tmdb.org/t/p/w500/2ZQV9rPFXF0iFfKbsAvVIweQ1yM.jpg"
+      },
+      {
+        "name": "PAIN AND GLORY",
+        "id": "519010",
+        "path": "https://image.tmdb.org/t/p/w500/rXv4tqt0UZsqyjCD3Kxjcs6OnHT.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in makeup and hairstyling nominees:",
     "nominations": [
-      { "name": "BOMBSHELL", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "JUDY", "id": "", "path": "" },
-      { "name": "MALEFICENT: MISTRESS OF EVIL", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" }
+      {
+        "name": "BOMBSHELL",
+        "id": "525661",
+        "path": "https://image.tmdb.org/t/p/w500/gbPfvwBqbiHpQkYZQvVwB6MVauV.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "JUDY",
+        "id": "491283",
+        "path": "https://image.tmdb.org/t/p/w500/iqJhHjD6k6T07waELjMKDpQJUP.jpg"
+      },
+      {
+        "name": "MALEFICENT: MISTRESS OF EVIL",
+        "id": "420809",
+        "path": "https://image.tmdb.org/t/p/w500/vloNTScJ3w7jwNwtNGoG8DbTThv.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in music written for motion pictures (Original score) nominees:",
     "nominations": [
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "LITTLE WOMEN", "id": "", "path": "" },
-      { "name": "MARRIAGE STORY", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "STAR WARS: THE RISE OF SKYWALKER", "id": "", "path": "" }
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "LITTLE WOMEN",
+        "id": "331482",
+        "path": "https://image.tmdb.org/t/p/w500/mSmiB8XjUnR1GSIljuCPGsk0cwX.jpg"
+      },
+      {
+        "name": "MARRIAGE STORY",
+        "id": "492188",
+        "path": "https://image.tmdb.org/t/p/w500/pZekG6xabTmZxjmYw10wN84Hp8d.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "STAR WARS: THE RISE OF SKYWALKER",
+        "id": "181812",
+        "path": "https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in music written for motion pictures (Original song) nominees:",
     "nominations": [
-      { "name": "TOY STORY 4", "id": "", "path": "" },
-      { "name": "ROCKETMAN", "id": "", "path": "" },
-      { "name": "BREAKTHROUGH", "id": "", "path": "" },
-      { "name": "FROZEN II", "id": "", "path": "" },
-      { "name": "HARRIET", "id": "", "path": "" }
+      {
+        "name": "TOY STORY 4",
+        "id": "301528",
+        "path": "https://image.tmdb.org/t/p/w500/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg"
+      },
+      {
+        "name": "ROCKETMAN",
+        "id": "504608",
+        "path": "https://image.tmdb.org/t/p/w500/f4FF18ia7yTvHf2izNrHqBmgH8U.jpg"
+      },
+      {
+        "name": "BREAKTHROUGH",
+        "id": "514439",
+        "path": "https://image.tmdb.org/t/p/w500/t58dx7JIgchr9If5uxn3NmHaHoS.jpg"
+      },
+      {
+        "name": "FROZEN II",
+        "id": "330457",
+        "path": "https://image.tmdb.org/t/p/w500/pjeMs3yqRmFL3giJy4PMXWZTTPa.jpg"
+      },
+      {
+        "name": "HARRIET",
+        "id": "506528",
+        "path": "https://image.tmdb.org/t/p/w500/4M6hxvrWol8R6NjNAFWtMx1Pr6v.jpg"
+      }
     ]
   },
   {
     "topic": "Best motion picture of the year nominees:",
     "nominations": [
-      { "name": "FORD V FERRARI", "id": "", "path": "" },
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOJO RABBIT", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "LITTLE WOMEN", "id": "", "path": "" },
-      { "name": "MARRIAGE STORY", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" },
-      { "name": "PARASITE", "id": "", "path": "" }
+      {
+        "name": "FORD V FERRARI",
+        "id": "359724",
+        "path": "https://image.tmdb.org/t/p/w500/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg"
+      },
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOJO RABBIT",
+        "id": "515001",
+        "path": "https://image.tmdb.org/t/p/w500/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "LITTLE WOMEN",
+        "id": "331482",
+        "path": "https://image.tmdb.org/t/p/w500/mSmiB8XjUnR1GSIljuCPGsk0cwX.jpg"
+      },
+      {
+        "name": "MARRIAGE STORY",
+        "id": "492188",
+        "path": "https://image.tmdb.org/t/p/w500/pZekG6xabTmZxjmYw10wN84Hp8d.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in production design nominees:",
     "nominations": [
-      { "name": "THE IRISHMAN", "id": "", "path": "" },
-      { "name": "JOJO RABBIT", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
-      { "name": "PARASITE", "id": "", "path": "" }
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOJO RABBIT",
+        "id": "515001",
+        "path": "https://image.tmdb.org/t/p/w500/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD ",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   },
   {
     "topic": "Best animated short film nominees:",
     "nominations": [
-      { "name": "DCERA (DAUGHTER)", "id": "", "path": "" },
-      { "name": "HAIR LOVE ", "id": "", "path": "" },
-      { "name": "KITBULL", "id": "", "path": "" },
-      { "name": "MEMORABLE", "id": "", "path": "" },
-      { "name": "SISTER", "id": "", "path": "" }
+      {
+        "name": "DCERA (DAUGHTER)",
+        "id": "613221",
+        "path": "https://image.tmdb.org/t/p/w500/55aCc3X19i3BSUj4pEzedO4C7VP.jpg"
+      },
+      {
+        "name": "HAIR LOVE ",
+        "id": "589739",
+        "path": "https://image.tmdb.org/t/p/w500/v8dRis2ze25imTXwBvRVhUSQBBL.jpg"
+      },
+      {
+        "name": "KITBULL",
+        "id": "574074",
+        "path": "https://image.tmdb.org/t/p/w500/8qblK8VqWOxrUWeJYkBszqYmW12.jpg"
+      },
+      {
+        "name": "MEMORABLE",
+        "id": "608542",
+        "path": "https://image.tmdb.org/t/p/w500/eLW86bTGdsSADHgLBZZSpiO95s5.jpg"
+      },
+      {
+        "name": "SISTER",
+        "id": "0",
+        "path": "https://upload.wikimedia.org/wikipedia/en/b/b1/Sister_%282018_film%29_poster.jpg"
+      }
     ]
   },
   {
     "topic": "Best live action short film nominees:",
     "nominations": [
-      { "name": "BROTHERHOOD", "id": "", "path": "" },
-      { "name": "NEFTA FOOTBALL CLUB ", "id": "", "path": "" },
-      { "name": "THE NEIGHBORS’ WINDOW ", "id": "", "path": "" },
-      { "name": "SARIA", "id": "", "path": "" },
-      { "name": "A SISTER ", "id": "", "path": "" }
+      {
+        "name": "BROTHERHOOD",
+        "id": "624405",
+        "path": "https://image.tmdb.org/t/p/w500/5enZgROSewdvJkVt42LS44k4X7P.jpg"
+      },
+      {
+        "name": "NEFTA FOOTBALL CLUB ",
+        "id": "581465",
+        "path": "https://image.tmdb.org/t/p/w500/q12uZ98BbJuxgVO53Rb4lvjfZZZ.jpg"
+      },
+      {
+        "name": "THE NEIGHBORS’ WINDOW ",
+        "id": "1",
+        "path": "https://m.media-amazon.com/images/M/MV5BZjEyNjgxOGUtMmEwYi00ZjQxLWI2NGMtNDNmY2NiODk3NmU3XkEyXkFqcGdeQXVyOTgwNzIyOTU@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+      },
+      {
+        "name": "SARIA",
+        "id": "656190",
+        "path": "https://image.tmdb.org/t/p/w500/1uoiNz5TgYsp711sMHGCs8h43BN.jpg"
+      },
+      {
+        "name": "A SISTER ",
+        "id": "575107",
+        "path": "https://image.tmdb.org/t/p/w500/8ZGsddMD2Ov7deaDR1VzMqtlm4M.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in sound editing nominees:",
     "nominations": [
-      { "name": "FORD V FERRARI", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
-      { "name": "STAR WARS: THE RISE OF SKYWALKER ", "id": "", "path": "" }
+      {
+        "name": "FORD V FERRARI",
+        "id": "359724",
+        "path": "https://image.tmdb.org/t/p/w500/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD ",
+        "id": "466272",
+        "path": ""
+      },
+      {
+        "name": "STAR WARS: THE RISE OF SKYWALKER ",
+        "id": "181812",
+        "path": "https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in sound mixing nominees:",
     "nominations": [
-      { "name": "AD ASTRA ", "id": "", "path": "" },
-      { "name": "FORD V FERRARI ", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" }
+      {
+        "name": "AD ASTRA ",
+        "id": "419704",
+        "path": "https://image.tmdb.org/t/p/w500/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"
+      },
+      {
+        "name": "FORD V FERRARI ",
+        "id": "359724",
+        "path": "https://image.tmdb.org/t/p/w500/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      }
     ]
   },
   {
     "topic": "Achievement in visual effects nominees:",
     "nominations": [
-      { "name": "AVENGERS: ENDGAME ", "id": "", "path": "" },
-      { "name": "THE IRISHMAN ", "id": "", "path": "" },
-      { "name": "THE LION KING ", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "STAR WARS: THE RISE OF SKYWALKER ", "id": "", "path": "" }
+      {
+        "name": "AVENGERS: ENDGAME",
+        "id": "299534",
+        "path": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+      },
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "THE LION KING ",
+        "id": "420818",
+        "path": "https://image.tmdb.org/t/p/w500/2bXbqYdUdNVa8VIWXVfclP2ICtT.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "STAR WARS: THE RISE OF SKYWALKER ",
+        "id": "181812",
+        "path": "https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
+      }
     ]
   },
   {
     "topic": "Adapted screenplay nominees:",
     "nominations": [
-      { "name": "THE IRISHMAN ", "id": "", "path": "" },
-      { "name": "JOJO RABBIT ", "id": "", "path": "" },
-      { "name": "JOKER", "id": "", "path": "" },
-      { "name": "LITTLE WOMEN ", "id": "", "path": "" },
-      { "name": "THE TWO POPES ", "id": "", "path": "" }
+      {
+        "name": "THE IRISHMAN",
+        "id": "398978",
+        "path": "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg"
+      },
+      {
+        "name": "JOJO RABBIT ",
+        "id": "515001",
+        "path": "https://image.tmdb.org/t/p/w500/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+      },
+      {
+        "name": "JOKER",
+        "id": "475557",
+        "path": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+      },
+      {
+        "name": "LITTLE WOMEN",
+        "id": "331482",
+        "path": "https://image.tmdb.org/t/p/w500/mSmiB8XjUnR1GSIljuCPGsk0cwX.jpg"
+      },
+      {
+        "name": "THE TWO POPES ",
+        "id": "551332",
+        "path": "https://image.tmdb.org/t/p/w500/4d4mTSfDIFIbUbMLUfaKodvxYXA.jpg"
+      }
     ]
   },
   {
     "topic": "Original screenplay nominees:",
     "nominations": [
-      { "name": "KNIVES OUT ", "id": "", "path": "" },
-      { "name": "MARRIAGE STORY ", "id": "", "path": "" },
-      { "name": "1917", "id": "", "path": "" },
-      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
-      { "name": "PARASITE ", "id": "", "path": "" }
+      {
+        "name": "KNIVES OUT",
+        "id": "546554",
+        "path": "https://image.tmdb.org/t/p/w500/pThyQovXQrw2m0s9x82twj48Jq4.jpg"
+      },
+      {
+        "name": "MARRIAGE STORY",
+        "id": "492188",
+        "path": "https://image.tmdb.org/t/p/w500/pZekG6xabTmZxjmYw10wN84Hp8d.jpg"
+      },
+      {
+        "name": "1917",
+        "id": "530915",
+        "path": "https://image.tmdb.org/t/p/w500/AuGiPiGMYMkSosOJ3BQjDEAiwtO.jpg"
+      },
+      {
+        "name": "ONCE UPON A TIME...IN HOLLYWOOD ",
+        "id": "466272",
+        "path": "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg"
+      },
+      {
+        "name": "PARASITE",
+        "id": "496243",
+        "path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+      }
     ]
   }
 ]
