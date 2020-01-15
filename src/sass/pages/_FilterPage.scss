@@ -1,34 +1,57 @@
-.search-container {
-  width: 100%;
-  background-color: $off-grey;
+.search-container--filter {
+  background-color: $color3;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 4rem;
+  z-index: 1;
+  box-shadow: var(--shadow-dark);
 
-  &--bar {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    align-items: center;
-    justify-content: center;
+  @include respond(phone-land) {
+    flex-wrap: wrap;
   }
 
-  &--filter {
-    position: relative;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: 1rem;
+  .filter {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
 
-    @include respond(phone-port) {
-      grid-template-columns: repeat(2, auto);
+    @include respond(phone-land) {
+      flex: 0 0 40%;
     }
 
-    &--select {
-      padding: 0.5rem 2rem;
-      border: none;
-      border-radius: 2px;
-      margin: 1rem;
-      width: 4rem;
+
+    &__icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-left: -2.5rem;
+      fill: $color2;
+      transition: all .3s;
+    }
+  }
+
+  &--select {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2px;
+    margin: 1rem;
+    width: 10rem;
+    background-color: transparent;
+    border-bottom: 1px solid $grey-dark-3;
+    color: $color2;
+    -webkit-appearance: none;
+    transition: all .3s;
+
+    &:hover{
+      cursor: pointer;
+      color: $color1;
+      border-bottom: 1px solid $color1;
+    }
+
+    &:hover + .filter__icon {
+      fill: $color1;
     }
   }
 
@@ -40,9 +63,8 @@
     }
   }
 }
+
 .search-filter {
   position: sticky;
-  top: calc(4rem + 2px);
-  background-color: $main-black;
   z-index: 1;
 }

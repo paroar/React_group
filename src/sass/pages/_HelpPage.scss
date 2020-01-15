@@ -6,7 +6,6 @@
     margin: 5rem 0;
     .btn-help {
         width: 10rem;
-        //font-size: 1.5rem;
         padding: 1rem 2rem;
         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
         border: 1px solid $main-white;
@@ -21,7 +20,7 @@
 }
 
 .help-box {
-    background-color: $off-black;
+    background-color: $grey-dark-1;
     border: 1px solid $main-white;
     padding: 2.5rem;
     border-radius: 0.6rem;
@@ -39,7 +38,7 @@
 
 .help-wrapper .icons {
     background: $main-white;
-    color: $off-black;
+    color: $grey-dark-1;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;

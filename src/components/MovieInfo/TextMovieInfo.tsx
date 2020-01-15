@@ -28,7 +28,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
     background-color: rgba(0, 0, 0, 0.5);
     margin: 1rem auto;
     border-radius: 2px;
-    border: 1px solid #f76c5e;
+    border: 1px solid var(--coral);
     justify-content: center;
     align-items: center;
 
@@ -37,7 +37,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
       content: "";
       width: ${vote_average * 10}%;
       height: 1.5rem;
-      background-color: #f76c5e;
+      background-color: var(--coral);
     }
   `;
 
@@ -67,7 +67,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
-      color: #f76c5e;
+      color: var(--coral);
     }
   `;
 

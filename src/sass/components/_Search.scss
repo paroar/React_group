@@ -1,32 +1,30 @@
 .input {
-  top: 0;
-  left: 5rem;
   text-align: center;
   border: none;
   padding: 0.5rem 0rem;
   border-radius: 100rem;
-  z-index: 10;
-  background-color: grey;
-  color: $main-white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  background-color: $grey-light-3;
   width: 15rem;
+  color: $main-black;
+  transition: all .3s;
+  margin-right: -2rem;
 
   &:focus{
     background-color: $main-white;
-    color: $main-black;
-  }
-
-  @include respond(tablet-port) {
-    right: 10rem;
-    width: 12rem;
+    width: 18rem;
   }
 }
 
 .search {
   position: absolute;
   top: 25%;
+
+  &-input{
+    flex: 1;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+  }
 
   &-grid {
     width: 100%;
@@ -42,14 +40,14 @@
         rgba(0, 0, 0, 0.7)
       );
       width: 100%;
-      border-bottom: 2px solid $off-white;
+      border-bottom: 2px solid $main-black;
       display: grid;
       transition: all 1s ease;
 
       &:hover {
         background: linear-gradient(
           to right,
-          $dark-grey,
+          $main-black,
           rgba(0, 0, 0, 0.8)
         );
         color: $main-black;
@@ -75,11 +73,6 @@
   }
 }
 
-.search-input {
-  margin-right: auto;
-  width: 50%;
-}
-
 .hidden {
   display: none;
 }
@@ -90,4 +83,11 @@
   background-color: $first-color;
   float: left;
   margin: 0.3rem;
+
+
+}
+.search-icon{
+  width: 1rem;
+  height: 1rem;
+  fill: $color2;
 }

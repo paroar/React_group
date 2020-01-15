@@ -15,7 +15,7 @@ const Genre = styled.span`
   transition-property: background-color, transform;
 
   &:hover {
-    background-color: #f76c5e;
+    background-color: var(--coral);
     transform: translateY(-2px);
   }
 `;
