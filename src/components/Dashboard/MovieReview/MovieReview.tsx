@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from '../../Modal/Modal';
-import NewListForm from './MovieReviewForm/MovieReviewForm';
-import { FaTimes } from 'react-icons/fa';
 import ButtonComponent from '../../ButtonComponent/ButtonComponent';
+import MovieReviewForm from './MovieReviewForm/MovieReviewForm';
+import { FaTimes } from 'react-icons/fa';
 
 const MovieReview = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +12,9 @@ const MovieReview = () => {
     }
 
     return (
-        <div>
+        <>
             <ButtonComponent
-                action="Review Movie"
+                action="Create new list"
                 class="btn movie-review-btn"
                 onClick={toggleOpen}
             />
@@ -28,9 +28,9 @@ const MovieReview = () => {
                 <div className="close" onClick={toggleOpen}>
                     <FaTimes size="2rem" />
                 </div>
-                <NewListForm />
+                <MovieReviewForm />
             </Modal>
-        </div>
+        </>
     )
 }
 

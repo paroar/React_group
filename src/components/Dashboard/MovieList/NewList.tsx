@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from '../../Modal/Modal';
+import ButtonComponent from '../../ButtonComponent/ButtonComponent';
 import NewListForm from './NewListForm/NewListForm';
 import { FaTimes } from 'react-icons/fa';
-import ButtonComponent from '../../ButtonComponent/ButtonComponent';
 
 const NewList = () => {
     const [isOpen, setIsOpen] = useState(false);

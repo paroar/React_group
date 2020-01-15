@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import Input, { InputProps } from '../../../Help/ContactForm/Input/Input';
 
-class MovieReview extends React.Component {
+class MovieReviewForm extends React.Component {
     state = {
         movieReview : {
             rating: {
@@ -90,9 +90,11 @@ class MovieReview extends React.Component {
         )
 
         return(
-            {form}
+            <div className="form-container">
+                {form}
+            </div>
         )
     }
 }
 
-export default MovieReview;
+export default MovieReviewForm;
