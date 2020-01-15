@@ -5,7 +5,6 @@ import { CatalogueContainerProps } from "../../utils/types";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 import { GenreContext } from "../../contexts/GenreContext";
-import { FilmContext } from "../../contexts/FilmContext";
 
 const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
   const [state, changeState] = useState({
@@ -16,7 +15,6 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
 
   const { lang } = useContext(LanguageContext);
   let { genre } = useContext(GenreContext);
-  const { handleFilms } = useContext(FilmContext);
 
   useEffect(() => {
     var url = "";
@@ -56,8 +54,8 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
           currentPage: props.page
         });
       });
-      handleFilms(state.movies);
   }, [props, state.currentPage]);
+
 
   if (state.loading) {
     return <div>{language.loading[lang]}</div>;
