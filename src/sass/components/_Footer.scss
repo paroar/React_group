@@ -10,9 +10,32 @@
   border-top: 1px solid $grey-dark-2;
   z-index: 2;
 
-  &--copyright {
+  &--lang {
+    display: flex;
+    align-items: center;
 
-    &--name{
+    & > select{
+      padding: .3rem 0;
+      border: none;
+      margin: .5rem;
+      width: 4rem;
+      background-color: transparent;
+      border-bottom: 1px solid $grey-dark-3;
+      color: $color2;
+      -webkit-appearance: none;
+      transition: all .3s;
+    }
+
+    &__icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: $color2;
+      margin-left: -2rem;
+    }
+  }
+
+  &--copyright {
+    &--name {
       color: $first-color;
     }
   }

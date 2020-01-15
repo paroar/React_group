@@ -69,6 +69,9 @@ const Footer: React.FC = () => {
           <option value="en">en</option>
           <option value="es">es</option>
         </select>
+        <svg className="footer--lang__icon">
+          <use href="img/sprite.svg#icon-language" />
+        </svg>
       </div>
     </footer>
   );
