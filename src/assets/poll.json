@@ -1,0 +1,254 @@
+[
+  {
+    "topic": "Performance by an actor in a leading role nominees:",
+    "nominations": [
+      { "name": "Antonio Banderas", "id": "", "path": "" },
+      { "name": "Leonardo DiCaprio", "id": "", "path": "" },
+      { "name": "Adam Driver", "id": "", "path": "" },
+      { "name": "Joaquin Phoenix", "id": "", "path": "" },
+      { "name": "Jonathan Pryce", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Performance by an actor in a supporting role nominees:",
+    "nominations": [
+      { "name": "Tom Hanks", "id": "", "path": "" },
+      { "name": "Anthony Hopkins", "id": "", "path": "" },
+      { "name": "Al Pacino", "id": "", "path": "" },
+      { "name": "Joe Pesci", "id": "", "path": "" },
+      { "name": "Brad Pitt", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Performance by an actress in a leading role nominees:",
+    "nominations": [
+      { "name": "Cynthia Erivo", "id": "", "path": "" },
+      { "name": "Scarlett Johansson", "id": "", "path": "" },
+      { "name": "Saoirse Ronan", "id": "", "path": "" },
+      { "name": "Charlize Theron", "id": "", "path": "" },
+      { "name": "Renée Zellweger", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Performance by an actress in a supporting role nominees:",
+    "nominations": [
+      { "name": "Kathy Bates", "id": "", "path": "" },
+      { "name": "Scarlett Johansson", "id": "", "path": "" },
+      { "name": "Florence Pugh", "id": "", "path": "" },
+      { "name": "Charlize Theron", "id": "", "path": "" },
+      { "name": "Margot Robbie", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best animated feature film of the year nominees:",
+    "nominations": [
+      {
+        "name": "HOW TO TRAIN YOUR DRAGON: THE HIDDEN WORLD",
+        "id": "",
+        "path": ""
+      },
+      { "name": "I LOST MY BODY", "id": "", "path": "" },
+      { "name": "KLAUS", "id": "", "path": "" },
+      { "name": "MISSING LINK", "id": "", "path": "" },
+      { "name": "TOY STORY 4", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in cinematography nominees:",
+    "nominations": [
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "THE LIGHTHOUSE", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in costume design nominees:",
+    "nominations": [
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOJO RABBIT", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "LITTLE WOMEN", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in directing nominees:",
+    "nominations": [
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" },
+      { "name": "PARASITE", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best documentary feature nominees:",
+    "nominations": [
+      { "name": "AMERICAN FACTORY", "id": "", "path": "" },
+      { "name": "THE CAVE", "id": "", "path": "" },
+      { "name": "THE EDGE OF DEMOCRACY", "id": "", "path": "" },
+      { "name": "FOR SAMA", "id": "", "path": "" },
+      { "name": "HONEYLAND", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best documentary short subject nominees:",
+    "nominations": [
+      { "name": "IN THE ABSENCE", "id": "", "path": "" },
+      {
+        "name": "LEARNING TO SKATEBOARD IN A WARZONE (IF YOU’RE A GIRL)",
+        "id": "",
+        "path": ""
+      },
+      { "name": "LIFE OVERTAKES ME", "id": "", "path": "" },
+      { "name": "ST. LOUIS SUPERMAN", "id": "", "path": "" },
+      { "name": "WALK RUN CHA-CHA", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in film editing nominees: ",
+    "nominations": [
+      { "name": "FORD V FERRARI", "id": "", "path": "" },
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOJO RABBIT", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "PARASITE", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best international feature film of the year nominees:",
+    "nominations": [
+      { "name": "CORPUS CHRISTI", "id": "", "path": "" },
+      { "name": "HONEYLAND", "id": "", "path": "" },
+      { "name": "LES MISÉRABLES", "id": "", "path": "" },
+      { "name": "PAIN AND GLORY", "id": "", "path": "" },
+      { "name": "PARASITE", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in makeup and hairstyling nominees:",
+    "nominations": [
+      { "name": "BOMBSHELL", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "JUDY", "id": "", "path": "" },
+      { "name": "MALEFICENT: MISTRESS OF EVIL", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in music written for motion pictures (Original score) nominees:",
+    "nominations": [
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "LITTLE WOMEN", "id": "", "path": "" },
+      { "name": "MARRIAGE STORY", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "STAR WARS: THE RISE OF SKYWALKER", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in music written for motion pictures (Original song) nominees:",
+    "nominations": [
+      { "name": "TOY STORY 4", "id": "", "path": "" },
+      { "name": "ROCKETMAN", "id": "", "path": "" },
+      { "name": "BREAKTHROUGH", "id": "", "path": "" },
+      { "name": "FROZEN II", "id": "", "path": "" },
+      { "name": "HARRIET", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best motion picture of the year nominees:",
+    "nominations": [
+      { "name": "FORD V FERRARI", "id": "", "path": "" },
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOJO RABBIT", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "LITTLE WOMEN", "id": "", "path": "" },
+      { "name": "MARRIAGE STORY", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD", "id": "", "path": "" },
+      { "name": "PARASITE", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in production design nominees:",
+    "nominations": [
+      { "name": "THE IRISHMAN", "id": "", "path": "" },
+      { "name": "JOJO RABBIT", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
+      { "name": "PARASITE", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best animated short film nominees:",
+    "nominations": [
+      { "name": "DCERA (DAUGHTER)", "id": "", "path": "" },
+      { "name": "HAIR LOVE ", "id": "", "path": "" },
+      { "name": "KITBULL", "id": "", "path": "" },
+      { "name": "MEMORABLE", "id": "", "path": "" },
+      { "name": "SISTER", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Best live action short film nominees:",
+    "nominations": [
+      { "name": "BROTHERHOOD", "id": "", "path": "" },
+      { "name": "NEFTA FOOTBALL CLUB ", "id": "", "path": "" },
+      { "name": "THE NEIGHBORS’ WINDOW ", "id": "", "path": "" },
+      { "name": "SARIA", "id": "", "path": "" },
+      { "name": "A SISTER ", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in sound editing nominees:",
+    "nominations": [
+      { "name": "FORD V FERRARI", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
+      { "name": "STAR WARS: THE RISE OF SKYWALKER ", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in sound mixing nominees:",
+    "nominations": [
+      { "name": "AD ASTRA ", "id": "", "path": "" },
+      { "name": "FORD V FERRARI ", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Achievement in visual effects nominees:",
+    "nominations": [
+      { "name": "AVENGERS: ENDGAME ", "id": "", "path": "" },
+      { "name": "THE IRISHMAN ", "id": "", "path": "" },
+      { "name": "THE LION KING ", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "STAR WARS: THE RISE OF SKYWALKER ", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Adapted screenplay nominees:",
+    "nominations": [
+      { "name": "THE IRISHMAN ", "id": "", "path": "" },
+      { "name": "JOJO RABBIT ", "id": "", "path": "" },
+      { "name": "JOKER", "id": "", "path": "" },
+      { "name": "LITTLE WOMEN ", "id": "", "path": "" },
+      { "name": "THE TWO POPES ", "id": "", "path": "" }
+    ]
+  },
+  {
+    "topic": "Original screenplay nominees:",
+    "nominations": [
+      { "name": "KNIVES OUT ", "id": "", "path": "" },
+      { "name": "MARRIAGE STORY ", "id": "", "path": "" },
+      { "name": "1917", "id": "", "path": "" },
+      { "name": "ONCE UPON A TIME...IN HOLLYWOOD ", "id": "", "path": "" },
+      { "name": "PARASITE ", "id": "", "path": "" }
+    ]
+  }
+]
