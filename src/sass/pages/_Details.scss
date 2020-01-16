@@ -39,6 +39,9 @@
       margin-top: 2rem;
       border-radius: 2px;
       white-space: pre-line;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       @include respond(desktop4k) {
         margin: 0 0 0 2rem;
@@ -100,4 +103,20 @@
 .similars,
 .reviews {
   @include box;
+}
+
+.rating-stars {
+  direction: rtl;
+  display: flex;
+  justify-content: flex-end;
+
+  & > * {
+    width: 1.2rem;
+    height: 1.2rem;
+
+    &:hover, &:hover ~ *{
+      cursor: pointer;
+      fill:red;
+    }
+  }
 }
