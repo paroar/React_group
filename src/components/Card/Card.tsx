@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import language from "./lang";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import svg from "../../img/sprite.svg";
 
 type CardProps = {
   title: string;
@@ -28,7 +29,6 @@ const Card: React.FC<CardProps> = props => {
   };
 
   return (
-
     <div className="card">
       <div className="card__side card__side--front">{props.children}</div>
       <div className="card__side card__side--back" style={style}>
@@ -38,14 +38,14 @@ const Card: React.FC<CardProps> = props => {
             <>
               <Num>{props.vote}/10</Num>
               <div className="icons">
-                <svg className="back__icon">
-                  <use href="img/sprite.svg#icon-heart" />
+                <svg className="filter__icon">
+                  <use xlinkHref={svg + "#icon-heart"}></use>
                 </svg>
-                <svg className="back__icon">
-                  <use href="img/sprite.svg#icon-eye" />
+                <svg className="filter__icon">
+                  <use xlinkHref={svg + "#icon-eye"}></use>
                 </svg>
-                <svg className="back__icon">
-                  <use href="img/sprite.svg#icon-add-to-list" />
+                <svg className="filter__icon">
+                  <use xlinkHref={svg + "#icon-add-to-list"}></use>
                 </svg>
               </div>
             </>
