@@ -8,6 +8,7 @@ const Choose = styled.div`
   background-color: yellowgreen;
   display: flex;
   justify-content: center;
+  flex-wrap:wrap;
   & > * {
     margin: 1rem;
   }

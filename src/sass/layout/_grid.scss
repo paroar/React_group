@@ -3,6 +3,12 @@
   justify-content: center;
   background-color: $primary-color-dark;
   
+  img {
+    width: 185px;
+    height: 277.5px;
+    border-radius: 2px;
+  }
+  
   & > * {
     margin: 1rem;
   }
