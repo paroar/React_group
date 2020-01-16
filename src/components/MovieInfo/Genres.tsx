@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
-  display: inline-block;
-  padding: 0.4rem;
+  padding: 0.3rem;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0.2rem;
   border-radius: 2px;
@@ -21,7 +20,7 @@ const Genre = styled.span`
 `;
 
 const GenreTags = styled.div`
-  margin: 1rem auto;
+  margin: .5rem 0;
 `;
 
 const Genres: React.FC<MovieGenres> = props => {
@@ -32,7 +31,11 @@ const Genres: React.FC<MovieGenres> = props => {
     return (
       <GenreTags>
         {props.genres.map(genre => (
-          <Link key={genre.id} to="/Catalogue" onClick={() => handleGenre(genre.id.toString())}>
+          <Link
+            key={genre.id}
+            to="/Catalogue"
+            onClick={() => handleGenre(genre.id.toString())}
+          >
             <Genre>{genre.name}</Genre>
           </Link>
         ))}
