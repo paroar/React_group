@@ -1,13 +1,8 @@
 .grid {
-  //margin: 5rem 0 5rem 0;
   display: grid;
   justify-content: center;
-  background-image: linear-gradient(
-    to bottom right,
-    $shade-grey-2,
-    $shade-grey-1
-  );
-
+  background-color: $primary-color-dark;
+  
   & > * {
     margin: 1rem;
   }

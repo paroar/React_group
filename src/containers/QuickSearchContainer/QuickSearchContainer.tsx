@@ -59,7 +59,7 @@ class SearchContainer extends React.Component<SearchContainerProps> {
     return (
       <LanguageContext.Consumer>
         {value => {
-          const {lang} = value;
+          const { lang } = value;
           return (
             <>
               <div className={this.props.isOpen ? "hidden" : "search-input"}>
@@ -72,6 +72,9 @@ class SearchContainer extends React.Component<SearchContainerProps> {
                   onChange={e => this.handleOnChange(e)}
                   value={this.state.input}
                 />
+                <svg className="search-icon">
+                  <use href="img/sprite.svg#icon-magnifying-glass" />
+                </svg>
               </div>
               <QuickSearch
                 arr={this.state.movies}

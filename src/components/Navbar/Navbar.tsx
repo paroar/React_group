@@ -14,13 +14,10 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav>
+      <nav className="navbar">
         <QuickSearchContainer isOpen={isOpen} handleIsOpen={handleIsOpen} />
-        <IconMenu isOpen={isOpen} handleIsOpen={handleIsOpen}  />
-        <Tabs
-          isOpen={isOpen}
-          handleIsOpen={handleIsOpen}
-        />
+        <IconMenu isOpen={isOpen} handleIsOpen={handleIsOpen} />
+        <Tabs isOpen={isOpen} handleIsOpen={handleIsOpen} />
       </nav>
     </header>
   );

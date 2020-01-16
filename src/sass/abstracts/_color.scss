@@ -1,15 +1,33 @@
-$first-color: #f76c5e;
+$first-color: rgb(250, 114, 104);
+$primary-color-light: #ffbeb9;
+$primary-color-dark: #c32a2a;
 
 $main-white: #fff;
-$off-white: rgba(255, 255, 255, 0.1);
 $main-black: #000;
-$off-black: rgba(0, 0, 0, 0.8);
-$main-grey: #ececec;
-$off-grey: rgba(50, 50, 50, 0.7);
-$dark-grey: rgb(50, 50, 50);
 
-$shade-grey-1: #323232;
-$shade-grey-2: #191919;
+$grey-light-1: #faf9f9;
+$grey-light-2: #f4f2f2;
+$grey-light-3: #f0eeee;
+$grey-light-4: #ccc;
+
+$grey-dark-1: #333;
+$grey-dark-2: #9993;
+$grey-dark-3: #999;
+
+$color1: rgb(250, 114, 104);
+$color2: #b5a5ab;
+$color3: rgba(34, 24, 28, 1);
+$color4: rgba(90, 0, 1, 1);
+$color5: rgba(195, 42, 42, 1);
+
+:root {
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --shadow-card: .5rem .5rem 1rem rgba(0,0,0,0.9);
+
+  --line: 1px solid var(--main-black);
+  --coral: rgb(250, 114, 104);
+}
 
 $facebook-color: #3b5998;
 $twitter-color: #00acee;

@@ -37,7 +37,7 @@ class FAQ extends React.Component {
       <div className="faq-wrapper">
         <div className="faq-header">
           <h2>
-            Have a <span style={{ color: "#f76c5e" }}>Question?</span>
+            Have a <span style={{ color: "var(--coral)" }}>Question?</span>
           </h2>
           <p style={{ letterSpacing: "0.1rem" }}>Look Here</p>
           <form action="">

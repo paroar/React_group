@@ -21,10 +21,10 @@
 @mixin box {
   margin: 3rem auto 6rem;
   padding: 2rem;
-  background-color: $off-black;
-  border: 2px solid $off-white;
+  background-image: linear-gradient(to right, $grey-dark-1, $main-black);
   border-radius: 5px;
   width: 70%;
+  box-shadow: var(--shadow-dark);
 
   @include respond(desktop4k) {
     width: 50%;
