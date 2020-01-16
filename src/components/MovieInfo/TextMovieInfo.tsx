@@ -5,7 +5,7 @@ import styled from "styled-components";
 // import { GiPopcorn } from "react-icons/gi";
 // import { FaTrashAlt } from "react-icons/fa";
 import Videos from "./Videos";
-import Svg from "../Svg";
+import svg from "../../img/sprite.svg";
 
 const TextMovieInfo: React.FC<FetchMovie> = ({
   title,
@@ -20,10 +20,6 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
   const handleIsOpen = () => {
     setisOpen(!isOpen);
   };
-
-  const star = (
-    <path d="M10 1.3l2.388 6.722h6.412l-5.232 3.948 1.871 6.928-5.439-4.154-5.438 4.154 1.87-6.928-5.233-3.948h6.412l2.389-6.722z"></path>
-  );
 
   // const Rate = styled.span`
   //   position: relative;
@@ -89,12 +85,23 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
         <h1>{title}</h1>
         {tagline ? <h3>{tagline}</h3> : null}
         <div className="rating-stars">
-          <Svg class="">{star}</Svg>
-          <Svg class="">{star}</Svg>
-          <Svg class="">{star}</Svg>
-          <Svg class="">{star}</Svg>
-          <Svg class="">{star}</Svg>
+          <svg>
+            <use xlinkHref={svg + "#icon-star"}></use>
+          </svg>
+          <svg>
+            <use xlinkHref={svg + "#icon-star"}></use>
+          </svg>
+          <svg>
+            <use xlinkHref={svg + "#icon-star"}></use>
+          </svg>
+          <svg>
+            <use xlinkHref={svg + "#icon-star"}></use>
+          </svg>
+          <svg>
+            <use xlinkHref={svg + "#icon-star"}></use>
+          </svg>
         </div>
+
         <WatchTrailer onClick={() => handleIsOpen()}>
           Watch Trailer
         </WatchTrailer>
