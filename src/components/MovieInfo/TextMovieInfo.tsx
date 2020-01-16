@@ -78,35 +78,52 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
         <Videos results={videos.results} handleIsOpen={handleIsOpen} />
       ) : null}
       <span></span>
+
       <div
         className="details--movieInfo--grid"
         onClick={e => e.stopPropagation()}
       >
-        <h1>{title}</h1>
-        {tagline ? <h3>{tagline}</h3> : null}
-        <div className="rating-stars">
-          <svg>
-            <use xlinkHref={svg + "#icon-star"}></use>
-          </svg>
-          <svg>
-            <use xlinkHref={svg + "#icon-star"}></use>
-          </svg>
-          <svg>
-            <use xlinkHref={svg + "#icon-star"}></use>
-          </svg>
-          <svg>
-            <use xlinkHref={svg + "#icon-star"}></use>
-          </svg>
-          <svg>
-            <use xlinkHref={svg + "#icon-star"}></use>
-          </svg>
+        <div className="top-text">
+          <h1>{title}</h1>
+          {tagline ? <h3>{tagline}</h3> : null}
+          <div className="rating-stars">
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+            <svg>
+              <use xlinkHref={svg + "#icon-star"}></use>
+            </svg>
+          </div>
+
+          <WatchTrailer onClick={() => handleIsOpen()}>
+            Watch Trailer
+          </WatchTrailer>
+          <Genres genres={genres} />
         </div>
-
-        <WatchTrailer onClick={() => handleIsOpen()}>
-          Watch Trailer
-        </WatchTrailer>
-        <Genres genres={genres} />
-
         {/* 
         <Rate>
           <Good>
@@ -117,7 +134,9 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
             <FaTrashAlt size="1.2rem"></FaTrashAlt>
           </Bad>
         </Rate> */}
-        <p>{overview}</p>
+        <div className="bottom-text">
+          <p>{overview}</p>
+        </div>
       </div>
     </>
   );

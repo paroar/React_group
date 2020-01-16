@@ -42,12 +42,14 @@
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  text-shadow: 0 0 0.1rem rgba(0,0,0,.7);
 }
 .back__icon {
   width: 2rem;
   height: 2rem;
   margin: 1rem 0;
-  fill: $color2;
+  fill: #fff;
+  filter: drop-shadow(0 0 .2rem $color3);
   &:hover{
     fill: $color1;
   }

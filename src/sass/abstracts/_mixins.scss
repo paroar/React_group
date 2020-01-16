@@ -21,7 +21,7 @@
 @mixin box {
   margin: 3rem auto 6rem;
   padding: 2rem;
-  background-image: linear-gradient(to right, $grey-dark-1, $main-black);
+  background-image: linear-gradient(to bottom, $color3,black);
   border-radius: 5px;
   width: 70%;
   box-shadow: var(--shadow-dark);

@@ -13,8 +13,10 @@ type CardProps = {
 
 const Num = styled.h3``;
 
-const Title = styled.h2`
+const Title = styled.p`
   margin: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 `;
 
 const SubTitle = styled.h4``;
@@ -38,13 +40,13 @@ const Card: React.FC<CardProps> = props => {
             <>
               <Num>{props.vote}/10</Num>
               <div className="icons">
-                <svg className="filter__icon">
+                <svg className="back__icon">
                   <use xlinkHref={svg + "#icon-heart"}></use>
                 </svg>
-                <svg className="filter__icon">
+                <svg className="back__icon">
                   <use xlinkHref={svg + "#icon-eye"}></use>
                 </svg>
-                <svg className="filter__icon">
+                <svg className="back__icon">
                   <use xlinkHref={svg + "#icon-add-to-list"}></use>
                 </svg>
               </div>

@@ -6,21 +6,25 @@ import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
   padding: 0.3rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0.2rem;
+  background-image: linear-gradient(to bottom, black, rgba(34, 24, 28, 1));
+  margin: 1rem 0.2rem;
   border-radius: 2px;
   cursor: pointer;
-  transition: all 0.3s;
-  transition-property: background-color, transform;
+  transition: all 0.5s;
+  transition-property: background-image, transform;
 
   &:hover {
-    background-color: var(--coral);
-    transform: translateY(-2px);
+    background-image: linear-gradient(to top, black, rgba(34, 24, 28, 1));
+
+    transform: translateY(-4px);
   }
 `;
 
 const GenreTags = styled.div`
-  margin: .5rem 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
 `;
 
 const Genres: React.FC<MovieGenres> = props => {
@@ -32,6 +36,7 @@ const Genres: React.FC<MovieGenres> = props => {
       <GenreTags>
         {props.genres.map(genre => (
           <Link
+            className="genre"
             key={genre.id}
             to="/Catalogue"
             onClick={() => handleGenre(genre.id.toString())}

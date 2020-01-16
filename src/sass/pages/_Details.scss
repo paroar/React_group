@@ -41,7 +41,8 @@
       white-space: pre-line;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      text-shadow: 0 0 2rem rgba(0,0,0,.5);
+      color: $color2;
 
       @include respond(desktop4k) {
         margin: 0 0 0 2rem;
@@ -65,6 +66,17 @@
       p {
         padding: 0.5rem 0;
         letter-spacing: 1px;
+      }
+
+      .top-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .bottom-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
       }
     }
   }
@@ -113,10 +125,21 @@
   & > * {
     width: 1.2rem;
     height: 1.2rem;
+    fill: $color3;
 
-    &:hover, &:hover ~ *{
+    &:hover,
+    &:hover ~ * {
       cursor: pointer;
-      fill:red;
+      fill: $color1;
     }
+  }
+}
+
+.genre{
+  margin-bottom: 1rem;
+  transition: all .3s;
+  &:hover{
+    transform: translateY(-3px);
+    color: white;
   }
 }
