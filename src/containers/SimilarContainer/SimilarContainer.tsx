@@ -33,7 +33,7 @@ const SimilarContainer: React.FC = () => {
           movies: movies.results
         })
       );
-  }, []);
+  }, [lang, slug]);
 
   if (state.loading) {
     return <div>{language["loading"][lang]}</div>;

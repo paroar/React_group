@@ -18,8 +18,8 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
 
   useEffect(() => {
     var url = "";
-    genre = genre !== "" ? `&with_genres=${genre}` : "";
-    const sort = "&sort_by=" + `${props.sort || "popularity"}`;
+    let genreStr = genre !== "" ? `&with_genres=${genre}` : "";
+    const sort = `&sort_by=${props.sort || "popularity"}`;
     const order = props.order ? "." + props.order : ".desc";
     const rating =
       props.rating !== "" && typeof props.rating !== "undefined"
@@ -34,7 +34,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
       urls.domain +
       "discover/movie" +
       urls.apikey +
-      genre +
+      genreStr +
       sort +
       order +
       rating +
@@ -54,8 +54,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
           currentPage: props.page
         });
       });
-  }, [props, state.currentPage]);
-
+  }, [props, state.currentPage, genre, lang]);
 
   if (state.loading) {
     return <div>{language.loading[lang]}</div>;

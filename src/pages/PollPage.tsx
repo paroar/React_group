@@ -24,7 +24,7 @@ const PollPage: React.FC = () => {
           <Choose>
             {topic.nominations.map(nomination => (
               <Draggable id={nomination.id}>
-                <img src={nomination.path} />
+                <img src={nomination.path} alt={nomination.id}/>
               </Draggable>
             ))}
           </Choose>

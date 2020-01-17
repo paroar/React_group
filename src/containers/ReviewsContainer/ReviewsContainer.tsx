@@ -48,7 +48,7 @@ const ReviewsContainer: React.FC = () => {
           reviews: reviews.results
         })
       );
-  }, []);
+  }, [lang, slug]);
 
   if (state.loading) {
 return <div>{language["loading"][lang]}</div>;

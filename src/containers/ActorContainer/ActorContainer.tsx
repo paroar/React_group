@@ -27,7 +27,7 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
     fetch(url)
       .then(response => response.json())
       .then(info => changeState({ loading: false, info: info }));
-  }, [props]);
+  }, [props,lang]);
 
   if (state.loading) {
     return <div>{language["loading"][lang]}</div>;
