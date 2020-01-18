@@ -1,23 +1,40 @@
 .details {
   border-radius: 2px;
-  padding: 2rem 0;
 
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important;
   background-attachment: fixed !important;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > * {
+    @include respond(desktop4k) {
+      width: 50%;
+    }
+
+    @include respond(desktop) {
+      width: 70% !important;
+    }
+    @include respond(phone-land) {
+      width: 85% !important;
+    }
+    @include respond(phone-port) {
+      width: 90% !important;
+    }
+  }
+
   &--movieInfo {
     display: grid;
     grid-template-columns: repeat(1, auto);
     justify-content: center;
     padding: 2rem;
-    width: 70%;
     @include box;
 
     @include respond(desktop4k) {
       grid-template-columns: repeat(3, auto);
-      width: 50%;
     }
 
     @include respond(desktop2k) {
@@ -34,15 +51,15 @@
     }
 
     &--grid {
-      background-color: $grey-dark-1;
+      background-image: linear-gradient(to bottom, #2a2225, #130d0f);
       padding: 1rem;
       margin-top: 2rem;
       border-radius: 2px;
       white-space: pre-line;
       display: flex;
       flex-direction: column;
-      text-shadow: 0 0 2rem rgba(0,0,0,.5);
-      color: $color2;
+      text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+      color: $color6;
 
       @include respond(desktop4k) {
         margin: 0 0 0 2rem;
@@ -72,6 +89,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        &__title {
+          color: #fff;
+        }
       }
       .bottom-text {
         display: flex;
@@ -123,27 +143,34 @@
 }
 
 .rating-stars {
-  direction: rtl;
+  //direction: rtl;
   display: flex;
-  justify-content: flex-end;
+  //justify-content: flex-end;
 
   & > * {
     width: 1.2rem;
     height: 1.2rem;
     fill: $color3;
 
-    &:hover,
-    &:hover ~ * {
-      cursor: pointer;
-      fill: $color1;
-    }
+    // &:hover,
+    // &:hover ~ * {
+    //   cursor: pointer;
+    //   fill: $color1;
+    // }
+  }
+
+  .svg__color {
+    fill: $color1;
+  }
+  .svg__nocolor {
+    stroke: rgba(255, 255, 255, 0.15);
   }
 }
 
-.genre{
+.genre {
   margin-bottom: 1rem;
-  transition: all .3s;
-  &:hover{
+  transition: all 0.3s;
+  &:hover {
     transform: translateY(-3px);
     color: white;
   }

@@ -19,15 +19,19 @@
 }
 
 @mixin box {
-  margin: 3rem auto 6rem;
+  margin: 3rem;
   padding: 2rem;
   background-image: linear-gradient(to bottom, $color3,black);
   border-radius: 5px;
-  width: 70%;
+  width: 90%;
   box-shadow: var(--shadow-dark);
 
   @include respond(desktop4k) {
     width: 50%;
+  }
+
+  @include respond(phone-port) {
+    margin: 1.5rem;
   }
 }
 

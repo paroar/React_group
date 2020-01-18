@@ -69,12 +69,4 @@
   .cross .bar::after {
     transform: rotate(45deg);
   }
-
-  input[type="text"] {
-    font-family: monospace;
-  }
-
-  ::placeholder {
-    font-size: 1rem;
-  }
 }

@@ -14,14 +14,12 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ movie }) => {
 
   return (
     <div data-testid="details-page" className="details" style={backStyle}>
-      <div className="back">
         <div className="details--movieInfo">
           <Poster
             imgPath={movie.poster_path}
             className="details--movieInfo--portrait"
           />
           <TextMovieInfo {...movie} />
-        </div>
       </div>
       <Cast credits={movie.credits} />
       <SimilarContainer/>

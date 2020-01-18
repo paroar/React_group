@@ -5,26 +5,24 @@ import { Link } from "react-router-dom";
 import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
-  padding: 0.3rem;
+  padding: 0.4rem .7rem;
   background-image: linear-gradient(to bottom, black, rgba(34, 24, 28, 1));
-  margin: 1rem 0.2rem;
   border-radius: 2px;
+  margin: .2rem;
   cursor: pointer;
   transition: all 0.5s;
   transition-property: background-image, transform;
+  box-shadow: 0 .2rem .1rem rgba(0,0,0,.5);
+  display: inline-block; 
 
   &:hover {
     background-image: linear-gradient(to top, black, rgba(34, 24, 28, 1));
-
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 `;
 
 const GenreTags = styled.div`
-  margin: 0.5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
+  margin: .5rem 0;
 `;
 
 const Genres: React.FC<MovieGenres> = props => {
