@@ -57,6 +57,7 @@ class SignInForm extends React.Component<RouteComponentProps> {
             await base
             .auth()
             .signInWithEmailAndPassword(this.state.signIn.email.value, this.state.signIn.password.value);
+            
             this.props.history.push("/dashboard");
         } catch (error) {
             alert(error);
@@ -72,7 +73,13 @@ class SignInForm extends React.Component<RouteComponentProps> {
             return (
                 <Redirect to="/dashboard" />
             ); 
-        } 
+        }
+
+        // var user = base.auth().currentUser;
+        // if ( user != null) {
+            
+        // }
+        // console.log("ASD",user);
 
         const formElements: {id: string, config: InputProps}[] = [];
         for (let key in this.state.signIn) {

@@ -67,6 +67,8 @@ const Card: React.FC<CardProps> = props => {
       firebase
       .firestore()
       .collection('favorites')
+      .doc('subdocument')
+      .collection('subcollection')
       .add({
         title: props.title,
         backdrop_path: props.backdrop_path
