@@ -10,6 +10,7 @@ const UserPage = () => {
     }
 
     return (
+        <div className="user-page">
         <div className={`user-container ${setClass}`} id="user-container">
             <SignUpForm />
             <SignInForm />
@@ -26,6 +27,7 @@ const UserPage = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

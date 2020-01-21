@@ -5,6 +5,10 @@
  - coral pal titulo y el botón
 */
 
+.user-page{
+    height: calc(100vh - 8rem);
+}
+
 .user-container {
     background-color: $help-form-dark;
     border-radius: 0.1rem;

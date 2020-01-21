@@ -1,4 +1,4 @@
-.home-page{
+.home-page {
   height: calc(100vh - 8rem);
   background: url("../../img/cinema.jpg") no-repeat center;
   background-size: cover;
@@ -38,16 +38,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid $main-black;
+    border: 3px solid rgba($color3, 1);
     border-radius: 2rem;
     margin: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(black, 0.5);
     width: 8rem;
     height: 8rem;
+    position: relative;
+    z-index: 3;
+    transition: all 0.3s;
 
     &:hover {
-      opacity: 0.6;
-      border-color: $first-color;
+      border: 3px solid rgba($color1, 0.5);
+      background-color: rgba(black, 1);
+      color: white;
+      transform: scale(1.05);
     }
   }
 

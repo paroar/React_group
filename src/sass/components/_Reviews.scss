@@ -1,17 +1,102 @@
-.reviews{
-    white-space: pre-line;
-    overflow: hidden;
+.reviews {
+  white-space: pre-line;
+  overflow: hidden;
 
-    .accordion-text > p{
-        padding: 1rem;
-    }
+  .accordion-text > p {
+    padding: 1rem;
+  }
+
+  .accordion-section{
+      width: 100%;
+  }
 }
 
-.review{
-    white-space: pre-line;
-    overflow: auto;
-    margin: 1rem auto;
-    padding: 2rem;
-    background-color: $main-black;
-    border-radius: 3px;
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &-rating{
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    &-left{
+      display: flex;
+      align-items: center;
+      @include respond(phone-port) {
+        flex: 1 1 100%;
+      }
+
+    }
+
+    &__stars {
+      margin: 1rem;
+      direction: rtl;
+      display: flex;
+    
+      & > span > * {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: $color3;
+        stroke: $color1;
+    
+        &:hover,
+        &:hover ~ * {
+          cursor: pointer;
+          fill: $color1;
+        }
+      }
+
+      &__color{
+        background-color: $color1;
+      }
+    }
+  }
+
+  &-textarea{
+    min-width: 100%;
+    min-height: 3rem;
+    margin: 1rem;
+    background-color: rgba($color3, 0.2);
+    color: rgba($color2, 0.5);
+    border: 1px solid rgba($color2, .4);
+    border-radius: 2px;
+    padding: 1rem;
+    transition: all .3s;
+
+    &:focus{
+      background-color: $color3;
+      color: $color2;
+    }
+  }
+
+  &__submit{
+
+    padding: 0.4rem 1.5rem;
+    border-radius: 2px;
+    font-weight: 400;
+
+    transition: all .3s;
+    box-shadow: 0rem 0.1rem 0.1rem black;
+    background-color: transparent;
+    border: 1px solid $color1;
+    color: $color1;
+
+    @include respond(phone-port) {
+      flex: auto;
+    }
+
+
+    &:hover{
+      color: $color2;
+      border: 1px solid $color2;
+      transform: translateY(-3px);
+    }
+  }
 }

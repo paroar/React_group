@@ -38,14 +38,14 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
     let roundAverage = Math.round(vote_average);
     for (i; i < roundAverage; i++) {
       stars.push(
-        <svg className="svg__color">
+        <svg key={i} className="svg__color">
           <use xlinkHref={svg + "#icon-star"}></use>
         </svg>
       );
     }
     for (i; i < 10; i++) {
       stars.push(
-        <svg className="svg__nocolor">
+        <svg key={i} className="svg__nocolor">
           <use xlinkHref={svg + "#icon-star"}></use>
         </svg>
       );
