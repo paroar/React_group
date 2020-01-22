@@ -91,12 +91,19 @@
     @include respond(phone-port) {
       flex: auto;
     }
+  }
+}
 
+.disabled{
+  color: $color3;
+  border: 1px solid $color3;
+  transform: none !important;
+}
 
-    &:hover{
-      color: $color2;
-      border: 1px solid $color2;
-      transform: translateY(-3px);
-    }
+.active{
+  &:hover{
+    color: $color2;
+    border: 1px solid $color2;
+    transform: translateY(-3px);
   }
 }

@@ -1,5 +1,5 @@
 .heading {
-  color: white;
+  color: $color2;
   border-radius: 2px;
   padding: 1.5rem 2.5rem;
   text-align: center;
@@ -14,7 +14,7 @@
     &::after{
       content: "";
       position: absolute;
-      background-color: white;
+      background-color: $color2;
       height: 1px;
       width: 100%;
       left: 50%;

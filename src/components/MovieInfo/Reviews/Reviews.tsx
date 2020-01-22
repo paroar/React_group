@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Accordion from "../../Help/Accordion/Accordion";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../../../contexts/LanguageContext";
 import language from "./lang";
 import { AuthContext } from "../../../contexts/Auth";
-import svg from "../../../img/sprite.svg";
+import Rating from "./Rating";
+import TextArea from "./TextArea";
 
 type ReviewsType = {
   reviews: {
@@ -27,59 +28,48 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   const { lang } = useContext(LanguageContext);
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
-  //@ts-ignore
   const [starsState, setStarsState] = useState(0);
-
+  const [textAreaState, setTextAreaState] = useState("");
+  const [isSubmitable, setIsSubmitable] = useState(false);
 
   const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-//@ts-ignore
+    //@ts-ignore
     setStarsState(e.target.id);
   };
 
-  const numStars = () => {
-    const stars = [];
-
-    let i = 0;
-    for (i; i < 10; i++) {
-      stars.push(
-        
-        <svg
-          key={i}
-          id={`${10 - i}`}
-          className={`${ i < starsState ?  "stars_nocolor" : "stars__color"}`}
-          onClick={e => handleClick(e)
-          }
-        >
-          <use id={`${10 - i}`} xlinkHref={svg + "#icon-star"}></use>
-        </svg>
-
-      );
-    }
-    return stars;
+  const handleTextArea = (s: string) => {
+    setTextAreaState(s);
   };
-  console.log("target.id",starsState);
+
+  useEffect(() => {
+    starsState !== 0 && textAreaState !== ""
+      ? setIsSubmitable(false)
+      : setIsSubmitable(true);
+  }, [textAreaState, starsState]);
+
+  const handleSubmit = () => {
+    console.log({
+      rating: starsState,
+      review: textAreaState
+    });
+  };
 
   return (
     <>
       {currentUser ? (
         <div className="review">
-          <textarea
-            className="review-textarea"
-            name=""
-            id=""
-            cols={30}
-            rows={10}
-            placeholder="Add your review..."
-          />
+          <TextArea handleTextArea={handleTextArea} />
           <div className="review-rating">
-            <div className="review-rating-left">
-              <p>Your Rating: </p>
-              <div className="review-rating__stars">
-                <span>{numStars()}</span>
-              </div>
-            </div>
-
-            <button className="review__submit">Submit</button>
+            <Rating starsState={starsState} handleClick={handleClick} />
+            <button
+              className={`review__submit ${
+                isSubmitable ? "disabled" : "active"
+              }`}
+              disabled={isSubmitable}
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
           </div>
         </div>
       ) : (
