@@ -9,6 +9,7 @@ const StyledDragDiv = styled.div`
   margin: auto;
   display:flex;
   justify-content: center;
+  height: 10rem;
   & > *{
     margin: 1rem;
   }
