@@ -5,18 +5,23 @@ import { Link } from "react-router-dom";
 import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
-  padding: 0.4rem .7rem;
-  background-image: linear-gradient(to bottom, black, rgba(34, 24, 28, 1));
-  border-radius: 2px;
-  margin: .2rem;
-  cursor: pointer;
-  transition: all 0.5s;
-  transition-property: background-image, transform;
-  box-shadow: 0 .2rem .1rem rgba(0,0,0,.5);
-  display: inline-block; 
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: .8rem;
+
+    transition: all .3s;
+    box-shadow: 0rem 0.1rem 0.1rem black;
+    background-color: transparent;
+    border: 1px solid rgb(250, 114, 104);
+    color: rgb(250, 114, 104);
+    margin: .2rem;
+    display: inline-block;
+    cursor: pointer;
 
   &:hover {
-    background-image: linear-gradient(to top, black, rgba(34, 24, 28, 1));
+    color: #b5a5ab;
+    border: 1px solid #b5a5ab;
     transform: translateY(-3px);
   }
 `;
