@@ -27,47 +27,38 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   const { lang } = useContext(LanguageContext);
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
+  //@ts-ignore
   const [starsState, setStarsState] = useState(0);
 
-  const handleClick = (e:any) => {
-    //@ts-ignore
-    console.log(e.target.id);
+
+  const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+//@ts-ignore
+    setStarsState(e.target.id);
   };
 
   const numStars = () => {
     const stars = [];
 
     let i = 0;
-    for (i; i < 10 && i < starsState; i++) {
-      stars.push(
-        <svg
-          key={i}
-          id={`${10 - i}`}
-          className="stars__color"
-          onClick={e => {
-            console.log(e.target);
-            setStarsState(1);
-            console.log("i");
-          }}
-        >
-          <use xlinkHref={svg + "#icon-star"}></use>
-        </svg>
-      );
-    }
     for (i; i < 10; i++) {
       stars.push(
+        
         <svg
           key={i}
           id={`${10 - i}`}
-          className="stars__nocolor"
-          onClick={e => handleClick(e)}
+          className={`${ i < starsState ?  "stars_nocolor" : "stars__color"}`}
+          onClick={e => handleClick(e)
+          }
         >
-          <use xlinkHref={svg + "#icon-star"}></use>
+          <use id={`${10 - i}`} xlinkHref={svg + "#icon-star"}></use>
         </svg>
+
       );
     }
     return stars;
   };
+  console.log("target.id",starsState);
+
   return (
     <>
       {currentUser ? (
