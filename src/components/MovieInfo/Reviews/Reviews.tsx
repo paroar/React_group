@@ -6,6 +6,8 @@ import language from "./lang";
 import { AuthContext } from "../../../contexts/Auth";
 import Rating from "./Rating";
 import TextArea from "./TextArea";
+import firebase from "firebase";
+import SlugContext from "../../../contexts/SlugContext";
 
 type ReviewsType = {
   reviews: {
@@ -26,6 +28,7 @@ type Review = {
 
 const Reviews: React.FC<ReviewsType> = (props: any) => {
   const { lang } = useContext(LanguageContext);
+  const { slug } = useContext(SlugContext);
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
   const [starsState, setStarsState] = useState(0);
@@ -47,11 +50,25 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
       : setIsSubmitable(true);
   }, [textAreaState, starsState]);
 
+  var dbRefObject = firebase.database().ref();
+
   const handleSubmit = () => {
     console.log({
       rating: starsState,
       review: textAreaState
     });
+
+    var updates = {};
+
+    //@ts-ignore
+    updates[`/reviews/review/${slug}/` + currentUser.uid] = {
+      movieId: slug,
+      rating: starsState,
+      review: textAreaState,
+      user: currentUser.uid
+    };
+
+    dbRefObject.update(updates);
   };
 
   return (

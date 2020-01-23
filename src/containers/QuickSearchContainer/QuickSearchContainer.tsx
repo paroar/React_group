@@ -5,7 +5,6 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 import svg from "../../img/sprite.svg";
 
-
 export type SearchMovie = {
   poster_path: string;
   title: string;
