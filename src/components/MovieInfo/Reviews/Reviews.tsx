@@ -26,6 +26,13 @@ type Review = {
   url: string;
 };
 
+type OurReviews = {
+  movieId: string;
+  rating: string;
+  review: string;
+  user: string;
+};
+
 const Reviews: React.FC<ReviewsType> = (props: any) => {
   const { lang } = useContext(LanguageContext);
   const { slug } = useContext(SlugContext);
@@ -34,6 +41,7 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   const [starsState, setStarsState] = useState(0);
   const [textAreaState, setTextAreaState] = useState("");
   const [isSubmitable, setIsSubmitable] = useState(false);
+  const [ourReviews, setOurReviews] = useState<OurReviews[]>([]);
 
   const handleClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     //@ts-ignore
@@ -52,12 +60,18 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
 
   var dbRefObject = firebase.database().ref();
 
-  const handleSubmit = () => {
-    console.log({
-      rating: starsState,
-      review: textAreaState
-    });
+  useEffect(() => {
+    var ourR: any[] = [];
+    firebase.database().ref().child(`reviews/review/${slug}`).on("value", snap => {
+      debugger
+      snap.forEach(item => {
+      var itemVal = item.val();
+      ourR.push(itemVal);
+    })});
+    setOurReviews(ourR);
+  }, []);
 
+  const handleSubmit = () => {
     var updates = {};
 
     //@ts-ignore
@@ -70,6 +84,13 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
 
     dbRefObject.update(updates);
   };
+
+  if (ourReviews.length) {
+    debugger
+
+  }
+
+  console.log("our",ourReviews);
 
   return (
     <>
@@ -94,6 +115,12 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
           <Accordion title={language["login"][lang]} />
         </Link>
       )}
+
+      {ourReviews.map(review => (
+        <Accordion key={review["movieId"]} title={review["user"]}>
+          <p>{review["review"]}</p>
+        </Accordion>
+      ))}
 
       {[].map.call(props.reviews, review => (
         <Accordion key={review["id"]} title={review["author"]}>
