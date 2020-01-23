@@ -2,17 +2,17 @@ import React from "react";
 
 type TextAreaProps = {
     handleTextArea: (s: string) => void;
+    textAreaState: string;
 }
 
  const TextArea: React.FC<TextAreaProps> = (props) => {
   return (
-    <textarea
+    <input
       className="review-textarea"
       name=""
       id=""
-      cols={20}
-      rows={5}
       placeholder="Add your review..."
+      value={props.textAreaState}
       onChange={e =>props.handleTextArea(e.target.value)}
     />
   );

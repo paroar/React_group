@@ -31,6 +31,7 @@ type OurReviews = {
   rating: string;
   review: string;
   user: string;
+  key: string;
 };
 
 const Reviews: React.FC<ReviewsType> = (props: any) => {
@@ -61,42 +62,42 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   var dbRefObject = firebase.database().ref();
 
   useEffect(() => {
-    var ourR: any[] = [];
-    firebase.database().ref().child(`reviews/review/${slug}`).on("value", snap => {
-      debugger
-      snap.forEach(item => {
-      var itemVal = item.val();
-      ourR.push(itemVal);
-    })});
-    setOurReviews(ourR);
+    firebase
+      .database()
+      .ref()
+      .child(`reviews/movie/${slug}/`)
+      .on("value", snap =>
+        snap.val() ? setOurReviews(Object.values(snap.val())) : null
+      );
   }, []);
 
   const handleSubmit = () => {
+    var key = firebase.database().ref().key;
     var updates = {};
 
     //@ts-ignore
-    updates[`/reviews/review/${slug}/` + currentUser.uid] = {
+    updates[`/reviews/movie/${slug}/` + currentUser.uid] = {
       movieId: slug,
       rating: starsState,
       review: textAreaState,
-      user: currentUser.uid
+      user: currentUser.email,
+      key: key
     };
 
     dbRefObject.update(updates);
+    setTextAreaState("");
+
+    setStarsState(0);
   };
-
-  if (ourReviews.length) {
-    debugger
-
-  }
-
-  console.log("our",ourReviews);
 
   return (
     <>
       {currentUser ? (
         <div className="review">
-          <TextArea handleTextArea={handleTextArea} />
+          <TextArea
+            handleTextArea={handleTextArea}
+            textAreaState={textAreaState}
+          />
           <div className="review-rating">
             <Rating starsState={starsState} handleClick={handleClick} />
             <button
@@ -117,7 +118,11 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
       )}
 
       {ourReviews.map(review => (
-        <Accordion key={review["movieId"]} title={review["user"]}>
+        <Accordion
+          key={review["key"]}
+          title={review["user"]}
+          vote_average={Number(review["rating"])}
+        >
           <p>{review["review"]}</p>
         </Accordion>
       ))}

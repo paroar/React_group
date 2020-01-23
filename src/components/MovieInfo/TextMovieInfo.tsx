@@ -3,7 +3,7 @@ import { FetchMovie } from "../../utils/types";
 import Genres from "./Genres";
 import styled from "styled-components";
 import Videos from "./Videos";
-import svg from "../../img/sprite.svg";
+import Stars from "../Stars";
 
 const TextMovieInfo: React.FC<FetchMovie> = ({
   title,
@@ -31,28 +31,6 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
     }
   `;
 
-  const numStars = () => {
-    const stars = [];
-
-    let i = 0;
-    let roundAverage = Math.round(vote_average);
-    for (i; i < roundAverage; i++) {
-      stars.push(
-        <svg key={i} className="svg__color">
-          <use xlinkHref={svg + "#icon-star"}></use>
-        </svg>
-      );
-    }
-    for (i; i < 10; i++) {
-      stars.push(
-        <svg key={i} className="svg__nocolor">
-          <use xlinkHref={svg + "#icon-star"}></use>
-        </svg>
-      );
-    }
-    return stars;
-  };
-
   return (
     <>
       {isOpen ? (
@@ -67,7 +45,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
         <div className="top-text">
           <h1 className="top-text__title">{title}</h1>
           {tagline ? <h3>{tagline}</h3> : null}
-          <div className="rating-stars">{numStars()}</div>
+          <Stars vote_average={vote_average}/>
 
           <WatchTrailer onClick={() => handleIsOpen()}>
             Watch Trailer
