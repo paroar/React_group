@@ -65,18 +65,18 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
     firebase
       .database()
       .ref()
-      .child(`reviews/movie/${slug}/`)
+      .child(`reviews/movie/${slug}/${lang}/`)
       .on("value", snap =>
         snap.val() ? setOurReviews(Object.values(snap.val())) : null
       );
-  }, []);
+  }, [lang]);
 
   const handleSubmit = () => {
     var key = firebase.database().ref().key;
     var updates = {};
 
     //@ts-ignore
-    updates[`/reviews/movie/${slug}/` + currentUser.uid] = {
+    updates[`/reviews/movie/${slug}/${lang}/` + currentUser.uid] = {
       movieId: slug,
       rating: starsState,
       review: textAreaState,
