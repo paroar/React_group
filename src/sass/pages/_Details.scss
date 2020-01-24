@@ -11,6 +11,7 @@
   align-items: center;
 
   & > * {
+    box-shadow: 0rem .1rem .1rem rgba(0, 0, 0, 1);
     @include respond(desktop4k) {
       width: 50%;
     }
@@ -60,6 +61,7 @@
       flex-direction: column;
       text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
       color: $color6;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
       @include respond(desktop4k) {
         margin: 0 0 0 2rem;
@@ -142,20 +144,11 @@
 }
 
 .rating-stars {
-  //direction: rtl;
-  display: flex;
-  //justify-content: flex-end;
 
   & > * {
     width: 1.2rem;
     height: 1.2rem;
     fill: $color3;
-
-    // &:hover,
-    // &:hover ~ * {
-    //   cursor: pointer;
-    //   fill: $color1;
-    // }
   }
 
   .svg__color {

@@ -51,8 +51,6 @@ const PollPage: React.FC = () => {
     dbRefObject.on("value", snap => setstate(snap.val()));
   }, []);
 
-  console.log(state);
-
   return (
     <>
       {state
