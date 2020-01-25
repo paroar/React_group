@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 type DroppableProps = {
-  id: string;
+  voteId: number;
+  handleVote: (voteId: string, state: number) => void;
 };
 
 const StyledDragDiv = styled.div`
@@ -15,7 +16,8 @@ const StyledDragDiv = styled.div`
   }
 `;
 
-const Droppable: React.FC<DroppableProps> = () => {
+const Droppable: React.FC<DroppableProps> = (props) => {
+  const [state] = useState(props.voteId);
   const [pick, setPick] = useState({
     id: "",
     path: ""
@@ -28,6 +30,17 @@ const Droppable: React.FC<DroppableProps> = () => {
     //@ts-ignore
     setPick({id: node.id, path: node.firstChild.currentSrc});
   };
+
+  useEffect(() => {
+    const update = () => {
+      console.log("VOTEID", pick.id);
+      console.log("STATE", state);
+      props.handleVote(pick.id, state);
+    }
+    update();
+  }, [pick])
+
+
 
   return (
     <>

@@ -5,7 +5,7 @@ import Poll from "../../components/Poll";
 var dbRefObject = firebase
   .database()
   .ref()
-  .child("poll");
+  .child("poll/results/");
 
 type Category = {
   topic: string;
