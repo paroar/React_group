@@ -30,7 +30,7 @@
     width: 100%;
     position: absolute;
     top: calc(4rem + 2px);
-    height: calc(100vh + 4rem + 2px);
+    height: calc(100vh - 4rem - 2px);
     overflow: scroll;
 
     &--movie {
@@ -40,9 +40,9 @@
         rgba(0, 0, 0, 0.7)
       );
       width: 100%;
-      border-bottom: 2px solid $main-black;
+      border-bottom: 1px solid $main-black;
       display: grid;
-      transition: all 1s ease;
+      transition: all .5s ease;
 
       &:hover {
         background: linear-gradient(
@@ -50,7 +50,7 @@
           $main-black,
           rgba(0, 0, 0, 0.8)
         );
-        color: #fff;
+        color: $color1;
       }
 
       & > a {
@@ -67,6 +67,7 @@
         }
         & > h3 {
           margin-top: 0.3rem;
+
         }
       }
     }

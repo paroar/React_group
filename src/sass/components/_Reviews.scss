@@ -61,7 +61,7 @@
 
   &-textarea{
     min-width: 100%;
-    min-height: 3rem;
+    height: 4rem;
     margin: 1rem;
     background-color: rgba($color3, 0.2);
     color: rgba($color2, 0.5);
@@ -73,6 +73,7 @@
     &:focus{
       background-color: $color3;
       color: $color2;
+      height: 10rem;
     }
   }
 

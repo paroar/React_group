@@ -1,21 +1,21 @@
 import React from "react";
 
 type TextAreaProps = {
-    handleTextArea: (s: string) => void;
-    textAreaState: string;
-}
+  handleTextArea: (s: string) => void;
+  textAreaState: string;
+};
 
- const TextArea: React.FC<TextAreaProps> = (props) => {
+const TextArea: React.FC<TextAreaProps> = props => {
   return (
-    <input
+    <textarea
       className="review-textarea"
       name=""
       id=""
       placeholder="Add your review..."
+      onChange={e => props.handleTextArea(e.target.value)}
       value={props.textAreaState}
-      onChange={e =>props.handleTextArea(e.target.value)}
     />
   );
-}
+};
 
 export default TextArea;
