@@ -35,6 +35,7 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
   if (!state.info.combined_credits) {
     return <div>{language["noInfo"][lang]}</div>;
   }
+  console.log("INFO",state.info)
   return <Actor info={state.info} />;
 };
 

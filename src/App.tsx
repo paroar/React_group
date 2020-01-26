@@ -6,7 +6,6 @@ import HelpPage from "./pages/HelpPage";
 import CataloguePage from "./pages/CataloguePage";
 import MovieInfoPage from "./pages/MovieInfoPage";
 import ErrorPage from "./pages/ErrorPage";
-import SearchPage from "./pages/SearchPage";
 import UserPage from "./pages/UserPage";
 import AdminPage from "./pages/AdminPage";
 import Navbar from "./components/Navbar/Navbar";
@@ -48,7 +47,6 @@ const App: React.FC = () => {
                 />
                 <Route exact path="/actor/:slug" component={ActorPage} />
                 <Route exact path="/help" component={HelpPage} />
-                <Route exact path="/search" component={SearchPage} />
                 <Route exact path="/user" component={UserPage} />
                 <Route exact path="/poll" component={PollPage}/>
                 <PrivateRoute exact path="/admin" component={AdminPage} />

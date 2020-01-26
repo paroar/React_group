@@ -24,6 +24,8 @@
   background-image: linear-gradient(to bottom, $color3,black);
   border-radius: 5px;
   width: 90%;
+  box-shadow: 0 0 1rem rgba($color3, 1);
+
 
   @include respond(desktop4k) {
     width: 50%;

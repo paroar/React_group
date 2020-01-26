@@ -43,7 +43,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
         onClick={e => e.stopPropagation()}
       >
         <div className="top-text">
-          <h1 className="top-text__title">{title}</h1>
+          <h2 className="top-text__title">{title}</h2>
           {tagline ? <h3>{tagline}</h3> : null}
           <Stars vote_average={vote_average}/>
 

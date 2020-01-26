@@ -18,6 +18,10 @@
     align-items: center;
     margin: 0 1rem;
 
+    @include respond(tablet-port) {
+      margin: 0 .5rem;
+    }
+
     @include respond(phone-land) {
       flex: 0 0 40%;
     }
