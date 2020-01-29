@@ -18,7 +18,7 @@ const Biography: React.FC<BioProps> = ({ bio }) => {
 
 const Actor: React.FC<ActorProps> = ({ info }) => {
   const { lang } = useContext(LanguageContext);
-
+  
   return (
     <>
       <div className="actor">

@@ -9,7 +9,9 @@ const Grid: React.FC<GridProps> = props => {
   if (!props) {
     return null;
   } else {
-    //const setMovies = [...new Set(props.arr)];
+    
+    //[{id: 1}, {id: 2},{id: 1},{id: 2},{id: 3}].reduce((os, o) => os.find(oo => oo.id === o.id) ? os : [...os, o], []);
+    //const setMovies:any[] = props.arr.reduce((movies, movie) => movies.find((mov:any) => mov.id === movie.id) ? movies : [...movies,mov],[]);
     return (
       <>
         {props.arr.map(movie =>

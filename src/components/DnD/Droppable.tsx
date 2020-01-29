@@ -47,6 +47,7 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
     });
   };
 
+
   useEffect(() => {
     const update = () => {
       props.handleVote(pick.id, state);

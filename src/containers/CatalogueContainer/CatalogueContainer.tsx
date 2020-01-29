@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import Grid from "../../components/Grid";
 import { urls } from "../../utils/urls";
-import { CatalogueContainerProps } from "../../utils/types";
+import { CatalogueContainerProps, FetchMovie } from "../../utils/types";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
 import { GenreContext } from "../../contexts/GenreContext";
 
 const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
-  const [state, changeState] = useState({
-    loading: false,
-    movies: [],
-    currentPage: props.page
-  });
+
+  const [movies, setMovies] = useState<FetchMovie[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const { lang } = useContext(LanguageContext);
   let { genre } = useContext(GenreContext);
@@ -40,7 +38,7 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
       rating +
       keyword +
       "&page=" +
-      state.currentPage +
+      props.page +
       "&vote_count.gte=20" +
       "&language=" +
       lang;
@@ -48,23 +46,20 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
     fetch(url)
       .then(response => response.json())
       .then(movies => {
-        changeState({
-          loading: false,
-          movies: movies.results,
-          currentPage: props.page
-        });
+        setMovies(movies.results);
+        setLoading(false);
       });
-  }, [props, state.currentPage, genre, lang]);
+  }, [props, genre, lang]);
 
-  if (state.loading) {
+  if (loading) {
     return <div>{language.loading[lang]}</div>;
   }
-  if (state.movies.length === 0) {
+  if (movies.length === 0) {
     return <div>{language["noInfo"][lang]}</div>;
   }
   return (
     <>
-      <Grid arr={state.movies} />
+      <Grid arr={movies} />
     </>
   );
 };
