@@ -52,28 +52,28 @@ const Poll: React.FC<PollProps> = props => {
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
 
-  const handleSubmit = () => {
-    var updates = {};
+  useEffect(() => {
+    const handleSubmit = () => {
+      var updates = {};
 
-    var updateVote = vote.map(val => (val ? val : "null"));
+      var updateVote = vote.map(val => (val ? val : "null"));
 
-    //@ts-ignore
-    updates[`/poll/votes/` + currentUser.uid] = {
-      user: currentUser.email,
-      vote: updateVote
+      //@ts-ignore
+      updates[`/poll/votes/` + currentUser.uid] = {
+        user: currentUser.email,
+        vote: updateVote
+      };
+
+      firebase
+        .database()
+        .ref()
+        .update(updates);
     };
 
-    firebase
-      .database()
-      .ref()
-      .update(updates);
-  };
-
-  useEffect(() => {
-      if(vote.find(vot => vot !== null)){
-        handleSubmit();
-      }
-  }, [vote]);
+    if (vote.find(vot => vot !== null)) {
+      handleSubmit();
+    }
+  }, [vote, currentUser]);
 
   if (!props.poll) {
     return null;

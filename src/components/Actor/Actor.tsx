@@ -28,6 +28,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
             <a
               href={"https://www.imdb.com/name/" + info.imdb_id}
               target="_blank"
+              rel="noopener noreferrer"
               className="actor-data__imdb"
             >
               <Poster imgPath={info.profile_path} className="actor-info__pic" />
@@ -36,6 +37,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
               <a
                 href={"https://www.imdb.com/name/" + info.imdb_id}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="actor-data__imdb"
               >
                 <h2>{info.name}</h2>
