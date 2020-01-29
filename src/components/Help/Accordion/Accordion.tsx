@@ -35,7 +35,7 @@ const Accordion = (props: AccordionProps) => {
         <Plus
           width={20}
           fill={"white"}
-          height="1.2rem"
+          height={"2rem"}
           plusClass={`${setRotate}`}
         />
       </button>

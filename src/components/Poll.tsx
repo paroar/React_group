@@ -87,7 +87,7 @@ const Poll: React.FC<PollProps> = props => {
             <Choose>
               {category.nominations.map(
                 (nomination: { id: string; path: string }) => (
-                  <Draggable id={nomination.id}>
+                  <Draggable id={nomination.id} key={nomination.id}>
                     <img src={nomination.path} alt={nomination.id} />
                   </Draggable>
                 )

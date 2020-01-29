@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 type DroppableProps = {
@@ -8,10 +8,10 @@ type DroppableProps = {
 
 const StyledDragDiv = styled.div`
   margin: auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   height: 10rem;
-  & > *{
+  & > * {
     margin: 1rem;
   }
 `;
@@ -26,19 +26,26 @@ const Droppable: React.FC<DroppableProps> = (props) => {
   const drop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const data = e.dataTransfer.getData("transfer");
-    const node = document.getElementById(data);
-    //@ts-ignore
-    setPick({id: node.id, path: node.firstChild.currentSrc});
+    if (data) {
+      const node = document.getElementById(data);
+      if (node) {
+        //@ts-ignore
+        setPick({ id: node.id, path: node.firstChild.currentSrc });
+      }
+    }
   };
+
+  const handleVote = useCallback(
+    props.handleVote,
+    [],
+  ) 
 
   useEffect(() => {
     const update = () => {
-      props.handleVote(pick.id, state);
-    }
+      handleVote(pick.id, state);
+    };
     update();
-  }, [pick])
-
-
+  }, [pick, handleVote]);
 
   return (
     <>
@@ -47,7 +54,7 @@ const Droppable: React.FC<DroppableProps> = (props) => {
         onDragOver={e => e.preventDefault()}
         id="dragDiv"
       >
-        <img src={pick.path} alt=""/>
+        <img src={pick.path} alt="" />
       </StyledDragDiv>
     </>
   );
