@@ -22,7 +22,6 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
       "&append_to_response=external_ids,combined_credits" +
       "&language=" +
       lang;
-      console.log(url);
       
     fetch(url)
       .then(response => response.json())
@@ -35,7 +34,6 @@ const ActorContainer: React.FC<ActorIdProps> = props => {
   if (!state.info.combined_credits) {
     return <div>{language["noInfo"][lang]}</div>;
   }
-  console.log("INFO",state.info)
   return <Actor info={state.info} />;
 };
 

@@ -33,8 +33,6 @@ const Droppable: React.FC<DroppableProps> = (props) => {
 
   useEffect(() => {
     const update = () => {
-      console.log("VOTEID", pick.id);
-      console.log("STATE", state);
       props.handleVote(pick.id, state);
     }
     update();

@@ -66,10 +66,10 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
       .database()
       .ref()
       .child(`reviews/movie/${slug}/${lang}/`)
-      .on("value", snap =>
+      .once("value", snap =>
         snap.val() ? setOurReviews(Object.values(snap.val())) : null
       );
-  }, [lang]);
+  }, [lang,slug]);
 
   const handleSubmit = () => {
     var key = firebase.database().ref().key;
