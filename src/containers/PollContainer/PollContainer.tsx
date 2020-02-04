@@ -23,7 +23,6 @@ const PollContainer: React.FC = () => {
     dbRefObject.on("value", snap => setPoll(Object.values(snap.val()).flat()));
   }, []);
 
-  console.log("POLLCONTAINER",poll);
   if (!poll) {
     return <div>Not yet</div>;
   }

@@ -33,9 +33,8 @@ const Accordion = (props: AccordionProps) => {
           <Stars vote_average={props.vote_average} />
         ) : null}
         <Plus
-          width={20}
+          width={"1rem"}
           fill={"white"}
-          height="1.2rem"
           plusClass={`${setRotate}`}
         />
       </button>
