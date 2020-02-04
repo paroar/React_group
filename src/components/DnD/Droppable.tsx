@@ -31,7 +31,19 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
   const drop = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault();
     if(!currentUser){
+<<<<<<< HEAD
       handleRedirect()
+=======
+      props.history.push("/user");
+    }
+    const data = e.dataTransfer.getData("transfer");
+    if (data) {
+      const node = document.getElementById(data);
+      if (node) {
+        //@ts-ignore
+        setPick({ id: node.id, path: node.firstChild.currentSrc });
+      }
+>>>>>>> router
     }
     const data = e.dataTransfer.getData("transfer");
     const node = document.getElementById(data);
@@ -47,7 +59,10 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
     });
   };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> router
   useEffect(() => {
     const update = () => {
       props.handleVote(pick.id, state);
