@@ -67,6 +67,10 @@
   }
 
   @include respond(phone-land) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include respond(phone-port) {
     grid-template-columns: repeat(1, auto);
   }
 }
@@ -100,6 +104,10 @@
   }
 
   @include respond(phone-land) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include respond(phone-port) {
     grid-template-columns: repeat(1, auto);
   }
 }

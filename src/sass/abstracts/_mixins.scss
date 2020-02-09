@@ -58,7 +58,7 @@ $breakpoint arguments choices:
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone-port {
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
       @content;
     }
   }
