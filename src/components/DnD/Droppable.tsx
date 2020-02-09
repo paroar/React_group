@@ -32,9 +32,13 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
     e.preventDefault();
     if(!currentUser){
 <<<<<<< HEAD
+<<<<<<< HEAD
       handleRedirect()
 =======
       props.history.push("/user");
+=======
+      handleRedirect()
+>>>>>>> redirect poll
     }
     const data = e.dataTransfer.getData("transfer");
     if (data) {
@@ -45,11 +49,22 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
       }
 >>>>>>> router
     }
+<<<<<<< HEAD
     const data = e.dataTransfer.getData("transfer");
     const node = document.getElementById(data);
     //@ts-ignore
     setPick({ id: node.id, path: node.firstChild.currentSrc });
 
+=======
+
+  };
+
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/poll`
+    });
+>>>>>>> redirect poll
   };
 
   const handleRedirect = () => {
