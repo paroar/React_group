@@ -31,12 +31,20 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
   const drop = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault();
     if(!currentUser){
-      props.history.push("/user");
+      handleRedirect()
     }
     const data = e.dataTransfer.getData("transfer");
     const node = document.getElementById(data);
     //@ts-ignore
     setPick({ id: node.id, path: node.firstChild.currentSrc });
+
+  };
+
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/poll`
+    });
   };
 
   useEffect(() => {
