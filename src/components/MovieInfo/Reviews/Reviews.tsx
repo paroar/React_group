@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Accordion from "../../Help/Accordion/Accordion";
-import { Link } from "react-router-dom";
+import {withRouter, RouteComponentProps } from "react-router-dom";
 import { LanguageContext } from "../../../contexts/LanguageContext";
 import language from "./lang";
 import { AuthContext } from "../../../contexts/Auth";
@@ -34,7 +34,7 @@ type OurReviews = {
   key: string;
 };
 
-const Reviews: React.FC<ReviewsType> = (props: any) => {
+const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
   const { lang } = useContext(LanguageContext);
   const { slug } = useContext(SlugContext);
   //@ts-ignore
@@ -90,6 +90,13 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
     setStarsState(0);
   };
 
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/catalogue/${slug}`
+    });
+  };
+
   return (
     <>
       {currentUser ? (
@@ -112,9 +119,9 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
           </div>
         </div>
       ) : (
-        <Link to="/user">
+        <div onClick={handleRedirect}>
           <Accordion title={language["login"][lang]} />
-        </Link>
+        </div>
       )}
 
       {ourReviews.map(review => (
@@ -136,4 +143,4 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   );
 };
 
-export default Reviews;
+export default withRouter(Reviews);
