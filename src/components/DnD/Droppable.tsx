@@ -28,17 +28,24 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
 
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/poll`
+    });
+  };
+
+  useEffect(() => {
+    const update = () => {
+      props.handleVote(pick.id, state);
+    };
+    update();
+  }, [pick]);
+
   const drop = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault();
-    if(!currentUser){
-<<<<<<< HEAD
-<<<<<<< HEAD
-      handleRedirect()
-=======
-      props.history.push("/user");
-=======
-      handleRedirect()
->>>>>>> redirect poll
+    if (!currentUser) {
+      handleRedirect();
     }
     const data = e.dataTransfer.getData("transfer");
     if (data) {
@@ -47,47 +54,13 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
         //@ts-ignore
         setPick({ id: node.id, path: node.firstChild.currentSrc });
       }
->>>>>>> router
     }
-<<<<<<< HEAD
-    const data = e.dataTransfer.getData("transfer");
-    const node = document.getElementById(data);
-    //@ts-ignore
-    setPick({ id: node.id, path: node.firstChild.currentSrc });
 
-=======
+    
+  }
 
-  };
-
-  const handleRedirect = () => {
-    props.history.push({
-      pathname: "/user",
-      search: `/poll`
-    });
->>>>>>> redirect poll
-  };
-
-  const handleRedirect = () => {
-    props.history.push({
-      pathname: "/user",
-      search: `/poll`
-    });
-  };
-
-<<<<<<< HEAD
-
-=======
->>>>>>> router
-  useEffect(() => {
-    const update = () => {
-      props.handleVote(pick.id, state);
-    };
-    update();
-  }, [pick]);
-
-  return (
-    <>
-     
+    return (
+      <>
         <StyledDragDiv
           onDrop={e => drop(e)}
           onDragOver={e => e.preventDefault()}
@@ -95,9 +68,8 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
         >
           <img src={pick.path} alt="" />
         </StyledDragDiv>
-      
-    </>
-  );
+      </>
+    );
 };
 
 export default withRouter(Droppable);
