@@ -29,3 +29,34 @@ const Carousel = () => {
 }
 
 export default Carousel;
+
+
+// import React from 'react';
+// // import CarouselContext from "./CarouselContext";
+// // import CarouselContent from "./CarouselContent";
+// // import CarouselButton from "./CarouselButton";
+// // import CarouselWrapper from "./CarouselWrapper";
+// // import useSliding from "./useSliding";
+// // import useSize from "./useSize";
+
+// type SliderProps = {
+//     children?: React.ReactNode,
+//     activeSlide: any
+// }
+// // @ts-ignore
+// const Slider = (props: SliderProps) => {
+//     // const [currentSlide, setCurrentSlide] = useState(props.activeSlide);
+//     // const { width, elementRef } = useSize();
+//     // const {
+//     //     handlePrev,
+//     //     handleNext,
+//     //     slideProps,
+//     //     containerRef,
+//     //     hasNext,
+//     //     hasPrev
+//     // } 
+//     // // = useSliding(width, React.Children.count(Children));
+
+
+
+// }

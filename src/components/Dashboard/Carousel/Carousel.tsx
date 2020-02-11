@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import app from "./../../../config/base";
+import React, { FunctionComponent } from 'react';
+import CarouselButton from './CarouselButton';
+import CarouselWrapper from './CarouselWrapper';
+import useSliding from './useSliding';
+import useSize from './useSize';
 
 
-const Carousel = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        const fetchFirebase = async () => {
-            const db = app.firestore()
-            const data: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> = 
-            (await db.collection("users/testUser/lists").get());
-            //@ts-ignore
-            setItems(data.docs.map(doc => 
-                doc.data()
-            ))
-        }        
-        fetchFirebase()
-    }, [])
-
+const Carousel: FunctionComponent = ({ children }) => {
+    //@ts-ignore
+    const { width, elementRef } = useSize();
+    const {
+        handlePrev,
+        handleNext,
+        slideProps,
+        containerRef
+        // hasNext,
+        // hasPrev
+      } = useSliding(width, React.Children.count(children));
+    
+    // const contextValue = {
+    //     elementRef
+    // };
+    
     return (
-        <ul>
-            {items.map(item => (
-                //@ts-ignore
-                <li key={item.name}>{item.name}</li>
-            ))}
-        </ul>
+        // <CarouselContext.Provider value={contextValue}>
+            <CarouselWrapper>
+                <CarouselButton clicked={handlePrev} type="prev" />
+                <CarouselButton clicked={handleNext} type="next" />
+                <div ref={containerRef} className="carousel-container" {...slideProps}>{children}</div>
+            </CarouselWrapper>
+        // </CarouselContext.Provider>        
     )
 }
 

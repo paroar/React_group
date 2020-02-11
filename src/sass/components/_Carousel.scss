@@ -1,0 +1,53 @@
+.section-title {
+    width: 90%;
+    margin: 0 auto;
+    color: whitesmoke;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-size: .9rem;
+    line-height: 1;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
+.carousel-wrapper {
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carousel-container,
+.picks-container {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    padding: 0 9rem;
+    z-index: 3;
+    transition: all 300ms ease 100ms;
+}
+
+.carousel-item {
+    background-color: $wooo;
+    flex: 0 0 20%;
+    text-align: center;
+    margin: 0 2rem;
+    transition: transform 300ms ease-in-out 100ms;
+}
+
+.carousel-item:hover {
+    transform: scale(1.4) !important;
+}
+
+.carousel-container:hover,
+.carousel-item {
+    transform: translateX(-20%);
+}
+
+.carousel-item:hover ~ .carousel-item {
+    transform: translateX(20%);
+}
+
+

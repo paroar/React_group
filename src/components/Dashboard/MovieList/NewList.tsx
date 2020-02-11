@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from '../../Modal/Modal';
-import ButtonComponent from '../../ButtonComponent/ButtonComponent';
 import NewListForm from './NewListForm/NewListForm';
 import { FaTimes } from 'react-icons/fa';
 
@@ -13,11 +12,7 @@ const NewList = () => {
 
     return (
         <div>
-            <ButtonComponent
-                action="New List"
-                class="btn new-list-btn"
-                onClick={toggleOpen}
-            />
+            <button onClick={toggleOpen}>+</button>
 
             <Modal 
                 show={isOpen}
