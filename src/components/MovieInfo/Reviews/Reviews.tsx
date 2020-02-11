@@ -57,19 +57,10 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
     starsState !== 0 && textAreaState !== ""
       ? setIsSubmitable(false)
       : setIsSubmitable(true);
+      
   }, [textAreaState, starsState]);
 
   var dbRefObject = firebase.database().ref();
-
-  useEffect(() => {
-    firebase
-      .database()
-      .ref()
-      .child(`reviews/movie/${slug}/${lang}/`)
-      .once("value", snap =>
-        snap.val() ? setOurReviews(Object.values(snap.val())) : null
-      );
-  }, [lang,slug]);
 
   const handleSubmit = () => {
     var key = firebase.database().ref().key;
@@ -87,8 +78,30 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
     dbRefObject.update(updates);
     setTextAreaState("");
 
+    firebase
+    .database()
+    .ref()
+    .child(`reviews/movie/${slug}/${lang}/`)
+    .once("value", snap =>
+      snap.val() ? setOurReviews(Object.values(snap.val())) : null
+    );
+
     setStarsState(0);
   };
+
+  useEffect(() => {
+
+    firebase
+      .database()
+      .ref()
+      .child(`reviews/movie/${slug}/${lang}/`)
+      .once("value", snap =>
+        snap.val() ? setOurReviews(Object.values(snap.val())) : null
+      );
+      
+  }, [lang,slug]);
+
+
 
   const handleRedirect = () => {
     props.history.push({
