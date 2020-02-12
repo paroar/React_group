@@ -22,14 +22,16 @@
 ### API
 Se facilita una api para consultar nominaciones de la gala de los oscar 2020
 
-**/getOscarsPoll**
-Para obtener toda la información sobre la gala
+##### **GET**
 
-**/getOscarsPoll/topic?topic=\<pattern>**
+Información sobre la gala
+**https://api4birds.netlify.com/.netlify/functions/api/getOscarsPoll**
+
 Para obtener información sobre las categorías
+**https://api4birds.netlify.com/.netlify/functions/api/getOscarsPoll/topic?topic=\<pattern>**
 
-**/getOscarsPoll/nominations?nominations=\<pattern>**
 Para obtener información sobre los nominados
+**https://api4birds.netlify.com/.netlify/functions/api/getOscarsPoll/nominations?nominations=\<pattern>**
 
 ---
 #### USUARIO DE PRUEBA
