@@ -1,7 +1,7 @@
 const language = {
     placeholder:{
         en: "Quick Search...",
-        es: "Busqueda rapida..."
+        es: "Búsqueda rápida..."
     }
 }
 

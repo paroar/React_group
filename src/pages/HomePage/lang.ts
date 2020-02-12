@@ -30,7 +30,7 @@ const tabs = {
         logo: "./img/menu.svg",
         name: {
           en: "catalogue",
-          es: "catalogo"
+          es: "catálogo"
         }
       }
     ],

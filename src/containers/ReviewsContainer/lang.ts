@@ -9,7 +9,7 @@ const language = {
     },
     reviews: {
         en: "reviews",
-        es: "criticas"
+        es: "críticas"
     }
 }
 
