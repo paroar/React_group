@@ -1,5 +1,5 @@
 import React from "react";
-import TextMovieInfo from "./TextMovieInfo";
+import TextMovieInfo from "./TextMovieInfo/TextMovieInfo";
 import { MovieInfoProps } from "../../utils/types";
 import Cast from "./Cast/Cast";
 import Poster from "../Poster";

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Accordion from "../../Help/Accordion/Accordion";
-import {withRouter, RouteComponentProps } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import { LanguageContext } from "../../../contexts/LanguageContext";
 import language from "./lang";
 import { AuthContext } from "../../../contexts/Auth";
@@ -57,7 +57,6 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
     starsState !== 0 && textAreaState !== ""
       ? setIsSubmitable(false)
       : setIsSubmitable(true);
-      
   }, [textAreaState, starsState]);
 
   var dbRefObject = firebase.database().ref();
@@ -79,18 +78,17 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
     setTextAreaState("");
 
     firebase
-    .database()
-    .ref()
-    .child(`reviews/movie/${slug}/${lang}/`)
-    .once("value", snap =>
-      snap.val() ? setOurReviews(Object.values(snap.val())) : null
-    );
+      .database()
+      .ref()
+      .child(`reviews/movie/${slug}/${lang}/`)
+      .once("value", snap =>
+        snap.val() ? setOurReviews(Object.values(snap.val())) : null
+      );
 
     setStarsState(0);
   };
 
   useEffect(() => {
-
     firebase
       .database()
       .ref()
@@ -98,10 +96,7 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
       .once("value", snap =>
         snap.val() ? setOurReviews(Object.values(snap.val())) : null
       );
-      
-  }, [lang,slug]);
-
-
+  }, [lang, slug]);
 
   const handleRedirect = () => {
     props.history.push({
@@ -127,7 +122,7 @@ const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
               disabled={isSubmitable}
               onClick={handleSubmit}
             >
-              Submit
+              {language["submit"][lang]}
             </button>
           </div>
         </div>

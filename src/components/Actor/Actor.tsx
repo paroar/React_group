@@ -23,7 +23,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
     <>
       <div className="actor">
         <div className="actor-info__bio">
-          <Heading>Biography</Heading>
+          <Heading>{language["biography"][lang]}</Heading>
           <div className="actor-data">
             <a
               href={"https://www.imdb.com/name/" + info.imdb_id}
@@ -44,7 +44,7 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
               </a>
 
               <p>
-                ({info.birthday} to {info.deathday})
+                ({info.birthday} {language["to"][lang]} {info.deathday})
               </p>
             </div>
           </div>

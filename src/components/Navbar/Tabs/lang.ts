@@ -19,6 +19,12 @@ const tabs = {
             }
         },
         {
+            path: "poll", name: {
+                en: "poll",
+                es: "votar"
+            }
+        },
+        {
             path: "help", name: {
                 en: "help",
                 es: "ayuda"
