@@ -1,7 +1,6 @@
 import React from "react";
 import ButtonComponent from "../../ButtonComponent/ButtonComponent";
 import Modal from "../../Modal/Modal";
-import { FaTimes } from "react-icons/fa";
 
 type HelpBlockProps = {
     title: string;
@@ -30,6 +29,7 @@ class HelpBlock extends React.Component<HelpBlockProps, HelpBlockState> {
     render() {
 
         return (
+            <>
             <div className="help-block-wrapper">
                 <h2>{this.props.title}</h2>
                 <p>{this.props.description}</p>
@@ -45,12 +45,10 @@ class HelpBlock extends React.Component<HelpBlockProps, HelpBlockState> {
                     modalWidth={this.props.modalWidth}
                     modalLeft={this.props.modalLeft}
                 >
-                    <div className="close" onClick={this.togglePopUp.bind(this)}>
-                        <FaTimes size="2rem" />
-                    </div>
                     {this.props.children}
                 </Modal>
             </div>
+            </>
         )
     }
 };

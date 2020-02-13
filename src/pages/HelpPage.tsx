@@ -16,7 +16,8 @@ const HelpPage = () => {
           description="Our Terms and Conditions policy"
           buttonText="Read"
           buttonClass="btn btn-form"
-        ></HelpBlock>
+        >
+        </HelpBlock>
       </div>
       <div className="help-box">
         <div className="icons">
