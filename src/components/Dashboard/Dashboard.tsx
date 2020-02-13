@@ -4,6 +4,7 @@ import NewList from "./MovieList/NewList";
 import Carousel from "./Carousel/Carousel";
 import MovieReview from "./MovieReview/MovieReview";
 import Submenu from "./Submenu/Submenu";
+import CarouselItem from "./Carousel/CarouselItem";
 
 const Dashboard = () => {
     const [items, setItems] = useState([]);
@@ -28,11 +29,11 @@ const Dashboard = () => {
             <Carousel>
                 {items.map(item => (
                     //@ts-ignore
-                    <div className="carousel-item" key={item.name}>{item.name}
-                        <button>View List</button>
-                    </div>
+                    <CarouselItem list={item} key={item.name}>
+                    </CarouselItem>
                 ))}
-                <div className="carousel-item add-list">Create list
+                <div className="carousel-item add-list">
+                    <span>Create list</span>
                     <NewList></NewList>
                 </div>
             </Carousel>
