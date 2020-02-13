@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-const PADDINGS = 0;
+const PADDINGS = 180;
 
 const useSliding = (elementWidth: any, countElements: number) => {
     const containerRef = useRef<HTMLInputElement | null>(null);
@@ -17,20 +17,20 @@ const useSliding = (elementWidth: any, countElements: number) => {
             setContainerWidth(containerWidth);
             setTotalInViewport(Math.floor(containerWidth / elementWidth));
         }
-    }, []);
+    }, [containerRef.current]);
 
     const handlePrev = () => {
-        if (hasPrev) {
-            setViewed(viewed - totalInViewport);
-            setDistance(distance + containerWidth);    
-        }    
+        setViewed(viewed - totalInViewport);
+        setDistance(distance + containerWidth);    
     }
        
     const handleNext = () => {
-        if (hasNext) {
-            setViewed(viewed + totalInViewport);
-            setDistance(distance - containerWidth);        
-        }
+        console.log("viewed", viewed);
+        console.log("total in viewport", totalInViewport);
+        console.log("distance", distance);
+
+        setViewed(viewed + totalInViewport);
+        setDistance(distance - containerWidth);        
     }
 
     const slideProps = {

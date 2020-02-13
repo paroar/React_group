@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 
 const useSize = () => {
-  const elementRef = useRef<HTMLInputElement | null>(null);
+  const elementRef = useRef<HTMLInputElement | null>();
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if (elementRef.current) {
-        setWidth(elementRef.current.offsetWidth);
+        setWidth(elementRef.current.clientWidth);
     }
   }, [elementRef.current]);
 
