@@ -18,22 +18,23 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
 
   useEffect(() => {
     var url = "";
-    genre =
-      genre !== ""
-        ? `&with_genres=${genre}`
-        : "";
-    const sort = "&sort_by=" + `${props.sort || "popularity"}`;
+    let genreStr = genre !== "" ? `&with_genres=${genre}` : "";
+    const sort = `&sort_by=${props.sort || "popularity"}`;
     const order = props.order ? "." + props.order : ".desc";
     const rating =
-      props.rating !== "" && typeof props.rating !== "undefined"? `&vote_average.gte=${props.rating}` : "";
+      props.rating !== "" && typeof props.rating !== "undefined"
+        ? `&vote_average.gte=${props.rating}`
+        : "";
     const keyword =
-      props.keyword !== "" && typeof props.keyword !== "undefined"? `&with_keywords=${props.keyword}` : "";
+      props.keyword !== "" && typeof props.keyword !== "undefined"
+        ? `&with_keywords=${props.keyword}`
+        : "";
 
     url =
       urls.domain +
       "discover/movie" +
       urls.apikey +
-      genre +
+      genreStr +
       sort +
       order +
       rating +
@@ -44,21 +45,18 @@ const CatalogueContainer: React.FC<CatalogueContainerProps> = props => {
       "&language=" +
       lang;
 
-    console.log("URLK", url);
-
     fetch(url)
       .then(response => response.json())
-      .then(movies =>
+      .then(movies => {
         changeState({
           loading: false,
           movies: movies.results,
           currentPage: props.page
-        })
-      );
-  }, [props, state.currentPage]);
+        });
+      });
+  }, [props, state.currentPage, genre, lang]);
 
   if (state.loading) {
-
     return <div>{language.loading[lang]}</div>;
   }
   if (state.movies.length === 0) {

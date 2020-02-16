@@ -17,7 +17,7 @@
     position: absolute;
     height: 2px;
     width: 40px;
-    background-color: white;
+    background-color: $color2;
     top: 0;
     left: 0;
     right: 0;
@@ -68,14 +68,5 @@
   }
   .cross .bar::after {
     transform: rotate(45deg);
-  }
-
-  input[type="text"] {
-    font-family: monospace;
-    font-size: 1.5rem;
-  }
-
-  ::placeholder {
-    font-size: 1rem;
   }
 }

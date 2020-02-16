@@ -5,23 +5,29 @@ import { Link } from "react-router-dom";
 import { GenreContext } from "../../contexts/GenreContext";
 
 const Genre = styled.span`
-  display: inline-block;
-  padding: 0.4rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0.2rem;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.3s;
-  transition-property: background-color, transform;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: .8rem;
+
+    transition: all .3s;
+    box-shadow: 0rem 0.1rem 0.1rem black;
+    background-color: transparent;
+    border: 1px solid rgb(250, 114, 104);
+    color: rgb(250, 114, 104);
+    margin: .2rem;
+    display: inline-block;
+    cursor: pointer;
 
   &:hover {
-    background-color: #f76c5e;
-    transform: translateY(-2px);
+    color: #b5a5ab;
+    border: 1px solid #b5a5ab;
+    transform: translateY(-3px);
   }
 `;
 
 const GenreTags = styled.div`
-  margin: 1rem auto;
+  margin: .5rem 0;
 `;
 
 const Genres: React.FC<MovieGenres> = props => {
@@ -32,7 +38,12 @@ const Genres: React.FC<MovieGenres> = props => {
     return (
       <GenreTags>
         {props.genres.map(genre => (
-          <Link key={genre.id} to="/Catalogue" onClick={() => handleGenre(genre.id.toString())}>
+          <Link
+            className="genre"
+            key={genre.id}
+            to="/Catalogue"
+            onClick={() => handleGenre(genre.id.toString())}
+          >
             <Genre>{genre.name}</Genre>
           </Link>
         ))}

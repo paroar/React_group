@@ -1,12 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 ul {
@@ -17,11 +17,7 @@ ul {
   outline: none;
 }
 
-img {
-  width: 185px;
-  height: 277.5px;
-  border-radius: 2px;
-}
+
 
 picture {
   margin: auto;

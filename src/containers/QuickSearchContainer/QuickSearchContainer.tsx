@@ -3,6 +3,7 @@ import { urls } from "../../utils/urls";
 import QuickSearch from "../../components/Navbar/QuickSearch";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import language from "./lang";
+import svg from "../../img/sprite.svg";
 
 export type SearchMovie = {
   poster_path: string;
@@ -59,7 +60,7 @@ class SearchContainer extends React.Component<SearchContainerProps> {
     return (
       <LanguageContext.Consumer>
         {value => {
-          const {lang} = value;
+          const { lang } = value;
           return (
             <>
               <div className={this.props.isOpen ? "hidden" : "search-input"}>
@@ -72,6 +73,9 @@ class SearchContainer extends React.Component<SearchContainerProps> {
                   onChange={e => this.handleOnChange(e)}
                   value={this.state.input}
                 />
+                <svg className="search-icon">
+                  <use xlinkHref={svg + "#icon-magnifying-glass"}></use>
+                </svg>
               </div>
               <QuickSearch
                 arr={this.state.movies}

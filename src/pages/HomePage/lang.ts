@@ -13,8 +13,8 @@ const tabs = {
         id: 1,
         logo: "./img/search.svg",
         name: {
-          en: "search",
-          es: "busqueda"
+          en: "poll",
+          es: "votar"
         }
       },
       {
@@ -35,8 +35,8 @@ const tabs = {
       }
     ],
     welcome:{
-      "en": "welcome to",
-      "es": "bienvenido a"
+      "en": "Welcome to ",
+      "es": "Bienvenido a "
   }
 }
 

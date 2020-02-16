@@ -3,6 +3,7 @@ import Poster from "./Poster";
 import { Link } from "react-router-dom";
 import { GridProps } from "../utils/types";
 import Card from "./Card/Card";
+import Draggable from "./DnD/Draggable";
 
 const Grid: React.FC<GridProps> = props => {
   if (!props) {
@@ -12,11 +13,19 @@ const Grid: React.FC<GridProps> = props => {
       <>
         {props.arr.map(movie =>
           movie.poster_path ? (
+<<<<<<< HEAD
             <Link key={movie.id} to={`/catalogue/${movie.id}`}>
               <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path} id={movie.id} imdb={movie.imdb_id}>
                 <Poster key={movie.id} imgPath={movie.poster_path} />
+=======
+            <Draggable key={movie.id} id={movie.id}>
+            <Link  to={`/catalogue/${movie.id}`}>
+              <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path}>
+                <Poster imgPath={movie.poster_path} />
+>>>>>>> dev
               </Card>
             </Link>
+            </Draggable>
           ) : null
         )}
       </>

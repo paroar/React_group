@@ -20,26 +20,45 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
   const { lang } = useContext(LanguageContext);
 
   return (
-    <div>
-      <div data-testid="details-page" className="details">
-        <div className="back">
-          <div className="details--movieInfo">
-            <Poster imgPath={info.profile_path} className="actor__img" />
-            <div className="details--movieInfo--grid">
-              <Biography bio={info.biography} />
+    <>
+      <div className="actor">
+        <div className="actor-info__bio">
+          <Heading>Biography</Heading>
+          <div className="actor-data">
+            <a
+              href={"https://www.imdb.com/name/" + info.imdb_id}
+              target="_blank"
+              className="actor-data__imdb"
+            >
+              <Poster imgPath={info.profile_path} className="actor-info__pic" />
+            </a>
+            <div className="">
+              <a
+                href={"https://www.imdb.com/name/" + info.imdb_id}
+                target="_blank"
+                className="actor-data__imdb"
+              >
+                <h2>{info.name}</h2>
+              </a>
+
+              <p>
+                ({info.birthday} to {info.deathday})
+              </p>
             </div>
           </div>
+
+          <Biography bio={info.biography} />
         </div>
       </div>
       {info.combined_credits.cast.length < 8 ? null : (
-        <>
+        <div className="actor--filmography">
           <Heading>{language["filmography"][lang]}</Heading>
           <div className="grid">
             <Grid arr={info.combined_credits.cast} />
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

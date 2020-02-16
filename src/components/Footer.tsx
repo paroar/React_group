@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { LanguageContext, Lang } from "../contexts/LanguageContext";
+import svg from "../img/sprite.svg";
 
 const icons = [
   {
@@ -69,6 +70,11 @@ const Footer: React.FC = () => {
           <option value="en">en</option>
           <option value="es">es</option>
         </select>
+        <svg className="footer--lang__icon">
+        <svg>
+            <use xlinkHref={svg + "#icon-language"}></use>
+          </svg>
+        </svg>
       </div>
     </footer>
   );

@@ -24,7 +24,7 @@ const CataloguePage = () => {
   const handleKeyword = (e: React.ChangeEvent<HTMLSelectElement>) => {
     changeKeywordState(e.target.value);
   };
-
+  
   useEffect(() => {
     const listener = () => {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
