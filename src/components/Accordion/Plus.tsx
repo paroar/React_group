@@ -2,7 +2,7 @@ import React from "react";
 
 type PlusProps = {
     plusClass?: string;
-    height: string | number;
+    height?: string | number;
     width: string | number;
     fill: string;
 }

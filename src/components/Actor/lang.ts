@@ -1,11 +1,15 @@
 const language = {
     biography: {
-        en: "loading...",
-        es: "cargando..."
+        en: "biography",
+        es: "biografía"
     },
     filmography: {
         en: "filmography",
-        es: "filmografia"
+        es: "filmografía"
+    },
+    to:{
+        en: "to",
+        es: "a"
     }
 }
 

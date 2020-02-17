@@ -1,0 +1,83 @@
+.carousel-content {
+  position: relative;
+  height: 37vh;
+  margin-top: -4rem;
+
+  .content-background,
+  .content-background .content-shadow,
+  .content-background .content-image,
+  .content-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  .content-background {
+    left: 0;
+    right: 0;
+
+    .content-shadow {
+      left: 0;
+      background-color: #000;
+      width: 30%;
+      z-index: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        background-image: linear-gradient(to right, #000, transparent);
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 27.5rem;
+      }
+    }
+
+    .content-image {
+      right: 0;
+      width: 70%;
+      height: 100%;
+      background-position: center 10%;
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+
+  .content-area {
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 3;
+
+    .content-container {
+      padding: 3rem 7rem;
+      color: wheat;
+
+      .content-title {
+        font-size: 4.5rem;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .content-description {
+        font-size: 1.8rem;
+        color: #999;
+        margin-top: 2rem;
+        max-width: 50rem;
+      }
+    }
+  }
+
+  .content-close {
+    color: #fff;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+  }
+}

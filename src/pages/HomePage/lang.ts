@@ -11,7 +11,7 @@ const tabs = {
       },
       {
         id: 1,
-        logo: "./img/search.svg",
+        logo: "./img/vote.svg",
         name: {
           en: "poll",
           es: "votar"
@@ -30,7 +30,7 @@ const tabs = {
         logo: "./img/menu.svg",
         name: {
           en: "catalogue",
-          es: "catalogo"
+          es: "catálogo"
         }
       }
     ],

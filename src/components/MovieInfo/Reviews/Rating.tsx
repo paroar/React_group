@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import svg from "../../../img/sprite.svg";
+import language from "./lang";
+import { LanguageContext } from "../../../contexts/LanguageContext";
+
 
 type RatingProps = {
     handleClick: (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
@@ -7,6 +10,8 @@ type RatingProps = {
 }
 
 const Rating: React.FC<RatingProps> = (props) => {
+  const { lang } = useContext(LanguageContext);
+
   const numStars = () => {
     const stars = [];
 
@@ -30,7 +35,7 @@ const Rating: React.FC<RatingProps> = (props) => {
   
   return (
     <div className="review-rating-left">
-      <p>Your Rating: </p>
+      <p>{language["rating"][lang]}</p>
       <div className="review-rating__stars">
         <span>{numStars()}</span>
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import Droppable from "../components/DnD/Droppable";
 import Draggable from "../components/DnD/Draggable";
 import styled from "styled-components";
-import Accordion from "..//components/Help/Accordion/Accordion";
+import Accordion from "../components/Accordion/Accordion";
 import firebase from "firebase";
 import { AuthContext } from "../contexts/Auth";
 
@@ -52,28 +52,28 @@ const Poll: React.FC<PollProps> = props => {
   //@ts-ignore
   const { currentUser } = useContext(AuthContext);
 
-  const handleSubmit = () => {
-    var updates = {};
+  useEffect(() => {
+    const handleSubmit = () => {
+      var updates = {};
 
-    var updateVote = vote.map(val => (val ? val : "null"));
+      var updateVote = vote.map(val => (val ? val : "null"));
 
-    //@ts-ignore
-    updates[`/poll/votes/` + currentUser.uid] = {
-      user: currentUser.email,
-      vote: updateVote
+      //@ts-ignore
+      updates[`/poll/votes/` + currentUser.uid] = {
+        user: currentUser.email,
+        vote: updateVote
+      };
+
+      firebase
+        .database()
+        .ref()
+        .update(updates);
     };
 
-    firebase
-      .database()
-      .ref()
-      .update(updates);
-  };
-
-  useEffect(() => {
-      if(vote.find(vot => vot !== null)){
-        handleSubmit();
-      }
-  }, [vote]);
+    if (vote.find(vot => vot !== null)) {
+      handleSubmit();
+    }
+  }, [vote, currentUser]);
 
   if (!props.poll) {
     return null;
@@ -87,7 +87,7 @@ const Poll: React.FC<PollProps> = props => {
             <Choose>
               {category.nominations.map(
                 (nomination: { id: string; path: string }) => (
-                  <Draggable id={nomination.id}>
+                  <Draggable id={nomination.id} key={nomination.id}>
                     <img src={nomination.path} alt={nomination.id} />
                   </Draggable>
                 )

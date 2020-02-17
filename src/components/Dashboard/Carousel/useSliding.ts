@@ -17,7 +17,7 @@ const useSliding = (elementWidth: any, countElements: number) => {
             setContainerWidth(containerWidth);
             setTotalInViewport(Math.floor(containerWidth / elementWidth));
         }
-    }, [containerRef.current]);
+    }, [{containerRef}]);
 
     const handlePrev = () => {
         setViewed(viewed - totalInViewport);

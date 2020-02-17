@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { FetchMovie } from "../../utils/types";
-import Genres from "./Genres";
+import React, { useState, useContext } from "react";
+import { FetchMovie } from "../../../utils/types";
+import Genres from "../Genres";
 import styled from "styled-components";
-import Videos from "./Videos";
-import Stars from "../Stars";
+import Videos from "../Videos";
+import Stars from "../../Stars";
+import { LanguageContext } from "../../../contexts/LanguageContext";
+import language from "./lang";
+
 
 const TextMovieInfo: React.FC<FetchMovie> = ({
   title,
@@ -14,6 +17,8 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
   videos
 }) => {
   const [isOpen, setisOpen] = useState(false);
+  
+  const { lang } = useContext(LanguageContext);
 
   const handleIsOpen = () => {
     setisOpen(!isOpen);
@@ -48,7 +53,7 @@ const TextMovieInfo: React.FC<FetchMovie> = ({
           <Stars vote_average={vote_average}/>
 
           <WatchTrailer onClick={() => handleIsOpen()}>
-            Watch Trailer
+          {language["trailer"][lang]}
           </WatchTrailer>
           <Genres genres={genres} />
         </div>

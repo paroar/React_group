@@ -2,11 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import language from "./lang";
 import { LanguageContext } from "../../contexts/LanguageContext";
-<<<<<<< HEAD
-import firebase from "firebase";
-=======
 import svg from "../../img/sprite.svg";
->>>>>>> dev
+import firebase from "firebase";
 
 type CardProps = {
   title: string;
@@ -54,22 +51,13 @@ const Card: React.FC<CardProps> = props => {
     <div className="card">
       <div className="card__side card__side--front">{props.children}</div>
       <div className="card__side card__side--back" style={style}>
-<<<<<<< HEAD
-        <Title>{props.title}</Title>
-        {props.vote ? (
-          <>
-            <Num>{props.vote}/10</Num>
-            <Genre onClick={addFavorite}>{language["add"][lang]}</Genre>
-          </>
-        ) : null}
-=======
         <div className="back__text">
           <Title>{props.title}</Title>
           {props.vote ? (
             <>
               <Num>{props.vote}/10</Num>
               <div className="icons">
-                <svg className="back__icon">
+                <svg className="back__icon" onClick={addFavorite}>
                   <use xlinkHref={svg + "#icon-heart"}></use>
                 </svg>
                 <svg className="back__icon">
@@ -81,7 +69,6 @@ const Card: React.FC<CardProps> = props => {
               </div>
             </>
           ) : null}
->>>>>>> dev
 
           {props.charName ? (
             <SubTitle>

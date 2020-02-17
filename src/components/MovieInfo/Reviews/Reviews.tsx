@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import React, { useContext } from "react";
 import Accordion from "../../Accordion/Accordion";
-=======
 import React, { useContext, useState, useEffect } from "react";
-import Accordion from "../../Help/Accordion/Accordion";
->>>>>>> dev
-import { Link } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import { LanguageContext } from "../../../contexts/LanguageContext";
 import language from "./lang";
 import { AuthContext } from "../../../contexts/Auth";
@@ -39,7 +34,7 @@ type OurReviews = {
   key: string;
 };
 
-const Reviews: React.FC<ReviewsType> = (props: any) => {
+const Reviews: React.FC<ReviewsType & RouteComponentProps> = props => {
   const { lang } = useContext(LanguageContext);
   const { slug } = useContext(SlugContext);
   //@ts-ignore
@@ -66,16 +61,6 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
 
   var dbRefObject = firebase.database().ref();
 
-  useEffect(() => {
-    firebase
-      .database()
-      .ref()
-      .child(`reviews/movie/${slug}/${lang}/`)
-      .on("value", snap =>
-        snap.val() ? setOurReviews(Object.values(snap.val())) : null
-      );
-  }, [lang]);
-
   const handleSubmit = () => {
     var key = firebase.database().ref().key;
     var updates = {};
@@ -92,7 +77,32 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
     dbRefObject.update(updates);
     setTextAreaState("");
 
+    firebase
+      .database()
+      .ref()
+      .child(`reviews/movie/${slug}/${lang}/`)
+      .once("value", snap =>
+        snap.val() ? setOurReviews(Object.values(snap.val())) : null
+      );
+
     setStarsState(0);
+  };
+
+  useEffect(() => {
+    firebase
+      .database()
+      .ref()
+      .child(`reviews/movie/${slug}/${lang}/`)
+      .once("value", snap =>
+        snap.val() ? setOurReviews(Object.values(snap.val())) : null
+      );
+  }, [lang, slug]);
+
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/catalogue/${slug}`
+    });
   };
 
   return (
@@ -112,14 +122,14 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
               disabled={isSubmitable}
               onClick={handleSubmit}
             >
-              Submit
+              {language["submit"][lang]}
             </button>
           </div>
         </div>
       ) : (
-        <Link to="/user">
+        <div onClick={handleRedirect}>
           <Accordion title={language["login"][lang]} />
-        </Link>
+        </div>
       )}
 
       {ourReviews.map(review => (
@@ -141,4 +151,4 @@ const Reviews: React.FC<ReviewsType> = (props: any) => {
   );
 };
 
-export default Reviews;
+export default withRouter(Reviews);

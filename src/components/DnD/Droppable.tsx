@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
+import { AuthContext } from "../../contexts/Auth";
+import { RouteComponentProps, withRouter } from "react-router";
 
 type DroppableProps = {
   voteId: number;
@@ -8,51 +10,66 @@ type DroppableProps = {
 
 const StyledDragDiv = styled.div`
   margin: auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   height: 10rem;
-  & > *{
+  & > * {
     margin: 1rem;
   }
 `;
 
-const Droppable: React.FC<DroppableProps> = (props) => {
+const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
   const [state] = useState(props.voteId);
   const [pick, setPick] = useState({
     id: "",
     path: ""
   });
 
-  const drop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const data = e.dataTransfer.getData("transfer");
-    const node = document.getElementById(data);
-    //@ts-ignore
-    setPick({id: node.id, path: node.firstChild.currentSrc});
+  //@ts-ignore
+  const { currentUser } = useContext(AuthContext);
+
+  const handleRedirect = () => {
+    props.history.push({
+      pathname: "/user",
+      search: `/poll`
+    });
   };
 
   useEffect(() => {
     const update = () => {
-      console.log("VOTEID", pick.id);
-      console.log("STATE", state);
       props.handleVote(pick.id, state);
-    }
+    };
     update();
-  }, [pick])
+  }, [pick]);
 
+  const drop = (e: React.DragEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+    if (!currentUser) {
+      handleRedirect();
+    }
+    const data = e.dataTransfer.getData("transfer");
+    if (data) {
+      const node = document.getElementById(data);
+      if (node) {
+        //@ts-ignore
+        setPick({ id: node.id, path: node.firstChild.currentSrc });
+      }
+    }
 
+    
+  }
 
-  return (
-    <>
-      <StyledDragDiv
-        onDrop={e => drop(e)}
-        onDragOver={e => e.preventDefault()}
-        id="dragDiv"
-      >
-        <img src={pick.path} alt=""/>
-      </StyledDragDiv>
-    </>
-  );
+    return (
+      <>
+        <StyledDragDiv
+          onDrop={e => drop(e)}
+          onDragOver={e => e.preventDefault()}
+          id="dragDiv"
+        >
+          <img src={pick.path} alt="" />
+        </StyledDragDiv>
+      </>
+    );
 };
 
-export default Droppable;
+export default withRouter(Droppable);

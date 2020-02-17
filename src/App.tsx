@@ -36,20 +36,6 @@ const App: React.FC = () => {
       <AuthProvider>
         <LanguageContext.Provider value={value}>
           <GenreContext.Provider value={valueGenre}>
-<<<<<<< HEAD
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/catalogue" component={CataloguePage} />
-              <Route exact path="/catalogue/:slug" component={MovieInfoPage} />
-              <Route exact path="/actor/:slug" component={ActorPage} />
-              <Route exact path="/help" component={HelpPage} />
-              <Route exact path="/search" component={SearchPage} />
-              <Route exact path="/user" component={UserPage} />
-              <PrivateRoute exact path="/dashboard" component={DashboardPage} />
-              <Route component={ErrorPage} />
-            </Switch>
-=======
               <Navbar />
               <Switch>
                 <Route exact path="/" component={HomePage} />
@@ -63,10 +49,10 @@ const App: React.FC = () => {
                 <Route exact path="/help" component={HelpPage} />
                 <Route exact path="/user" component={UserPage} />
                 <Route exact path="/poll" component={PollPage}/>
-                <PrivateRoute exact path="/admin" component={AdminPage} />
+                <Route exact path="/user" component={UserPage} />
+                <PrivateRoute exact path="/dashboard" component={DashboardPage} />
                 <Route component={ErrorPage} />
               </Switch>
->>>>>>> dev
           </GenreContext.Provider>
           <Footer />
         </LanguageContext.Provider>

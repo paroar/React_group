@@ -8,10 +8,9 @@ import SlugContext from "../../contexts/SlugContext";
 import language from "./lang";
 
 const SimilarContainer: React.FC = () => {
-  const [state, changeState] = useState({
-    loading: false,
-    movies: [] as PosterMovie[]
-  });
+  
+  const [loading, setLoading] = useState(false);
+  const [movies, setMovies] = useState<PosterMovie[]>([]);
 
   const { lang } = useContext(LanguageContext);
   const { slug } = useContext(SlugContext);
@@ -27,29 +26,26 @@ const SimilarContainer: React.FC = () => {
       lang;
     fetch(url)
       .then(response => response.json())
-      .then(movies =>
-        changeState({
-          loading: false,
-          movies: movies.results
-        })
-      );
+      .then(movies => {
+        setMovies(movies.results);
+        setLoading(false);
+      });
   }, [lang, slug]);
 
-  if (state.loading) {
+  if (loading) {
     return <div>{language["loading"][lang]}</div>;
   }
-  if (!state.movies) {
+  if (!movies) {
     return <div>{language["noInfo"][lang]}</div>;
   }
-  if (state.movies.length === 0) {
+  if (movies.length === 0) {
     return null;
   }
   return (
     <div className="similars">
-    
       <Heading>{language["similars"][lang]}</Heading>
       <div className="grid--similar">
-        <Grid arr={state.movies} />
+        <Grid arr={movies} />
       </div>
     </div>
   );

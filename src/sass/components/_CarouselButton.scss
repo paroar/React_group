@@ -18,14 +18,14 @@
         z-index: 6;
     }
 
-    &--next {
+    &-next {
         right: 0;
         span {
             transform: rotateZ(-90deg);
         }
     }
 
-    &--prev {
+    &-prev {
         left: 0;
         span {
             transform: rotateZ(90deg);

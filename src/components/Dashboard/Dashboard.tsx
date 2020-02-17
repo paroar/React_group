@@ -8,6 +8,7 @@ import CarouselItem from "./Carousel/CarouselItem";
 
 const Dashboard = () => {
     const [items, setItems] = useState([]);
+    const [tours, setTours] = useState([]);
 
     useEffect(() => {
         const fetchFirebase = async () => {
@@ -22,6 +23,20 @@ const Dashboard = () => {
         fetchFirebase()
     }, [])
 
+    useEffect(() => {
+        const fetchFirebase = async () => {
+            const db = app.firestore()
+            const data: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> = 
+            (await db.collection("tours").get());
+            //@ts-ignore
+            setTours(data.docs.map(doc => 
+                doc.data()
+            ))
+        }        
+        fetchFirebase()
+    }, [])
+
+
     return (
         <div>
             <Submenu />
@@ -29,12 +44,24 @@ const Dashboard = () => {
             <Carousel>
                 {items.map(item => (
                     //@ts-ignore
-                    <CarouselItem list={item} key={item.name}>
+                    <CarouselItem list={item} key={item.name} tour={false}>
                     </CarouselItem>
                 ))}
                 <div className="carousel-item add-list">
                     <span>Create list</span>
                     <NewList></NewList>
+                </div>
+            </Carousel>
+            
+            <div className="section-title">Popular</div>
+            <Carousel>
+                {tours.map(tour => (
+                    //@ts-ignore
+                    <CarouselItem list={tour} key={tour.name} tour={true}>
+                    </CarouselItem>
+                ))}
+                <div className="carousel-item add-list">
+                    <span>Create list</span>
                 </div>
             </Carousel>
             <MovieReview></MovieReview>

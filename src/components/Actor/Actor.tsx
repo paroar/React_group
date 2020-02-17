@@ -18,16 +18,17 @@ const Biography: React.FC<BioProps> = ({ bio }) => {
 
 const Actor: React.FC<ActorProps> = ({ info }) => {
   const { lang } = useContext(LanguageContext);
-
+  
   return (
     <>
       <div className="actor">
         <div className="actor-info__bio">
-          <Heading>Biography</Heading>
+          <Heading>{language["biography"][lang]}</Heading>
           <div className="actor-data">
             <a
               href={"https://www.imdb.com/name/" + info.imdb_id}
               target="_blank"
+              rel="noopener noreferrer"
               className="actor-data__imdb"
             >
               <Poster imgPath={info.profile_path} className="actor-info__pic" />
@@ -36,13 +37,14 @@ const Actor: React.FC<ActorProps> = ({ info }) => {
               <a
                 href={"https://www.imdb.com/name/" + info.imdb_id}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="actor-data__imdb"
               >
                 <h2>{info.name}</h2>
               </a>
 
               <p>
-                ({info.birthday} to {info.deathday})
+                ({info.birthday} {language["to"][lang]} {info.deathday})
               </p>
             </div>
           </div>
