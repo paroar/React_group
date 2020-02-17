@@ -32,7 +32,8 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
             const isActive = currentItem && currentItem.id === props.list.id;
             const itemClass = isActive ? 'carousel-item-open' : 'carousel-item';
             return (
-                <div ref={elementRef} className={itemClass} style={{background: imgPath}}>
+                <div ref={elementRef} className={itemClass} style={{'background': imgPath, 'backgroundSize': 'cover',
+                    'backgroundPosition': 'center'}}>
                     {props.list.name}
                     {props.list.tour ? <TourImages>{props.list}</TourImages> : null}
                     {/* <img src={imgPath} alt=""/> */}

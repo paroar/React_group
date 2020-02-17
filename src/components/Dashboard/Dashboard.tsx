@@ -44,7 +44,7 @@ const Dashboard = () => {
             <Carousel>
                 {items.map(item => (
                     //@ts-ignore
-                    <CarouselItem list={item} key={item.name} tour={false}>
+                    <CarouselItem list={item} key={item.id} tour={false}>
                     </CarouselItem>
                 ))}
                 <div className="carousel-item add-list">
@@ -57,7 +57,7 @@ const Dashboard = () => {
             <Carousel>
                 {tours.map(tour => (
                     //@ts-ignore
-                    <CarouselItem list={tour} key={tour.name} tour={true}>
+                    <CarouselItem list={tour} key={tour.id} tour={true}>
                     </CarouselItem>
                 ))}
                 <div className="carousel-item add-list">
