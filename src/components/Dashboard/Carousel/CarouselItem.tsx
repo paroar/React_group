@@ -18,6 +18,7 @@ export interface CarouselItemProps {
 }
 
 const CarouselItem: React.FC<CarouselItemProps> = (props) => {
+
     const imgPath = (props.list.tour ? '' : `url(https://image.tmdb.org/t/p/w500/${props.list.path})`); 
     console.log(props.list)
     return(
@@ -34,7 +35,9 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => {
             return (
                 <div ref={elementRef} className={itemClass} style={{'background': imgPath, 'backgroundSize': 'cover',
                     'backgroundPosition': 'center'}}>
-                    {props.list.name}
+                    <span className="overlay">
+                        {props.list.name}
+                    </span>
                     {props.list.tour ? <TourImages>{props.list}</TourImages> : null}
                     {/* <img src={imgPath} alt=""/> */}
                     <CarouselItemDetails onClick={() => onSelectItem(props.list)} />

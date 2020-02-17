@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaCross } from 'react-icons/fa';
+import { Redirect } from 'react-router-dom';
 
 type ContentProps = {
     item: {
         path: string,
+        id: string,
         description: string,
         title: string
     },
@@ -11,6 +13,10 @@ type ContentProps = {
 }
 
 const CarouselContent = (props: ContentProps) => {
+    const handleView = () => (
+        <Redirect to={`/lists/${props.item.id}`}/>
+    )
+
     return (
         <div className="carousel-content">
             <div className="content-background">
@@ -27,6 +33,7 @@ const CarouselContent = (props: ContentProps) => {
                     <div className="content-description">
                         {props.item.description}
                     </div>
+                    <button onClick={handleView}>View List</button>
                 </div>
             </div>
             <button className="content-close" onClick={props.close}>

@@ -38,7 +38,9 @@ const Dashboard = () => {
 
 
     return (
-        <div>
+        <div style={{
+            backgroundColor: '#222e3c'
+        }}>
             <Submenu />
             <div className="section-title">Popular</div>
             <Carousel>
