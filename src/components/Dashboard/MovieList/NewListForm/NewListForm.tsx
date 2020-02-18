@@ -1,6 +1,6 @@
 import React from 'react';
 import Input, { InputProps } from '../../../Help/ContactForm/Input/Input';
-import base from 'firebase';
+import app from 'firebase';
 
 class NewListForm extends React.Component {
     state = {
@@ -23,7 +23,9 @@ class NewListForm extends React.Component {
                 elementType: 'select',
                 elementConfig: {
                     name: 'existingListName',
-                    required: false
+                    required: false,
+                    options: app.firestore().collection('users/testUser/lists').get()
+                    
                 },
                 labelConfig: {
                     labelName: 'existing_list',
@@ -57,15 +59,14 @@ class NewListForm extends React.Component {
         //@ts-ignore
         updatedForm[identifier] = updatedFormElement;
         this.setState({newList: updatedForm});
-
-        base.database()
+        app.firestore()
     }
 
     handleNewList = (event: React.FormEvent) => {
         event.preventDefault();
         const name = this.state.newList.list_name.value;
         const description = this.state.newList.list_description.value;
-        const docRef = base.firestore().collection("users/testUser/lists")
+        const docRef = app.firestore().collection("users/testUser/lists")
         docRef.add({
             name: name,
             description: description

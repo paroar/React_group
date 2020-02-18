@@ -36,13 +36,19 @@ const Dashboard = () => {
         fetchFirebase()
     }, [])
 
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleOpen = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <div style={{
             backgroundColor: '#222e3c'
         }}>
             <Submenu />
-            <div className="section-title">Popular</div>
+            <div className="section-title">Popular this week</div>
+            
+            <div className="section-title">My lists</div>
             <Carousel>
                 {items.map(item => (
                     //@ts-ignore
@@ -51,11 +57,12 @@ const Dashboard = () => {
                 ))}
                 <div className="carousel-item add-list">
                     <span>Create list</span>
-                    <NewList></NewList>
+                    <button onClick={toggleOpen}>+</button>
                 </div>
             </Carousel>
-            
-            <div className="section-title">Popular</div>
+            {<NewList open={isOpen} toggle={toggleOpen}></NewList>}
+
+            <div className="section-title">Tours</div>
             <Carousel>
                 {tours.map(tour => (
                     //@ts-ignore

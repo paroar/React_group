@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import language from "./lang";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import svg from "../../img/sprite.svg";
 import firebase from "firebase";
+import NewList from "../Dashboard/MovieList/NewList";
 
 type CardProps = {
   title: string;
@@ -29,15 +30,36 @@ const Card: React.FC<CardProps> = props => {
     // const [favorite, setFavorite] = useState(false);
       firebase
       .firestore()
+      .collection('users')
+      .doc('testUser')
+      .collection('lists')
+      .doc('favorites')
       .collection('favorites')
-      .doc('subdocument')
-      .collection('subcollection')
       .add({
+        id: props.id,
         title: props.title,
-        backdrop_path: props.backdrop_path
-        // imdb_id: props.imdb
+        path: props.backdrop_path
       })
   }  
+
+  const addWatched = () => {
+    firebase
+    .firestore()
+    .collection('users')
+    .doc('testUser')
+    .collection('lists')
+    .doc('watched')
+    .collection('movies')
+    .add({
+      id: props.id,
+      title: props.title,
+      path: props.backdrop_path
+    })
+  }
+  const [open, setOpen] = useState(false);
+  const toggleOpen = () => {
+    setOpen(!open)
+  }
 
   const { lang } = useContext(LanguageContext);
 
@@ -60,11 +82,12 @@ const Card: React.FC<CardProps> = props => {
                 <svg className="back__icon" onClick={addFavorite}>
                   <use xlinkHref={svg + "#icon-heart"}></use>
                 </svg>
-                <svg className="back__icon">
+                <svg className="back__icon" onClick={addWatched}>
                   <use xlinkHref={svg + "#icon-eye"}></use>
                 </svg>
-                <svg className="back__icon">
+                <svg className="back__icon" onClick={toggleOpen}>
                   <use xlinkHref={svg + "#icon-add-to-list"}></use>
+                  {open && <NewList></NewList>}
                 </svg>
               </div>
             </>
