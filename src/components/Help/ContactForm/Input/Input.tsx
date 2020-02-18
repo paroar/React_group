@@ -1,12 +1,17 @@
 import React, { ChangeEvent } from "react";
 
+export type OptionProps = {
+  value: any,
+  displayName: string
+}
 export type InputProps = {
   //elementType: input | textarea | select, etc
   elementType: string,
   elementConfig: {
     type?: string,
     placeholder?: string,
-    name?: string
+    name?: string,
+    options: OptionProps[]
   },
   labelConfig: {
     labelName?: string,
@@ -38,6 +43,11 @@ const Input = (props: InputProps) => {
           className="input-select"
           onChange={props.changed}
         >
+          {props.elementConfig.options.map(option => {
+            <option key={option.value} value={option.value}>
+              {option.displayName}
+            </option>
+          })}
         </select>
       );
       break;
