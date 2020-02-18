@@ -1,14 +1,10 @@
 import React from 'react';
 import { FaCross } from 'react-icons/fa';
 import { Redirect } from 'react-router-dom';
+import { ListProps } from './CarouselItem';
 
 type ContentProps = {
-    item: {
-        path: string,
-        id: string,
-        description: string,
-        title: string
-    },
+    item: ListProps,
     close: any
 }
 
@@ -19,24 +15,24 @@ const CarouselContent = (props: ContentProps) => {
 
     return (
         <div className="carousel-content">
-            <div className="content-background">
-                <div className="content-shadow"></div>
-                <div className="content-image" style={{
+            <div className="carousel-content-background">
+                <div className="carousel-content-shadow"></div>
+                <div className="carousel-content-image" style={{
                     backgroundImage: `url(${props.item.path})`
                 }} />
             </div>
-            <div className="content-area">
-                <div className="content-container">
-                    <div className="content-title">
-                        {props.item.title}
+            <div className="carousel-content-area">
+                <div className="carousel-content-container">
+                    <div className="carousel-content-title">
+                        {props.item.name}
                     </div>
-                    <div className="content-description">
+                    <div className="carousel-content-description">
                         {props.item.description}
                     </div>
-                    <button onClick={handleView}>View List</button>
                 </div>
+                <button onClick={handleView}>View List</button>
             </div>
-            <button className="content-close" onClick={props.close}>
+            <button className="carousel-content-close" onClick={props.close}>
                 <FaCross />
             </button>
         </div>

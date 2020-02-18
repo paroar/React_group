@@ -19,7 +19,7 @@ const Carousel: React.FC = (props: {children?: React.ReactNode, activeItem?: any
         hasPrev
     } = useSliding(width, React.Children.count(props.children));
 
-    const handleSelect = ({item}: any) => {
+    const handleSelect = (item: any) => {
         setCurrentItem(item);
     };
     
@@ -34,7 +34,8 @@ const Carousel: React.FC = (props: {children?: React.ReactNode, activeItem?: any
         currentItem
     };
     
-    const carouselClass = currentItem !== null ? 'carousel' : 'carousel-open';
+    const carouselClass = currentItem != null ? 'carousel carousel-open' : 'carousel';
+    console.log("ITEM", currentItem)
 
     return (
         <CarouselContext.Provider value={contextValue}>

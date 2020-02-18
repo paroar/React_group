@@ -1,6 +1,6 @@
 import React from 'react';
-import ListGridItem from './ListGridItem';
-import { ListProps } from './CarouselItem';
+import ListGridItem from './ListGridItem/ListGridItem';
+import { ListProps } from '../CarouselItem';
 
 type ListGridProps = {
     items: ListProps[]

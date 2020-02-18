@@ -1,8 +1,8 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import CarouselContext from "./CarouselContext";
 import CarouselItemDetails from "./CarouselItemDetails";
 import Mark from "./Mark";
-import TourImages from "./TourImages";
+// import TourImages from "./TourImages";
 
 export type ListProps = {
     name?: string;
@@ -17,37 +17,28 @@ export interface CarouselItemProps {
     children?: React.ReactNode
 }
 
-const CarouselItem: React.FC<CarouselItemProps> = (props) => {
+const CarouselItem: React.FC<CarouselItemProps> = (props) => (
 
-    const imgPath = (props.list.tour ? '' : `url(https://image.tmdb.org/t/p/w500/${props.list.path})`); 
-    console.log(props.list)
-    return(
-        
-        <CarouselContext.Consumer>
-        
-        {({onSelectItem, currentItem, elementRef}: {
-            onSelectItem: any,
-            currentItem: any,
-            elementRef: any
-        }) => {
-            const isActive = currentItem && currentItem.id === props.list.id;
-            const itemClass = isActive ? 'carousel-item-open' : 'carousel-item';
-            return (
-                <div ref={elementRef} className={itemClass} style={{'background': imgPath, 'backgroundSize': 'cover',
-                    'backgroundPosition': 'center'}}>
-                    <span className="overlay">
-                        {props.list.name}
-                    </span>
-                    {props.list.tour ? <TourImages>{props.list}</TourImages> : null}
-                    {/* <img src={imgPath} alt=""/> */}
-                    <CarouselItemDetails onClick={() => onSelectItem(props.list)} />
-                    {isActive && <Mark />}
-                </div>
-            );
-        }}
+    <CarouselContext.Consumer>
+    {({onSelectItem, currentItem, elementRef}: {onSelectItem: any, currentItem: ListProps, elementRef: MutableRefObject<HTMLDivElement>}) => {
+        const imgPath = (props.list.tour ? '' : `url(https://image.tmdb.org/t/p/w500/${props.list.path})`); 
+        const isActive = currentItem && (currentItem.id === props.list.id);
+        // const itemClass = isActive ? 'carousel-item carousel-item-open' : 'carousel-item';
+        console.log(isActive);
+        return (
+            <div ref={elementRef} className={isActive ? 'carousel-item carousel-item-open' : 'carousel-item'} style={{'background': imgPath, 'backgroundSize': 'cover',
+                'backgroundPosition': 'center'}}>
+                <span className="overlay">
+                    {props.list.name}
+                </span>
+                {/* {props.list.tour ? <TourImages>{props.list}</TourImages> : null} */}
+                {/* <img src={imgPath} alt=""/> */}
+                <CarouselItemDetails onClick={() => onSelectItem(props.list)} />
+                {isActive ? <Mark /> : null}
+            </div>
+        );
+    }}
     </CarouselContext.Consumer>
-
-    )
-}
+)
 
 export default CarouselItem;

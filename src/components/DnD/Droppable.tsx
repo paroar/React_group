@@ -40,7 +40,7 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
       props.handleVote(pick.id, state);
     };
     update();
-  }, [pick]);
+  }, [pick.id, state, props]);
 
   const drop = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault();
