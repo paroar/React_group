@@ -5,23 +5,22 @@
     padding: 20%;
     justify-items: center;
     position: relative;
-    &:hover {
-        cursor: pointer;
-    }    
+
     .list-grid-item {
         position: relative;
         z-index: 2;
-        &:hover {
-            cursor: pointer;
-        }    
 
         img {
             width: 8rem;
             height: 12rem;
             position: relative;
-            z-index: 4;
+            object-fit: cover;
+            object-position: center;
+            z-index: 400;
             &:hover {
                 transform: scale(1.2) !important;
+                cursor: pointer;
+            
             }        
         }
 

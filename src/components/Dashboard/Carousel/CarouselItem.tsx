@@ -24,7 +24,7 @@ const CarouselItem: React.FC<CarouselItemProps> = (props) => (
         const imgPath = (props.list.tour ? '' : `url(https://image.tmdb.org/t/p/w500/${props.list.path})`); 
         const isActive = currentItem && (currentItem.id === props.list.id);
         return (
-            <div ref={elementRef} className={isActive ? 'carousel-item carousel-item-open' : 'carousel-item'} style={{'background': imgPath, 'backgroundSize': 'cover',
+            <div ref={elementRef} className={isActive ? 'carousel-item carousel-item-open active' : 'carousel-item'} style={{'background': imgPath, 'backgroundSize': 'cover',
                 'backgroundPosition': 'center'}}>
                 <span className="overlay">
                     {props.list.name}

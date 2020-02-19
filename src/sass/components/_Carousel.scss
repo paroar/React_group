@@ -69,7 +69,7 @@
                 opacity: 1;
             }
         }
-        &:active {
+        &.active {
             filter: grayscale(0.7);
             span {
                 font-weight: 700;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaPowerOff } from 'react-icons/fa';
+import firebase from './../../../config/base';
 
 type SubmenuProps = {
     name: string;
@@ -58,7 +60,9 @@ const Submenu: React.FC = () => {
                     path={"/dashboard"}
                     index={2}
                 />
-            
+            <li className={`submenu-links__li`} style={{float: 'right'}} onClick={() => firebase.auth().signOut()}>
+                <FaPowerOff />
+            </li>
             </ul> 
         </div>
     )
