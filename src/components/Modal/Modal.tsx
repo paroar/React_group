@@ -19,7 +19,7 @@ const Modal = (props: ModalProps) => {
             />
             <div className="modal-wrapper"
                 style={{
-                    transform: props.show ? '' : 'translateY(-100vh)',
+                    transform: props.show ? '' : 'translateY(-200vh)',
                     opacity: props.show ? '1' : '0',
                     width: props.modalWidth,
                     left: props.modalLeft
