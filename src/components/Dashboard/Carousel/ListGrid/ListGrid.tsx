@@ -1,19 +1,16 @@
 import React from 'react';
 import ListGridItem from './ListGridItem/ListGridItem';
-import { ListProps } from '../CarouselItem';
+// import { ListProps } from '../CarouselItem';
 
 type ListGridProps = {
-    items: ListProps[]
+    items: {name: string, path: string}[]
 }
 const ListGrid = (props: ListGridProps) => (
-    <div className="list-grid-wrapper">
-        <div className="list-grid-container">
-            <div className="list-images">
-                {props.items.map(item => {
-                    <ListGridItem path={item.path} />
-                })}
-            </div>
-            <button className="view-list-button">View List</button>
+    <div className="list-grid-container">
+        <div className="list-images">
+            {props.items.map((item) => {
+                return <ListGridItem item={item} key={item.name}/>
+            })}
         </div>
     </div>
 )

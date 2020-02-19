@@ -11,7 +11,7 @@ type CardProps = {
   vote?: number;
   backdrop_path?: string;
   charName?: string;
-  id?: number;
+  id: number;
   imdb?: string | number
 };
 
@@ -25,7 +25,9 @@ const Title = styled.p`
 
 const SubTitle = styled.h4``;
 
+
 const Card: React.FC<CardProps> = props => {
+
   const addFavorite = () => {
     // const [favorite, setFavorite] = useState(false);
       firebase
@@ -34,7 +36,7 @@ const Card: React.FC<CardProps> = props => {
       .doc('testUser')
       .collection('lists')
       .doc('favorites')
-      .collection('favorites')
+      .collection('movies')
       .add({
         id: props.id,
         title: props.title,

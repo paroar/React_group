@@ -1,11 +1,11 @@
 import React from 'react';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 
 const CarouselItemDetails = ({onClick}: any) => {
     return (
         <button onClick={onClick} className="carousel-details">
             <span>
-                <FaArrowDown />
+                <FaChevronDown />
             </span>
         </button>
     )

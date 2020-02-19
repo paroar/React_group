@@ -35,7 +35,6 @@ const Carousel: React.FC = (props: {children?: React.ReactNode, activeItem?: any
     };
     
     const carouselClass = currentItem != null ? 'carousel carousel-open' : 'carousel';
-    console.log("ITEM", currentItem)
 
     return (
         <CarouselContext.Provider value={contextValue}>
@@ -48,7 +47,7 @@ const Carousel: React.FC = (props: {children?: React.ReactNode, activeItem?: any
             </div>
 
             </CarouselWrapper>
-            {currentItem && <CarouselContent item={currentItem} close={handleClose} />}
+            {currentItem && <CarouselContent item={currentItem} id={currentItem.id} name={currentItem.name} description={currentItem.description} close={handleClose} />}
         </CarouselContext.Provider>        
     )
 }

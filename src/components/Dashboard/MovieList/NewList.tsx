@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from '../../Modal/Modal';
 import NewListForm from './NewListForm/NewListForm';
 import { FaTimes } from 'react-icons/fa';
 
-const NewList = ({isOpen, toggle}: any) => {
+const NewList = ({open, toggle}: any) => {
 
     return (
         <div>
             <Modal 
-                show={isOpen}
+                show={open}
                 modalClosed={toggle}
                 modalWidth="40%"
-                modalLeft="50%"
             >
                 <div className="close" onClick={() => toggle}>
                     <FaTimes size="2rem" />
@@ -23,3 +22,4 @@ const NewList = ({isOpen, toggle}: any) => {
 }
 
 export default NewList;
+

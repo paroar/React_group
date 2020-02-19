@@ -35,7 +35,7 @@ const Cast: React.FC<CastProps> = props => {
         <div className="grid--actor">
           {cast.map(crew => (
             <Link to={`/actor/${crew.id}`} key={crew.profile_path}>
-              <Card title={crew.name} charName={crew.character}>
+              <Card title={crew.name} charName={crew.character} id={crew.id}>
                 <Poster key={crew.profile_path} imgPath={crew.profile_path} />
               </Card>
             </Link>

@@ -10,7 +10,7 @@ const CarouselButton: FunctionComponent<CarouselButtonProps> = (props) => {
     return (
         <button className={`carousel-button carousel-button-${props.type}`} onClick={props.clicked}>
             <span>
-                <FaChevronDown />
+                <FaChevronDown size={"3rem"} color={"whitesmoke"}/>
             </span>
         </button>
     )

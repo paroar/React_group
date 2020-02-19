@@ -18,7 +18,7 @@ const Grid: React.FC<GridProps> = props => {
           movie.poster_path ? (
             <Draggable key={movie.id} id={movie.id}>
             <Link  to={`/catalogue/${movie.id}`}>
-              <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path}>
+              <Card title={movie.title} vote={movie.vote_average} backdrop_path={movie.backdrop_path} id={movie.id}>
                 <Poster imgPath={movie.poster_path} />
               </Card>
             </Link>
@@ -28,6 +28,7 @@ const Grid: React.FC<GridProps> = props => {
                   title={movie.title}
                   vote={movie.vote_average}
                   backdrop_path={movie.backdrop_path}
+                  id={movie.id}
                 >
                   <Poster imgPath={movie.poster_path} />
                 </Card>

@@ -2,7 +2,10 @@ import React from 'react';
 import Input, { InputProps } from '../../../Help/ContactForm/Input/Input';
 import app from 'firebase';
 
+const initial: any[] = [];
+
 class NewListForm extends React.Component {
+
     state = {
         newList: {
             list_name: {
@@ -24,8 +27,7 @@ class NewListForm extends React.Component {
                 elementConfig: {
                     name: 'existingListName',
                     required: false,
-                    options: app.firestore().collection('users/testUser/lists').get()
-                    
+                    options: initial
                 },
                 labelConfig: {
                     labelName: 'existing_list',
@@ -74,6 +76,7 @@ class NewListForm extends React.Component {
     }
 
     render() {
+
         const formElements: {id: string, config: InputProps}[] = [];
         for (let key in this.state.newList) {
             formElements.push({
@@ -82,11 +85,11 @@ class NewListForm extends React.Component {
                 config: this.state.newList[key]
             })
         }
-
+                
         let form = (
             <div className="new-list-form-wrapper">
                 <form onSubmit={this.handleNewList.bind(this)} className="new-list-form">
-                    <h2>Create a new list</h2>
+                    <h2>Create new list</h2>
                     {formElements.map(formElement => (
                         <Input 
                             key = {formElement.id}
@@ -105,7 +108,7 @@ class NewListForm extends React.Component {
         );
 
         return (
-            <div className="form-container">
+            <div className="">
                 {form}
             </div>
         )     

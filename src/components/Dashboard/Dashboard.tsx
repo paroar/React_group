@@ -5,6 +5,7 @@ import Carousel from "./Carousel/Carousel";
 import MovieReview from "./MovieReview/MovieReview";
 import Submenu from "./Submenu/Submenu";
 import CarouselItem from "./Carousel/CarouselItem";
+import { FaPlusCircle } from "react-icons/fa";
 
 const Dashboard = () => {
     const [items, setItems] = useState([]);
@@ -40,6 +41,7 @@ const Dashboard = () => {
     const toggleOpen = () => {
         setIsOpen(!isOpen)
     }
+    console.log(items)
 
     return (
         <div style={{
@@ -56,11 +58,11 @@ const Dashboard = () => {
                     </CarouselItem>
                 ))}
                 <div className="carousel-item add-list">
-                    <span>Create list</span>
-                    <button onClick={toggleOpen}>+</button>
+                    <p>Create list</p>
+                    <FaPlusCircle onClick={toggleOpen}/>
                 </div>
             </Carousel>
-            {<NewList open={isOpen} toggle={toggleOpen}></NewList>}
+            {isOpen && <NewList open={isOpen} toggle={toggleOpen}></NewList>}
 
             <div className="section-title">Tours</div>
             <Carousel>
@@ -69,9 +71,6 @@ const Dashboard = () => {
                     <CarouselItem list={tour} key={tour.id} tour={true}>
                     </CarouselItem>
                 ))}
-                <div className="carousel-item add-list">
-                    <span>Create list</span>
-                </div>
             </Carousel>
             <MovieReview></MovieReview>
             <button onClick={() => app.auth().signOut()}>Sign Out</button>

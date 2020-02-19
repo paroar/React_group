@@ -1,9 +1,6 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
+import firebase from './../../../../config/base';
 
-export type OptionProps = {
-  value: any,
-  displayName: string
-}
 export type InputProps = {
   //elementType: input | textarea | select, etc
   elementType: string,
@@ -11,7 +8,7 @@ export type InputProps = {
     type?: string,
     placeholder?: string,
     name?: string,
-    options: OptionProps[]
+    options?: string[]
   },
   labelConfig: {
     labelName?: string,
@@ -24,6 +21,19 @@ export type InputProps = {
 
 const Input = (props: InputProps) => {
   let element = null;
+  const [options, setOptions] = useState([]);
+  useEffect(() => {
+      const fetchFirebase = async () => {
+          const db = firebase.firestore()
+          const data: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> = 
+          (await db.collection("users/testUser/lists").get());
+          //@ts-ignore
+          setOptions(data.docs.map(doc => 
+              doc.data()
+          ))
+      }        
+      fetchFirebase()
+  }, [])
   switch (props.elementType) {
     case "input":
       element = (
@@ -36,6 +46,7 @@ const Input = (props: InputProps) => {
       );
       break;
     case "select":
+  
       element = (
         <select
           {...props.elementConfig}
@@ -43,11 +54,10 @@ const Input = (props: InputProps) => {
           className="input-select"
           onChange={props.changed}
         >
-          {props.elementConfig.options.map(option => {
-            <option key={option.value} value={option.value}>
-              {option.displayName}
-            </option>
-          })}
+         {options.map((op) => (
+           //@ts-ignore
+           <option value={op.name} key={op.name}>{op.name}</option>
+         ))}
         </select>
       );
       break;
