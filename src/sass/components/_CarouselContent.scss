@@ -11,6 +11,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    
   }
 
   &-background {
@@ -42,8 +43,11 @@
     height: 100%;
     // background-position: center 10%;
     // background-size: cover;
-    z-index: 2;
+    z-index: 20;
     width: 70%;
+    @include respond(phone-port) {
+      width: 100%;
+    }
   }
 
   &-area {
@@ -51,6 +55,14 @@
     right: 0;
     height: 100%;
     z-index: 3;
+    @include respond(phone-port) {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: absolute;
+      top: 0;
+      flex-wrap: wrap;
+    }
   }
 
   &-container {
@@ -62,6 +74,12 @@
       height: 100%;
       justify-content: center;
       align-items: center;
+      @include respond(phone-port) {
+        width: 100%;
+        display: block;
+        position: absolute;
+        margin: 0 auto;
+      }
   }
 
   &-title {
@@ -69,6 +87,12 @@
     letter-spacing: 0.2rem;
     color: #fff;
     font-weight: 600;
+    @include respond(phone-port) {
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 4%;
+    }
   }
 
   &-description {

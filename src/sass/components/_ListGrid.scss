@@ -1,3 +1,17 @@
+.list-grid-container {
+    width: 60%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include respond(phone-port) {
+        width: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .list-images {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -9,6 +23,15 @@
     .list-grid-item {
         position: relative;
         z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 300ms ease-in;
+        margin: 8%;
+        @include respond(phone-port) {
+            margin: 7%;
+        }
+
 
         img {
             width: 8rem;
@@ -16,13 +39,46 @@
             position: relative;
             object-fit: cover;
             object-position: center;
-            z-index: 400;
-            &:hover {
-                transform: scale(1.2) !important;
-                cursor: pointer;
+            z-index: 4;
             
-            }        
+        }
+        .list-grid-icon {
+            position: absolute;
+            bottom: 0; 
+            z-index: 4;
+            margin: 3%;
+            opacity: 0;
         }
 
+        &:hover {
+            transform: scale(1.1) !important;
+            cursor: pointer;
+            img {
+                filter: grayscale(1);
+            }
+            .list-grid-icon {
+                opacity: 1;
+            }
+        }  
     }
+ 
+    @include respond(desktop2k) {
+        grid-template-columns: repeat(3, auto);
+      }
+    
+      @include respond(tablet-land) {
+        grid-template-columns: repeat(2, auto);
+      }
+    
+      @include respond(tablet-port) {
+        grid-template-columns: repeat(2, auto);
+      }
+    
+      @include respond(phone-land) {
+        grid-template-columns: repeat(2, auto);
+      }
+    
+      @include respond(phone-port) {
+        grid-template-columns: repeat(2, auto);
+      }
 }

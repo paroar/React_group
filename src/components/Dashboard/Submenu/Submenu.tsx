@@ -45,11 +45,6 @@ const Submenu: React.FC = () => {
             className={"submenu-links"}
             >
                 <SubmenuTab
-                    name={"Dashboard"}
-                    path={"/dashboard"}
-                    index={0}
-                />
-                <SubmenuTab
                     name={"Lists"}
                     path={"/dashboard"}
                     index={1}

@@ -19,8 +19,18 @@ class NewListForm extends React.Component {
                     labelName: 'list_name',
                     labelContent: 'List Name'
                 },
-                value: '',
-                valid: false
+                value: ''
+            },
+            list_description: {
+                elementType: 'textarea',
+                elementConfig: {
+                    placeholder: 'Description...',
+                    name: 'listDescription',
+                    required: true
+                },
+                labelConfig: {
+                },
+                value: ''
             },
             existing_list: {
                 elementType: 'select',
@@ -33,27 +43,15 @@ class NewListForm extends React.Component {
                     labelName: 'existing_list',
                     labelContent: 'Add to existing list'
                 },
-                value: '',
-                valid: false
-            },
-            list_description: {
-                elementType: 'textarea',
-                elementConfig: {
-                    name: 'listDescription',
-                    required: true
-                },
-                labelConfig: {
-                    labelName: 'list_description',
-                    labelContent: 'List Description'
-                },
-                value: '',
-                valid: false
+                value: ''
             }
         }
     }
 
     //@ts-ignore
     handleInputChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
+        event.preventDefault();
+        event.stopPropagation();
         const updatedForm = {...this.state.newList}
         //@ts-ignore
         const updatedFormElement = {...updatedForm[identifier]};
@@ -66,6 +64,7 @@ class NewListForm extends React.Component {
 
     handleNewList = (event: React.FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
         const name = this.state.newList.list_name.value;
         const description = this.state.newList.list_description.value;
         const docRef = app.firestore().collection("users/testUser/lists")
@@ -87,29 +86,29 @@ class NewListForm extends React.Component {
         }
                 
         let form = (
-            <div className="new-list-form-wrapper">
-                <form onSubmit={this.handleNewList.bind(this)} className="new-list-form">
-                    <h2>Create new list</h2>
-                    {formElements.map(formElement => (
-                        <Input 
-                            key = {formElement.id}
-                            elementType = {formElement.config.elementType}
-                            elementConfig = {formElement.config.elementConfig}
-                            labelConfig = {formElement.config.labelConfig}
-                            value = {formElement.config.value}
-                            changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
-                        />
-                    ))}
-                    <button type="submit" className="btn-form">
-                        Send
-                    </button>
-                </form>
-            </div>
+            <form className="help-form" onSubmit={this.handleNewList.bind(this)}>
+                <h2>Add to existing list or create a new one</h2>
+                {formElements.map(formElement => (
+                    <Input 
+                        key = {formElement.id}
+                        elementType = {formElement.config.elementType}
+                        elementConfig = {formElement.config.elementConfig}
+                        labelConfig = {formElement.config.labelConfig}
+                        value = {formElement.config.value}
+                        changed = {(event: React.ChangeEvent<HTMLInputElement>) => this.handleInputChange(event, formElement.id)}
+                    />
+                ))}
+                <button type="submit" className="btn-form">
+                    Send
+                </button>
+            </form>
         );
 
         return (
-            <div className="">
+            <div className="new-list-form-wrapper">
+                <div className="new-list-form-content">
                 {form}
+                </div>
             </div>
         )     
     }

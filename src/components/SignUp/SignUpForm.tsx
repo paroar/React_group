@@ -7,30 +7,30 @@ import { withRouter, Redirect, RouteComponentProps } from "react-router";
 class SignUpForm extends React.Component<RouteComponentProps> {
   state = {
     signUp: {
-      first_name: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          required: true
-        },
-        labelConfig: {
-          labelName: "first_name",
-          labelContent: "First Name"
-        },
-        value: ""
-      },
-      last_name: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          required: true
-        },
-        labelConfig: {
-          labelName: "last_name",
-          labelContent: "Last Name"
-        },
-        value: ""
-      },
+      // first_name: {
+      //   elementType: "input",
+      //   elementConfig: {
+      //     type: "text",
+      //     required: true
+      //   },
+      //   labelConfig: {
+      //     labelName: "first_name",
+      //     labelContent: "First Name"
+      //   },
+      //   value: ""
+      // },
+      // last_name: {
+      //   elementType: "input",
+      //   elementConfig: {
+      //     type: "text",
+      //     required: true
+      //   },
+      //   labelConfig: {
+      //     labelName: "last_name",
+      //     labelContent: "Last Name"
+      //   },
+      //   value: ""
+      // },
       email: {
         elementType: "input",
         elementConfig: {

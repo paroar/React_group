@@ -15,24 +15,25 @@ type ContentProps = {
 
 const CarouselContent = (props: ContentProps) => {
     const [elements, setElements] = useState([]);
-    const name = props.id;
+    const [toCatalogue, setToCatalogue] = useState(false);
+    const name = props.name;
     const desc = props.description;
 
     useEffect(() => {
         const fetchFirebase = async () => {
             const db = firebase.firestore()
-            const data: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> = 
-            (await db.collection("users/testUser/lists").doc(props.id).collection('movies').get());
-            //@ts-ignore
-            setElements(data.docs.map(doc => 
-                doc.data()
-            ))
+            db.collection("users/testUser/lists").doc(props.id).collection('movies').onSnapshot((snapshot) => {
+                //@ts-ignore
+                setElements(snapshot.docs.map(doc => 
+                    doc.data()
+                ))
+            })
         }        
         fetchFirebase()
     }, [props])
 
     const handleView = () => (
-        <Redirect to={`/lists/${props.id}`}/>
+        setToCatalogue(!toCatalogue)
     )
 
     return (
@@ -40,8 +41,8 @@ const CarouselContent = (props: ContentProps) => {
             <div className="carousel-content-background">
                 <div className="carousel-content-shadow"></div>
                 <div className="carousel-content-image">
-                    <ListGrid items={elements}></ListGrid>
                 </div>
+
             </div>
             <div className="carousel-content-area">
                 <div className="carousel-content-container">
@@ -51,12 +52,15 @@ const CarouselContent = (props: ContentProps) => {
                     <div className="carousel-content-description">
                         {desc}
                     </div>
-                    <button onClick={handleView} className={"btn"} style={{marginTop: '2rem', position: 'relative', zIndex: 6}}>View List</button>
+                    <button onClick={handleView} className={"btn"} style={{marginTop: '2rem', position: 'relative', zIndex: 6}}>Add Films</button>
                 </div>
+                <ListGrid items={elements} colId={props.id}></ListGrid>
             </div>
             <button className="carousel-content-close" onClick={props.close}>
-                <FaTimes />
+                <FaTimes size={'2em'}/>
             </button>
+            {toCatalogue && <Redirect to={`/catalogue`}/>
+}
         </div>
     )
 }

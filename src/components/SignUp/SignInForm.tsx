@@ -122,5 +122,5 @@ class SignInForm extends React.Component<RouteComponentProps> {
     );
   }
 }
-//@ts-ignore
+
 export default withRouter(SignInForm);

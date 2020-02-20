@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import app from "../../config/base";
 import NewList from "./MovieList/NewList";
 import Carousel from "./Carousel/Carousel";
-import MovieReview from "./MovieReview/MovieReview";
 import Submenu from "./Submenu/Submenu";
 import CarouselItem from "./Carousel/CarouselItem";
 import { FaPlusCircle } from "react-icons/fa";
@@ -13,13 +12,13 @@ const Dashboard = () => {
 
     useEffect(() => {
         const fetchFirebase = async () => {
-            const db = app.firestore()
-            const data: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> = 
-            (await db.collection("users/testUser/lists").get());
-            //@ts-ignore
-            setItems(data.docs.map(doc => 
-                doc.data()
-            ))
+            const db = app.firestore();
+            db.collection("users/testUser/lists").onSnapshot((snapshot) => {
+                //@ts-ignore
+                setItems(snapshot.docs.map(doc => 
+                    doc.data()
+                ))
+            })
         }        
         fetchFirebase()
     }, [])
@@ -41,15 +40,12 @@ const Dashboard = () => {
     const toggleOpen = () => {
         setIsOpen(!isOpen)
     }
-    console.log(items)
 
     return (
         <div style={{
             backgroundColor: '#222e3c'
         }}>
-            <Submenu />
-            <div className="section-title">Popular this week</div>
-            
+            <Submenu />            
             <div className="section-title">My lists</div>
             <Carousel>
                 {items.map(item => (
@@ -72,8 +68,6 @@ const Dashboard = () => {
                     </CarouselItem>
                 ))}
             </Carousel>
-            <MovieReview></MovieReview>
-            <button onClick={() => app.auth().signOut()}>Sign Out</button>
         </div>
     )
 }

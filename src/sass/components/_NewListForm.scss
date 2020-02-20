@@ -1,12 +1,51 @@
 .new-list-form-wrapper {
     width: 100%;
+    box-sizing: border-box;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
     background-color: $help-form-dark;
+}
+
+.new-list-form-content {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #191919;
+    opacity: .9;
+
+    h2 {
+        margin: 3rem auto;
+        text-align: center;
+        font-size: 1.3rem !important;
+        letter-spacing: 0.2rem;
+        font-weight: 400;
+    }
+    input,
+    select,
+    textarea {
+        background: transparent !important;
+    }
+    select {
+        color: #b8b6b6;
+        width: 100%;
+    }
+    select + label {
+        border-bottom: none;
+        span.input-animation {
+            bottom: 1.3rem !important;
+        }
+    }
+    textarea {
+        width: 100%;
+    }
+    textarea + label {
+        border-bottom: none;
+    }
 }
 
 form.new-list-form {

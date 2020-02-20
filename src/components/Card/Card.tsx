@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, MouseEvent } from "react";
 import styled from "styled-components";
 import language from "./lang";
 import { LanguageContext } from "../../contexts/LanguageContext";
@@ -27,6 +27,15 @@ const SubTitle = styled.h4``;
 
 
 const Card: React.FC<CardProps> = props => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = (e: MouseEvent) => {
+    console.log(e)
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOpen(!isOpen)
+  }
+  console.log(isOpen)
 
   const addFavorite = () => {
     // const [favorite, setFavorite] = useState(false);
@@ -58,11 +67,6 @@ const Card: React.FC<CardProps> = props => {
       path: props.backdrop_path
     })
   }
-  const [open, setOpen] = useState(false);
-  const toggleOpen = () => {
-    setOpen(!open)
-  }
-
   const { lang } = useContext(LanguageContext);
 
   const style = {
@@ -72,8 +76,9 @@ const Card: React.FC<CardProps> = props => {
   };
 
   return (
+    <>
     <div className="card">
-      <div className="card__side card__side--front">{props.children}</div>
+    <div className="card__side card__side--front">{props.children}</div>
       <div className="card__side card__side--back" style={style}>
         <div className="back__text">
           <Title>{props.title}</Title>
@@ -87,14 +92,12 @@ const Card: React.FC<CardProps> = props => {
                 <svg className="back__icon" onClick={addWatched}>
                   <use xlinkHref={svg + "#icon-eye"}></use>
                 </svg>
-                <svg className="back__icon" onClick={toggleOpen}>
+                <svg className="back__icon" onClick={(e: any) =>{ toggleOpen(e)}}>
                   <use xlinkHref={svg + "#icon-add-to-list"}></use>
-                  {open && <NewList></NewList>}
                 </svg>
               </div>
             </>
           ) : null}
-
           {props.charName ? (
             <SubTitle>
               {language["as"][lang]}
@@ -104,6 +107,9 @@ const Card: React.FC<CardProps> = props => {
         </div>
       </div>
     </div>
+{   isOpen && <NewList open={isOpen} toggle={(e:any) => toggleOpen(e)}></NewList>
+}
+    </>
   );
 };
 

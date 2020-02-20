@@ -30,6 +30,7 @@
     &:not(&-open) .carousel-item:hover ~ .carousel-item {
         transform: translateX(20%);
     }
+    
 }
 
 .carousel-wrapper {
@@ -62,6 +63,15 @@
         background-size: cover;
         background-position: center;
         box-shadow: 0px 0.3rem 0.6rem rgba(0,0,0,0.1);
+        &.add-list {
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+            display: flex;
+            flex-direction: column;
+            * {
+                margin: 0.4rem auto;
+            }
+        }
         &:hover{
             filter: grayscale(0.7);
             span {
@@ -82,6 +92,33 @@
             text-transform: uppercase;
             font-size: 1.3rem;
             color: white;
+        }
+        @include respond(desktop4k) {
+            flex: 0 0 2%;
+          }
+        
+          @include respond(desktop2k) {
+            flex: 0 0 25%;
+        }
+        
+          @include respond(desktop) {
+            flex: 0 0 25%;
+        }
+        
+          @include respond(tablet-land) {
+            flex: 0 0 35%;
+        }
+        
+          @include respond(tablet-port) {
+            flex: 0 0 40%;
+        }
+        
+          @include respond(phone-land) {
+            flex: 0 0 45%;
+        }
+        
+          @include respond(phone-port) {
+            flex: 0 0 90%;
         }
     }
 }
