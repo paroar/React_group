@@ -18,8 +18,8 @@ const StyledDragDiv = styled.div`
   }
 `;
 
-const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
-  const [state] = useState(props.voteId);
+const Droppable: React.FC<DroppableProps & RouteComponentProps> = ({voteId, handleVote, history}) => {
+  const [state] = useState(voteId);
   const [pick, setPick] = useState({
     id: "",
     path: ""
@@ -29,7 +29,7 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
   const { currentUser } = useContext(AuthContext);
 
   const handleRedirect = () => {
-    props.history.push({
+    history.push({
       pathname: "/user",
       search: `/poll`
     });
@@ -37,10 +37,10 @@ const Droppable: React.FC<DroppableProps & RouteComponentProps> = props => {
 
   useEffect(() => {
     const update = () => {
-      props.handleVote(pick.id, state);
+      handleVote(pick.id, state);
     };
     update();
-  }, [pick.id, state, props]);
+  }, [pick, state]);
 
   const drop = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault();

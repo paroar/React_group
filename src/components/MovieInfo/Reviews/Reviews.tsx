@@ -1,5 +1,5 @@
-import Accordion from "../../Accordion/Accordion";
 import React, { useContext, useState, useEffect } from "react";
+import Accordion from "./../../Accordion/Accordion";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { LanguageContext } from "../../../contexts/LanguageContext";
 import language from "./lang";

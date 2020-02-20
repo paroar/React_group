@@ -67,7 +67,7 @@ class SignInForm extends React.Component<RouteComponentProps> {
         let redirectPath = this.props.history.location.search.slice(2);
         this.props.history.push(redirectPath);
       } else {
-        // this.props.history.push("/admin");
+        this.props.history.push("/dashboard");
       }
     } catch (error) {
       alert(error);
@@ -122,5 +122,5 @@ class SignInForm extends React.Component<RouteComponentProps> {
     );
   }
 }
-
+//@ts-ignore
 export default withRouter(SignInForm);
